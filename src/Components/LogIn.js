@@ -14,7 +14,7 @@ class LogIn extends Component {
       <div className="logInPage">
         <HeaderLogIn />
 
-        <div className="logInFormBox">
+        {/* <div className="logInFormBox wrapper"> */}
           <form action="" className="logInForm">
             <div className="upperFormLogIn">
               <label htmlFor="userName" className="visuallyHidden">
@@ -42,7 +42,7 @@ class LogIn extends Component {
 
             <div className="lowerFormLogIn">
               <div className="passBox">
-                <a href="">Forgot your password?</a>
+                <a href="#">Forgot your password?</a>
 
                 {/* On Click, link to Reset Password Component */}
               </div>
@@ -57,7 +57,7 @@ class LogIn extends Component {
               </div>
             </div>
           </form>
-        </div>
+        {/* </div> */}
       </div>
     );
   }

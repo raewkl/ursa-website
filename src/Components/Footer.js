@@ -31,13 +31,13 @@ const Footer = props => {
         <div className="rightFooter">
           <ul>
             <li>
-              <i class="fab fa-facebook-f"></i>
+              <i className="fab fa-facebook-f"></i>
             </li>
             <li>
-              <i class="fab fa-twitter"></i>
+              <i className="fab fa-twitter"></i>
             </li>
             <li>
-              <i class="fab fa-linkedin-in"></i>
+              <i className="fab fa-linkedin-in"></i>
             </li>
           </ul>
         </div>
@@ -46,7 +46,7 @@ const Footer = props => {
       <div className="bottomFooter">
         <p>&copy; 2019 Ursa Inc.</p>
         <a href="#">
-          <i class="fas fa-arrow-up"></i>
+          <i className="fas fa-arrow-up"></i>
           <p className="return">Return To Top</p>
         </a>
       </div>

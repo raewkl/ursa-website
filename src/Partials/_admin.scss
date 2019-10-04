@@ -1,0 +1,21 @@
+.adminPage {
+    height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    .logInForm {
+        width: 100%;
+    }
+
+    .upperFormLogIn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .lowerFormLogIn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

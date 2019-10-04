@@ -1,11 +1,13 @@
 .upperFooter {
   display: flex;
   justify-content: space-between;
+  // flex-direction: row-reverse;
 }
 
 .leftFooter {
   display: flex;
   width: calc(100% - 365px);
+  // flex-direction: flex-end;
 
   .logoBox {
     margin-right: 60px;

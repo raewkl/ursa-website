@@ -1,19 +1,19 @@
 .logInPage {
 
-    height: 72vh;
+    height: 69vh;
+    padding-top: 15vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    .logInFormBox {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+    // .logInFormBox {
+    //     // width: 100%;
+    //     display: flex;
+    //     justify-content: center;
+    // }
 
     form.logInForm {
-        width: 80%;
         display: flex;
         flex-direction: column;
     }
@@ -43,10 +43,15 @@
     .passBox {
         display: flex;
         align-items: center;
+
+        a {
+            font-size: 0.8rem;
+        }
     }
 
     .lowerFormLogIn {
         display: flex;
+        align-items: center;
         justify-content: space-between;
     }
 

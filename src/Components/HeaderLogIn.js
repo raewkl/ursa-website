@@ -21,9 +21,9 @@ const HeaderLogIn = props => {
           <ul>
             <li>
               <HashLink to="/#contact">
-                <a className="contactLink" href="#">
+                <div className="contactLink">
                   Contact
-                </a>
+                </div>
               </HashLink>
             </li>
 
