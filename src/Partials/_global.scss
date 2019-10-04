@@ -1,0 +1,73 @@
+$background: #eeeeee;
+
+// Primary Colors
+
+$colorOne: #0000cc;
+$colorTwo: #ff99cc;
+$colorThree: #434343;
+
+// Secondary Colors
+
+$colorFour: #99ffcc;
+$colorFive: #6666ff;
+
+html {
+  font-size: 125%;
+  background-color: $background;
+  color: $colorOne;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+li,
+span,
+em {
+  &::selection {
+    background-color: $colorTwo;
+  }
+}
+
+body,
+h1,
+h2,
+button,
+p,
+a,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+      color: $colorOne;
+  }
+}
+
+.wrapper {
+  width: 85%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+button,
+input[type="submit"] {
+  margin-top: 40px;
+  background-color: $colorOne;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 12px 20px;
+  border: 1px solid $colorOne;
+  border-radius: 30px;
+  width: 160px;
+  color: $background;
+}

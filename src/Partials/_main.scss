@@ -1,0 +1,291 @@
+.sectionOne,
+.sectionThree {
+  height: 100vh;
+}
+
+.sectionOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 15%;
+
+  h1 {
+    padding-bottom: 50px;
+    border-bottom: 1px solid $colorOne;
+  }
+
+  p {
+    margin: 40px 0;
+  }
+}
+
+.sectionTwo {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  li {
+    width: 50%;
+    padding: 2% 0;
+
+    &:first-child {
+      border-bottom-left-radius: 50px;
+      border-left: 20px dotted $colorTwo;
+      border-bottom: 20px dotted $colorTwo;
+    }
+
+    &:nth-child(2) {
+      border-right: 20px dotted rgba(0, 0, 0, 0);
+    }
+
+    &:nth-child(3) {
+      position: relative;
+      border-left: 20px dotted rgba(0, 0, 0, 0);
+    }
+
+    &:last-child {
+      border-top-right-radius: 50px;
+      border-top: 20px solid $colorTwo;
+      border-right: 20px solid $colorTwo;
+      position: relative;
+      top: -20px;
+    }
+  }
+
+  figure {
+    padding: 15% 10% 15% 20%;
+    display: flex;
+  }
+
+  figure.even {
+    padding: 15% 20% 15% 10%;
+  }
+
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h3 {
+    margin-bottom: 30px;
+  }
+
+  p:first-of-type {
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+  }
+
+  p:last-of-type {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .numBox {
+    p {
+      font-weight: 300;
+      font-size: 1.5rem;
+      position: relative;
+      left: -20px;
+      border-radius: 50%;
+      line-height: 1;
+    }
+  }
+}
+
+.sectionThree {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  ul {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+  }
+
+  figure {
+    padding: 0 7%;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1rem;
+    padding-bottom: 20px;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  .stuImg {
+    padding: 0 5%;
+  }
+}
+
+.contact {
+  height: 100vh;
+}
+
+.formAsideBox {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.formBox {
+  width: calc(100% - 350px);
+}
+
+form {
+  width: 85%;
+
+  .upperForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formName,
+  .formEmail,
+  .formSchool,
+  .formProgram,
+  .formLength,
+  .formCost,
+  .formStudents,
+  .formComment {
+    margin: 20px 0;
+    background-color: $background;
+    padding: 10px;
+
+    color: $colorOne;
+    font-size: 0.8rem;
+    font-family: $primaryFont;
+
+    &::placeholder {
+      color: $colorThree;
+      font-size: 0.8rem;
+      font-family: $primaryFont;
+    }
+  }
+
+  .formName,
+  .formEmail,
+  .formSchool,
+  .formProgram,
+  .formCost,
+  .formLength,
+  .formStudents {
+    border: none;
+    border-bottom: 1px solid $colorOne;
+    opacity: 1;
+    
+    &::placeholder {
+        font-weight: 500;
+    }
+  }
+
+  .nameEmail {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .formName,
+  .formEmail {
+    width: 48%;
+  }
+
+  .numberBox {
+    display: flex;
+    justify-content: space-between;
+
+    
+  }
+
+  .formCost,
+  .formLength,
+  .formStudents {
+    width: 32%;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid $colorOne;
+    resize: none;
+    opacity: 1;
+
+    &::placeholder {
+        font-weight: 500;
+    }
+  }
+
+  input[type="submit"] {
+    margin-top: 20px;
+    width: 120px;
+  }
+}
+
+aside {
+  border: 1px solid $colorOne;
+  padding: 35px 25px;
+  position: relative;
+  background-color: $background;
+  left: -15px;
+
+  width: 350px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 15px;
+    top: 15px;
+    background-color: $colorOne;
+    border: 1px solid $colorOne;
+    z-index: -1;
+  }
+
+  .numberBox {
+    display: flex;
+    justify-content: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 1px solid $colorOne;
+    padding-bottom: 5px;
+  }
+
+  ul {
+    margin: 20px 0;
+  }
+
+  li {
+    text-align: center;
+    padding: 4%;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    text-align: center;
+    font-size: 0.7rem;
+  }
+
+  .punchLine {
+    font-weight: bold;
+  }
+}

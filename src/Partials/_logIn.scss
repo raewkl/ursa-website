@@ -1,0 +1,56 @@
+.logInPage {
+
+    height: 72vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .logInFormBox {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    form.logInForm {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .upperFormLogIn {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .formUserName, .formPassword {
+        width: 48%;
+        background-color: rgba(0,0,0,0);
+        border: none;
+        border-bottom: 1px solid $colorOne;
+        padding: 10px;
+        font-size: 2.5rem;
+        opacity: 0.5;
+
+        color: $colorOne;
+
+        &::placeholder {
+            color: $colorThree;
+        }
+    }
+
+    .passBox {
+        display: flex;
+        align-items: center;
+    }
+
+    .lowerFormLogIn {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logInSubmit {
+        margin-top: 0;
+    }
+}
