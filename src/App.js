@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './Partials/App.scss';
+import React, { Component } from "react";
+import "./Partials/App.scss";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import firebase from "./Components/firebase";
 
@@ -7,8 +7,7 @@ import LandingPage from "./Components/LandingPage";
 import Footer from "./Components/Footer";
 import LogIn from "./Components/LogIn";
 import Header from "./Components/Header";
-import Admin from "./Components/Admin";
-import AdminDashboard from "./Components/AdminDashboard";
+import Dashboard from "./Components/Dashboard";
 
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
@@ -18,15 +17,23 @@ class App extends Component {
     super();
     this.state = {
       user: null,
-      email: "",
-      password: ""
+      userId: null,
+      // students: [],
     };
   }
 
   componentDidMount() {
-    auth.onAuthStateChanged(user => {
+    this.listener = auth.onAuthStateChanged(user => {
       if (user) {
-        this.setState({ user });
+        this.setState({ 
+          user,
+          userId: user.uid
+         });
+      } else {
+        this.setState({
+          user: null,
+          userId: null
+        });
       }
     });
   }
@@ -37,26 +44,16 @@ class App extends Component {
     });
   };
 
-  handleChange = event => {
-    let value = event.target.value;
-
-    this.setState({
-      [event.target.name]: value
-    });
-  };
-
-  login = event => {
+  login = (event, email, password) => {
     event.preventDefault();
-
-    let email = this.state.email;
-    let password = this.state.password;
 
     auth.signInWithEmailAndPassword(email, password).then(result => {
       const user = result.user;
 
       this.setState(
         {
-          user
+          user,
+          uid: user.uid
         },
         () => {
           console.log(user);
@@ -71,7 +68,8 @@ class App extends Component {
     auth.signOut().then(() => {
       this.setState(
         {
-          user: null
+          user: null,
+          userId: null
         },
         () => {
           console.log(this.state.user);
@@ -88,45 +86,22 @@ class App extends Component {
 
           <Route exact path="/" component={() => <LandingPage />} />
 
-          <Route
-            path="/admin"
-            component={() => (
-              <Admin
-                updateUser={this.updateUser}
-                handleChange={this.handleChange}
-                login={this.login}
-                logout={this.logout}
-                email={this.state.email}
-                password={this.state.password}
-                user={this.state.user}
-              />
-            )}
-          />
-
-          <Route
-            path="/admindash"
-            component={() => <AdminDashboard logout={this.logout} />}
-          />
-
-          {/* <Route exact path="/admin">
+          <Route path="/dashboard">
             {this.state.user ? (
-              <Redirect
-                to="/admindash"
+              <Dashboard 
+                logout={this.logout} 
+                userId={this.state.uid}
+                listener={this.listener}
               />
             ) : (
-              <Admin
+              <LogIn
                 updateUser={this.updateUser}
                 handleChange={this.handleChange}
                 login={this.login}
-                email={this.state.email}
-                password={this.state.password}
                 user={this.state.user}
               />
             )}
-          </Route> */}
-
-          <Route path="/login" component={() => <LogIn />} />
-
+          </Route>
           <Route path="/" component={() => <Footer />} />
         </div>
       </Router>

@@ -28,7 +28,7 @@ const HeaderLogIn = props => {
             </li>
 
             <li>
-              <Link to="/login" className="logIn">
+              <Link to="/dashboard" className="logIn">
                 Log In
               </Link>
             </li>

@@ -16,8 +16,6 @@ const Footer = props => {
             <div className="footerLinks">
               <ul>
                 <li>Company</li>
-                <li>Blog</li>
-                <li>Legal</li>
                 <li>Team</li>
                 <li>Help & Support</li>
                 <li>Privacy Policy</li>

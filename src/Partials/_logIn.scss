@@ -7,15 +7,10 @@
     justify-content: center;
     align-items: center;
 
-    // .logInFormBox {
-    //     // width: 100%;
-    //     display: flex;
-    //     justify-content: center;
-    // }
-
     form.logInForm {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .upperFormLogIn {
@@ -24,7 +19,7 @@
         margin-bottom: 50px;
     }
 
-    .formUserName, .formPassword {
+    .formUserEmail, .formPassword {
         width: 48%;
         background-color: rgba(0,0,0,0);
         border: none;
