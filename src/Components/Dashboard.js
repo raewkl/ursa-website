@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import FormList from "./FormList";
 import firebase from "./firebase";
 
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 
 class Dashboard extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -18,11 +20,11 @@ class Dashboard extends Component {
       stuNotes: "",
       user: null,
       userId: null
+
     };
   }
 
   componentDidMount() {
-
     this.listener = auth.onAuthStateChanged(user => {
       if (user) {
         this.setState(
@@ -36,7 +38,6 @@ class Dashboard extends Component {
               .ref(`users/${this.state.userId}/students/`);
 
             dbRef.on("value", response => {
-
               const newState = [];
               const data = response.val();
 
@@ -51,13 +52,14 @@ class Dashboard extends Component {
                   email: data[key].email,
                   phone: data[key].phone,
                   linkedIn: data[key].linkedIn,
-                  notes: data[key].notes
+                  notes: data[key].notes,
+                  edit: false
                 });
               }
 
               this.setState(
                 {
-                  students: newState,
+                  students: newState
                 },
                 () => {
                   console.log(this.state.students);
@@ -88,18 +90,32 @@ class Dashboard extends Component {
     });
   };
 
+  editStudent = (event, i) => {
+
+    // when we press edit, we need to ternary the li to forms that represent all the fiels
+
+    // we then need a placeholder state, for the student in question
+
+    // once the edits are finished, we need to submit the changes to the placeholder state
+
+    // then we need to update the actual students state, with all the existing students, plus the modified student
+
+    // then we need to upload the new students state to firebase
+
+    // the we can clear the placeholder state
+
+  }
+
   handleSubmit = event => {
     event.preventDefault();
 
     console.log(this.state.userId);
     console.log(this.state.students);
 
-    // here, we create a reference to our database
     const dbRef = firebase
       .database()
       .ref(`users/${this.state.userId}/students/`);
 
-    // here we grab whatever value this.state.userInput has and push it to the database
     dbRef.push({
       firstName: this.state.stuFirstName,
       lastName: this.state.stuLastName,
@@ -110,7 +126,6 @@ class Dashboard extends Component {
       notes: this.state.stuNotes
     });
 
-    // here we reset the state to an empty string
     this.setState({
       stuFirstName: "",
       stuLastName: "",
@@ -122,11 +137,21 @@ class Dashboard extends Component {
     });
   };
 
+  removeStudent = (studentId) => {
+
+    const dbRef = firebase
+      .database()
+      .ref(`users/${this.state.userId}/students/`);
+
+    dbRef.child(studentId).remove();
+
+  }
+
   render() {
     return (
       <div className="dashboard wrapper">
         <div className="dashHeader">
-          <h1>Admin Dashboard</h1>
+          <h1>Dashboard</h1>
 
           <button onClick={this.props.logout}>Log Out</button>
         </div>
@@ -238,20 +263,12 @@ class Dashboard extends Component {
         </div>
 
         <div>
-          <ul>{this.state.students.map((student) => {
-            return (
-              <li key={student.key}>
-                <p>{student.firstName}</p>
-                <p>{student.lastName}</p>
-                <p>{student.cohort}</p>
-                <p>{student.email}</p>
-                <p>{student.phone}</p>
-                <p>{student.linkedIn}</p>
-                <p>{student.notes}</p>
-              </li>
-            );
-          })
-          }</ul>
+
+          <FormList 
+            students={this.state.students}
+            removeStudent={this.removeStudent}
+          />
+
         </div>
       </div>
     );

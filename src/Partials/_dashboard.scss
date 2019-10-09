@@ -1,24 +1,35 @@
 .dashHeader {
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    margin: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;;
-
-    button {
-        margin: 0;
-    }
-
+  button {
+    margin: 0;
+  }
 }
 
 .dashboard {
-    height: 100vh;
+  height: 100vh;
 
-    ul {
-        width: 100%;
-    }
+  ul {
+    width: 100%;
+    margin: 30px 0;
+  }
 
-    li {
-        
+  li {
+    border: 1px solid black;
+    display: flex;
+    margin: 5px 0;
+
+    button {
+      margin: 0;
+      padding: 0;
     }
+  }
+
+  p {
+    width: calc(100% / 9);
+    text-align: center;
+  }
 }
