@@ -97,8 +97,6 @@ class Dashboard extends Component {
       }
     };
 
-    console.log(studentsEditValues);
-
     this.setState(
       {
         ...this.state,
@@ -131,13 +129,41 @@ class Dashboard extends Component {
     );
   };
 
+  updateImage = (i) => {
+
+    const dbRef = firebase
+      .database()
+      .ref(`users/${this.state.userId}/students/${this.state.studentsEdit[i].key}`);
+
+    dbRef.push({
+      firstName: this.state.studentsEdit[i].firstName,
+      lastName: this.state.studentsEdit[i].lastName,
+      cohort: this.state.studentsEdit[i].cohort,
+      email: this.state.studentsEdit[i].email,
+      phone: this.state.studentsEdit[i].phone,
+      linkedIn: this.state.studentsEdit[i].linkedIn,
+      notes: this.state.studentsEdit[i].notes
+    });
+  }
+
   handleEditSubmit = (event, i) => {
     event.preventDefault();
 
-    const allStudents = [...this.state.students];
+    // convert StudentEdits Object into array
+    const updates = { ...this.state.studentsEdit };
+    const arr = Object.values(updates);
+    const allStudents = [...arr];
+
+    console.log()
+
+    // create a variable of student being edited, take all the existing values, then change it's edit to false, so we can close the edit box
     const student = { ...allStudents[i], edit: false };
 
+    // update the StudentEdits array, with the new state, which will be passed to the main students state array
     allStudents[i] = student;
+
+    // push the StudentEdits to the database
+    this.updateImage(i);
 
     this.setState(
       {
@@ -146,8 +172,8 @@ class Dashboard extends Component {
       },
       () => {
         console.log(this.state.students[i].edit);
-        console.log(this.state.students);
-        console.log(this.state.studentsEdit);
+        
+        
       }
     );
   };
@@ -155,8 +181,8 @@ class Dashboard extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    console.log(this.state.userId);
-    console.log(this.state.students);
+    // console.log(this.state.userId);
+    // console.log(this.state.students);
 
     const dbRef = firebase
       .database()
