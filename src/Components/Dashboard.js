@@ -6,11 +6,12 @@ const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 
 class Dashboard extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       students: [],
+      studentsEdit: {},
+
       stuFirstName: "",
       stuLastName: "",
       cohort: "",
@@ -20,7 +21,6 @@ class Dashboard extends Component {
       stuNotes: "",
       user: null,
       userId: null
-
     };
   }
 
@@ -83,28 +83,74 @@ class Dashboard extends Component {
   }
 
   handleChange = event => {
-    let value = event.target.value;
-
     this.setState({
-      [event.target.name]: value
+      [event.target.name]: event.target.value
     });
   };
 
-  editStudent = (event, i) => {
+  handleChangeEdit = (event, i) => {
+    const studentsEditValues = {
+      ...this.state.studentsEdit,
+      [i]: {
+        ...this.state.studentsEdit[i],
+        [event.target.name]: event.target.value
+      }
+    };
 
-    // when we press edit, we need to ternary the li to forms that represent all the fiels
+    console.log(studentsEditValues);
 
-    // we then need a placeholder state, for the student in question
+    this.setState(
+      {
+        ...this.state,
+        studentsEdit: studentsEditValues
+      },
+      () => console.log(this.state.studentsEdit[i])
+    );
+  };
 
-    // once the edits are finished, we need to submit the changes to the placeholder state
+  editStudent = i => {
+    const allStudents = [...this.state.students];
+    const student = {
+      ...allStudents[i],
+      edit: true
+    };
 
-    // then we need to update the actual students state, with all the existing students, plus the modified student
+    allStudents[i] = student;
 
-    // then we need to upload the new students state to firebase
+    console.log({ ...allStudents });
 
-    // the we can clear the placeholder state
+    this.setState(
+      {
+        students: allStudents,
+        studentsEdit: { ...allStudents }
+      },
+      () => {
+        console.log(this.state.students);
+        console.log(this.state.studentsEdit);
+      }
+    );
+  };
 
-  }
+  handleEditSubmit = (event, i) => {
+    event.preventDefault();
+
+    const allStudents = [...this.state.students];
+    const student = { ...allStudents[i], edit: false };
+
+    allStudents[i] = student;
+
+    this.setState(
+      {
+        students: allStudents,
+        studentsEdit: {}
+      },
+      () => {
+        console.log(this.state.students[i].edit);
+        console.log(this.state.students);
+        console.log(this.state.studentsEdit);
+      }
+    );
+  };
 
   handleSubmit = event => {
     event.preventDefault();
@@ -137,15 +183,13 @@ class Dashboard extends Component {
     });
   };
 
-  removeStudent = (studentId) => {
-
+  removeStudent = studentId => {
     const dbRef = firebase
       .database()
       .ref(`users/${this.state.userId}/students/`);
 
     dbRef.child(studentId).remove();
-
-  }
+  };
 
   render() {
     return (
@@ -263,12 +307,14 @@ class Dashboard extends Component {
         </div>
 
         <div>
-
-          <FormList 
+          <FormList
             students={this.state.students}
+            studentsEdit={this.state.studentsEdit}
             removeStudent={this.removeStudent}
+            editStudent={this.editStudent}
+            handleEditSubmit={this.handleEditSubmit}
+            handleChangeEdit={this.handleChangeEdit}
           />
-
         </div>
       </div>
     );
