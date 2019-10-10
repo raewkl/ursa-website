@@ -135,7 +135,7 @@ class Dashboard extends Component {
       .database()
       .ref(`users/${this.state.userId}/students/${this.state.studentsEdit[i].key}`);
 
-    dbRef.push({
+    dbRef.update({
       firstName: this.state.studentsEdit[i].firstName,
       lastName: this.state.studentsEdit[i].lastName,
       cohort: this.state.studentsEdit[i].cohort,
