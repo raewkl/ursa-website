@@ -56,7 +56,9 @@ class Dashboard extends Component {
                   phone: data[key].phone,
                   linkedIn: data[key].linkedIn,
                   notes: data[key].notes,
-                  status: "Approved"
+                  status: "Approved",
+
+                  addStudent: false,
                 });
               }
 
@@ -204,7 +206,8 @@ class Dashboard extends Component {
       phone: this.state.stuPhone,
       linkedIn: this.state.stuLinkedIn,
       notes: this.state.stuNotes,
-      status: this.state.stuStatus
+      status: this.state.stuStatus,
+      
     });
 
     this.setState({
@@ -216,6 +219,7 @@ class Dashboard extends Component {
       stuLinkedIn: "",
       stuNotes: "",
       stuStatus: "N/A",
+      addStudent: !this.state.addStudent
     });
   };
 
@@ -235,17 +239,48 @@ class Dashboard extends Component {
           <button onClick={this.props.logout}>Log Out</button>
         </div>
 
-        <StudentForm
-          stuFirstName={this.state.stuFirstName}
-          stuLastName={this.state.stuLastName}
-          cohort={this.state.cohort}
-          stuEmail={this.state.stuEmail}
-          stuPhone={this.state.stuPhone}
-          stuLinkedIn={this.state.stuLinkedIn}
-          stuNotes={this.state.stuNotes}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
+        <div className="accountSettings">
+
+
+
+        </div>
+
+        <div className="addStudent">
+          <button
+            className="addStudentButton"
+            onClick={() =>
+              this.setState({
+                addStudent: !this.state.addStudent
+              })
+            }
+          >
+
+            {this.state.addStudent ? (
+              <div className="addStudentLower">
+                <i class="fas fa-times"></i>
+              </div>
+            ) : (
+              <div className="addStudentLower">
+                <p>Add Student</p>
+                <i class="fas fa-user-plus"></i>
+              </div>
+            )}
+          </button>
+        </div>
+
+        {this.state.addStudent ? (
+          <StudentForm
+            stuFirstName={this.state.stuFirstName}
+            stuLastName={this.state.stuLastName}
+            cohort={this.state.cohort}
+            stuEmail={this.state.stuEmail}
+            stuPhone={this.state.stuPhone}
+            stuLinkedIn={this.state.stuLinkedIn}
+            stuNotes={this.state.stuNotes}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+        ) : null}
 
         <div>
           <div className="formListHeader">

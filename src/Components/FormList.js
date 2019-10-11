@@ -17,7 +17,6 @@ const FormList = props => {
                   <p>{student.status}</p>
                   <p className="studentNotes">{student.notes}</p>
                 </div>
-                {/* <div className="lowerStudent"></div> */}
               </div>
 
               <div className="buttonBox">

@@ -22,6 +22,40 @@
     font-size: 2rem;
   }
 
+  .addStudent {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .addStudentButton {
+    padding: 0;
+    margin: 0;
+    width: auto;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $colorOne;
+
+    .fa-times {
+      font-size: 1.6rem;
+      margin-left: 10px;
+    }
+
+    .fa-user-plus {
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+
+    .addStudentLower {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
   .formListHeader {
     border-bottom: 2px solid $colorOne;
     margin: 10px 0;

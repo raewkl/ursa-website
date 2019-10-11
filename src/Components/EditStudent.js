@@ -93,8 +93,7 @@ const EditStudent = props => {
               name="notes"
               id="stuNotes"
               className="stuNotes"
-              cols="30"
-              rows="10"
+              placeholder="Additional Notes"
               value={props.studentsEdit[props.i].notes}
               onChange={e => props.handleChangeEdit(e, props.i)}
             ></textarea>
