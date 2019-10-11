@@ -1,0 +1,68 @@
+.formList {
+  font-size: 0.8rem;
+
+  li {
+    border: none;
+    border-bottom: 1px solid $colorOne;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    padding: 10px 20px;
+  }
+
+  .studentInfo {
+    width: 100%;
+    display: flex;
+  }
+
+  .studentContainer {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 150px);
+  }
+
+  .buttonBox {
+    width: 150px;
+
+    .buttonBoxLower {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      padding: 0;
+      border: none;
+      color: $colorOne;
+      width: auto;
+      margin: 0;
+    }
+
+    .phoneContact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    p {
+      text-align: left;
+      width: auto;
+    }
+  }
+
+  .upperStudent {
+    display: flex;
+
+    p {
+      flex: 1 0 calc(50% / 4);
+      text-align: left;
+    }
+
+    p:last-child {
+      flex: 1 0 50%;
+      padding-right: 20px;
+    }
+  }
+}

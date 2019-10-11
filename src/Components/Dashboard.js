@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FormList from "./FormList";
+import StudentForm from "./StudentForm";
 import firebase from "./firebase";
 
 const provider = new firebase.auth.GoogleAuthProvider();
@@ -10,7 +11,7 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       students: [],
-      studentsEdit: {},
+      studentsEdit: null,
 
       stuFirstName: "",
       stuLastName: "",
@@ -19,6 +20,8 @@ class Dashboard extends Component {
       stuPhone: "",
       stuLinkedIn: "",
       stuNotes: "",
+      stuStatus: "Approved",
+
       user: null,
       userId: null
     };
@@ -53,7 +56,7 @@ class Dashboard extends Component {
                   phone: data[key].phone,
                   linkedIn: data[key].linkedIn,
                   notes: data[key].notes,
-                  edit: false
+                  status: "Approved"
                 });
               }
 
@@ -62,7 +65,8 @@ class Dashboard extends Component {
                   students: newState
                 },
                 () => {
-                  console.log(this.state.students);
+                  // console.log(this.state.students);
+                  // console.log(this.state.studentsEdit);
                 }
               );
             });
@@ -97,17 +101,28 @@ class Dashboard extends Component {
       }
     };
 
-    this.setState(
-      {
-        ...this.state,
-        studentsEdit: studentsEditValues
-      },
-      () => console.log(this.state.studentsEdit[i])
-    );
+    this.setState({
+      ...this.state,
+      studentsEdit: studentsEditValues
+    });
   };
 
   editStudent = i => {
+    // use a placeholder, but only take state from student on the first open
+
+    if (!this.state.studentsEdit) {
+      const updateStudents = { ...this.state.students };
+
+      console.log(updateStudents);
+
+      this.setState({
+        studentsEdit: updateStudents
+      });
+    }
+
+    // setting the student.edit to true, so it opens the edit box
     const allStudents = [...this.state.students];
+
     const student = {
       ...allStudents[i],
       edit: true
@@ -115,25 +130,22 @@ class Dashboard extends Component {
 
     allStudents[i] = student;
 
-    console.log({ ...allStudents });
-
     this.setState(
       {
-        students: allStudents,
-        studentsEdit: { ...allStudents }
+        students: allStudents
       },
       () => {
-        console.log(this.state.students);
-        console.log(this.state.studentsEdit);
+        // console.log(this.state.studentsEdit);
       }
     );
   };
 
-  updateImage = (i) => {
-
+  updateStudent = i => {
     const dbRef = firebase
       .database()
-      .ref(`users/${this.state.userId}/students/${this.state.studentsEdit[i].key}`);
+      .ref(
+        `users/${this.state.userId}/students/${this.state.studentsEdit[i].key}`
+      );
 
     dbRef.update({
       firstName: this.state.studentsEdit[i].firstName,
@@ -144,45 +156,41 @@ class Dashboard extends Component {
       linkedIn: this.state.studentsEdit[i].linkedIn,
       notes: this.state.studentsEdit[i].notes
     });
-  }
+  };
 
   handleEditSubmit = (event, i) => {
+    // NEED TO ISOLATE INDIVIDUAL STUDENTS, NOT EVERYTHING
+
     event.preventDefault();
 
-    // convert StudentEdits Object into array
-    const updates = { ...this.state.studentsEdit };
-    const arr = Object.values(updates);
-    const allStudents = [...arr];
+    this.updateStudent(i);
 
-    console.log()
+    const update = { ...this.state.studentsEdit[i] };
+    const fullUpdate = { ...this.state.studentsEdit };
 
-    // create a variable of student being edited, take all the existing values, then change it's edit to false, so we can close the edit box
-    const student = { ...allStudents[i], edit: false };
+    console.log(fullUpdate);
 
-    // update the StudentEdits array, with the new state, which will be passed to the main students state array
-    allStudents[i] = student;
+    // let's close the individual edit box
 
-    // push the StudentEdits to the database
-    this.updateImage(i);
+    const current = this.state.students;
+    current[i] = { ...update, edit: false };
+
+    // update state for students edit as well, so that it maintains after refresh
 
     this.setState(
       {
-        students: allStudents,
-        studentsEdit: {}
+        students: current,
+        studentEdits: fullUpdate
       },
       () => {
-        console.log(this.state.students[i].edit);
-        
-        
+        // console.log(this.state.students);
+        // console.log(this.state.studentsEdit);
       }
     );
   };
 
   handleSubmit = event => {
     event.preventDefault();
-
-    // console.log(this.state.userId);
-    // console.log(this.state.students);
 
     const dbRef = firebase
       .database()
@@ -195,7 +203,8 @@ class Dashboard extends Component {
       email: this.state.stuEmail,
       phone: this.state.stuPhone,
       linkedIn: this.state.stuLinkedIn,
-      notes: this.state.stuNotes
+      notes: this.state.stuNotes,
+      status: this.state.stuStatus
     });
 
     this.setState({
@@ -205,7 +214,8 @@ class Dashboard extends Component {
       stuEmail: "",
       stuPhone: "",
       stuLinkedIn: "",
-      stuNotes: ""
+      stuNotes: "",
+      stuStatus: "N/A",
     });
   };
 
@@ -221,118 +231,31 @@ class Dashboard extends Component {
     return (
       <div className="dashboard wrapper">
         <div className="dashHeader">
-          <h1>Dashboard</h1>
-
+          <h1>School Dashboard</h1>
           <button onClick={this.props.logout}>Log Out</button>
         </div>
 
-        <div className="formContainer">
-          <form action="">
-            <label htmlFor="stuFirstName" className="visuallyHidden">
-              First Name
-            </label>
-            <input
-              type="text"
-              name="stuFirstName"
-              id="stuFirstName"
-              placeholder="First Name"
-              className="stuFirstName"
-              value={this.state.stuFirstName}
-              onChange={e => this.handleChange(e)}
-            />
-
-            <label htmlFor="stuLastName" className="visuallyHidden">
-              Last Name
-            </label>
-            <input
-              type="text"
-              name="stuLastName"
-              id="stuLastName"
-              placeholder="Last Name"
-              className="stuLastName"
-              value={this.state.stuLastName}
-              onChange={e => this.handleChange(e)}
-            />
-
-            <label htmlFor="cohort" className="visuallyHidden">
-              Cohort
-            </label>
-            <input
-              type="text"
-              name="cohort"
-              id="cohort"
-              placeholder="Cohort"
-              className="cohort"
-              value={this.state.cohort}
-              onChange={e => this.handleChange(e)}
-            />
-
-            <label htmlFor="stuEmail" className="visuallyHidden">
-              Cohort
-            </label>
-            <input
-              type="text"
-              name="stuEmail"
-              id="stuEmail"
-              placeholder="Email"
-              className="stuEmail"
-              value={this.state.stuEmail}
-              onChange={e => this.handleChange(e)}
-            />
-
-            <label htmlFor="stuPhone" className="visuallyHidden">
-              Cohort
-            </label>
-            <input
-              type="text"
-              name="stuPhone"
-              id="stuPhone"
-              placeholder="Phone #"
-              className="stuPhone"
-              value={this.state.stuPhone}
-              onChange={e => this.handleChange(e)}
-            />
-
-            <label htmlFor="stuLinkedIn" className="visuallyHidden">
-              Cohort
-            </label>
-            <input
-              type="text"
-              name="stuLinkedIn"
-              id="stuLinkedIn"
-              placeholder="LinkedIn"
-              className="stuLinkedIn"
-              value={this.state.stuLinkedIn}
-              onChange={e => this.handleChange(e)}
-            />
-
-            <label htmlFor="stuNotes" className="visuallyHidden">
-              Cohort
-            </label>
-            <textarea
-              name="stuNotes"
-              id="stuNotes"
-              className="stuNotes"
-              cols="30"
-              rows="10"
-              value={this.state.stuNotes}
-              onChange={e => this.handleChange(e)}
-            ></textarea>
-
-            <label htmlFor="stuSubmit" className="visuallyHidden">
-              Submit
-            </label>
-            <input
-              type="submit"
-              value="Submit"
-              id="stuSubmit"
-              className="submitBox button"
-              onClick={this.handleSubmit}
-            />
-          </form>
-        </div>
+        <StudentForm
+          stuFirstName={this.state.stuFirstName}
+          stuLastName={this.state.stuLastName}
+          cohort={this.state.cohort}
+          stuEmail={this.state.stuEmail}
+          stuPhone={this.state.stuPhone}
+          stuLinkedIn={this.state.stuLinkedIn}
+          stuNotes={this.state.stuNotes}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
 
         <div>
+          <div className="formListHeader">
+            <h4>First</h4>
+            <h4>Last</h4>
+            <h4>Cohort</h4>
+            <h4>Status</h4>
+            <h4>Notes</h4>
+          </div>
+
           <FormList
             students={this.state.students}
             studentsEdit={this.state.studentsEdit}

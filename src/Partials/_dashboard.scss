@@ -4,33 +4,41 @@
   justify-content: space-between;
   align-items: center;
 
+  h1 {
+    font-size: 3rem;
+  }
+
   button {
     margin: 0;
   }
 }
 
 .dashboard {
-  // height: 100vh;
+
   margin: 100px auto;
 
-  ul {
-    width: 100%;
-    margin: 30px 0;
+  h2 {
+    text-align: left;
+    font-size: 2rem;
   }
 
-  li {
-    border: 1px solid black;
+  .formListHeader {
+    border-bottom: 2px solid $colorOne;
+    margin: 10px 0;
+    padding: 10px 170px 10px 20px;
     display: flex;
-    margin: 5px 0;
 
-    button {
-      margin: 0;
-      padding: 0;
+    h4 {
+      font-size: 0.8rem;
+      flex: 1 0 calc(50% / 4);
+      text-align: left;
+    }
+
+    h4:last-child {
+      flex: 1 0 50%;
+      padding-right: 20px;
     }
   }
 
-  p {
-    width: calc(100% / 9);
-    text-align: center;
-  }
+
 }
