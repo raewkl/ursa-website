@@ -7,17 +7,97 @@ class LandingPage extends Component {
   }
 
   // handleChange = e => {
-    // let userInput = e.target.value;
-    // this.setState({ userWish: userInput });
+  // let userInput = e.target.value;
+  // this.setState({ userWish: userInput });
   // };
+
+  componentDidMount() {
+    this.scrollEvents();
+  }
+
+  componentDidMount() {
+    this.scrollEvents();
+  }
+
+  getDocHeight = () => {
+    let D = document;
+    return Math.max(
+      D.body.scrollHeight,
+      D.documentElement.scrollHeight,
+      D.body.offsetHeight,
+      D.documentElement.offsetHeight,
+      D.body.clientHeight,
+      D.documentElement.clientHeight
+    );
+  };
+
+  scrollEvents = () => {
+    window.addEventListener(
+      "scroll",
+      () => {
+        this.scrollPercentage();
+        // this.scrollSimpleNav();
+      },
+      false
+    );
+  };
+
+  scrollPercentage = () => {
+    const winHeight =
+      window.innerHeight ||
+      (document.documentElement || document.body).clientHeight;
+
+    const docHeight = this.getDocHeight();
+    const scrollTop =
+      window.pageYOffset ||
+      (document.documentElement || document.body.parentNode || document.body)
+        .scrollTop;
+
+    const trackLength = docHeight - winHeight;
+    const percentScrolled = Math.floor((scrollTop / trackLength) * 100);
+
+    console.log(percentScrolled + "% scrolled");
+  };
+
+  scrollSimpleNav = () => {
+    // window.addEventListener("scroll", e => {
+    // grab each section element
+    const navSection = document.getElementsByClassName("navSection");
+
+    // grab circle
+    const circle = document.getElementById("circle");
+
+    // create array with all the distances updating
+    const distance = [];
+
+    for (let i = 0; i < navSection.length; i++) {
+      distance.push(navSection[i].getBoundingClientRect().top);
+    }
+
+    // when distance is within range, update classes accordingly
+    for (let i = 0; i < distance.length; i++) {
+      if (distance[i] < 100 && distance[i] > -100) {
+        if (navSection[i].id === "sectionOne") {
+          circle.style.top = "0";
+        } else if (navSection[i].id === "sectionTwo") {
+          circle.style.top = "calc(100% / 3 - 7px)";
+        } else if (navSection[i].id === "sectionThree") {
+          circle.style.top = "calc(100% / 3 * 2 - 13px)";
+        } else if (navSection[i].id === "contact") {
+          circle.style.top = "calc(100% - 20px)";
+        }
+      }
+    }
+    // });
+  };
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="wrapper landingPage">
         <main>
           {/* SECTION ONE */}
 
-          <section className="sectionOne" id="sectionOne">
+          <section className="sectionOne navSection" id="sectionOne">
             <div className="sectionOneLeft">
               <div className="logoBox">
                 <img
@@ -25,9 +105,12 @@ class LandingPage extends Component {
                   alt={"Ursa Logo"}
                 />
               </div>
-              <h1>
-                Turnkey ISA Solutions <span>for Schools</span>
-              </h1>
+              <div className="titleBox">
+                <h1>
+                  Turnkey ISA Solutions <span>for Schools</span>
+                </h1>
+                <div className="borderSix"></div>
+              </div>
               <p>
                 Improve access, enrollment, and outcomes for students. We do the
                 heavy lifting <span>so you can focus on what’s important.</span>
@@ -44,7 +127,7 @@ class LandingPage extends Component {
 
           {/* SECTION TWO */}
 
-          <section className="sectionTwo">
+          <section className="sectionTwo navSection" id="sectionTwo">
             <div className="borderOne"></div>
             <div className="borderTwo"></div>
 
@@ -137,7 +220,7 @@ class LandingPage extends Component {
 
           {/* SECTION THREE */}
 
-          <section className="sectionThree">
+          <section className="sectionThree navSection" id="sectionThree">
             <div className="borderFour"></div>
 
             <h2>
@@ -201,8 +284,7 @@ class LandingPage extends Component {
 
           {/* CONTACT*/}
 
-          <section className="contact" id="contact">
-
+          <section className="contact navSection" id="contact">
             <div className="borderFive"></div>
 
             <h2>
@@ -242,27 +324,29 @@ class LandingPage extends Component {
                       />
                     </div>
 
-                    <label htmlFor="school" className="visuallyHidden">
-                      Enter school name
-                    </label>
-                    <input
-                      type="text"
-                      name="school"
-                      id="school"
-                      placeholder="School Name"
-                      className="formSchool"
-                    />
+                    <div className="schoolProgram">
+                      <label htmlFor="school" className="visuallyHidden">
+                        Enter school name
+                      </label>
+                      <input
+                        type="text"
+                        name="school"
+                        id="school"
+                        placeholder="School Name"
+                        className="formSchool"
+                      />
 
-                    <label htmlFor="program" className="visuallyHidden">
-                      Enter name of program
-                    </label>
-                    <input
-                      type="text"
-                      name="program"
-                      id="program"
-                      placeholder="Program Name"
-                      className="formProgram"
-                    />
+                      <label htmlFor="program" className="visuallyHidden">
+                        Enter name of program
+                      </label>
+                      <input
+                        type="text"
+                        name="program"
+                        id="program"
+                        placeholder="Program Name"
+                        className="formProgram"
+                      />
+                    </div>
 
                     <div className="numberBox">
                       <label htmlFor="length" className="visuallyHidden">

@@ -1,16 +1,21 @@
 import React from "react";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = props => {
   return (
     <footer className="wrapper">
       <div className="upperFooter">
         <div className="leftFooter">
-          <div className="logoBox">
-            <img
-              src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
-              alt={"Ursa Logo"}
-            />
-          </div>
+
+          <HashLink to="/#sectionOne">
+              <div className="logoBox">
+                <img
+                  src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
+                  alt={"Ursa Logo"}
+                />
+              </div>
+        </HashLink>
+
           <div className="footerText">
             <p className="motto">We align goals for better results.</p>
             <div className="footerLinks">

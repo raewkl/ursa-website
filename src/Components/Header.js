@@ -4,7 +4,6 @@ import { HashLink } from "react-router-hash-link";
 
 const Header = props => {
   return (
-
     <header className="landingNav">
       {/* Make all of this position fixed */}
 
@@ -36,20 +35,21 @@ const Header = props => {
       </div>
 
       <div className="sideNav">
-        <ul>
-          <li>
+        <ul className="sideNavLower">
+          <li className="navContainer">
             <div className="dot"></div>
           </li>
-          <li>
+          <li className="navContainer">
             <div className="dot"></div>
           </li>
-          <li>
+          <li className="navContainer">
             <div className="dot"></div>
           </li>
-          <li>
+          <li className="navContainer">
             <div className="dot"></div>
           </li>
         </ul>
+        <div className="circle" id="circle"></div>
       </div>
     </header>
   );

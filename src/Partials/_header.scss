@@ -1,12 +1,8 @@
-// header {
-//   z-index: 1000;
-// }
-
 .topBar {
   position: fixed;
   z-index: 100;
-  left: 6%;
-  right: 6%;
+  left: 10%;
+  right: 10%;
   top: 3vh;
 
   margin: 0 auto;
@@ -16,9 +12,7 @@
   align-items: center;
 }
 
-.logoBox {
-  width: 80px;
-}
+
 
 .mainNav {
   width: 100%;
@@ -56,20 +50,22 @@
 .sideNav {
   position: fixed;
   left: 3%;
-  top: calc(50% - 24vh);
+  top: calc(50% - 18vh);
 
   ul {
+    padding: 2px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  li:first-child {
-    border: 1px solid $colorOne;
+    justify-content: space-between;
+    height: 36vh;
+    position: relative;
+    width: 20px;
   }
 
   li {
-    margin: 6vh 0;
+    // margin: 6vh 0;
+    // height: 20px;
     border-radius: 50%;
   }
 
@@ -80,4 +76,17 @@
     border-radius: 50%;
     background-color: $colorOne;
   }
+
+  .circle {
+    // width: 20px;
+    height: 20px;
+    border: 1px solid $colorOne;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
 }

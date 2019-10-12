@@ -1,3 +1,17 @@
+.landingPage {
+  position: relative;
+}
+
+.borderOne,
+.borderTwo,
+.borderThree,
+.borderFour,
+.borderFive,
+.borderSix {
+  position: absolute;
+  z-index: -10;
+}
+
 .sectionOne {
   height: calc(100vh - 100px);
   margin-top: 3vh;
@@ -14,12 +28,24 @@
       margin-bottom: 50px;
     }
 
+    .titleBox {
+      position: relative;
+    }
+
     h1 {
       padding-bottom: 50px;
-      border-bottom: 1px solid $colorOne;
       span {
         display: block;
       }
+    }
+
+    .borderSix {
+      top: 0;
+      left: 0;
+      right: 10%;
+      bottom: 0;
+      // background-color: rgba(0,0,0,0.3);
+      border-bottom: 1px solid $colorOne;
     }
 
     p {
@@ -40,16 +66,6 @@
       left: -30px;
     }
   }
-}
-
-.borderOne,
-.borderTwo,
-.borderThree,
-.borderFour,
-.borderFive {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0);
-  z-index: -10;
 }
 
 .sectionTwo,
@@ -121,7 +137,6 @@
 }
 
 .sectionTwo {
-
   padding: 15vh 0;
 
   figure {
@@ -258,8 +273,6 @@ form {
     margin: 20px 0;
     background-color: $background;
     padding: 10px;
-
-    color: $colorOne;
     font-size: 0.8rem;
     font-family: $primaryFont;
 
@@ -281,13 +294,16 @@ form {
     border-bottom: 1px solid $colorOne;
   }
 
-  .nameEmail {
+  .nameEmail,
+  .schoolProgram {
     display: flex;
     justify-content: space-between;
   }
 
   .formName,
-  .formEmail {
+  .formEmail,
+  .formProgram,
+  .formSchool {
     width: 48%;
   }
 
