@@ -1,5 +1,10 @@
+// header {
+//   z-index: 1000;
+// }
+
 .topBar {
   position: fixed;
+  z-index: 100;
   left: 6%;
   right: 6%;
   top: 3vh;
@@ -16,7 +21,7 @@
 }
 
 .mainNav {
-  width: calc(100% - 80px);
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 

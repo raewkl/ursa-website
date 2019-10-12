@@ -6,34 +6,48 @@ class LandingPage extends Component {
     this.state = {};
   }
 
-  handleChange = e => {
+  // handleChange = e => {
     // let userInput = e.target.value;
     // this.setState({ userWish: userInput });
-  };
+  // };
 
   render() {
     return (
       <div className="wrapper">
-
         <main>
           {/* SECTION ONE */}
 
           <section className="sectionOne" id="sectionOne">
-            <h1>
-              Turnkey ISA Solutions <span>for Schools</span>
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis
-              optio fuga veniam! Vitae obcaecati quia eum minima magnam sint
-              tempore laborum, aliquam autem!
-            </p>
+            <div className="sectionOneLeft">
+              <div className="logoBox">
+                <img
+                  src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
+                  alt={"Ursa Logo"}
+                />
+              </div>
+              <h1>
+                Turnkey ISA Solutions <span>for Schools</span>
+              </h1>
+              <p>
+                Improve access, enrollment, and outcomes for students. We do the
+                heavy lifting <span>so you can focus on what’s important.</span>
+              </p>
 
-            <button>Learn More</button>
+              <button>Learn More</button>
+            </div>
+            <div className="sectionOneRight">
+              <div className="imgBox">
+                <img src={require("../Assets/Images/turnkey2.png")} alt="" />
+              </div>
+            </div>
           </section>
 
           {/* SECTION TWO */}
 
           <section className="sectionTwo">
+            <div className="borderOne"></div>
+            <div className="borderTwo"></div>
+
             <h2>
               <em>How</em> it works
             </h2>
@@ -73,7 +87,15 @@ class LandingPage extends Component {
                   </figcaption>
                 </figure>
               </li>
+            </ul>
+          </section>
 
+          {/* SECTION TWO BOTTOM */}
+
+          <section className="sectionTwoBottom">
+            <div className="borderThree"></div>
+
+            <ul>
               <li>
                 <figure>
                   <div className="numBox">
@@ -116,6 +138,8 @@ class LandingPage extends Component {
           {/* SECTION THREE */}
 
           <section className="sectionThree">
+            <div className="borderFour"></div>
+
             <h2>
               <em>Student</em> benefits
             </h2>
@@ -125,15 +149,15 @@ class LandingPage extends Component {
                 <figure>
                   <div className="stuImg">
                     <img
-                      src={require("../Assets/Images/ac_arrow2_blue.svg")}
+                      src={require("../Assets/Images/rocket3.png")}
                       alt={"Ursa Logo"}
                     />
                   </div>
                   <figcaption>
-                    <h3>Affordable Financing</h3>
+                    <h3>Pay only when you start working</h3>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nam adipisci ipsa?
+                      With Ursa, you’ll never have to worry about balances or
+                      interest. We get paid when you get paid!
                     </p>
                   </figcaption>
                 </figure>
@@ -142,15 +166,15 @@ class LandingPage extends Component {
                 <figure>
                   <div className="stuImg">
                     <img
-                      src={require("../Assets/Images/ac_calendar2_blue.svg")}
+                      src={require("../Assets/Images/piggybank.png")}
                       alt={"Ursa Logo"}
                     />
                   </div>
                   <figcaption>
-                    <h3>Mentorship</h3>
+                    <h3>Financing that’s always affordable</h3>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nam adipisci ipsa?
+                      Payments will always be a set % of your earnings, and
+                      you’ll never pay more than the cap we agree on.
                     </p>
                   </figcaption>
                 </figure>
@@ -159,15 +183,15 @@ class LandingPage extends Component {
                 <figure>
                   <div className="stuImg">
                     <img
-                      src={require("../Assets/Images/ac_elements_blue.svg")}
+                      src={require("../Assets/Images/tree2.png")}
                       alt={"Ursa Logo"}
                     />
                   </div>
                   <figcaption>
-                    <h3>Career Support</h3>
+                    <h3>Mentorship and career support</h3>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nam adipisci ipsa?
+                      We know how stressful the jump from school to working can
+                      be. We’re here to make it easier.
                     </p>
                   </figcaption>
                 </figure>
@@ -178,6 +202,9 @@ class LandingPage extends Component {
           {/* CONTACT*/}
 
           <section className="contact" id="contact">
+
+            <div className="borderFive"></div>
+
             <h2>
               <em>Contact</em> Us
             </h2>
@@ -299,14 +326,14 @@ class LandingPage extends Component {
                 </form>
               </div>
 
-              <aside className="byTheNumbers">
+              {/* <aside className="byTheNumbers">
                 <div className="numberBox">
                   <h2>The Numbers</h2>
                 </div>
 
                 <ul>
                   <li>
-                    <h3>7 Out Of 10</h3>
+                    <h3>7 In 10</h3>
                     <p>Students require financial assistance.</p>
                   </li>
                   <li>
@@ -322,7 +349,7 @@ class LandingPage extends Component {
                 <p className="punchLine">
                   There's a better way to finance education.
                 </p>
-              </aside>
+              </aside> */}
             </div>
           </section>
         </main>
