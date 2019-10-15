@@ -4,14 +4,30 @@ let scrollPos = 0;
 class LandingPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      sectionOne: false,
+      sectionTwo: false,
+      sectionThree: false,
+      contact: false
+    };
   }
 
   componentDidMount() {
     // check if in contact for initial circle position
-    this.circleAnimationFinal("", this.scrollHeight());
 
-    window.addEventListener("scroll", this.scrollDirection, false);
+    this.setState(
+      {
+        sectionOne: true,
+        sectionTwo: false,
+        sectionThree: false,
+        contact: false
+      },
+      () => {
+        this.circleAnimations("", this.scrollHeight());
+
+        window.addEventListener("scroll", this.scrollDirection, false);
+      }
+    );
   }
 
   componentWillUnmount() {
@@ -26,10 +42,10 @@ class LandingPage extends Component {
 
       if (document.body.getBoundingClientRect().top > scrollPos) {
         // scroll up
-        this.circleAnimationFinal("-", percentage);
+        this.circleAnimations("-", percentage);
       } else {
         // scroll down
-        this.circleAnimationFinal("", percentage);
+        this.circleAnimations("", percentage);
       }
 
       // saves the new position for iteration.
@@ -78,7 +94,7 @@ class LandingPage extends Component {
     // }
   };
 
-  circleAnimationFinal = (vector, height) => {
+  circleAnimations = (vector, height) => {
     const circle = document.getElementById("circle");
 
     const animationClasses = [
@@ -94,26 +110,92 @@ class LandingPage extends Component {
     let animationVector = vector;
 
     if (animationVector === "-") {
-      if (percentage > 11 && percentage < 15) {
-        this.removeClasses(circle, animationClasses);
-        circle.classList.add("circle21");
-      } else if (percentage > 44 && percentage < 48) {
-        this.removeClasses(circle, animationClasses);
-        circle.classList.add("circle32");
-      } else if (percentage > 74 && percentage < 78) {
-        this.removeClasses(circle, animationClasses);
-        circle.classList.add("circle43");
+      if (percentage < 15 && !this.state.sectionOne) {
+        this.setState(
+          {
+            sectionOne: true,
+            sectionTwo: false,
+            sectionThree: false,
+            contact: false
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle21");
+          }
+        );
+      } else if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
+        this.setState(
+          {
+            sectionOne: false,
+            sectionTwo: true,
+            sectionThree: false,
+            contact: false
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle32");
+          }
+        );
+      } else if (percentage > 48 && percentage < 78 && !this.state.sectionThree) {
+
+        this.setState(
+          {
+            sectionOne: false,
+            sectionTwo: false,
+            sectionThree: true,
+            contact: false
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle43");
+          }
+        );
       }
     } else {
-      if (percentage > 15 && percentage < 19) {
-        this.removeClasses(circle, animationClasses);
-        circle.classList.add("circle12");
-      } else if (percentage > 48 && percentage < 52) {
-        this.removeClasses(circle, animationClasses);
-        circle.classList.add("circle23");
-      } else if (percentage > 78) {
-        this.removeClasses(circle, animationClasses);
-        circle.classList.add("circle34");
+      if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
+
+        this.setState(
+          {
+            sectionOne: false,
+            sectionTwo: true,
+            sectionThree: false,
+            contact: false
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle12");
+          }
+        );
+        
+      } else if (percentage > 48 && percentage < 78 && !this.state.sectionThree) {
+
+        this.setState(
+          {
+            sectionOne: false,
+            sectionTwo: false,
+            sectionThree: true,
+            contact: false
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle23");
+          }
+        );
+        
+      } else if (percentage > 78 && !this.state.contact) {
+
+        this.setState(
+          {
+            sectionOne: false,
+            sectionTwo: false,
+            sectionThree: false,
+            contact: true
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle34");
+          }
+        );
       }
     }
   };
