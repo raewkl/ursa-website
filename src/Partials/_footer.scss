@@ -1,3 +1,8 @@
+footer {
+  padding-top: 5vh;
+  border-top: 1px solid $colorOne;
+}
+
 .upperFooter {
   display: flex;
   justify-content: space-between;
@@ -9,14 +14,14 @@
 
 .leftFooter {
   display: flex;
-  width: calc(100% - 365px);
+  width: 100%;
 
   .logoBox {
-    margin-right: 60px;
+    margin-right: 10px
   }
 
   .footerLinks {
-    margin-top: 20px;
+    margin-top: 3vh;
   }
 
   ul {
@@ -28,7 +33,7 @@
 
   li {
     font-size: 0.7rem;
-    margin-right: 15px;
+    margin-right: 25px;
     margin-bottom: 15px;
     text-decoration: underline;
     font-weight: 500;
@@ -36,15 +41,17 @@
 
   .motto {
     line-height: 1;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    line-height: 0.7;
   }
 }
 
 .rightFooter {
-  width: 15%;
-  padding-left: 40px;
-  border-left: 1px solid $colorOne;
+  // width: 15%;
+  // padding-left: 40px;
   display: flex;
+  justify-content: flex-end;
   
   li {
       text-align: center;

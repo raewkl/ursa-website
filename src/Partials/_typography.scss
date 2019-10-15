@@ -69,9 +69,7 @@ h1 {
 }
 
 h2 {
-  em {
     font-weight: bold;
-  }
   font-size: 3rem;
   text-align: center;
 }
@@ -83,14 +81,14 @@ h3 {
 
 input[type="text"], input[type="email"], input[type="number"] {
     opacity: 1;
-    color: $colorThree;
+    color: $colorOne;
     font-family: $primaryFont;
     font-weight: 500;
 
     &::placeholder {
         font-weight: 500;
         font-family: $primaryFont;
-        color: $colorThree;
+        color: $colorOne;
         opacity: 0.7;
     }
 }
@@ -99,13 +97,19 @@ textarea {
     opacity: 1;
     font-family: $primaryFont;
     font-weight: 500;
-    color: $colorThree;
+    color: $colorOne;
 
     &::placeholder {
         opacity: 0.7;
         font-weight: 500;
         font-family: $primaryFont;
-        color: $colorThree;
+        color: $colorOne;
 
     }
 }
+
+  a p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: underline;
+  }

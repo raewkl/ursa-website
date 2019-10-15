@@ -1,3 +1,14 @@
+.sectionOne {
+  height: 100vh;
+  // border: 1px solid red;
+}
+.sectionTwo,
+.sectionThree,
+.contact {
+  // min-height: 90vh;
+  // border: 1px solid red;
+}
+
 .landingPage {
   position: relative;
 }
@@ -7,26 +18,32 @@
 .borderThree,
 .borderFour,
 .borderFive,
-.borderSix {
+.borderSix, .circleEnd {
   position: absolute;
   z-index: -10;
 }
 
 .sectionOne {
-  height: calc(100vh - 100px);
   margin-top: 3vh;
   display: flex;
+  position: relative;
+
+  .imgBox {
+    position: absolute;
+    bottom: 10vh;
+    right: -10%;
+    width: 450px;
+  }
+
+  button {
+    margin-top: 2vh;
+  }
 
   .sectionOneLeft {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: calc(100% - 330px);
-
-    .logoBox {
-      width: 220px;
-      margin-bottom: 50px;
-    }
+    width: calc(80%);
 
     .titleBox {
       position: relative;
@@ -42,40 +59,29 @@
     .borderSix {
       top: 0;
       left: 0;
-      right: 10%;
+      right: 200px;
       bottom: 0;
-      // background-color: rgba(0,0,0,0.3);
       border-bottom: 1px solid $colorOne;
     }
 
     p {
       margin: 40px 0;
-      width: calc(100% - 100px);
-    }
-  }
-
-  .sectionOneRight {
-    display: flex;
-    align-items: flex-end;
-    width: 300px;
-
-    img {
-      width: 410px;
-      position: relative;
-      bottom: -70px;
-      left: -30px;
+      width: calc(100% - 200px);
     }
   }
 }
 
-.sectionTwo,
+.sectionTwoUpper,
 .sectionTwoBottom {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .borderOne {
-    left: -5%;
+    left: 0;
     right: 50%;
-    top: 0;
+    top: -15vh;
     bottom: 0;
 
     border-top: 20px solid $colorTwo;
@@ -88,7 +94,7 @@
   .borderTwo {
     left: 50%;
     right: 28%;
-    top: 0;
+    top: -15vh;
     bottom: 0;
 
     border-top: 20px dotted $colorTwo;
@@ -119,11 +125,6 @@
     font-size: 0.8rem;
   }
 
-  p:last-of-type {
-    font-size: 0.8rem;
-    font-weight: 500;
-  }
-
   .numBox {
     p {
       font-weight: 300;
@@ -136,25 +137,25 @@
   }
 }
 
-.sectionTwo {
-  padding: 15vh 0;
+.sectionTwoUpper {
+  padding: 4.5vh 0 8vh 0;
 
   figure {
-    padding: 10vh 10% 0 20%;
+    padding: 8vh 10% 0 20%;
     display: flex;
   }
 
   figure.even {
-    padding: 10vh 20% 0 10%;
+    padding: 8vh 20% 0 10%;
   }
 }
 
 .sectionTwoBottom {
-  padding: 15vh 0;
+  padding: 8vh 0;
 
   .borderThree {
     left: 50%;
-    right: -5%;
+    right: 0;
     top: -20px;
     bottom: 0;
 
@@ -176,14 +177,15 @@
 }
 
 .sectionThree {
-  padding: 15vh 0;
+  padding: 8vh 0 calc(8vh + 20px) 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
 
   .borderFour {
-    left: -5%;
+    left: 0;
     right: 50%;
     top: -20px;
     bottom: 0;
@@ -195,7 +197,7 @@
   }
 
   ul {
-    margin-top: 3vh;
+    margin: 6vh 0;
     display: flex;
     justify-content: space-evenly;
   }
@@ -220,42 +222,66 @@
   }
 
   .stuImg {
-    padding: 0 20%;
+    padding: 0 15%;
     margin-bottom: 3vh;
     margin-top: 2vh;
   }
 }
 
 .contact {
-  padding: 15vh 0;
+  height: 85vh;
   position: relative;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
   .borderFive {
-    right: -5%;
+    right: 0;
+    left: 70%;
+    top: -20px;
+    bottom: 72vh;
+    border-top: 20px solid $colorTwo;
+    border-right: 20px solid $colorTwo;
+    border-bottom: 20px solid $colorTwo;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+  }
+
+  .borderSix {
+    right: 30%;
     left: 50%;
     top: -20px;
-    bottom: -300px;
-    border-top: 20px dotted $colorTwo;
-    border-right: 20px dotted $colorTwo;
-    border-top-right-radius: 80px;
+    bottom: 72vh;
+    border-top: 20px solid $colorTwo;
+  }
+
+  .circleEnd {
+    width: 20px;
+    height: 20px;
+    // color: $colorTwo;
+    background-color: $colorTwo;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 72vh;
+    right: calc(30% - 10px);
   }
 }
 
 .formAsideBox {
   display: flex;
   align-items: center;
-  margin-top: 5vh;
+  // margin-top: 5vh;
   justify-content: center;
 }
 
 .formBox {
-  width: 100%;
+  width: 70%;
   display: flex;
-  justify-content: center;
 }
 
 form {
-  width: 70%;
+  width: 88%;
 
   .upperForm {
     display: flex;
@@ -270,14 +296,13 @@ form {
   .formCost,
   .formStudents,
   .formComment {
-    margin: 20px 0;
+    
     background-color: $background;
     padding: 10px;
     font-size: 0.8rem;
     font-family: $primaryFont;
 
     &::placeholder {
-      color: $colorThree;
       font-size: 0.8rem;
       font-family: $primaryFont;
     }
@@ -290,8 +315,13 @@ form {
   .formCost,
   .formLength,
   .formStudents {
+    margin: 10px 0;
     border: none;
     border-bottom: 1px solid $colorOne;
+  }
+
+  .formComment {
+    margin: 20px 0;
   }
 
   .nameEmail,
@@ -331,60 +361,74 @@ form {
   }
 }
 
-// aside {
-//   border: 1px solid $colorOne;
-//   padding: 35px 25px;
-//   position: relative;
-//   background-color: $background;
-//   left: -15px;
+aside {
+  border: 1px solid $colorOne;
+  padding: 1% 4%;
+  position: relative;
+  background-color: $background;
+  right: 10px;
+  height: 100%;
 
-//   width: 350px;
+  width: calc(30% + 20px);
 
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     height: 100%;
-//     width: 100%;
-//     left: 15px;
-//     top: 15px;
-//     background-color: $colorOne;
-//     border: 1px solid $colorOne;
-//     z-index: -1;
-//   }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 10px;
+    top: 10px;
+    background-color: $colorOne;
+    border: 1px solid $colorOne;
+    z-index: -1;
+  }
 
-//   .numberBox {
-//     display: flex;
-//     justify-content: center;
-//   }
+  .numberBox {
+    display: flex;
+    justify-content: center;
+  }
 
-//   h2 {
-//     font-size: 1.5rem;
-//     font-weight: bold;
-//     display: inline-block;
-//     border-bottom: 1px solid $colorOne;
-//     padding-bottom: 5px;
-//   }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 1px solid $colorOne;
+    padding-bottom: 5px;
+  }
 
-//   ul {
-//     margin: 20px 0;
-//   }
+  .factList {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    // padding: 5%;
+  }
 
-//   li {
-//     text-align: center;
-//     padding: 4%;
-//   }
+  li {
+    text-align: center;
+    // padding: 4%;
+  }
 
-//   h3 {
-//     font-size: 1.2rem;
-//     margin-bottom: 10px;
-//   }
+  h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
 
-//   p {
-//     text-align: center;
-//     font-size: 0.7rem;
-//   }
+  p {
+    text-align: center;
+    font-size: 0.7rem;
+    // font-weight: 500;
+    
+  }
 
-//   .punchLine {
-//     font-weight: bold;
-//   }
-// }
+  .motto {
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+    // p {
+      // border-bottom: 1px solid $colorOne;
+    // }
+  }
+}

@@ -83,7 +83,8 @@ class App extends Component {
         <div className="App">
           <Route exact path="/" component={() => <Header />} />
 
-          <Route exact path="/" component={() => <LandingPage />} />
+          <Route exact path="/" component={() => <LandingPage 
+          />} />
 
           <Route path="/dashboard">
             {this.state.user ? (

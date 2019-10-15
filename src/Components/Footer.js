@@ -6,26 +6,27 @@ const Footer = props => {
     <footer className="wrapper">
       <div className="upperFooter">
         <div className="leftFooter">
-
           <HashLink to="/#sectionOne">
-              <div className="logoBox">
-                <img
-                  src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
-                  alt={"Ursa Logo"}
-                />
-              </div>
-        </HashLink>
+            <div className="logoBox">
+              <img
+                src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
+                alt={"Ursa Logo"}
+              />
+            </div>
+          </HashLink>
 
           <div className="footerText">
-            <p className="motto">We align goals for better results.</p>
+            <p className="motto">Forward Together</p>
             <div className="footerLinks">
               <ul>
-                <li>Company</li>
-                <li>Team</li>
-                <li>Help & Support</li>
-                <li>Privacy Policy</li>
-                <li>Terms Of Use</li>
+                {/* <li>Company</li> */}
+                {/* <li>Team</li>
+                <li>Help & Support</li> */}
+                {/* <li>Privacy Policy</li>
+                <li>Terms Of Use</li> */}
                 <li>FAQ</li>
+                <li>Contact Us</li>
+                <li>Legal</li>
               </ul>
             </div>
           </div>
@@ -34,13 +35,13 @@ const Footer = props => {
         <div className="rightFooter">
           <ul>
             <li>
-              <i className="fab fa-facebook-f"></i>
-            </li>
-            <li>
               <i className="fab fa-twitter"></i>
             </li>
             <li>
               <i className="fab fa-linkedin-in"></i>
+            </li>
+            <li>
+              <i className="fab fa-facebook-f"></i>
             </li>
           </ul>
         </div>

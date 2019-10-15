@@ -6,89 +6,122 @@ class LandingPage extends Component {
     this.state = {};
   }
 
-  // handleChange = e => {
-  // let userInput = e.target.value;
-  // this.setState({ userWish: userInput });
-  // };
-
   componentDidMount() {
-    this.scrollEvents();
+    // check if in contact for initial circle position
+    this.circleAnimationFinal("", this.scrollHeight());
+
+    this.scrollDirection();
   }
 
-  componentDidMount() {
-    this.scrollEvents();
+  componentWillUnmount() {
+    this.scrollDirection();
   }
 
   getDocHeight = () => {
-    let D = document;
+    let d = document;
     return Math.max(
-      D.body.scrollHeight,
-      D.documentElement.scrollHeight,
-      D.body.offsetHeight,
-      D.documentElement.offsetHeight,
-      D.body.clientHeight,
-      D.documentElement.clientHeight
+      d.body.scrollHeight,
+      d.documentElement.scrollHeight,
+      d.body.offsetHeight,
+      d.documentElement.offsetHeight,
+      d.body.clientHeight,
+      d.documentElement.clientHeight
     );
   };
 
-  scrollEvents = () => {
-    window.addEventListener(
-      "scroll",
-      () => {
-        this.scrollPercentage();
-        // this.scrollSimpleNav();
-      },
-      false
-    );
-  };
-
-  scrollPercentage = () => {
+  scrollHeight = () => {
     const winHeight =
       window.innerHeight ||
       (document.documentElement || document.body).clientHeight;
 
     const docHeight = this.getDocHeight();
+
     const scrollTop =
       window.pageYOffset ||
       (document.documentElement || document.body.parentNode || document.body)
         .scrollTop;
 
     const trackLength = docHeight - winHeight;
-    const percentScrolled = Math.floor((scrollTop / trackLength) * 100);
+    const percentScrolled = (scrollTop / trackLength) * 100;
 
-    console.log(percentScrolled + "% scrolled");
+    return percentScrolled;
   };
 
-  scrollSimpleNav = () => {
-    // window.addEventListener("scroll", e => {
-    // grab each section element
-    const navSection = document.getElementsByClassName("navSection");
+  removeClasses = (target, classes) => {
+    const circle = target;
+    const animClasses = classes;
 
-    // grab circle
+    animClasses.forEach(i => {
+      circle.classList.remove(i);
+    });
+  };
+
+
+  scrollDirection = () => {
+    // Initial state
+    let scrollPos = 0;
+
+    // adding scroll event
+    window.addEventListener(
+      "scroll",
+      () => {
+        // detects new state and compares it with the new one
+
+        let percentage = this.scrollHeight();
+
+        if (document.body.getBoundingClientRect().top > scrollPos) {
+          // scroll up
+          this.circleAnimationFinal("-", percentage);
+        } else {
+          // scroll down
+          this.circleAnimationFinal("", percentage);
+        }
+
+        // saves the new position for iteration.
+        scrollPos = document.body.getBoundingClientRect().top;
+      },
+      false
+    );
+  };
+
+  circleAnimationFinal = (vector, height) => {
     const circle = document.getElementById("circle");
 
-    // create array with all the distances updating
-    const distance = [];
+    const animationClasses = [
+      "circle12",
+      "circle23",
+      "circle34",
+      "circle21",
+      "circle32",
+      "circle43"
+    ];
 
-    for (let i = 0; i < navSection.length; i++) {
-      distance.push(navSection[i].getBoundingClientRect().top);
-    }
+    let percentage = height;
+    let animationVector = vector;
 
-    // when distance is within range, update classes accordingly
-    for (let i = 0; i < distance.length; i++) {
-      if (distance[i] < 100 && distance[i] > -100) {
-        if (navSection[i].id === "sectionOne") {
-          circle.style.top = "0";
-        } else if (navSection[i].id === "sectionTwo") {
-          circle.style.top = "calc(100% / 3 - 7px)";
-        } else if (navSection[i].id === "sectionThree") {
-          circle.style.top = "calc(100% / 3 * 2 - 13px)";
-        } else if (navSection[i].id === "contact") {
-          circle.style.top = "calc(100% - 20px)";
-        }
+    if (animationVector === "-") {
+      if (percentage > 11 && percentage < 15) {
+        this.removeClasses(circle, animationClasses);
+        circle.classList.add("circle21");
+      } else if (percentage > 44 && percentage < 48) {
+        this.removeClasses(circle, animationClasses);
+        circle.classList.add("circle32");
+      } else if (percentage > 74 && percentage < 78) {
+        this.removeClasses(circle, animationClasses);
+        circle.classList.add("circle43");
+      }
+    } else {
+      if (percentage > 15 && percentage < 19) {
+        this.removeClasses(circle, animationClasses);
+        circle.classList.add("circle12");
+      } else if (percentage > 48 && percentage < 52) {
+        this.removeClasses(circle, animationClasses);
+        circle.classList.add("circle23");
+      } else if (percentage > 78) {
+        this.removeClasses(circle, animationClasses);
+        circle.classList.add("circle34");
       }
     }
-    // });
   };
 
   render() {
@@ -96,15 +129,8 @@ class LandingPage extends Component {
       <div className="wrapper landingPage">
         <main>
           {/* SECTION ONE */}
-
           <section className="sectionOne navSection" id="sectionOne">
             <div className="sectionOneLeft">
-              <div className="logoBox">
-                <img
-                  src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
-                  alt={"Ursa Logo"}
-                />
-              </div>
               <div className="titleBox">
                 <h1>
                   Turnkey ISA Solutions <span>for Schools</span>
@@ -118,104 +144,111 @@ class LandingPage extends Component {
 
               <button>Learn More</button>
             </div>
-            <div className="sectionOneRight">
-              <div className="imgBox">
-                <img src={require("../Assets/Images/turnkey2.png")} alt="" />
-              </div>
+
+            <div className="imgBox">
+              <img src={require("../Assets/Images/turnkey2.png")} alt="" />
             </div>
           </section>
 
           {/* SECTION TWO */}
 
-          <section className="sectionTwo navSection" id="sectionTwo">
-            <div className="borderOne"></div>
-            <div className="borderTwo"></div>
+          <section className="sectionTwo">
+            <section
+              className="sectionTwoUpper navSection"
+              id="sectionTwoUpper"
+            >
+              <div className="borderOne"></div>
+              <div className="borderTwo"></div>
 
-            <h2>
-              <em>How</em> it works
-            </h2>
-            <ul>
-              <li>
-                <figure>
-                  <div className="numBox">
-                    <p>1</p>
-                  </div>
-                  <figcaption>
-                    <div className="subFig">
-                      <h3>Schools Partner With Us</h3>
-                      <p>
-                        Ursa works with schools to create an ISA program with
-                        set % income share, $ cap, and payment term.
-                      </p>
-                      <p>Contact Us ></p>
+              <h2>
+                <em>How it works</em>
+              </h2>
+              <ul>
+                <li>
+                  <figure>
+                    <div className="numBox">
+                      <p>1</p>
                     </div>
-                  </figcaption>
-                </figure>
-              </li>
+                    <figcaption>
+                      <div className="subFig">
+                        <h3>Schools Partner With Us</h3>
+                        <p>
+                          Ursa works with schools to create an ISA program with
+                          set % income share, $ cap, and payment term.
+                        </p>
+                        {/* <p>Contact Us ></p> */}
+                      </div>
+                    </figcaption>
+                  </figure>
+                </li>
 
-              <li>
-                <figure className="even">
-                  <div className="numBox">
-                    <p>2</p>
-                  </div>
-                  <figcaption>
-                    <div className="subFig">
-                      <h3>Students Apply</h3>
-                      <p>
-                        Students fill out a simple application form and eligable
-                        candidates are provided an ISA.
-                      </p>
-                      <p>Apply now ></p>
+                <li>
+                  <figure className="even">
+                    <div className="numBox">
+                      <p>2</p>
                     </div>
-                  </figcaption>
-                </figure>
-              </li>
-            </ul>
-          </section>
+                    <figcaption>
+                      <div className="subFig">
+                        <h3>Students Apply</h3>
+                        <p>
+                          Students fill out a simple application form and
+                          eligable candidates are provided an ISA.
+                        </p>
+                        <a href="">
+                          <p>Request an ISA program at your school ></p>
+                        </a>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </section>
 
-          {/* SECTION TWO BOTTOM */}
+            {/* SECTION TWO BOTTOM */}
 
-          <section className="sectionTwoBottom">
-            <div className="borderThree"></div>
+            <section className="sectionTwoBottom">
+              <div className="borderThree"></div>
 
-            <ul>
-              <li>
-                <figure>
-                  <div className="numBox">
-                    <p>3</p>
-                  </div>
-                  <figcaption>
-                    <div className="subFig">
-                      <h3>Tuition is Paid Upfront</h3>
-                      <p>
-                        Ursa pays tuition for the students upfront, with no risk
-                        to the school itself.
-                      </p>
-                      <p>Learn more ></p>
+              <ul>
+                <li>
+                  <figure>
+                    <div className="numBox">
+                      <p>3</p>
                     </div>
-                  </figcaption>
-                </figure>
-              </li>
+                    <figcaption>
+                      <div className="subFig">
+                        <h3>Tuition is Paid Upfront</h3>
+                        <p>
+                          Ursa pays tuition for the students upfront, with no
+                          risk to the school itself.
+                        </p>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </li>
 
-              <li>
-                <figure className="even">
-                  <div className="numBox">
-                    <p>4</p>
-                  </div>
-                  <figcaption>
-                    <div className="subFig">
-                      <h3>Students Pay, But Only When They Can</h3>
-                      <p>
-                        Student pays Ursa a % of their earnings. Once they hit
-                        the $ cap or the payment term ends, the ISA terminates
-                        and their payment obligations are complete.
-                      </p>
-                      <p>Learn more ></p>
+                <li>
+                  <figure className="even">
+                    <div className="numBox">
+                      <p>4</p>
                     </div>
-                  </figcaption>
-                </figure>
-              </li>
-            </ul>
+                    <figcaption>
+                      <div className="subFig">
+                        <h3>Students Pay, But Only When They Can</h3>
+                        <p>
+                          Student pays Ursa a % of their earnings. Once they hit
+                          the $ cap or the payment term ends, the ISA terminates
+                          and their payment obligations are complete.
+                        </p>
+                        <a href="">
+                          <p>Learn more ></p>
+                        </a>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </section>
           </section>
 
           {/* SECTION THREE */}
@@ -232,7 +265,7 @@ class LandingPage extends Component {
                 <figure>
                   <div className="stuImg">
                     <img
-                      src={require("../Assets/Images/rocket3.png")}
+                      src={require("../Assets/Images/rocket.png")}
                       alt={"Ursa Logo"}
                     />
                   </div>
@@ -266,7 +299,7 @@ class LandingPage extends Component {
                 <figure>
                   <div className="stuImg">
                     <img
-                      src={require("../Assets/Images/tree2.png")}
+                      src={require("../Assets/Images/tree.png")}
                       alt={"Ursa Logo"}
                     />
                   </div>
@@ -280,12 +313,17 @@ class LandingPage extends Component {
                 </figure>
               </li>
             </ul>
+            <a href="">
+              <p>Request an ISA program at your school ></p>
+            </a>
           </section>
 
           {/* CONTACT*/}
 
           <section className="contact navSection" id="contact">
             <div className="borderFive"></div>
+            <div className="borderSix"></div>
+            <div className="circleEnd"></div>
 
             <h2>
               <em>Contact</em> Us
@@ -332,7 +370,7 @@ class LandingPage extends Component {
                         type="text"
                         name="school"
                         id="school"
-                        placeholder="School Name"
+                        placeholder="School / Institution Name"
                         className="formSchool"
                       />
 
@@ -410,30 +448,31 @@ class LandingPage extends Component {
                 </form>
               </div>
 
-              {/* <aside className="byTheNumbers">
-                <div className="numberBox">
+              <aside className="byTheNumbers">
+                {/* <div className="numberBox">
                   <h2>The Numbers</h2>
-                </div>
+                </div> */}
 
-                <ul>
+                <ul className="factList">
                   <li>
                     <h3>7 In 10</h3>
-                    <p>Students require financial assistance.</p>
+                    <p>students require financial assistance</p>
                   </li>
                   <li>
                     <h3>1 In 10</h3>
-                    <p>Are expected to default on their loans.</p>
+                    <p>default on their loans</p>
                   </li>
                   <li>
                     <h3>1.5 Trillion</h3>
-                    <p>Outstanding student debt and growing.</p>
+                    <p>outstanding student debt in North America</p>
+                  </li>
+                  <li>
+                    <p className="motto">
+                      There's a better way to finance education.
+                    </p>
                   </li>
                 </ul>
-
-                <p className="punchLine">
-                  There's a better way to finance education.
-                </p>
-              </aside> */}
+              </aside>
             </div>
           </section>
         </main>

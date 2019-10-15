@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import * as Scroll from "react-scroll";
+
+let ScrollLink = Scroll.Link;
 
 const Header = props => {
   return (
@@ -8,14 +11,14 @@ const Header = props => {
       {/* Make all of this position fixed */}
 
       <div className="topBar">
-        {/* <HashLink to="/#sectionOne">
+        <HashLink to="/#sectionOne">
               <div className="logoBox">
                 <img
                   src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
                   alt={"Ursa Logo"}
                 />
               </div>
-        </HashLink> */}
+        </HashLink>
 
         <nav className="mainNav">
           <ul>
@@ -36,17 +39,53 @@ const Header = props => {
 
       <div className="sideNav">
         <ul className="sideNavLower">
-          <li className="navContainer">
-            <div className="dot"></div>
+          <li className="navContainer" name="sectionOneScroll">
+            <ScrollLink
+              activeClass="active"
+              to="sectionOne"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <div className="dot"></div>
+            </ScrollLink>
           </li>
           <li className="navContainer">
-            <div className="dot"></div>
+            <ScrollLink
+              activeClass="active"
+              to="sectionTwo"
+              spy={true}
+              smooth={true}
+              offset={-25}
+              duration={500}
+            >
+              <div className="dot"></div>
+            </ScrollLink>
           </li>
           <li className="navContainer">
-            <div className="dot"></div>
+            <ScrollLink
+              activeClass="active"
+              to="sectionThree"
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+            >
+              <div className="dot"></div>
+            </ScrollLink>
           </li>
           <li className="navContainer">
-            <div className="dot"></div>
+            <ScrollLink
+              activeClass="active"
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
+              <div className="dot"></div>
+            </ScrollLink>
           </li>
         </ul>
         <div className="circle" id="circle"></div>

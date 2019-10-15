@@ -3,6 +3,8 @@ import FormList from "./FormList";
 import StudentForm from "./StudentForm";
 import firebase from "./firebase";
 
+
+
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 
@@ -262,7 +264,7 @@ class Dashboard extends Component {
             ) : (
               <div className="addStudentLower">
                 <p>Add Student</p>
-                <i class="fas fa-user-plus"></i>
+                <i className="fas fa-user-plus"></i>
               </div>
             )}
           </button>

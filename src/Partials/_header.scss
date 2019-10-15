@@ -12,8 +12,6 @@
   align-items: center;
 }
 
-
-
 .mainNav {
   width: 100%;
   display: flex;
@@ -39,18 +37,20 @@
 
     .logIn {
       border: 1px solid $colorOne;
-      // color: $background;
-      // font-weight: bold;
-      // background-color: $colorOne;
+
       width: 120px;
     }
   }
 }
 
 .sideNav {
+  display: flex;
+  justify-content: center;
+
   position: fixed;
-  left: 3%;
-  top: calc(50% - 18vh);
+  left: 0%;
+  width: 10%;
+  top: calc(50% - 200px);
 
   ul {
     padding: 2px 0;
@@ -58,14 +58,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 36vh;
+    height: 400px;
     position: relative;
     width: 20px;
   }
 
   li {
-    // margin: 6vh 0;
-    // height: 20px;
     border-radius: 50%;
   }
 
@@ -78,9 +76,10 @@
   }
 
   .circle {
-    // width: 20px;
     height: 20px;
+    width: 20px;
     border: 1px solid $colorOne;
+    // background-color: $colorOne;
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -89,4 +88,85 @@
     margin: 0 auto;
   }
 
+  $distance: 126.7px;
+  $distance2: 253.4px;
+  $distance3: 380.1px;
+
+  .circle12 {
+    animation: circle12 0.1s linear 1 forwards;
+  }
+
+  @keyframes circle12 {
+    from {
+      top: 0;
+    }
+    to {
+      top: $distance;
+    }
+  }
+
+  .circle23 {
+    animation: circle23 0.1s linear 1 forwards;
+  }
+
+  @keyframes circle23 {
+    from {
+      top: $distance;
+    }
+    to {
+      top: $distance2;
+    }
+  }
+
+  .circle34 {
+    animation: circle34 0.1s linear 1 forwards;
+  }
+
+  @keyframes circle34 {
+    from {
+      top: $distance2;
+    }
+    to {
+      top: $distance3;
+    }
+  }
+
+  .circle21 {
+    animation: circle21 0.1s linear 1 forwards;
+  }
+
+  @keyframes circle21 {
+    from {
+      top: $distance;
+    }
+    to {
+      top: 0;
+    }
+  }
+
+  .circle32 {
+    animation: circle32 0.1s linear 1 forwards;
+  }
+
+  @keyframes circle32 {
+    from {
+      top: $distance2;
+    }
+    to {
+      top: $distance;
+    }
+  }
+
+  .circle43 {
+    animation: circle43 0.1s linear 1 forwards;
+  }
+
+  @keyframes circle43 {
+    from {
+      top: $distance3;
+    }
+    to {
+      top: $distance2;
+    }
+  }
 }
