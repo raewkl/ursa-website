@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+let scrollPos = 0;
 
 class LandingPage extends Component {
   constructor(props) {
@@ -10,12 +11,31 @@ class LandingPage extends Component {
     // check if in contact for initial circle position
     this.circleAnimationFinal("", this.scrollHeight());
 
-    this.scrollDirection();
+    window.addEventListener("scroll", this.scrollDirection, false);
   }
 
   componentWillUnmount() {
-    this.scrollDirection();
+    window.removeEventListener("scroll", this.scrollDirection, false);
   }
+
+  scrollDirection = () => {
+    const circle = document.getElementById("circle");
+
+    if (circle) {
+      let percentage = this.scrollHeight();
+
+      if (document.body.getBoundingClientRect().top > scrollPos) {
+        // scroll up
+        this.circleAnimationFinal("-", percentage);
+      } else {
+        // scroll down
+        this.circleAnimationFinal("", percentage);
+      }
+
+      // saves the new position for iteration.
+      scrollPos = document.body.getBoundingClientRect().top;
+    }
+  };
 
   getDocHeight = () => {
     let d = document;
@@ -51,37 +71,11 @@ class LandingPage extends Component {
     const circle = target;
     const animClasses = classes;
 
+    // if (circle) {
     animClasses.forEach(i => {
       circle.classList.remove(i);
     });
-  };
-
-
-  scrollDirection = () => {
-    // Initial state
-    let scrollPos = 0;
-
-    // adding scroll event
-    window.addEventListener(
-      "scroll",
-      () => {
-        // detects new state and compares it with the new one
-
-        let percentage = this.scrollHeight();
-
-        if (document.body.getBoundingClientRect().top > scrollPos) {
-          // scroll up
-          this.circleAnimationFinal("-", percentage);
-        } else {
-          // scroll down
-          this.circleAnimationFinal("", percentage);
-        }
-
-        // saves the new position for iteration.
-        scrollPos = document.body.getBoundingClientRect().top;
-      },
-      false
-    );
+    // }
   };
 
   circleAnimationFinal = (vector, height) => {
