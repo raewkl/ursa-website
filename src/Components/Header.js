@@ -12,12 +12,12 @@ const Header = props => {
 
       <div className="topBar">
         <HashLink to="/#sectionOne">
-              <div className="logoBox">
-                <img
-                  src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
-                  alt={"Ursa Logo"}
-                />
-              </div>
+          <div className="logoBox">
+            <img
+              src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
+              alt={"Ursa Logo"}
+            />
+          </div>
         </HashLink>
 
         <nav className="mainNav">
@@ -39,54 +39,54 @@ const Header = props => {
 
       <div className="sideNav">
         <ul className="sideNavLower">
-          <li className="navContainer" name="sectionOneScroll">
-            <ScrollLink
-              activeClass="active"
-              to="sectionOne"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
+          <ScrollLink
+            activeClass="active"
+            to="sectionOne"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            <li className="navContainer" name="sectionOneScroll">
               <div className="dot"></div>
-            </ScrollLink>
-          </li>
-          <li className="navContainer">
-            <ScrollLink
-              activeClass="active"
-              to="sectionTwo"
-              spy={true}
-              smooth={true}
-              offset={-25}
-              duration={500}
-            >
+            </li>
+          </ScrollLink>
+          <ScrollLink
+            activeClass="active"
+            to="sectionTwo"
+            spy={true}
+            smooth={true}
+            offset={-25}
+            duration={500}
+          >
+            <li className="navContainer">
               <div className="dot"></div>
-            </ScrollLink>
-          </li>
-          <li className="navContainer">
-            <ScrollLink
-              activeClass="active"
-              to="sectionThree"
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={500}
-            >
+            </li>
+          </ScrollLink>
+          <ScrollLink
+            activeClass="active"
+            to="sectionThree"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+          >
+            <li className="navContainer">
               <div className="dot"></div>
-            </ScrollLink>
-          </li>
-          <li className="navContainer">
-            <ScrollLink
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
-            >
+            </li>
+          </ScrollLink>
+          <ScrollLink
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+          >
+            <li className="navContainer">
               <div className="dot"></div>
-            </ScrollLink>
-          </li>
+            </li>
+          </ScrollLink>
         </ul>
         <div className="circle" id="circle"></div>
       </div>

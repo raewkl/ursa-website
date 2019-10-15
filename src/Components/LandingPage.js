@@ -136,8 +136,11 @@ class LandingPage extends Component {
             circle.classList.add("circle32");
           }
         );
-      } else if (percentage > 48 && percentage < 78 && !this.state.sectionThree) {
-
+      } else if (
+        percentage > 48 &&
+        percentage < 78 &&
+        !this.state.sectionThree
+      ) {
         this.setState(
           {
             sectionOne: false,
@@ -153,7 +156,6 @@ class LandingPage extends Component {
       }
     } else {
       if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
-
         this.setState(
           {
             sectionOne: false,
@@ -166,9 +168,11 @@ class LandingPage extends Component {
             circle.classList.add("circle12");
           }
         );
-        
-      } else if (percentage > 48 && percentage < 78 && !this.state.sectionThree) {
-
+      } else if (
+        percentage > 48 &&
+        percentage < 78 &&
+        !this.state.sectionThree
+      ) {
         this.setState(
           {
             sectionOne: false,
@@ -181,9 +185,7 @@ class LandingPage extends Component {
             circle.classList.add("circle23");
           }
         );
-        
       } else if (percentage > 78 && !this.state.contact) {
-
         this.setState(
           {
             sectionOne: false,
@@ -223,6 +225,7 @@ class LandingPage extends Component {
 
             <div className="imgBox">
               <img src={require("../Assets/Images/turnkey2.png")} alt="" />
+              <div className="shadow"></div>
             </div>
           </section>
 
@@ -235,6 +238,36 @@ class LandingPage extends Component {
             >
               <div className="borderOne"></div>
               <div className="borderTwo"></div>
+              <div className="pathImgBox1">
+                <img
+                  src={require("../Assets/Images/3d_acorn_light2.png")}
+                  alt=""
+                />
+              </div>
+              <div className="pathImgBox2">
+                <img
+                  src={require("../Assets/Images/3d_tree3_light.png")}
+                  alt=""
+                />
+              </div>
+              <div className="pathImgBox3">
+                <img
+                  src={require("../Assets/Images/3d_tree3_dark.png")}
+                  alt=""
+                />
+              </div>
+              <div className="pathImgBox4">
+                <img
+                  src={require("../Assets/Images/3d_tree2_light.png")}
+                  alt=""
+                />
+              </div>
+              <div className="pathImgBox5">
+                <img
+                  src={require("../Assets/Images/3d_acorn_dark2.png")}
+                  alt=""
+                />
+              </div>
 
               <h2>
                 <em>How it works</em>
@@ -252,7 +285,6 @@ class LandingPage extends Component {
                           Ursa works with schools to create an ISA program with
                           set % income share, $ cap, and payment term.
                         </p>
-                        {/* <p>Contact Us ></p> */}
                       </div>
                     </figcaption>
                   </figure>
@@ -344,7 +376,9 @@ class LandingPage extends Component {
                       src={require("../Assets/Images/rocket.png")}
                       alt={"Ursa Logo"}
                     />
+                    <div className="shadow"></div>
                   </div>
+
                   <figcaption>
                     <h3>Pay only when you start working</h3>
                     <p>
@@ -361,6 +395,7 @@ class LandingPage extends Component {
                       src={require("../Assets/Images/piggybank.png")}
                       alt={"Ursa Logo"}
                     />
+                    <div className="shadow"></div>
                   </div>
                   <figcaption>
                     <h3>Financing that’s always affordable</h3>
@@ -378,6 +413,15 @@ class LandingPage extends Component {
                       src={require("../Assets/Images/tree.png")}
                       alt={"Ursa Logo"}
                     />
+
+                    <div className="stuImgAcorn">
+                      <img
+                        src={require("../Assets/Images/3d_acorn_dark1.png")}
+                        alt={"Acorn"}
+                      />
+                    </div>
+
+                    <div className="shadow"></div>
                   </div>
                   <figcaption>
                     <h3>Mentorship and career support</h3>
@@ -392,6 +436,19 @@ class LandingPage extends Component {
             <a href="">
               <p>Request an ISA program at your school ></p>
             </a>
+
+            <div className="sec3ImgBox1">
+              <img
+                src={require("../Assets/Images/3d_tree4_light.png")}
+                alt={"Ursa Logo"}
+              />
+            </div>
+            <div className="sec3ImgBox2">
+              <img
+                src={require("../Assets/Images/3d_tree3_dark.png")}
+                alt={"Ursa Logo"}
+              />
+            </div>
           </section>
 
           {/* CONTACT*/}
@@ -401,9 +458,32 @@ class LandingPage extends Component {
             <div className="borderSix"></div>
             <div className="circleEnd"></div>
 
-            <h2>
-              <em>Contact</em> Us
-            </h2>
+            <div className="conImgBox1">
+              <img
+                src={require("../Assets/Images/3d_acorn_light2.png")}
+                alt={"Ursa Logo"}
+              />
+            </div>
+            <div className="conImgBox2">
+              <img
+                src={require("../Assets/Images/3d_tree2_light.png")}
+                alt={"Ursa Logo"}
+              />
+            </div>
+            <div className="conImgBox3">
+              <img
+                src={require("../Assets/Images/3d_tree3_dark.png")}
+                alt={"Ursa Logo"}
+              />
+            </div>
+            <div className="conImgBox4">
+              <img
+                src={require("../Assets/Images/3d_acorn_dark1.png")}
+                alt={"Ursa Logo"}
+              />
+            </div>
+
+            <h2>Contact Us</h2>
 
             <div className="formAsideBox">
               <div className="formBox">

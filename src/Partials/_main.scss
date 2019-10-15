@@ -1,13 +1,6 @@
 .sectionOne {
   height: 100vh;
-  // border: 1px solid red;
 }
-// .sectionTwo,
-// .sectionThree,
-// .contact {
-  // min-height: 90vh;
-  // border: 1px solid red;
-// }
 
 .landingPage {
   position: relative;
@@ -18,7 +11,8 @@
 .borderThree,
 .borderFour,
 .borderFive,
-.borderSix, .circleEnd {
+.borderSix,
+.circleEnd {
   position: absolute;
   z-index: -10;
 }
@@ -69,6 +63,17 @@
       width: calc(100% - 200px);
     }
   }
+}
+
+.shadow {
+  position: absolute;
+  left: 20%;
+  right: 15%;
+  bottom: -10px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -30;
+  border-radius: 50%;
 }
 
 .sectionTwoUpper,
@@ -139,6 +144,48 @@
 
 .sectionTwoUpper {
   padding: 4.5vh 0 8vh 0;
+  position: relative;
+
+  .pathImgBox1,
+  .pathImgBox2,
+  .pathImgBox3,
+  .pathImgBox4,
+  .pathImgBox5 {
+    position: absolute;
+    z-index: -5;
+  }
+
+  .pathImgBox1 {
+    width: 50px;
+    transform: rotate(-50deg);
+    bottom: 0;
+    left: 8%;
+  }
+
+  .pathImgBox2 {
+    width: 120px;
+    bottom: 0;
+    left: 22%;
+  }
+
+  .pathImgBox3 {
+    width: 80px;
+    bottom: -3vh;
+    right: 22%;
+  }
+
+  .pathImgBox4 {
+    width: 120px;
+    bottom: 0;
+    right: 8%;
+  }
+
+  .pathImgBox5 {
+    width: 40px;
+    transform: rotate(55deg);
+    bottom: 0;
+    right: 4%;
+  }
 
   figure {
     padding: 8vh 10% 0 20%;
@@ -197,7 +244,7 @@
   }
 
   ul {
-    margin: 6vh 0;
+    margin: 4vh 0 6vh 0;
     display: flex;
     justify-content: space-evenly;
   }
@@ -223,22 +270,89 @@
 
   .stuImg {
     padding: 0 15%;
-    margin-bottom: 3vh;
+    margin-bottom: 6vh;
     margin-top: 2vh;
+    position: relative;
+  }
+
+  .stuImgAcorn {
+    position: absolute;
+    transform: rotate(50deg);
+    width: 25px;
+    bottom: -2px;
+    right: 25%;
+  }
+
+  .shadow {
+    height: 18px;
+  }
+
+  .sec3ImgBox1,
+  .sec3ImgBox2 {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .sec3ImgBox1 {
+    right: 115px;
+    width: 65px;
+    z-index: -1;
+    bottom: -6px;
+  }
+
+  .sec3ImgBox2 {
+    right: 50px;
+    width: 85px;
+    z-index: -2;
   }
 }
 
 .contact {
   height: 85vh;
+  padding-top: 10vh;
   position: relative;
 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 
+  .conImgBox1,
+  .conImgBox2,
+  .conImgBox3,
+  .conImgBox4 {
+    position: absolute;
+    z-index: -10;
+  }
+
+  .conImgBox1 {
+    width: 35px;
+    bottom: 72.5vh;
+    right: 20%;
+    transform: rotate(55deg);
+  }
+
+  .conImgBox2 {
+    width: 120px;
+    bottom: -9px;
+    left: 10%;
+  }
+
+  .conImgBox3 {
+    width: 80px;
+    bottom: -10px;
+    left: 22%;
+  }
+
+  .conImgBox4 {
+    width: 35px;
+    bottom: -6px;
+    left: 57%;
+    transform: rotate(-55deg);
+  }
+
   .borderFive {
     right: 0;
-    left: 70%;
+    left: 71%;
     top: -20px;
     bottom: 72vh;
     border-top: 20px solid $colorTwo;
@@ -249,7 +363,7 @@
   }
 
   .borderSix {
-    right: 30%;
+    right: 29%;
     left: 50%;
     top: -20px;
     bottom: 72vh;
@@ -259,12 +373,18 @@
   .circleEnd {
     width: 20px;
     height: 20px;
-    // color: $colorTwo;
     background-color: $colorTwo;
     border-radius: 50%;
     position: absolute;
     bottom: 72vh;
-    right: calc(30% - 10px);
+    right: calc(29% - 10px);
+  }
+
+  h2 {
+    position: absolute;
+    bottom: 70vh;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -296,7 +416,6 @@ form {
   .formCost,
   .formStudents,
   .formComment {
-    
     background-color: $background;
     padding: 10px;
     font-size: 0.8rem;
@@ -419,7 +538,6 @@ aside {
     text-align: center;
     font-size: 0.7rem;
     // font-weight: 500;
-    
   }
 
   .motto {
@@ -428,7 +546,7 @@ aside {
     text-decoration: underline;
     text-align: center;
     // p {
-      // border-bottom: 1px solid $colorOne;
+    // border-bottom: 1px solid $colorOne;
     // }
   }
 }
