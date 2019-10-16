@@ -31,6 +31,13 @@
 
   button {
     margin-top: 2vh;
+    // display: flex;
+    // align-items: center;
+
+    .fa-arrow-up {
+      transform: rotate(45deg);
+      margin-left: 6px;
+    }
   }
 
   .sectionOneLeft {
@@ -67,11 +74,11 @@
 
 .shadow {
   position: absolute;
-  left: 20%;
+  left: 40%;
   right: 15%;
   bottom: -10px;
   height: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.15);
   z-index: -30;
   border-radius: 50%;
 }
@@ -85,25 +92,25 @@
 
   .borderOne {
     left: 0;
-    right: 50%;
-    top: -15vh;
-    bottom: 0;
-
-    border-top: 20px solid $colorTwo;
-    border-left: 20px solid $colorTwo;
-    border-bottom: 20px solid $colorTwo;
-    border-top-left-radius: 80px;
-    border-bottom-left-radius: 80px;
-  }
-
-  .borderTwo {
-    left: 50%;
     right: 28%;
     top: -15vh;
     bottom: 0;
 
     border-top: 20px dotted $colorTwo;
+    border-left: 20px dotted $colorTwo;
+    border-bottom: 20px dotted $colorTwo;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
   }
+
+  // .borderTwo {
+  //   left: 50%;
+  //   right: 28%;
+  //   top: -15vh;
+  //   bottom: 0;
+
+  //   border-top: 20px dotted $colorTwo;
+  // }
 
   ul {
     display: flex;
@@ -132,7 +139,7 @@
 
   .numBox {
     p {
-      font-weight: 300;
+      font-weight: 500;
       font-size: 1.5rem;
       position: relative;
       left: -20px;
@@ -206,9 +213,9 @@
     top: -20px;
     bottom: 0;
 
-    border-top: 20px dotted $colorTwo;
-    border-right: 20px dotted $colorTwo;
-    border-bottom: 20px dotted $colorTwo;
+    border-top: 20px solid $colorTwo;
+    border-right: 20px solid $colorTwo;
+    border-bottom: 20px solid $colorTwo;
     border-top-right-radius: 80px;
     border-bottom-right-radius: 80px;
   }
@@ -253,6 +260,7 @@
     width: 25%;
     display: flex;
     justify-content: center;
+    padding: 0 1%;
   }
 
   figure {
@@ -266,6 +274,7 @@
 
   p {
     font-size: 0.8rem;
+    text-align: left;
   }
 
   .stuImg {
@@ -275,16 +284,41 @@
     position: relative;
   }
 
+  .rocket {
+    position: relative;
+    bottom: 2vh;
+  }
+
+  .stuTree {
+    position: relative;
+    bottom: -5px;
+  }
+
   .stuImgAcorn {
     position: absolute;
     transform: rotate(50deg);
     width: 25px;
-    bottom: -2px;
+    bottom: -5px;
     right: 25%;
   }
 
   .shadow {
-    height: 18px;
+    height: 14px;
+  }
+
+  .s1 {
+    left: 28%;
+    right: 12%;
+  }
+
+  .s2 {
+    left: 38%;
+    right: 25%;
+  }
+
+  .s3 {
+    left: 27%;
+    right: 12%;
   }
 
   .sec3ImgBox1,
@@ -352,7 +386,7 @@
 
   .borderFive {
     right: 0;
-    left: 71%;
+    left: calc(68% + 5px);
     top: -20px;
     bottom: 72vh;
     border-top: 20px solid $colorTwo;
@@ -377,7 +411,7 @@
     border-radius: 50%;
     position: absolute;
     bottom: 72vh;
-    right: calc(29% - 10px);
+    right: calc(32% - 15px);
   }
 
   h2 {

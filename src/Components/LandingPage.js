@@ -14,7 +14,6 @@ class LandingPage extends Component {
 
   componentDidMount() {
     // check if in contact for initial circle position
-
     this.setState(
       {
         sectionOne: true,
@@ -87,11 +86,9 @@ class LandingPage extends Component {
     const circle = target;
     const animClasses = classes;
 
-    // if (circle) {
     animClasses.forEach(i => {
       circle.classList.remove(i);
     });
-    // }
   };
 
   circleAnimations = (vector, height) => {
@@ -220,11 +217,13 @@ class LandingPage extends Component {
                 heavy lifting <span>so you can focus on what’s important.</span>
               </p>
 
-              <button>Learn More</button>
+              <button>
+                Learn More<i className="fas fa-arrow-up"></i>
+              </button>
             </div>
 
             <div className="imgBox">
-              <img src={require("../Assets/Images/turnkey2.png")} alt="" />
+              <img src={require("../Assets/Images/student_light.png")} alt="" />
               <div className="shadow"></div>
             </div>
           </section>
@@ -237,7 +236,7 @@ class LandingPage extends Component {
               id="sectionTwoUpper"
             >
               <div className="borderOne"></div>
-              <div className="borderTwo"></div>
+              {/* <div className="borderTwo"></div> */}
               <div className="pathImgBox1">
                 <img
                   src={require("../Assets/Images/3d_acorn_light2.png")}
@@ -269,9 +268,7 @@ class LandingPage extends Component {
                 />
               </div>
 
-              <h2>
-                <em>How it works</em>
-              </h2>
+              <h2>How it works</h2>
               <ul>
                 <li>
                   <figure>
@@ -280,10 +277,11 @@ class LandingPage extends Component {
                     </div>
                     <figcaption>
                       <div className="subFig">
-                        <h3>Schools Partner With Us</h3>
+                        <h3>Partner with ursa</h3>
                         <p>
-                          Ursa works with schools to create an ISA program with
-                          set % income share, $ cap, and payment term.
+                          We work with your school to create a tailored ISA
+                          program with terms that will support financial health
+                          for your students and graduates.
                         </p>
                       </div>
                     </figcaption>
@@ -297,10 +295,10 @@ class LandingPage extends Component {
                     </div>
                     <figcaption>
                       <div className="subFig">
-                        <h3>Students Apply</h3>
+                        <h3>Students apply via school</h3>
                         <p>
                           Students fill out a simple application form and
-                          eligable candidates are provided an ISA.
+                          eligible candidates are provided an ISA.
                         </p>
                         <a href="">
                           <p>Request an ISA program at your school ></p>
@@ -325,10 +323,11 @@ class LandingPage extends Component {
                     </div>
                     <figcaption>
                       <div className="subFig">
-                        <h3>Tuition is Paid Upfront</h3>
+                        <h3>Ursa pays the student’s tuition to the school</h3>
                         <p>
-                          Ursa pays tuition for the students upfront, with no
-                          risk to the school itself.
+                          We pay tuition on the students’ behalf. A portion is
+                          withheld until the students start earning so schools
+                          are also invested in their students’ success.
                         </p>
                       </div>
                     </figcaption>
@@ -342,11 +341,12 @@ class LandingPage extends Component {
                     </div>
                     <figcaption>
                       <div className="subFig">
-                        <h3>Students Pay, But Only When They Can</h3>
+                        <h3>Students pay Ursa when they start earning</h3>
                         <p>
-                          Student pays Ursa a % of their earnings. Once they hit
-                          the $ cap or the payment term ends, the ISA terminates
-                          and their payment obligations are complete.
+                          Students pay Ursa a % of their earnings, until they
+                          hit the payment cap or the contract term expires.
+                          Schools receive the portion of tuition deferred as the
+                          student pays their ISA.
                         </p>
                         <a href="">
                           <p>Learn more ></p>
@@ -373,10 +373,11 @@ class LandingPage extends Component {
                 <figure>
                   <div className="stuImg">
                     <img
+                    className="rocket"
                       src={require("../Assets/Images/rocket.png")}
                       alt={"Ursa Logo"}
                     />
-                    <div className="shadow"></div>
+                    <div className="shadow s1"></div>
                   </div>
 
                   <figcaption>
@@ -395,7 +396,7 @@ class LandingPage extends Component {
                       src={require("../Assets/Images/piggybank.png")}
                       alt={"Ursa Logo"}
                     />
-                    <div className="shadow"></div>
+                    <div className="shadow s2"></div>
                   </div>
                   <figcaption>
                     <h3>Financing that’s always affordable</h3>
@@ -410,6 +411,7 @@ class LandingPage extends Component {
                 <figure>
                   <div className="stuImg">
                     <img
+                      className="stuTree"
                       src={require("../Assets/Images/tree.png")}
                       alt={"Ursa Logo"}
                     />
@@ -421,7 +423,7 @@ class LandingPage extends Component {
                       />
                     </div>
 
-                    <div className="shadow"></div>
+                    <div className="shadow s3"></div>
                   </div>
                   <figcaption>
                     <h3>Mentorship and career support</h3>
