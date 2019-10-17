@@ -1,9 +1,19 @@
+.topBarContainer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 7vh;
+  background-image: linear-gradient($background, rgba(255,244,233,0));
+  z-index: 80;
+}
+
 .topBar {
   position: fixed;
   z-index: 100;
   left: 10%;
   right: 10%;
-  top: 3vh;
+  top: 2vh;
 
   margin: 0 auto;
   max-width: 1280px;

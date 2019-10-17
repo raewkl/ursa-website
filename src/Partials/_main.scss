@@ -12,6 +12,7 @@
 .borderFour,
 .borderFive,
 .borderSix,
+.borderSeven,
 .circleEnd {
   position: absolute;
   z-index: -10;
@@ -25,16 +26,18 @@
   .imgBox {
     position: absolute;
     bottom: 10vh;
-    right: -10%;
+    right: -5%;
     width: 450px;
   }
 
   button {
     margin-top: 2vh;
-    // display: flex;
-    // align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .fa-arrow-up {
+      font-size: 1rem;
       transform: rotate(45deg);
       margin-left: 6px;
     }
@@ -54,10 +57,11 @@
       padding-bottom: 50px;
       span {
         display: block;
+        white-space: nowrap;
       }
     }
 
-    .borderSix {
+    .borderSeven {
       top: 0;
       left: 0;
       right: 200px;
@@ -197,6 +201,11 @@
   figure {
     padding: 8vh 10% 0 20%;
     display: flex;
+    span {
+      display: inline-block;
+      white-space: nowrap;
+      text-decoration: underline;
+    }
   }
 
   figure.even {
@@ -342,7 +351,8 @@
 }
 
 .contact {
-  height: 85vh;
+  height: 760px;
+  min-height: 600px;
   padding-top: 10vh;
   position: relative;
 
@@ -386,9 +396,9 @@
 
   .borderFive {
     right: 0;
-    left: calc(68% + 5px);
+    left: calc(100% - 350px);
     top: -20px;
-    bottom: 72vh;
+    bottom: 665px;
     border-top: 20px solid $colorTwo;
     border-right: 20px solid $colorTwo;
     border-bottom: 20px solid $colorTwo;
@@ -397,10 +407,10 @@
   }
 
   .borderSix {
-    right: 29%;
+    right: 350px;
     left: 50%;
     top: -20px;
-    bottom: 72vh;
+    bottom: 0;
     border-top: 20px solid $colorTwo;
   }
 
@@ -410,13 +420,13 @@
     background-color: $colorTwo;
     border-radius: 50%;
     position: absolute;
-    bottom: 72vh;
-    right: calc(32% - 15px);
+    bottom: 665px;
+    right: calc(350px - 10px);
   }
 
   h2 {
     position: absolute;
-    bottom: 70vh;
+    bottom: 650px;
     left: 0;
     right: 0;
   }
@@ -425,17 +435,82 @@
 .formAsideBox {
   display: flex;
   align-items: center;
-  // margin-top: 5vh;
   justify-content: center;
 }
 
 .formBox {
-  width: 70%;
+  width: calc(100% - 300px - 10px);
   display: flex;
 }
 
 form {
   width: 88%;
+
+  label {
+    font-size: 0.6rem;
+  }
+
+  fieldset {
+    width: 100%;
+    margin: 10px 0 15px 0;
+  }
+
+  .radioOptionsUpper {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  .radioBox {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+
+    label {
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"] + label .outerRadio {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $colorOne;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 10px;
+  }
+
+  input[type="radio"]:checked + label .innerRadio {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: $colorOne;
+    border-radius: 50%;
+
+    position: absolute;
+    top: calc(50% - 3px);
+    right: calc(50% - 3px);
+  }
+
+  .nameBox,
+  .emailBox,
+  .schoolBox,
+  .programBox {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+  }
 
   .upperForm {
     display: flex;
@@ -450,14 +525,15 @@ form {
   .formCost,
   .formStudents,
   .formComment {
-    background-color: $background;
-    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px 0;
     font-size: 0.8rem;
     font-family: $primaryFont;
 
     &::placeholder {
       font-size: 0.8rem;
       font-family: $primaryFont;
+      font-weight: lighter;
     }
   }
 
@@ -468,13 +544,14 @@ form {
   .formCost,
   .formLength,
   .formStudents {
-    margin: 10px 0;
+    margin: 0 0 20px 0;
     border: none;
     border-bottom: 1px solid $colorOne;
   }
 
   .formComment {
-    margin: 20px 0;
+    margin: 10px 0 20px 0;
+    padding: 10px;
   }
 
   .nameEmail,
@@ -487,19 +564,19 @@ form {
   .formEmail,
   .formProgram,
   .formSchool {
-    width: 48%;
+    width: 100%;
   }
 
-  .numberBox {
-    display: flex;
-    justify-content: space-between;
-  }
+  // .numberBox {
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
 
-  .formCost,
-  .formLength,
-  .formStudents {
-    width: 32%;
-  }
+  // .formCost,
+  // .formLength,
+  // .formStudents {
+  //   width: 32%;
+  // }
 
   textarea {
     width: 100%;
@@ -519,18 +596,18 @@ aside {
   padding: 1% 4%;
   position: relative;
   background-color: $background;
-  right: 10px;
+  right: 8px;
   height: 100%;
 
-  width: calc(30% + 20px);
+  width: 350px;
 
   &::after {
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
-    left: 10px;
-    top: 10px;
+    left: 8px;
+    top: 5px;
     background-color: $colorOne;
     border: 1px solid $colorOne;
     z-index: -1;
@@ -554,12 +631,10 @@ aside {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    // padding: 5%;
   }
 
   li {
     text-align: center;
-    // padding: 4%;
   }
 
   h3 {
@@ -571,7 +646,6 @@ aside {
   p {
     text-align: center;
     font-size: 0.7rem;
-    // font-weight: 500;
   }
 
   .motto {
@@ -579,8 +653,98 @@ aside {
     font-weight: bold;
     text-decoration: underline;
     text-align: center;
-    // p {
-    // border-bottom: 1px solid $colorOne;
-    // }
+
+    span {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 1317px) {
+  .contact {
+    height: 940px;
+    padding: 20vh 0 5vh 0;
+
+    h2 {
+      bottom: 840px;
+    }
+
+    .borderFive {
+      bottom: 855px;
+      left: 74%;
+    }
+
+    .borderSix {
+      right: 26%;
+    }
+
+    .circleEnd {
+      bottom: 855px;
+      right: calc(26% - 10px);
+    }
+  }
+
+  .formAsideBox {
+    flex-direction: column;
+  }
+
+  .formBox {
+    width: 75%;
+  }
+
+  form {
+    width: 100%;
+
+    input[type="submit"] {
+      margin-top: 0;
+    }
+  }
+
+  aside {
+    width: 100%;
+    padding: 4vh 3%;
+    margin-top: 5vh;
+  }
+
+  aside .factList {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+      width: calc(100% / 3);
+    }
+
+    li:last-child {
+      width: 100%;
+      margin-top: 3vh;
+
+      span {
+        display: inline;
+      }
+    }
+  }
+}
+
+@media (max-width: 1119px) {
+  .sectionOne {
+    .sectionOneLeft {
+      padding-top: 15vh;
+      justify-content: flex-start;
+      width: auto;
+
+      h1 {
+        font-size: 3.5rem;
+        span {
+          white-space: normal;
+        }
+      }
+    }
+  }
+
+  .sectionTwoUpper {
+
+    .borderOne {
+      right: 40%;
+    }
   }
 }

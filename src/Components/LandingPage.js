@@ -208,9 +208,9 @@ class LandingPage extends Component {
             <div className="sectionOneLeft">
               <div className="titleBox">
                 <h1>
-                  Turnkey ISA Solutions <span>for Schools</span>
+                  <span>Turnkey ISA Solutions</span> for Schools
                 </h1>
-                <div className="borderSix"></div>
+                <div className="borderSeven"></div>
               </div>
               <p>
                 Improve access, enrollment, and outcomes for students. We do the
@@ -237,7 +237,7 @@ class LandingPage extends Component {
             >
               <div className="borderOne"></div>
               {/* <div className="borderTwo"></div> */}
-              <div className="pathImgBox1">
+              {/* <div className="pathImgBox1">
                 <img
                   src={require("../Assets/Images/3d_acorn_light2.png")}
                   alt=""
@@ -266,7 +266,7 @@ class LandingPage extends Component {
                   src={require("../Assets/Images/3d_acorn_dark2.png")}
                   alt=""
                 />
-              </div>
+              </div> */}
 
               <h2>How it works</h2>
               <ul>
@@ -301,7 +301,9 @@ class LandingPage extends Component {
                           eligible candidates are provided an ISA.
                         </p>
                         <a href="">
-                          <p>Request an ISA program at your school ></p>
+                          <p>
+                            Request an ISA program at <span>your school ></span>
+                          </p>
                         </a>
                       </div>
                     </figcaption>
@@ -373,7 +375,7 @@ class LandingPage extends Component {
                 <figure>
                   <div className="stuImg">
                     <img
-                    className="rocket"
+                      className="rocket"
                       src={require("../Assets/Images/rocket.png")}
                       alt={"Ursa Logo"}
                     />
@@ -439,7 +441,7 @@ class LandingPage extends Component {
               <p>Request an ISA program at your school ></p>
             </a>
 
-            <div className="sec3ImgBox1">
+            {/* <div className="sec3ImgBox1">
               <img
                 src={require("../Assets/Images/3d_tree4_light.png")}
                 alt={"Ursa Logo"}
@@ -450,7 +452,7 @@ class LandingPage extends Component {
                 src={require("../Assets/Images/3d_tree3_dark.png")}
                 alt={"Ursa Logo"}
               />
-            </div>
+            </div> */}
           </section>
 
           {/* CONTACT*/}
@@ -460,7 +462,7 @@ class LandingPage extends Component {
             <div className="borderSix"></div>
             <div className="circleEnd"></div>
 
-            <div className="conImgBox1">
+            {/* <div className="conImgBox1">
               <img
                 src={require("../Assets/Images/3d_acorn_light2.png")}
                 alt={"Ursa Logo"}
@@ -483,7 +485,7 @@ class LandingPage extends Component {
                 src={require("../Assets/Images/3d_acorn_dark1.png")}
                 alt={"Ursa Logo"}
               />
-            </div>
+            </div> */}
 
             <h2>Contact Us</h2>
 
@@ -497,54 +499,108 @@ class LandingPage extends Component {
                 >
                   <div className="upperForm">
                     <div className="nameEmail">
-                      <label htmlFor="name" className="visuallyHidden">
-                        Enter your name
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Contact Name"
-                        className="formName"
-                      />
+                      <div className="nameBox">
+                        <label htmlFor="name">Name</label>
+                        <input
+                          type="text"
+                          name="name"
+                          id="name"
+                          placeholder="Enter Name"
+                          className="formName"
+                        />
+                      </div>
 
-                      <label htmlFor="email" className="visuallyHidden">
-                        Enter your email
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Email"
-                        className="formEmail"
-                      />
+                      <div className="emailBox">
+                        <label htmlFor="email">Email</label>
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          placeholder="Enter your email"
+                          className="formEmail"
+                        />
+                      </div>
                     </div>
 
                     <div className="schoolProgram">
-                      <label htmlFor="school" className="visuallyHidden">
-                        Enter school name
-                      </label>
-                      <input
-                        type="text"
-                        name="school"
-                        id="school"
-                        placeholder="School / Institution Name"
-                        className="formSchool"
-                      />
+                      <div className="schoolBox">
+                        <label htmlFor="school">School / Institution</label>
+                        <input
+                          type="text"
+                          name="school"
+                          id="school"
+                          placeholder="Enter School Name"
+                          className="formSchool"
+                        />
+                      </div>
 
-                      <label htmlFor="program" className="visuallyHidden">
-                        Enter name of program
-                      </label>
-                      <input
-                        type="text"
-                        name="program"
-                        id="program"
-                        placeholder="Program Name"
-                        className="formProgram"
-                      />
+                      <div className="programBox">
+                        <label htmlFor="program">Program</label>
+                        <input
+                          type="text"
+                          name="program"
+                          id="program"
+                          placeholder="Enter program name"
+                          className="formProgram"
+                        />
+                      </div>
                     </div>
 
-                    <div className="numberBox">
+                    <fieldset>
+                      <legend className="visuallyHidden">Customer Type</legend>
+                      <div className="radioOptionsUpper">
+                        <p>Tell us more about yourself: </p>
+                        {/* <div className="radioOptions"> */}
+
+                        <div className="radioBox">
+                          <input
+                            type="radio"
+                            name="customerType"
+                            value="school"
+                            id="schoolRadio"
+                          ></input>
+                          <label for="schoolRadio">
+                            School
+                            <span className="outerRadio">
+                              <span className="innerRadio"></span>
+                            </span>
+                          </label>
+                        </div>
+
+                        <div className="radioBox">
+                          <input
+                            type="radio"
+                            name="customerType"
+                            value="student"
+                            id="studentRadio"
+                          ></input>
+                          <label for="studentRadio">
+                            Student
+                            <span className="outerRadio">
+                              <span className="innerRadio"></span>
+                            </span>
+                          </label>
+                        </div>
+
+                        <div className="radioBox">
+                          <input
+                            type="radio"
+                            name="customerType"
+                            value="other"
+                            id="otherRadio"
+                          ></input>
+                          <label for="otherRadio">
+                            Other
+                            <span className="outerRadio">
+                              <span className="innerRadio"></span>
+                            </span>
+                          </label>
+                        </div>
+                        {/* </div> */}
+                      </div>
+                    </fieldset>
+
+                    {/* <div className="numberBox">
                       <label htmlFor="length" className="visuallyHidden">
                         Enter program length in months
                       </label>
@@ -577,7 +633,7 @@ class LandingPage extends Component {
                         placeholder="# Of Students"
                         className="formStudents"
                       />
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="lowerForm">
@@ -597,7 +653,7 @@ class LandingPage extends Component {
                     <div className="submitContainer">
                       <input
                         type="submit"
-                        value="Submit"
+                        value="Send"
                         id="submitBox"
                         className="submitBox button"
                       />
@@ -607,26 +663,22 @@ class LandingPage extends Component {
               </div>
 
               <aside className="byTheNumbers">
-                {/* <div className="numberBox">
-                  <h2>The Numbers</h2>
-                </div> */}
-
                 <ul className="factList">
                   <li>
-                    <h3>7 In 10</h3>
+                    <h3>7 in 10</h3>
                     <p>students require financial assistance</p>
                   </li>
                   <li>
-                    <h3>1 In 10</h3>
+                    <h3>1 in 10</h3>
                     <p>default on their loans</p>
                   </li>
                   <li>
-                    <h3>1.5 Trillion</h3>
+                    <h3>$1.5 Trillion</h3>
                     <p>outstanding student debt in North America</p>
                   </li>
                   <li>
                     <p className="motto">
-                      There's a better way to finance education.
+                      There's a better way <span>to finance education</span>
                     </p>
                   </li>
                 </ul>
