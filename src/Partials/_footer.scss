@@ -17,7 +17,7 @@ footer {
   width: 100%;
 
   .logoBox {
-    margin-right: 10px
+    margin-right: 10px;
   }
 
   .footerLinks {
@@ -39,7 +39,7 @@ footer {
     font-weight: 500;
   }
 
-  .motto {
+  .footMotto {
     line-height: 1;
     font-size: 1.8rem;
     text-transform: uppercase;
@@ -52,9 +52,9 @@ footer {
   // padding-left: 40px;
   display: flex;
   justify-content: flex-end;
-  
+
   li {
-      text-align: center;
+    text-align: center;
     font-size: 1rem;
     margin-bottom: 20px;
 
@@ -83,11 +83,39 @@ footer {
   }
 
   i {
-      line-height: 1.6;
-      margin-right: 5px;
+    line-height: 1.6;
+    margin-right: 5px;
   }
 
   .return {
     text-decoration: underline;
+  }
+}
+
+@media (max-width: 677px) {
+  .leftFooter {
+    .footMotto {
+      span {
+        margin-top: 10px;
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .leftFooter {
+    .footMotto {
+      font-size: 1.2rem;
+
+      // span {
+      //   margin-top: 10px;
+      //   display: block;
+      // }
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
   }
 }

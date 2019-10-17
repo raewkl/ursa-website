@@ -71,3 +71,9 @@ input[type="submit"] {
   width: 160px;
   color: $background;
 }
+
+@media (max-width: 500px) {
+  .wrapper {
+    width: 90%;
+  }
+}

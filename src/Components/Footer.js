@@ -16,7 +16,7 @@ const Footer = props => {
           </HashLink>
 
           <div className="footerText">
-            <p className="motto">Forward Together</p>
+            <p className="footMotto">Forward <span>Together</span></p>
             <div className="footerLinks">
               <ul>
                 {/* <li>Company</li> */}

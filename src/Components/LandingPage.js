@@ -438,7 +438,7 @@ class LandingPage extends Component {
               </li>
             </ul>
             <a href="">
-              <p>Request an ISA program at your school ></p>
+              <p>Request an ISA program at <span>your school ></span></p>
             </a>
 
             {/* <div className="sec3ImgBox1">
@@ -552,7 +552,7 @@ class LandingPage extends Component {
                         <p>Tell us more about yourself: </p>
                         {/* <div className="radioOptions"> */}
 
-                        <div className="radioBox">
+                        <div className="radioBox rb1">
                           <input
                             type="radio"
                             name="customerType"
@@ -567,7 +567,7 @@ class LandingPage extends Component {
                           </label>
                         </div>
 
-                        <div className="radioBox">
+                        <div className="radioBox rb2">
                           <input
                             type="radio"
                             name="customerType"
@@ -582,7 +582,7 @@ class LandingPage extends Component {
                           </label>
                         </div>
 
-                        <div className="radioBox">
+                        <div className="radioBox rb3">
                           <input
                             type="radio"
                             name="customerType"
