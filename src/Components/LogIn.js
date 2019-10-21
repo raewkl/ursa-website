@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import HeaderLogIn from "./HeaderLogIn";
+import Header from "./Header";
 
 class LogIn extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class LogIn extends Component {
   render() {
     return (
       <div className="logInPage wrapper">
-        <HeaderLogIn />
+        {/* <Header /> */}
 
         <form action="" className="logInForm">
           <div className="upperFormLogIn">

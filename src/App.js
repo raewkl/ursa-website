@@ -81,15 +81,19 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={() => <Header />} />
+          <div className="floatingPoints">
+            <div className="circle1">&#x1f511;</div>
+            <div className="circle2">&#128273;</div>
+          </div>
 
-          <Route exact path="/" component={() => <LandingPage 
-          />} />
+          <Route path="/" component={() => <Header />} />
+
+          <Route exact path="/" component={() => <LandingPage />} />
 
           <Route path="/dashboard">
             {this.state.user ? (
-              <Dashboard 
-                logout={this.logout} 
+              <Dashboard
+                logout={this.logout}
                 userId={this.state.uid}
                 listener={this.listener}
               />

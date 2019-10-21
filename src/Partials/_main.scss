@@ -28,7 +28,7 @@
     bottom: 10vh;
     right: -5%;
     width: 450px;
-    z-index: -10;
+    z-index: -20;
   }
 
   button {
@@ -108,15 +108,6 @@
     border-bottom-left-radius: 80px;
   }
 
-  // .borderTwo {
-  //   left: 50%;
-  //   right: 28%;
-  //   top: -15vh;
-  //   bottom: 0;
-
-  //   border-top: 20px dotted $colorTwo;
-  // }
-
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -139,23 +130,21 @@
 
   p:first-of-type {
     margin-bottom: 20px;
-    font-size: 0.8rem;
   }
 
   .numBox {
     p {
-      font-weight: 500;
+      font-weight: 300;
       font-size: 1.5rem;
       position: relative;
       left: -20px;
-      border-radius: 50%;
       line-height: 1;
     }
   }
 }
 
 .sectionTwoUpper {
-  padding: 4.5vh 0 8vh 0;
+  padding: 0 0 8vh 0;
   position: relative;
 
   .pathImgBox1,
@@ -283,7 +272,6 @@
   }
 
   p {
-    font-size: 0.8rem;
     text-align: left;
   }
 
@@ -597,51 +585,42 @@ aside {
   padding: 1% 4%;
   position: relative;
   background-color: $background;
-  right: 8px;
   height: 100%;
-
   width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    // text-decoration: underline;
+
+    font-weight: bold;
+
+    span {
+      font-weight: lighter;
+    }
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 5px;
+  }
 
   &::after {
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
-    left: 8px;
-    top: 5px;
+    left: 10px;
+    top: 10px;
     background-color: $colorOne;
     border: 1px solid $colorOne;
     z-index: -1;
-  }
-
-  .numberBox {
-    display: flex;
-    justify-content: center;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: inline-block;
-    border-bottom: 1px solid $colorOne;
-    padding-bottom: 5px;
-  }
-
-  .factList {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-
-  li {
-    text-align: center;
-  }
-
-  h3 {
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
   }
 
   p {
@@ -650,7 +629,7 @@ aside {
   }
 
   .motto {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     text-decoration: underline;
     text-align: center;
@@ -661,17 +640,28 @@ aside {
   }
 }
 
+// SCROLL SNAP EXPERIMENT
+
+// .scrollContainer {
+//   scroll-snap-type: y proximity;
+//   overflow-y: scroll;
+// }
+
+// .scrollChild {
+//   scroll-snap-align: start;
+// }
+
 @media (max-width: 1317px) {
   .contact {
-    height: 940px;
-    padding: 20vh 0 5vh 0;
+    height: 1050px;
+    padding: 9vh 0 0 0;
 
     h2 {
-      bottom: 840px;
+      bottom: 940px;
     }
 
     .borderFive {
-      bottom: 855px;
+      bottom: 955px;
       left: 74%;
     }
 
@@ -680,7 +670,7 @@ aside {
     }
 
     .circleEnd {
-      bottom: 855px;
+      bottom: 955px;
       right: calc(26% - 10px);
     }
   }
@@ -702,23 +692,27 @@ aside {
   }
 
   aside {
-    width: calc(100% - 8px);
-    padding: 4vh 3%;
+    width: calc(100% - 10px);
+    padding: 4vh 4%;
     margin-top: 5vh;
-    right: 4px;
-  }
+    right: 5px;
 
-  aside .factList {
     flex-direction: row;
     flex-wrap: wrap;
 
-    li {
-      width: calc(100% / 3);
+    h3 {
+      width: 100%;
     }
 
-    li:last-child {
+    .fact1,
+    .fact2,
+    .fact3 {
+      width: calc(100% / 3);
+      margin: 3.4vh 0;
+    }
+
+    .motto {
       width: 100%;
-      margin-top: 3vh;
 
       span {
         display: inline;
@@ -743,7 +737,7 @@ aside {
     }
 
     .imgBox {
-      width: 370px;
+      width: 400px;
     }
   }
 
@@ -769,6 +763,12 @@ aside {
         width: 80%;
         font-size: 0.8rem;
       }
+    }
+  }
+
+  .sectionThree {
+    .stuImg {
+      padding: 0 20%;
     }
   }
 
@@ -847,11 +847,52 @@ aside {
       width: calc(100% / 3);
     }
   }
+
+  .contact {
+    height: 1300px;
+
+    h2 {
+      bottom: 1195px;
+    }
+
+    .borderFive {
+      bottom: 1205px;
+      left: 85%;
+    }
+
+    .borderSix {
+      right: 15%;
+    }
+
+    .circleEnd {
+      bottom: 1205px;
+      right: calc(15% - 10px);
+    }
+  }
+
+  aside {
+    width: calc(80% - 10px);
+    max-width: 400px;
+    height: 500px;
+    padding: 0 4%;
+
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .fact1, .fact2, .fact3 {
+      width: 100%;
+      margin: 0;
+    }
+
+    .motto span {
+      display: block;
+    }
+  }
 }
 
 @media (max-width: 677px) {
   h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .sectionOne {
@@ -868,29 +909,7 @@ aside {
     }
 
     .imgBox {
-      width: 320px;
-    }
-  }
-
-  .contact {
-    height: 1225px;
-
-    h2 {
-      bottom: 1120px;
-    }
-
-    .borderFive {
-      bottom: 1130px;
-      left: 85%;
-    }
-
-    .borderSix {
-      right: 15%;
-    }
-
-    .circleEnd {
-      bottom: 1130px;
-      right: calc(15% - 10px);
+      width: 325px;
     }
   }
 
@@ -899,28 +918,9 @@ aside {
     li {
       width: 85%;
     }
-  }
 
-  aside {
-    width: calc(80% - 8px);
-    min-width: 290px;
-    max-width: 350px;
-
-    .factList {
-      flex-direction: column;
-      justify-content: space-evenly;
-
-      li,
-      li:last-child {
-        width: 100%;
-        margin: 2vh 0;
-      }
-
-      li:last-child {
-        span {
-          display: block;
-        }
-      }
+    .borderOne {
+      right: 50%;
     }
   }
 
@@ -930,75 +930,188 @@ aside {
 }
 
 @media (max-width: 500px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .borderOne,
+  .borderTwo,
+  .borderThree,
+  .borderFour,
+  .borderFive,
+  .borderSix,
+  .circleEnd {
+    display: none;
+  }
+
   h2 {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 
   h3 {
     font-size: 1.2rem;
   }
 
-  .sectionThree {
-    li {
-      width: 75%;
+  .sectionOne {
+    height: auto;
+    flex-direction: column;
+
+    .imgBox {
+      position: relative;
+      bottom: 0;
     }
+  }
+
+  .sectionTwo {
+    margin-top: 6vh;
+    padding: 5vh 25px 5vh 18px;
+    border: 1px solid $colorOne;
+    position: relative;
+    background-color: $background;
+    width: calc(100% - 10px);
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $colorOne;
+      right: -10px;
+      bottom: -10px;
+      z-index: -10;
+    }
+
+    
   }
 
   .sectionTwoUpper,
   .sectionTwoBottom {
+    ul:first-child {
+      padding-top: 2vh;
+    }
+
+    li {
+      width: 100%;
+      padding: 30px 0 10px 0;
+    }
+
+    p,
+    p:first-of-type {
+      margin-bottom: 0;
+    }
+
+    a p {
+      margin-top: 2vh;
+    }
+
+    .borderOne {
+      left: 0;
+      right: 50%;
+      top: -12vh;
+      bottom: 0;
+    }
+
     figure,
     figure.even {
-      padding: 4vh 0px 0 25px;
+      padding: 0 0px 0 6%;
     }
 
     .numBox {
       p {
-        font-size: 1.2rem;
+        top: -1px;
+        text-align: center;
+        left: -15px;
       }
     }
   }
 
+  .sectionTwoUpper {
+    padding: 0;
+  }
+
   .sectionTwoBottom {
-    padding-top: 4vh;
+    padding: 0;
+
+    li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
   }
 
   .sectionThree {
-    p {
-      span {
-        display: block;
-      }
+    padding-bottom: 8vh;
+
+    ul {
+      margin-bottom: 1vh;
+    }
+
+    li {
+      width: 100%;
+      margin-top: 2vh;
     }
   }
 
   form {
-    .nameEmail, .schoolProgram {
+    .nameEmail,
+    .schoolProgram {
       flex-direction: column;
     }
 
-    .nameBox, .emailBox, .schoolBox, .programBox {
+    .nameBox,
+    .emailBox,
+    .schoolBox,
+    .programBox {
       width: 100%;
     }
   }
 
+  aside {
+    width: calc(100% - 10px);
+  }
+
   .contact {
-    height: 1300px;
+    height: auto;
+    padding: 0 0 8vh 0;
 
     h2 {
-      bottom: 1120px;
+      position: static;
+      margin-bottom: 4vh;
     }
+  }
+}
 
-    .borderFive {
-      bottom: 1130px;
-      left: 85%;
+@media (max-width: 375px) {
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .sectionOne {
+    .imgBox {
+      right: 0;
     }
+  }
 
-    .borderSix {
-      right: 15%;
+  .sectionTwoUpper .subFig a p,
+  .sectionTwoBottom .subFig a p {
+    font-size: 0.6rem;
+  }
+
+  .sectionThree {
+    a {
+      width: 90%;
+      p {
+        font-size: 0.6rem;
+      }
     }
+  }
+}
 
-    .circleEnd {
-      bottom: 1130px;
-      right: calc(15% - 10px);
+@media (max-width: 500px) and (max-height: 750px) {
+  .sectionOne {
+    .sectionOneLeft {
+      height: calc(100vh - 3vh);
+      justify-content: center;
+      padding-top: 5vh;
     }
   }
 }

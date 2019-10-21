@@ -65,14 +65,19 @@ p {
 }
 
 h1 {
-  font-size: 4rem;
-  font-weight: bold;
+  font-size: 5rem;
 }
 
 h2 {
-    font-weight: bold;
+  font-weight: bold;
   font-size: 3rem;
   text-align: center;
+
+  
+
+  span {
+    font-weight: lighter;
+  }
 }
 
 h3 {
@@ -80,44 +85,70 @@ h3 {
   font-size: 1.5rem;
 }
 
-input[type="text"], input[type="email"], input[type="number"] {
-    opacity: 1;
-    color: $colorOne;
-    font-family: $primaryFont;
-    font-weight: 500;
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  opacity: 1;
+  color: $colorOne;
+  font-family: $primaryFont;
+  font-weight: 500;
 
-    &::placeholder {
-        font-weight: 500;
-        font-family: $primaryFont;
-        color: $colorOne;
-        opacity: 0.7;
-    }
+  &::placeholder {
+    font-weight: 500;
+    font-family: $primaryFont;
+    color: $colorOne;
+    opacity: 0.7;
+  }
 }
 
 textarea {
-    opacity: 1;
-    font-family: $primaryFont;
+  opacity: 1;
+  font-family: $primaryFont;
+  font-weight: 500;
+  color: $colorOne;
+
+  &::placeholder {
+    opacity: 0.7;
     font-weight: 500;
+    font-family: $primaryFont;
     color: $colorOne;
-
-    &::placeholder {
-        opacity: 0.7;
-        font-weight: 500;
-        font-family: $primaryFont;
-        color: $colorOne;
-
-    }
+  }
 }
 
-  a p {
-    font-size: 0.7em;
-    font-weight: 500;
-    text-decoration: underline;
-    text-transform: none;
-  }
+a p {
+  font-size: 0.7em;
+  font-weight: 500;
+  text-decoration: underline;
+  text-transform: none;
+}
 
-  a, button {
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    font-weight: 500;
-  }
+a,
+button {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.sectionThree p {
+  font-size: 0.8rem;
+}
+
+.sectionTwoUpper p:first-of-type, .sectionTwoBottom p:first-of-type {
+
+  font-size: 0.8rem;
+}
+
+@media (max-width: 500px) {
+
+  .sectionThree p {
+  font-size: 0.7rem;
+}
+
+.sectionTwoUpper p:first-of-type, .sectionTwoBottom p:first-of-type {
+
+  font-size: 0.7rem;
+}
+
+
+
+}

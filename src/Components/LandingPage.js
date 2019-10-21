@@ -22,7 +22,7 @@ class LandingPage extends Component {
         contact: false
       },
       () => {
-        this.circleAnimations("", this.scrollHeight());
+        // this.circleAnimations("", this.scrollHeight());
 
         window.addEventListener("scroll", this.scrollDirection, false);
       }
@@ -82,129 +82,132 @@ class LandingPage extends Component {
     return percentScrolled;
   };
 
-  removeClasses = (target, classes) => {
-    const circle = target;
-    const animClasses = classes;
+  // removeClasses = (target, classes) => {
+  //   const circle = target;
+  //   const animClasses = classes;
 
-    animClasses.forEach(i => {
-      circle.classList.remove(i);
-    });
-  };
+  //   animClasses.forEach(i => {
+  //     circle.classList.remove(i);
+  //   });
+  // };
 
-  circleAnimations = (vector, height) => {
-    const circle = document.getElementById("circle");
+  // circleAnimations = (vector, height) => {
+  //   const circle = document.getElementById("circle");
 
-    const animationClasses = [
-      "circle12",
-      "circle23",
-      "circle34",
-      "circle21",
-      "circle32",
-      "circle43"
-    ];
+  //   const animationClasses = [
+  //     "circle12",
+  //     "circle23",
+  //     "circle34",
+  //     "circle21",
+  //     "circle32",
+  //     "circle43"
+  //   ];
 
-    let percentage = height;
-    let animationVector = vector;
+  //   let percentage = height;
+  //   let animationVector = vector;
 
-    if (animationVector === "-") {
-      if (percentage < 15 && !this.state.sectionOne) {
-        this.setState(
-          {
-            sectionOne: true,
-            sectionTwo: false,
-            sectionThree: false,
-            contact: false
-          },
-          () => {
-            this.removeClasses(circle, animationClasses);
-            circle.classList.add("circle21");
-          }
-        );
-      } else if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
-        this.setState(
-          {
-            sectionOne: false,
-            sectionTwo: true,
-            sectionThree: false,
-            contact: false
-          },
-          () => {
-            this.removeClasses(circle, animationClasses);
-            circle.classList.add("circle32");
-          }
-        );
-      } else if (
-        percentage > 48 &&
-        percentage < 78 &&
-        !this.state.sectionThree
-      ) {
-        this.setState(
-          {
-            sectionOne: false,
-            sectionTwo: false,
-            sectionThree: true,
-            contact: false
-          },
-          () => {
-            this.removeClasses(circle, animationClasses);
-            circle.classList.add("circle43");
-          }
-        );
-      }
-    } else {
-      if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
-        this.setState(
-          {
-            sectionOne: false,
-            sectionTwo: true,
-            sectionThree: false,
-            contact: false
-          },
-          () => {
-            this.removeClasses(circle, animationClasses);
-            circle.classList.add("circle12");
-          }
-        );
-      } else if (
-        percentage > 48 &&
-        percentage < 78 &&
-        !this.state.sectionThree
-      ) {
-        this.setState(
-          {
-            sectionOne: false,
-            sectionTwo: false,
-            sectionThree: true,
-            contact: false
-          },
-          () => {
-            this.removeClasses(circle, animationClasses);
-            circle.classList.add("circle23");
-          }
-        );
-      } else if (percentage > 78 && !this.state.contact) {
-        this.setState(
-          {
-            sectionOne: false,
-            sectionTwo: false,
-            sectionThree: false,
-            contact: true
-          },
-          () => {
-            this.removeClasses(circle, animationClasses);
-            circle.classList.add("circle34");
-          }
-        );
-      }
-    }
-  };
+  //   if (animationVector === "-") {
+  //     if (percentage < 15 && !this.state.sectionOne) {
+  //       this.setState(
+  //         {
+  //           sectionOne: true,
+  //           sectionTwo: false,
+  //           sectionThree: false,
+  //           contact: false
+  //         },
+  //         () => {
+  //           this.removeClasses(circle, animationClasses);
+  //           circle.classList.add("circle21");
+  //         }
+  //       );
+  //     } else if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
+  //       this.setState(
+  //         {
+  //           sectionOne: false,
+  //           sectionTwo: true,
+  //           sectionThree: false,
+  //           contact: false
+  //         },
+  //         () => {
+  //           this.removeClasses(circle, animationClasses);
+  //           circle.classList.add("circle32");
+  //         }
+  //       );
+  //     } else if (
+  //       percentage > 48 &&
+  //       percentage < 78 &&
+  //       !this.state.sectionThree
+  //     ) {
+  //       this.setState(
+  //         {
+  //           sectionOne: false,
+  //           sectionTwo: false,
+  //           sectionThree: true,
+  //           contact: false
+  //         },
+  //         () => {
+  //           this.removeClasses(circle, animationClasses);
+  //           circle.classList.add("circle43");
+  //         }
+  //       );
+  //     }
+  //   } else {
+  //     if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
+  //       this.setState(
+  //         {
+  //           sectionOne: false,
+  //           sectionTwo: true,
+  //           sectionThree: false,
+  //           contact: false
+  //         },
+  //         () => {
+  //           this.removeClasses(circle, animationClasses);
+  //           circle.classList.add("circle12");
+  //         }
+  //       );
+  //     } else if (
+  //       percentage > 48 &&
+  //       percentage < 78 &&
+  //       !this.state.sectionThree
+  //     ) {
+  //       this.setState(
+  //         {
+  //           sectionOne: false,
+  //           sectionTwo: false,
+  //           sectionThree: true,
+  //           contact: false
+  //         },
+  //         () => {
+  //           this.removeClasses(circle, animationClasses);
+  //           circle.classList.add("circle23");
+  //         }
+  //       );
+  //     } else if (percentage > 78 && !this.state.contact) {
+  //       this.setState(
+  //         {
+  //           sectionOne: false,
+  //           sectionTwo: false,
+  //           sectionThree: false,
+  //           contact: true
+  //         },
+  //         () => {
+  //           this.removeClasses(circle, animationClasses);
+  //           circle.classList.add("circle34");
+  //         }
+  //       );
+  //     }
+  //   }
+  // };
 
   render() {
     return (
       <div className="wrapper landingPage">
         <main>
           {/* SECTION ONE */}
-          <section className="sectionOne navSection" id="sectionOne">
+          <section
+            className="sectionOne navSection scrollChild"
+            id="sectionOne"
+          >
             <div className="sectionOneLeft">
               <div className="titleBox">
                 <h1>
@@ -230,7 +233,7 @@ class LandingPage extends Component {
 
           {/* SECTION TWO */}
 
-          <section className="sectionTwo">
+          <section className="sectionTwo scrollChild">
             <section
               className="sectionTwoUpper navSection"
               id="sectionTwoUpper"
@@ -268,7 +271,9 @@ class LandingPage extends Component {
                 />
               </div> */}
 
-              <h2>How it works</h2>
+              <h2>
+                How <span>it works</span>
+              </h2>
               <ul>
                 <li>
                   <figure>
@@ -277,7 +282,7 @@ class LandingPage extends Component {
                     </div>
                     <figcaption>
                       <div className="subFig">
-                        <h3>Partner with ursa</h3>
+                        <h3>Partner with Ursa</h3>
                         <p>
                           We work with your school to create a tailored ISA
                           program with terms that will support financial health
@@ -347,8 +352,8 @@ class LandingPage extends Component {
                         <p>
                           Students pay Ursa a % of their earnings, until they
                           hit the payment cap or the contract term expires.
-                          Schools receive the portion of tuition deferred as the
-                          student pays their ISA.
+                          {/* Schools receive the portion of tuition deferred as the
+                          student pays their ISA. */}
                         </p>
                         <a href="">
                           <p>Learn more ></p>
@@ -363,11 +368,14 @@ class LandingPage extends Component {
 
           {/* SECTION THREE */}
 
-          <section className="sectionThree navSection" id="sectionThree">
+          <section
+            className="sectionThree navSection scrollChild"
+            id="sectionThree"
+          >
             <div className="borderFour"></div>
 
             <h2>
-              <em>Student</em> benefits
+              Student <span>benefits</span>
             </h2>
 
             <ul>
@@ -438,7 +446,9 @@ class LandingPage extends Component {
               </li>
             </ul>
             <a href="">
-              <p>Request an ISA program at <span>your school ></span></p>
+              <p>
+                Request an ISA program at <span>your school ></span>
+              </p>
             </a>
 
             {/* <div className="sec3ImgBox1">
@@ -457,7 +467,7 @@ class LandingPage extends Component {
 
           {/* CONTACT*/}
 
-          <section className="contact navSection" id="contact">
+          <section className="contact navSection scrollChild" id="contact">
             <div className="borderFive"></div>
             <div className="borderSix"></div>
             <div className="circleEnd"></div>
@@ -487,7 +497,9 @@ class LandingPage extends Component {
               />
             </div> */}
 
-            <h2>Contact Us</h2>
+            <h2>
+              Contact <span>Us</span>
+            </h2>
 
             <div className="formAsideBox">
               <div className="formBox">
@@ -559,7 +571,7 @@ class LandingPage extends Component {
                             value="school"
                             id="schoolRadio"
                           ></input>
-                          <label for="schoolRadio">
+                          <label htmlFor="schoolRadio">
                             School
                             <span className="outerRadio">
                               <span className="innerRadio"></span>
@@ -574,7 +586,7 @@ class LandingPage extends Component {
                             value="student"
                             id="studentRadio"
                           ></input>
-                          <label for="studentRadio">
+                          <label htmlFor="studentRadio">
                             Student
                             <span className="outerRadio">
                               <span className="innerRadio"></span>
@@ -589,7 +601,7 @@ class LandingPage extends Component {
                             value="other"
                             id="otherRadio"
                           ></input>
-                          <label for="otherRadio">
+                          <label htmlFor="otherRadio">
                             Other
                             <span className="outerRadio">
                               <span className="innerRadio"></span>
@@ -662,26 +674,23 @@ class LandingPage extends Component {
                 </form>
               </div>
 
-              <aside className="byTheNumbers">
-                <ul className="factList">
-                  <li>
-                    <h3>7 in 10</h3>
-                    <p>students require financial assistance</p>
-                  </li>
-                  <li>
-                    <h3>1 in 10</h3>
-                    <p>default on their loans</p>
-                  </li>
-                  <li>
-                    <h3>$1.5 Trillion</h3>
-                    <p>outstanding student debt in North America</p>
-                  </li>
-                  <li>
-                    <p className="motto">
-                      There's a better way <span>to finance education</span>
-                    </p>
-                  </li>
-                </ul>
+              <aside className="theNumbers">
+                <h3>The Numbers</h3>
+                <div className="fact1">
+                  <h4>7 in 10</h4>
+                  <p>students require financial assistance</p>
+                </div>
+                <div className="fact2">
+                  <h4>1 in 10</h4>
+                  <p>default on their loans</p>
+                </div>
+                <div className="fact3">
+                  <h4>$1.5 Trillion</h4>
+                  <p>outstanding student debt in North America</p>
+                </div>
+                <p className="motto">
+                  There's a better way <span>to finance education</span>
+                </p>
               </aside>
             </div>
           </section>

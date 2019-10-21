@@ -58,7 +58,7 @@ class Dashboard extends Component {
                   notes: data[key].notes,
                   status: "Approved",
 
-                  addStudent: false,
+                  addStudent: false
                 });
               }
 
@@ -206,8 +206,7 @@ class Dashboard extends Component {
       phone: this.state.stuPhone,
       linkedIn: this.state.stuLinkedIn,
       notes: this.state.stuNotes,
-      status: this.state.stuStatus,
-      
+      status: this.state.stuStatus
     });
 
     this.setState({
@@ -233,17 +232,13 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="dashboard wrapper">
+      <div className="dashboard wrapper scrollChild">
         <div className="dashHeader">
           <h1>School Dashboard</h1>
           <button onClick={this.props.logout}>Log Out</button>
         </div>
 
-        <div className="accountSettings">
-
-
-
-        </div>
+        <div className="accountSettings"></div>
 
         <div className="addStudent">
           <button
@@ -254,7 +249,6 @@ class Dashboard extends Component {
               })
             }
           >
-
             {this.state.addStudent ? (
               <div className="addStudentLower">
                 <i class="fas fa-times"></i>

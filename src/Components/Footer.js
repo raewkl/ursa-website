@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 
 const Footer = props => {
   return (
-    <footer className="wrapper">
+    <footer className="wrapper scrollChild">
       <div className="upperFooter">
         <div className="leftFooter">
           <HashLink to="/#sectionOne">
