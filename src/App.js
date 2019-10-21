@@ -35,6 +35,8 @@ class App extends Component {
         });
       }
     });
+
+    console.log("loading");
   }
 
   updateUser = user => {
@@ -81,11 +83,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="floatingPoints">
-            <div className="circle1">&#x1f511;</div>
-            <div className="circle2">&#128273;</div>
-          </div>
-
+        
           <Route path="/" component={() => <Header />} />
 
           <Route exact path="/" component={() => <LandingPage />} />

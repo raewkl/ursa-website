@@ -66,6 +66,7 @@ p {
 
 h1 {
   font-size: 5rem;
+  position: relative;
 }
 
 h2 {
@@ -73,11 +74,13 @@ h2 {
   font-size: 3rem;
   text-align: center;
 
-  
-
   span {
     font-weight: lighter;
   }
+}
+
+.howItWorks {
+  position: relative;
 }
 
 h3 {

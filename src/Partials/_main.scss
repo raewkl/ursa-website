@@ -1,3 +1,48 @@
+.floatingPoints {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.circle1 {
+  position: absolute;
+  font-size: 2rem;
+  bottom: 0;
+  left: 6%;
+  animation: float1 10s linear infinite;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.circle2 {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  animation: float2 15s linear infinite;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+@keyframes float1 {
+  from {
+    transform: translateY(0px) rotate(0);
+  }
+  to {
+    transform: translateY(-105vh) rotate(90deg);
+  }
+}
+
+@keyframes float2 {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-105vh) rotate(-90deg);
+  }
+}
+
 .sectionOne {
   height: 100vh;
 }
@@ -19,7 +64,6 @@
 }
 
 .sectionOne {
-  margin-top: 3vh;
   display: flex;
   position: relative;
 
@@ -29,6 +73,10 @@
     right: -5%;
     width: 450px;
     z-index: -20;
+  }
+
+  .landingPageText {
+    position: relative;
   }
 
   button {
@@ -147,6 +195,10 @@
   padding: 0 0 8vh 0;
   position: relative;
 
+  .oneTwoList {
+    position: relative;
+  }
+
   .pathImgBox1,
   .pathImgBox2,
   .pathImgBox3,
@@ -206,6 +258,10 @@
 .sectionTwoBottom {
   padding: 8vh 0;
 
+  .threeFourList {
+    position: relative;
+  }
+
   .borderThree {
     left: 50%;
     right: 0;
@@ -236,6 +292,12 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+
+  .studentBenefits,
+  .stuBenefitsList,
+  .requestIsa {
+    position: relative;
+  }
 
   .borderFour {
     left: 0;
@@ -428,6 +490,7 @@
 }
 
 .formBox {
+  position: relative;
   width: calc(100% - 300px - 10px);
   display: flex;
 }
@@ -580,6 +643,11 @@ form {
   }
 }
 
+.asideBox {
+  height: 100%;
+  position: relative;
+}
+
 aside {
   border: 1px solid $colorOne;
   padding: 1% 4%;
@@ -591,6 +659,8 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
+  right: 10px;
 
   h3 {
     text-align: center;
@@ -691,11 +761,15 @@ aside {
     }
   }
 
+  .asideBox {
+    height: auto;
+    margin-top: 5vh;
+  }
+
   aside {
     width: calc(100% - 10px);
     padding: 4vh 4%;
-    margin-top: 5vh;
-    right: 5px;
+    right: 0px;
 
     flex-direction: row;
     flex-wrap: wrap;
@@ -870,16 +944,25 @@ aside {
     }
   }
 
+  .asideBox {
+    width: calc(80%);
+    display: flex;
+    justify-content: center;
+  }
+
   aside {
-    width: calc(80% - 10px);
     max-width: 400px;
     height: 500px;
     padding: 0 4%;
 
+    right: 5px;
+
     flex-direction: column;
     justify-content: space-evenly;
 
-    .fact1, .fact2, .fact3 {
+    .fact1,
+    .fact2,
+    .fact3 {
       width: 100%;
       margin: 0;
     }
@@ -980,8 +1063,6 @@ aside {
       bottom: -10px;
       z-index: -10;
     }
-
-    
   }
 
   .sectionTwoUpper,
@@ -1063,6 +1144,10 @@ aside {
     .programBox {
       width: 100%;
     }
+  }
+
+  .asideBox {
+    width: calc(100%);
   }
 
   aside {

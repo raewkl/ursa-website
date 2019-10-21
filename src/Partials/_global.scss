@@ -1,5 +1,5 @@
-// $background: #fff4e9;
-$background: #fcf0ec;
+$background: #fff4e9;
+// $background: #fcf0ec;
 
 // Primary Colors
 
@@ -75,58 +75,6 @@ input[type="submit"] {
 
 .App {
   min-width: 320px;
-}
-
-.floatingPoints {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  // z-index: -1000;
-}
-
-.circle1 {
-  // height: 50px;
-  // width: 50px;
-  position: absolute;
-  font-size: 2rem;
-  // background-color: $colorTwo;
-  bottom: 0;
-  left: 6%;
-  animation: float1 10s linear infinite;
-  // z-index: -1000;
-  border-radius: 50%;
-}
-
-.circle2 {
-  // height: 20px;
-  // width: 20px;
-  position: absolute;
-  // background-color: $colorTwo;
-  bottom: 0;
-  right: 5%;
-  animation: float2 15s linear infinite;
-  // z-index: -1000;
-  border-radius: 50%
-}
-
-@keyframes float1 {
-  from {
-    transform: translateY(0px) rotate(0);
-  }
-  to {
-    transform: translateY(-105vh) rotate(90deg);
-  }
-}
-
-@keyframes float2 {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-105vh)  rotate(-90deg);
-  }
 }
 
 @media (max-width: 500px) {

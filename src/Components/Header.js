@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import * as Scroll from "react-scroll";
+import { useSpring, animated, config } from "react-spring";
 
 let ScrollLink = Scroll.Link;
 
@@ -75,13 +76,20 @@ const Header = props => {
     }, 500);
   };
 
+  const animProps = useSpring({
+    config: config.molasses,
+    from: { opacity: 0, top: -80 },
+    to: { opacity: 1, top: 20 },
+    delay: 100
+  });
+
   return (
     <header className="landingNav scrollChild">
       {/* Make all of this position fixed */}
 
       <div className="topBarContainer" id="topBarContainer">
         <div className="navCircle"></div>
-        <div className="topBar">
+        <animated.div style={animProps} className="topBar">
           <HashLink to="/#sectionOne">
             <div className="logoBox">
               <img
@@ -135,7 +143,7 @@ const Header = props => {
               </li>
             </ul>
           </nav>
-        </div>
+        </animated.div>
       </div>
 
       {/* <div className="sideNav">
