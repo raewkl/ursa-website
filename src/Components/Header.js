@@ -102,14 +102,18 @@ const Header = props => {
           <nav className="mainNav">
             <ul>
               <li>
-                <a className="contactLink" href="#contact">
-                  Contact
-                </a>
+                <HashLink to="/#contact">
+                  <a className="contactLink" href="#contact">
+                    <span className="animatedBorder">Contact</span>
+                  </a>
+                </HashLink>
               </li>
 
               <li>
                 <Link to="/dashboard" className="logIn">
-                  Log In
+                  <span className="movingText1">Log In</span>
+                  <span className="movingText2">Log In</span>
+                  {/* <span className="movingText">Log In</span> */}
                 </Link>
               </li>
             </ul>

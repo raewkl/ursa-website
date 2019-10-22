@@ -2,7 +2,7 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 
-const LazyAnimation5 = () => {
+const SectionTwoLower = () => {
   const [ref, inView] = useInView({
     rootMargin: "-50px 0px",
     triggerOnce: true
@@ -45,10 +45,8 @@ const LazyAnimation5 = () => {
               <p>
                 Students pay Ursa a % of their earnings, until they hit the
                 payment cap or the contract term expires.
-                {/* Schools receive the portion of tuition deferred as the
-                          student pays their ISA. */}
               </p>
-              <a href="">
+              <a href="#sectionThree">
                 <p>Learn more ></p>
               </a>
             </div>
@@ -59,4 +57,4 @@ const LazyAnimation5 = () => {
   );
 };
 
-export default LazyAnimation5;
+export default SectionTwoLower;

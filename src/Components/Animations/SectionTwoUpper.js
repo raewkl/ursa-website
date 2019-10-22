@@ -2,7 +2,7 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 
-const LazyAnimation1 = () => {
+const SectionTwoUpper = () => {
 
   const [ref, inView] = useInView({
     rootMargin: "-50px 0px",
@@ -47,7 +47,7 @@ const LazyAnimation1 = () => {
                   Students fill out a simple application form and eligible
                   candidates are provided an ISA.
                 </p>
-                <a href="">
+                <a href="#contact">
                   <p>
                     Request an ISA program at <span>your school ></span>
                   </p>
@@ -60,4 +60,4 @@ const LazyAnimation1 = () => {
   );
 };
 
-export default LazyAnimation1;
+export default SectionTwoUpper;

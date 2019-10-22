@@ -20,7 +20,7 @@
   position: absolute;
   top: -20px;
   right: -20px;
-  z-index: -100;
+  z-index: 10;
   border-radius: 50%;
 }
 
@@ -62,10 +62,88 @@
       border-radius: 30px;
     }
 
-    .logIn {
-      border: 1px solid $colorOne;
-      width: 120px;
+    .contactLink {
+      &:hover .animatedBorder::after {
+        animation: borderExpand 0.4s ease-out forwards;
+      }
     }
+
+    .animatedBorder {
+      display: block;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: $colorOne;
+      }
+    }
+
+    @keyframes borderExpand {
+      from {
+        width: 0%;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    .logIn {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      width: 120px;
+      overflow-x: hidden;
+      background-color: $colorOne;
+      color: $background;
+
+      &:hover {
+        // animation: toWhite 0.3s linear forwards;
+        background-color: white;
+        color: $colorOne;
+      }
+    }
+
+    @keyframes toWhite {
+      from {
+        background-color: $colorOne;
+        color: $background;
+      }
+      to {
+        background-color: white;
+        color: $colorOne;
+      }
+    }
+
+    .movingText1,
+    .movingText2 {
+      display: inline-block;
+      white-space: nowrap;
+      transform: translateX(100px);
+      position: absolute;
+    }
+
+    .movingText1 {
+      animation: scroll 6s linear infinite;
+    }
+
+    .movingText2 {
+      animation: scroll 6s linear 3s infinite;
+    }
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(105px);
+  }
+  to {
+    transform: translateX(-75px);
   }
 }
 
@@ -92,6 +170,10 @@
   .topBun {
     margin-bottom: 8px;
   }
+
+  &:hover {
+    background-color: rgba(0,0,0,0);
+  }
 }
 
 .hamburgerLinks {
@@ -101,7 +183,7 @@
   top: 40vh;
   left: 0;
   right: 0;
-  z-index: -10;
+  z-index: 50;
 
   a {
     font-size: 2rem;
@@ -111,15 +193,14 @@
   li {
     margin-bottom: 5vh;
   }
-
 }
 
 .fadeIn {
-  animation: fadeIn 0.5s linear forwards; 
+  animation: fadeIn 0.5s linear forwards;
 }
 
 .fadeOut {
-  animation: fadeOut 0.5s linear forwards; 
+  animation: fadeOut 0.5s linear forwards;
 }
 
 @keyframes fadeIn {
@@ -376,7 +457,8 @@
     display: none;
   }
 
-  .miniNav, .navCircle {
+  .miniNav,
+  .navCircle {
     display: block;
   }
 }

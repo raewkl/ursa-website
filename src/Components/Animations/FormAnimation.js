@@ -3,7 +3,6 @@ import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 
 const FormAnimation = () => {
-
   const [ref, inView] = useInView({
     rootMargin: "-50px 0px",
     triggerOnce: true
@@ -172,12 +171,15 @@ const FormAnimation = () => {
           </div>
 
           <div className="submitContainer">
-            <input
+            <button
               type="submit"
               value="Send"
               id="submitBox"
               className="submitBox button"
-            />
+            >
+              Send
+              <i className="fas fa-arrow-up"></i>
+            </button>
           </div>
         </div>
       </form>

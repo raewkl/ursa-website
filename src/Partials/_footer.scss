@@ -10,6 +10,19 @@ footer {
 
 .logoBox {
   width: 80px;
+
+  &:hover {
+    animation: grow 0.3s ease-in forwards;
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 
 .leftFooter {
@@ -44,6 +57,10 @@ footer {
     font-size: 1.8rem;
     text-transform: uppercase;
     line-height: 0.7;
+  }
+
+  a {
+    text-transform: none;
   }
 }
 

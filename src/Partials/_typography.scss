@@ -132,6 +132,14 @@ button {
   font-weight: 500;
 }
 
+button {
+  &:hover {
+      background-color: white;
+      color: $colorOne;
+      border-color: white;
+    }
+}
+
 .sectionThree p {
   font-size: 0.8rem;
 }
@@ -140,6 +148,12 @@ button {
 .sectionTwoBottom p:first-of-type {
   font-size: 0.8rem;
 }
+
+.fa-arrow-up {
+      font-size: 0.8rem;
+      transform: rotate(45deg);
+      margin-left: 6px;
+    }
 
 @media (max-width: 1317px) {
 

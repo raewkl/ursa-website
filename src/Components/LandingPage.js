@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-import LazyAnimation1 from "./Animations/LazyAnimation1";
-import LazyAnimation5 from "./Animations/LazyAnimation5";
+import LazyAnimation1 from "./Animations/SectionTwoUpper";
+import LazyAnimation5 from "./Animations/SectionTwoLower";
 import LazyAnimation8 from "./Animations/LazyAnimation8";
 import FormAnimation from "./Animations/FormAnimation";
 import NumbersAnimation from "./Animations/NumbersAnimation";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
+import * as Scroll from "react-scroll";
+
+let ScrollLink = Scroll.Link;
 // let scrollPos = 0;
 
 class LandingPage extends Component {
@@ -215,7 +218,7 @@ class LandingPage extends Component {
     const props = useSpring({
       config: config.molasses,
       from: { opacity: 0, left: -100 },
-      to: { opacity: 1, left: 0 },
+      to: { opacity: 1, left: 0 }
       // delay: 500
     });
 
@@ -230,7 +233,7 @@ class LandingPage extends Component {
     const props = useSpring({
       config: config.molasses,
       from: { opacity: 0, bottom: -100 },
-      to: { opacity: 1, bottom: 0 },
+      to: { opacity: 1, bottom: 0 }
       // delay: 500
     });
 
@@ -241,9 +244,18 @@ class LandingPage extends Component {
           lifting <span>so you can focus on what’s important.</span>
         </p>
 
-        <button>
-          Learn More<i className="fas fa-arrow-up"></i>
-        </button>
+        <ScrollLink
+          activeClass="active"
+          to="sectionTwo"
+          spy={true}
+          smooth={true}
+          offset={-60}
+          duration={500}
+        >
+          <button>
+            Learn More<i className="fas fa-arrow-up"></i>
+          </button>
+        </ScrollLink>
       </animated.div>
     );
   };
@@ -322,7 +334,8 @@ class LandingPage extends Component {
 
     return (
       <animated.div ref={ref} style={props} className="requestIsa">
-        <a href="">
+        
+        <a href="#contact">
           <p>
             Request an ISA program at <span>your school ></span>
           </p>
@@ -376,8 +389,9 @@ class LandingPage extends Component {
                 <img
                   src={require("../Assets/Images/student_light.png")}
                   alt=""
+                  className="boyImg"
                 />
-                <div className="shadow"></div>
+                <div className="shadow shadow1"></div>
               </div>
             </section>
 

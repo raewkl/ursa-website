@@ -11,9 +11,8 @@
   font-size: 2rem;
   bottom: 0;
   left: 6%;
-  animation: float1 17s linear infinite;
+  animation: float1 15s linear infinite;
   border-radius: 50%;
-  opacity: 0.6;
   z-index: -20;
 }
 
@@ -23,44 +22,56 @@
   right: 5%;
   animation: float2 12s linear infinite;
   border-radius: 50%;
-  opacity: 0.5;
   z-index: -20;
 }
 
 .circle3 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   position: absolute;
   bottom: 0;
   right: 25%;
   animation: float3 25s linear infinite;
   border-radius: 50%;
-  opacity: 1;
-  z-index: 200;
+  z-index: 15;
 }
 
 @keyframes float1 {
-  from {
+  0% {
     transform: translateY(0px) rotate(20deg);
+    opacity: 0;
   }
-  to {
+  5% {
+    opacity: 0.5;
+  }
+  100% {
     transform: translateY(-105vh) rotate(110deg);
+    opacity: 0.5;
   }
 }
 
 @keyframes float2 {
-  from {
+  0% {
     transform: translateY(0px);
+    opacity: 0;
   }
-  to {
+  5% {
+    opacity: 0.3;
+  }
+  100% {
     transform: translateY(-105vh) rotate(-90deg);
+    opacity: 0.3;
   }
 }
 
 @keyframes float3 {
-  from {
-    transform: translateY(0px);
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
   }
-  to {
+  5% {
+    opacity: 1;
+  }
+  100% {
     transform: translateY(-105vh) rotate(60deg);
   }
 }
@@ -94,11 +105,46 @@
     bottom: 10vh;
     right: -5%;
     width: 450px;
-    z-index: -20;
+
+    &:hover .boyImg {
+      animation: hover 3s ease-in-out infinite forwards;
+    }
+
+    &:hover .shadow1 {
+      animation: shadowChange 3s ease-in-out infinite forwards;
+    }
+  }
+
+  @keyframes hover {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shadowChange {
+    0% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scaleX(1.1) translateX(5px);
+      opacity: 0.75;
+    }
+    100% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
   }
 
   .landingPageText {
     position: relative;
+    z-index: 10;
   }
 
   button {
@@ -107,10 +153,17 @@
     justify-content: center;
     align-items: center;
 
-    .fa-arrow-up {
-      font-size: 1rem;
-      transform: rotate(45deg);
-      margin-left: 6px;
+    &:hover .fa-arrow-up {
+      animation: arrowPoint 1s ease-out infinite;
+    }
+  }
+
+  @keyframes arrowPoint {
+    from {
+      transform: translate(-2px, 2px) rotate(45deg);
+    }
+    to {
+      transform: translate(3px, -3px) rotate(45deg);
     }
   }
 
@@ -122,6 +175,7 @@
 
     .titleBox {
       position: relative;
+      z-index: 10;
     }
 
     h1 {
@@ -138,6 +192,19 @@
       right: 200px;
       bottom: 0;
       border-bottom: 1px solid $colorOne;
+      animation: border7ExpandLarge 1s linear;
+    }
+
+    @keyframes border7ExpandLarge {
+      0% {
+        opacity: 0;
+        right: 100%;
+      }
+
+      to {
+        opacity: 1;
+        right: 200px;
+      }
     }
 
     p {
@@ -150,7 +217,7 @@
 .shadow {
   position: absolute;
   left: 40%;
-  right: 15%;
+  right: 18%;
   bottom: -10px;
   height: 20px;
   background-color: rgba(0, 0, 0, 0.15);
@@ -659,9 +726,16 @@ form {
     resize: none;
   }
 
-  input[type="submit"] {
+  .submitBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
     width: 120px;
+
+    &:hover .fa-arrow-up {
+      animation: arrowPoint 1s ease-out infinite;
+    }
   }
 }
 
@@ -778,7 +852,7 @@ aside {
   form {
     width: 100%;
 
-    input[type="submit"] {
+    .submitBox {
       margin-top: 0;
     }
   }
@@ -853,6 +927,19 @@ aside {
 
       .borderSeven {
         right: 20%;
+        animation: border7ExpandSmall 1s linear;
+      }
+
+      @keyframes border7ExpandSmall {
+        0% {
+          opacity: 0;
+          right: 100%;
+        }
+
+        to {
+          opacity: 1;
+          right: 20%;
+        }
       }
 
       p {

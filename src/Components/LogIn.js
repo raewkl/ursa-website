@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import HeaderLogIn from "./HeaderLogIn";
-import Header from "./Header";
 
 class LogIn extends Component {
   constructor(props) {

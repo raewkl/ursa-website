@@ -24,9 +24,9 @@ const Footer = props => {
                 <li>Help & Support</li> */}
                 {/* <li>Privacy Policy</li>
                 <li>Terms Of Use</li> */}
-                <li>FAQ</li>
-                <li>Contact Us</li>
-                <li>Legal</li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#">Legal</a></li>
               </ul>
             </div>
           </div>
