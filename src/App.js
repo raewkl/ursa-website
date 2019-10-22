@@ -22,21 +22,23 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.listener = auth.onAuthStateChanged(user => {
-      if (user) {
-        this.setState({ 
-          user,
-          userId: user.uid
-         });
-      } else {
-        this.setState({
-          user: null,
-          userId: null
-        });
-      }
-    });
+    // this.listener = auth.onAuthStateChanged(user => {
+      // if (user) {
+      //   this.setState({ 
+      //     user,
+      //     userId: user.uid
+      //    });
+      // } 
+      
+      // else {
+      //   this.setState({
+      //     user: null,
+      //     userId: null
+      //   });
+      // }
+    // });
 
-    console.log("loading");
+    // console.log("loading");
   }
 
   updateUser = user => {

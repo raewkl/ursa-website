@@ -136,22 +136,25 @@ button {
   font-size: 0.8rem;
 }
 
-.sectionTwoUpper p:first-of-type, .sectionTwoBottom p:first-of-type {
-
+.sectionTwoUpper p:first-of-type,
+.sectionTwoBottom p:first-of-type {
   font-size: 0.8rem;
 }
 
+@media (max-width: 1317px) {
+
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
 @media (max-width: 500px) {
-
   .sectionThree p {
-  font-size: 0.7rem;
-}
+    font-size: 0.7rem;
+  }
 
-.sectionTwoUpper p:first-of-type, .sectionTwoBottom p:first-of-type {
-
-  font-size: 0.7rem;
-}
-
-
-
+  .sectionTwoUpper p:first-of-type,
+  .sectionTwoBottom p:first-of-type {
+    font-size: 0.7rem;
+  }
 }

@@ -85,7 +85,7 @@ class Dashboard extends Component {
 
   componentWillUnmount() {
     this.listener();
-    this.props.listener();
+    // this.props.listener();
   }
 
   handleChange = event => {

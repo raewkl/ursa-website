@@ -216,7 +216,7 @@ class LandingPage extends Component {
       config: config.molasses,
       from: { opacity: 0, left: -100 },
       to: { opacity: 1, left: 0 },
-      delay: 100
+      // delay: 500
     });
 
     return (
@@ -231,7 +231,7 @@ class LandingPage extends Component {
       config: config.molasses,
       from: { opacity: 0, bottom: -100 },
       to: { opacity: 1, bottom: 0 },
-      delay: 100
+      // delay: 500
     });
 
     return (
@@ -284,6 +284,7 @@ class LandingPage extends Component {
       <animated.div ref={ref} style={props} className="floatingPoints">
         <div className="circle1">&#x1f511;</div>
         <div className="circle2">&#128273;</div>
+        <div className="circle3">&#128273;</div>
       </animated.div>
     );
   };
