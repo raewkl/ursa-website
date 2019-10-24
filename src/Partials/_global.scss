@@ -1,13 +1,20 @@
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-$background: #fff4e9;
-// $background: #fcf0ec;
+// $background: white;
+$background2: #fcf0ec;
+$background3: #efeeff;
+// $background: #eefbff;
+// $background: #fafafa;
+$background: white;
 
 // Primary Colors
 
 $colorOne: #0000cc;
+$colorOneLight: rgba(0, 0, 204, 0.2);
+// $colorTwo: #0000cc;
 $colorTwo: #ff99cc;
 $colorThree: #434343;
 

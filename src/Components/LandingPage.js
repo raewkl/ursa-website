@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import LazyAnimation1 from "./Animations/SectionTwoUpper";
-import LazyAnimation5 from "./Animations/SectionTwoLower";
-import LazyAnimation8 from "./Animations/LazyAnimation8";
+import SectionTwoUpper from "./Animations/SectionTwoUpper";
+import StudentBenefits from "./Animations/StudentBenefits";
 import FormAnimation from "./Animations/FormAnimation";
 import NumbersAnimation from "./Animations/NumbersAnimation";
 import { useInView } from "react-intersection-observer";
@@ -224,7 +223,7 @@ class LandingPage extends Component {
 
     return (
       <animated.h1 style={props}>
-        <span>Turnkey ISA Solutions</span> for Schools
+        A better <span className="wayTo">way to</span> <span className="payFor">pay for </span><span className="education">education</span>
       </animated.h1>
     );
   };
@@ -240,8 +239,10 @@ class LandingPage extends Component {
     return (
       <animated.div style={props} className="landingPageText">
         <p>
-          Improve access, enrollment, and outcomes for students. We do the heavy
-          lifting <span>so you can focus on what’s important.</span>
+          Pay only
+          when you start working with Income Share Agreements. Learn more about
+          ISAs with Ursa.
+          {/* <span>so you can focus on what’s important.</span> */}
         </p>
 
         <ScrollLink
@@ -275,7 +276,8 @@ class LandingPage extends Component {
     return (
       <animated.div ref={ref} style={props} className="howItWorks">
         <h2>
-          How <span>it works</span>
+          {/* How <span>it works</span> */}
+          What’s an ISA?
         </h2>
       </animated.div>
     );
@@ -297,6 +299,7 @@ class LandingPage extends Component {
         <div className="circle1">&#x1f511;</div>
         <div className="circle2">&#128273;</div>
         <div className="circle3">&#128273;</div>
+        <div className="circle4">&#128273;</div>
       </animated.div>
     );
   };
@@ -334,12 +337,13 @@ class LandingPage extends Component {
 
     return (
       <animated.div ref={ref} style={props} className="requestIsa">
-        
-        <a href="#contact">
+        {/* <a href="#contact">
           <p>
             Request an ISA program at <span>your school ></span>
           </p>
-        </a>
+        </a> */}
+
+        <button className="requestIsa">Request ISA<span>s</span> for your program</button>
       </animated.div>
     );
   };
@@ -368,123 +372,123 @@ class LandingPage extends Component {
       <div className="noWrapper">
         <this.LazyAnimation6 />
 
-        <div className="wrapper landingPage">
+        <div className="landingPage">
           <main>
             {/* SECTION ONE */}
 
-            <section
-              className="sectionOne navSection scrollChild"
-              id="sectionOne"
-            >
-              <div className="sectionOneLeft">
-                <div className="titleBox">
-                  <this.LazyAnimation2 />
-                  <div className="borderSeven"></div>
+            <div className="sectionOneBg">
+              <section
+                className="sectionOne navSection scrollChild wrapper"
+                id="sectionOne"
+              >
+                <div className="sectionOneLeft">
+                  <div className="titleBox">
+                    <this.LazyAnimation2 />
+                    <div className="borderSeven"></div>
+                  </div>
+
+                  <this.LazyAnimation3 />
                 </div>
 
-                <this.LazyAnimation3 />
-              </div>
+                {/* <div className="imgBox">
+                  <img
+                    src={require("../Assets/Images/student_light.png")}
+                    alt=""
+                    className="boyImg"
+                  />
+                  <div className="shadow shadow1"></div>
+                </div> */}
+              </section>
 
-              <div className="imgBox">
-                <img
-                  src={require("../Assets/Images/student_light.png")}
-                  alt=""
-                  className="boyImg"
-                />
-                <div className="shadow shadow1"></div>
-              </div>
-            </section>
+              {/* <div className="diagonalBox">
+                <div className="diagonal1"></div>
+              </div> */}
+            </div>
 
             {/* SECTION TWO */}
 
-            <section className="sectionTwo scrollChild">
-              <section
-                className="sectionTwoUpper navSection"
-                id="sectionTwoUpper"
-              >
-                <div className="borderOne"></div>
-                <this.LazyAnimation4 />
-                <LazyAnimation1 />
+            <div className="sectionTwoBg">
+              <section className="sectionTwo scrollChild wrapper">
+                <section
+                  className="sectionTwoUpper navSection"
+                  id="sectionTwoUpper"
+                >
+                  {/* <div className="borderOne"></div> */}
+                  <this.LazyAnimation4 />
+
+                  <div className="isaDescription">
+                    <p>
+                      An <em>Income Share Agreement</em> lets you train in that
+                      field you want to work in without worrying about debt.
+                    </p>
+
+                    <p>
+                      We pay your tuition upfront, and you pay us a % of your
+                      income for a period of time once you start working.
+                    </p>
+                  </div>
+
+                  <SectionTwoUpper />
+
+                  <p className="institutions">
+                    We work with educational institutions in Canada and the US.
+                  </p>
+
+                  <button>Tell Me More</button>
+                </section>
               </section>
 
-              {/* SECTION TWO BOTTOM */}
-
-              <section className="sectionTwoBottom">
-                <div className="borderThree"></div>
-
-                <LazyAnimation5 />
-              </section>
-            </section>
+              {/* <div className="diagonalBox">
+                <div className="diagonal2"></div>
+              </div> */}
+            </div>
 
             {/* SECTION THREE */}
 
-            <section
-              className="sectionThree navSection scrollChild"
-              id="sectionThree"
-            >
-              <div className="borderFour"></div>
-              <this.LazyAnimation7 />
+            <div className="sectionThreeBg">
+              <section
+                className="sectionThree navSection scrollChild wrapper"
+                id="sectionThree"
+              >
+                {/* <div className="borderFour"></div> */}
+                <this.LazyAnimation7 />
 
-              <LazyAnimation8 />
+                <StudentBenefits />
 
-              <this.LazyAnimation9 />
+                <this.LazyAnimation9 />
 
-              {/* <div className="sec3ImgBox1">
-                <img
-                  src={require("../Assets/Images/3d_tree4_light.png")}
-                  alt={"Ursa Logo"}
-                />
-              </div>
-              <div className="sec3ImgBox2">
-                <img
-                  src={require("../Assets/Images/3d_tree3_dark.png")}
-                  alt={"Ursa Logo"}
-                />
-              </div> */}
-            </section>
+                {/* <div className="sec3ImgBox1">
+                  <img
+                    src={require("../Assets/Images/3d_tree4_light.png")}
+                    alt={"Ursa Logo"}
+                  />
+                </div>
+                <div className="sec3ImgBox2">
+                  <img
+                    src={require("../Assets/Images/3d_tree3_dark.png")}
+                    alt={"Ursa Logo"}
+                  />
+                </div> */}
+              </section>
+            </div>
 
             {/* CONTACT*/}
 
-            <section className="contact navSection scrollChild" id="contact">
-              <div className="borderFive"></div>
-              <div className="borderSix"></div>
-              <div className="circleEnd"></div>
+            <div className="contactBg">
+              <section
+                className="contact navSection scrollChild wrapper"
+                id="contact"
+              >
+                <this.LazyAnimation10 />
 
-              {/* <div className="conImgBox1">
-                <img
-                  src={require("../Assets/Images/3d_acorn_light2.png")}
-                  alt={"Ursa Logo"}
-                />
-              </div>
-              <div className="conImgBox2">
-                <img
-                  src={require("../Assets/Images/3d_tree2_light.png")}
-                  alt={"Ursa Logo"}
-                />
-              </div>
-              <div className="conImgBox3">
-                <img
-                  src={require("../Assets/Images/3d_tree3_dark.png")}
-                  alt={"Ursa Logo"}
-                />
-              </div>
-              <div className="conImgBox4">
-                <img
-                  src={require("../Assets/Images/3d_acorn_dark1.png")}
-                  alt={"Ursa Logo"}
-                />
-              </div> */}
+                <div className="formAsideBox">
+                  <FormAnimation />
+                  <NumbersAnimation />
+                </div>
+              </section>
 
-              <this.LazyAnimation10 />
-              {/* <h2>
-                Contact <span>Us</span>
-              </h2> */}
-
-              <div className="formAsideBox">
-                <FormAnimation />
-                <NumbersAnimation />
-              </div>
-            </section>
+              <div className="contactBgSub"></div>
+            </div>
           </main>
         </div>
       </div>

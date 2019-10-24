@@ -119,41 +119,6 @@ const FormAnimation = () => {
               {/* </div> */}
             </div>
           </fieldset>
-
-          {/* <div className="numberBox">
-                        <label htmlFor="length" className="visuallyHidden">
-                          Enter program length in months
-                        </label>
-                        <input
-                          type="number"
-                          name="length"
-                          id="length"
-                          placeholder="Program Length (Months)"
-                          className="formLength"
-                        />
-  
-                        <label htmlFor="cost" className="visuallyHidden">
-                          Enter program cost in dollars
-                        </label>
-                        <input
-                          type="number"
-                          name="cost"
-                          id="cost"
-                          placeholder="Program Cost (USD)"
-                          className="formCost"
-                        />
-  
-                        <label htmlFor="students" className="visuallyHidden">
-                          Enter number of students in program
-                        </label>
-                        <input
-                          type="number"
-                          name="students"
-                          id="students"
-                          placeholder="# Of Students"
-                          className="formStudents"
-                        />
-                      </div> */}
         </div>
 
         <div className="lowerForm">
