@@ -1,10 +1,10 @@
-.footerBg {
-  background-color: $background3;
-}
-
 footer {
   padding-top: 5vh;
   border-top: 1px solid $colorOne;
+}
+
+.footerBg {
+  background-color: $background3;
 }
 
 .upperFooter {
@@ -124,7 +124,7 @@ footer {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .leftFooter {
     .footMotto {
       font-size: 1.2rem;

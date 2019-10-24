@@ -170,14 +170,3 @@ button {
     font-size: 4rem;
   }
 }
-
-@media (max-width: 500px) {
-  .sectionThree p {
-    font-size: 0.7rem;
-  }
-
-  .sectionTwoUpper p:first-of-type,
-  .sectionTwoBottom p:first-of-type {
-    font-size: 0.7rem;
-  }
-}
