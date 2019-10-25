@@ -150,7 +150,7 @@ const Header = props => {
         </animated.div>
       </div>
 
-      {/* <div className="sideNav">
+      <div className="sideNav">
         <ul className="sideNavLower">
           <ScrollLink
             activeClass="active"
@@ -202,7 +202,7 @@ const Header = props => {
           </ScrollLink>
         </ul>
         <div className="circle" id="circle"></div>
-      </div> */}
+      </div>
     </header>
   );
 };

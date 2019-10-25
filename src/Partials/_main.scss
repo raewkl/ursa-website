@@ -23,8 +23,8 @@
   position: absolute;
   font-size: 2.5rem;
   bottom: 0;
-  left: 15%;
-  animation: float1 15s linear infinite;
+  left: 7%;
+  animation: float1 14s linear infinite;
   z-index: -20;
 }
 
@@ -32,27 +32,79 @@
   font-size: 1.8rem;
   position: absolute;
   bottom: 0;
-  right: 40%;
-  animation: float2 12s linear infinite;
+  right: 28%;
+  animation: float2 19s linear 2s infinite;
   z-index: -20;
 }
 
-.circle3 {
-  font-size: 3rem;
-  position: absolute;
-  bottom: 0;
-  right: 30%;
-  animation: float3 22s linear infinite;
-  z-index: -20;
-}
+// .circle3 {
+//   font-size: 3rem;
+//   position: absolute;
+//   bottom: 0;
+//   right: 20%;
+//   animation: float3 14s ease-in-out 1s infinite;
+//   z-index: -20;
+// }
 
 .circle4 {
   font-size: 8rem;
   position: absolute;
-  bottom: 0;
-  right: 10%;
-  animation: float4 35s linear infinite;
+  bottom: -150px;
+  right: 12%;
+  animation: float4 28s linear 5s infinite;
   z-index: 15;
+}
+
+.circle5 {
+  height: 15px;
+  width: 15px;
+  background-color: $colorTwo;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 0;
+  left: 6%;
+  animation: float5 9s linear 5s infinite;
+  z-index: -20;
+}
+
+.circle6 {
+  height: 10px;
+  width: 10px;
+  background-color: $colorOne;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  animation: float5 9s linear 2s infinite;
+  z-index: -20;
+}
+
+.circle7 {
+  height: 30px;
+  width: 30px;
+  background-color: $colorFour;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 0;
+  right: 8%;
+  animation: float5 7s linear 1s infinite;
+  z-index: -20;
+}
+
+.circle8 {
+  height: 22px;
+  width: 22px;
+  background-color: $colorFive;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 0;
+  left: 12%;
+  animation: float5 13s linear 4s infinite;
+  z-index: -20;
 }
 
 @keyframes float1 {
@@ -60,7 +112,7 @@
     transform: translateY(0px) rotate(20deg);
     opacity: 0;
   }
-  5% {
+  10% {
     opacity: 0.5;
   }
   100% {
@@ -74,11 +126,11 @@
     transform: translateY(0px) rotate(0);
     opacity: 0;
   }
-  5% {
+  10% {
     opacity: 0.3;
   }
   100% {
-    transform: translateY(-105vh) rotate(90deg);
+    transform: translateY(-105vh) rotate(-90deg);
     opacity: 0.3;
   }
 }
@@ -88,7 +140,7 @@
     transform: translateY(50px) rotate(-80deg);
     opacity: 0;
   }
-  15% {
+  10% {
     opacity: 0.4;
   }
   100% {
@@ -102,16 +154,39 @@
     transform: translateY(50px);
     opacity: 0;
   }
-  15% {
+  35% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-105vh) rotate(60deg);
+    transform: translateY(-135vh) rotate(60deg);
+    opacity: 1;
   }
 }
 
-.sectionOne {
-  height: 90.5vh;
+@keyframes float5 {
+  0% {
+    transform: translateY(0px) rotate(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-105vh) rotate(90deg);
+    opacity: 1;
+  }
+}
+
+.sectionOneBg {
+  position: relative;
+
+  .circleTextBox {
+    width: 220px;
+    bottom: -8vh;
+    right: 2%;
+    position: absolute;
+    z-index: 40;
+  }
 }
 
 .landingPage {
@@ -124,19 +199,42 @@
 }
 
 .sectionOne {
+
+  height: 88vh;
   display: flex;
   position: relative;
+  padding-top: 84px;
 
-  .landingPageText {
+  .landingPageTextSub {
     position: relative;
-    z-index: 10;
+    margin: 40px 0 47px 0;
+  }
+
+  .arrowBoxS1 {
+    width: 9px;
+    position: absolute;
+    left: -10.2%;
+    bottom: 8px;
+
+    .arrowImg {
+      width: 100%;
+    }
   }
 
   button {
-    margin-top: 2vh;
+    margin-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+
+    .fa-arrow-up {
+      transform: rotate(180deg);
+    }
+
+    &:hover {
+      background-color: $colorTwo;
+    }
 
     &:hover .fa-arrow-up {
       animation: arrowPoint 1s ease-out infinite;
@@ -145,10 +243,10 @@
 
   @keyframes arrowPoint {
     from {
-      transform: translate(-2px, 2px) rotate(45deg);
+      transform: translate(0px, 0px) rotate(180deg);
     }
     to {
-      transform: translate(3px, -3px) rotate(45deg);
+      transform: translate(0px, 4px) rotate(180deg);
     }
   }
 
@@ -156,29 +254,40 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: calc(80%);
+    width: calc(100%);
+    // padding-left: 9%;
 
     .titleBox {
       position: relative;
       z-index: 10;
+      padding-left: 9%;
+
+      // &:before {
+      //   content: "";
+      //   position: absolute;
+      //   left: calc(50% - 475px);
+      //   top: 55px;
+      //   bottom: 40px;
+      //   background-color: $colorTwoLight;
+      //   width: 950px;
+      // }
     }
 
     h1 {
-      padding-bottom: 50px;
-
-      .forEducation {
-        display: block;
-        white-space: nowrap;
-      }
+      text-align: left;
+      // padding-left: 9%;
     }
 
-    .borderSeven {
-      top: 0;
-      left: 0;
-      right: 200px;
-      bottom: 0;
-      border-bottom: 1px solid $colorOne;
-      animation: border7ExpandLarge 1s linear;
+    .forEdu {
+      display: block;
+    }
+
+    .landingPageText {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
     }
 
     @keyframes border7ExpandLarge {
@@ -194,15 +303,21 @@
     }
 
     p {
-      margin: 40px 0;
-      width: calc(100% - 200px);
+      text-align: left;
+      // margin: 40px 0 47px 0;
+      // background-color: $colorFour;
+      // padding: 0 10px;
+
+      span {
+        font-weight: 500;
+      }
+      // width: calc(100% - 200px);
     }
   }
 }
 
 .sectionTwo {
   padding: 9vh 0;
-
 
   .isaDescription {
     margin-top: 8vh;
@@ -221,8 +336,7 @@
 .sectionTwoBg {
   position: relative;
   z-index: 20;
-      background-color: $background2;
-
+  background-color: $background2;
 }
 
 .sectionTwoUpper {
@@ -232,6 +346,11 @@
   justify-content: center;
   align-items: center;
   padding: 0 0 0 0;
+
+  .sectionTwoLower {
+    width: 100%;
+    position: relative;
+  }
 
   .isaDescription {
     p:first-child {
@@ -243,6 +362,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
     width: 100%;
     margin: 8vh 0 8vh 0;
   }
@@ -251,17 +371,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: $background;
 
     border-radius: 25px;
     width: 260px;
     min-height: 200px;
     padding: 30px;
     text-align: center;
-    background-color: $background;
+    background-color: $colorOne;
 
     &:hover {
       box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.07);
-      background-color: $background;
+      background-color: $colorTwo;
     }
 
     .emoji {
@@ -393,6 +514,10 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.contactUs {
+  position: relative;
 }
 
 .contact {
@@ -566,6 +691,11 @@ form {
 .asideBox {
   height: 100%;
   position: relative;
+
+  // &:hover aside, &:hover aside:before {
+  //   border: 2px solid $colorTwo;
+  //   color: $colorTwo;
+  // }
 }
 
 aside {
@@ -632,7 +762,6 @@ aside {
 
 @media (max-width: 1406px) {
   .sectionTwoUpper {
-
     ul {
       margin: 6vh 0;
     }
@@ -655,6 +784,19 @@ aside {
 }
 
 @media (max-width: 1317px) {
+  .sectionOne {
+    .sectionOneLeft {
+      .titleBox {
+        &:before {
+          left: calc(50% - 390px);
+          top: 45px;
+          bottom: 34px;
+          width: 780px;
+        }
+      }
+    }
+  }
+
   .formAsideBox {
     flex-direction: column;
   }
@@ -693,7 +835,7 @@ aside {
     .fact2,
     .fact3 {
       width: calc(100% / 3);
-      margin:  3.6vh 0 3.4vh 0;
+      margin: 3.6vh 0 3.4vh 0;
     }
 
     .motto {
@@ -709,18 +851,21 @@ aside {
 @media (max-width: 1119px) {
   .sectionOne {
     .sectionOneLeft {
-      width: auto;
-
       h1 {
         font-size: 3.5rem;
         span {
           white-space: normal;
         }
       }
-    }
 
-    .imgBox {
-      width: 400px;
+      .titleBox {
+        &:before {
+          left: calc(50% - 345px);
+          top: 40px;
+          bottom: 29px;
+          width: 690px;
+        }
+      }
     }
   }
 }
@@ -732,9 +877,13 @@ aside {
         font-size: 3rem;
       }
 
-      .borderSeven {
-        right: 20%;
-        animation: border7ExpandSmall 1s linear;
+      .titleBox {
+        &:before {
+          left: calc(50% - 295px);
+          top: 34px;
+          bottom: 25px;
+          width: 590px;
+        }
       }
 
       @keyframes border7ExpandSmall {
@@ -825,7 +974,23 @@ aside {
   }
 }
 
-@media (max-width: 715px) {
+@media (max-width: 720px) {
+  .sectionOne {
+    .sectionOneLeft {
+      h1 {
+        .forEdu {
+          display: inline;
+        }
+      }
+
+      .titleBox {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
   .sectionTwoUpper {
     ul {
       flex-direction: column;
@@ -886,7 +1051,6 @@ aside {
 }
 
 @media (max-width: 500px) {
-
   .circle4 {
     font-size: 4.5rem;
   }
@@ -952,7 +1116,6 @@ aside {
 }
 
 @media (max-width: 380px) {
-
   h2 {
     font-size: 1.7rem;
   }
@@ -975,12 +1138,10 @@ aside {
 
 @media (max-width: 500px) and (max-height: 750px) {
   .sectionOne {
-
     height: calc(100vh);
     padding-top: 12vh;
 
     .sectionOneLeft {
-      
       justify-content: center;
     }
   }

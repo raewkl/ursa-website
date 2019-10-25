@@ -8,210 +8,218 @@ import { useSpring, animated, config } from "react-spring";
 import * as Scroll from "react-scroll";
 
 let ScrollLink = Scroll.Link;
-// let scrollPos = 0;
+let scrollPos = 0;
 
 class LandingPage extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   sectionOne: false,
-    //   sectionTwo: false,
-    //   sectionThree: false,
-    //   contact: false
-    // };
+    this.state = {
+      sectionOne: false,
+      sectionTwo: false,
+      sectionThree: false,
+      contact: false
+    };
   }
 
   componentDidMount() {
     // check if in contact for initial circle position
-    // this.setState(
-    //   {
-    //     sectionOne: true,
-    //     sectionTwo: false,
-    //     sectionThree: false,
-    //     contact: false
-    //   },
-    //   () => {
-    // this.circleAnimations("", this.scrollHeight());
-    // window.addEventListener("scroll", this.scrollDirection, false);
-    // }
-    // );
+    this.setState(
+      {
+        sectionOne: true,
+        sectionTwo: false,
+        sectionThree: false,
+        contact: false
+      },
+      () => {
+        // this.circleAnimations("", this.scrollHeight());
+        window.addEventListener("scroll", this.scrollDirection, false);
+      }
+    );
   }
-
-  // useOnScreen = (options) => {
-
-  //   const
-
-  // }
 
   componentWillUnmount() {
-    // window.removeEventListener("scroll", this.scrollDirection, false);
+    window.removeEventListener("scroll", this.scrollDirection, false);
   }
 
-  // scrollDirection = () => {
-  //   const circle = document.getElementById("circle");
+  scrollDirection = () => {
+    this.scrollHeight();
 
-  //   if (circle) {
-  //     let percentage = this.scrollHeight();
+    // const circle = document.getElementById("circle");
 
-  //     if (document.body.getBoundingClientRect().top > scrollPos) {
-  //       // scroll up
-  //       this.circleAnimations("-", percentage);
-  //     } else {
-  //       // scroll down
-  //       this.circleAnimations("", percentage);
-  //     }
+    // if (circle) {
+    //   let percentage = this.scrollHeight();
 
-  //     // saves the new position for iteration.
-  //     scrollPos = document.body.getBoundingClientRect().top;
-  //   }
-  // };
+    //   if (document.body.getBoundingClientRect().top > scrollPos) {
+    //     // scroll up
+    //     this.circleAnimations("-", percentage);
+    //   } else {
+    //     // scroll down
+    //     this.circleAnimations("", percentage);
+    //   }
 
-  // getDocHeight = () => {
-  //   let d = document;
-  //   return Math.max(
-  //     d.body.scrollHeight,
-  //     d.documentElement.scrollHeight,
-  //     d.body.offsetHeight,
-  //     d.documentElement.offsetHeight,
-  //     d.body.clientHeight,
-  //     d.documentElement.clientHeight
-  //   );
-  // };
+    //   // saves the new position for iteration.
+    //   scrollPos = document.body.getBoundingClientRect().top;
+    // }
+  };
 
-  // scrollHeight = () => {
-  //   const winHeight =
-  //     window.innerHeight ||
-  //     (document.documentElement || document.body).clientHeight;
+  getDocHeight = () => {
+    let d = document;
+    return Math.max(
+      d.body.scrollHeight,
+      d.documentElement.scrollHeight,
+      d.body.offsetHeight,
+      d.documentElement.offsetHeight,
+      d.body.clientHeight,
+      d.documentElement.clientHeight
+    );
+  };
 
-  //   const docHeight = this.getDocHeight();
+  scrollHeight = () => {
+    const winHeight =
+      window.innerHeight ||
+      (document.documentElement || document.body).clientHeight;
 
-  //   const scrollTop =
-  //     window.pageYOffset ||
-  //     (document.documentElement || document.body.parentNode || document.body)
-  //       .scrollTop;
+    const docHeight = this.getDocHeight();
 
-  //   const trackLength = docHeight - winHeight;
-  //   const percentScrolled = (scrollTop / trackLength) * 100;
+    const scrollTop =
+      window.pageYOffset ||
+      (document.documentElement || document.body.parentNode || document.body)
+        .scrollTop;
 
-  //   return percentScrolled;
-  // };
+    const trackLength = docHeight - winHeight;
+    const percentScrolled = (scrollTop / trackLength) * 100;
 
-  // removeClasses = (target, classes) => {
-  //   const circle = target;
-  //   const animClasses = classes;
+    this.circleTextAnimation(percentScrolled);
 
-  //   animClasses.forEach(i => {
-  //     circle.classList.remove(i);
-  //   });
-  // };
+    return percentScrolled;
+  };
 
-  // circleAnimations = (vector, height) => {
-  //   const circle = document.getElementById("circle");
+  removeClasses = (target, classes) => {
+    const circle = target;
+    const animClasses = classes;
 
-  //   const animationClasses = [
-  //     "circle12",
-  //     "circle23",
-  //     "circle34",
-  //     "circle21",
-  //     "circle32",
-  //     "circle43"
-  //   ];
+    animClasses.forEach(i => {
+      circle.classList.remove(i);
+    });
+  };
 
-  //   let percentage = height;
-  //   let animationVector = vector;
+  circleAnimations = (vector, height) => {
+    const circle = document.getElementById("circle");
 
-  //   if (animationVector === "-") {
-  //     if (percentage < 15 && !this.state.sectionOne) {
-  //       this.setState(
-  //         {
-  //           sectionOne: true,
-  //           sectionTwo: false,
-  //           sectionThree: false,
-  //           contact: false
-  //         },
-  //         () => {
-  //           this.removeClasses(circle, animationClasses);
-  //           circle.classList.add("circle21");
-  //         }
-  //       );
-  //     } else if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
-  //       this.setState(
-  //         {
-  //           sectionOne: false,
-  //           sectionTwo: true,
-  //           sectionThree: false,
-  //           contact: false
-  //         },
-  //         () => {
-  //           this.removeClasses(circle, animationClasses);
-  //           circle.classList.add("circle32");
-  //         }
-  //       );
-  //     } else if (
-  //       percentage > 48 &&
-  //       percentage < 78 &&
-  //       !this.state.sectionThree
-  //     ) {
-  //       this.setState(
-  //         {
-  //           sectionOne: false,
-  //           sectionTwo: false,
-  //           sectionThree: true,
-  //           contact: false
-  //         },
-  //         () => {
-  //           this.removeClasses(circle, animationClasses);
-  //           circle.classList.add("circle43");
-  //         }
-  //       );
-  //     }
-  //   } else {
-  //     if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
-  //       this.setState(
-  //         {
-  //           sectionOne: false,
-  //           sectionTwo: true,
-  //           sectionThree: false,
-  //           contact: false
-  //         },
-  //         () => {
-  //           this.removeClasses(circle, animationClasses);
-  //           circle.classList.add("circle12");
-  //         }
-  //       );
-  //     } else if (
-  //       percentage > 48 &&
-  //       percentage < 78 &&
-  //       !this.state.sectionThree
-  //     ) {
-  //       this.setState(
-  //         {
-  //           sectionOne: false,
-  //           sectionTwo: false,
-  //           sectionThree: true,
-  //           contact: false
-  //         },
-  //         () => {
-  //           this.removeClasses(circle, animationClasses);
-  //           circle.classList.add("circle23");
-  //         }
-  //       );
-  //     } else if (percentage > 78 && !this.state.contact) {
-  //       this.setState(
-  //         {
-  //           sectionOne: false,
-  //           sectionTwo: false,
-  //           sectionThree: false,
-  //           contact: true
-  //         },
-  //         () => {
-  //           this.removeClasses(circle, animationClasses);
-  //           circle.classList.add("circle34");
-  //         }
-  //       );
-  //     }
-  //   }
-  // };
+    const animationClasses = [
+      "circle12",
+      "circle23",
+      "circle34",
+      "circle21",
+      "circle32",
+      "circle43"
+    ];
+
+    let percentage = height;
+    let animationVector = vector;
+
+    if (animationVector === "-") {
+      if (percentage < 15 && !this.state.sectionOne) {
+        this.setState(
+          {
+            sectionOne: true,
+            sectionTwo: false,
+            sectionThree: false,
+            contact: false
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle21");
+          }
+        );
+      } else if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
+        this.setState(
+          {
+            sectionOne: false,
+            sectionTwo: true,
+            sectionThree: false,
+            contact: false
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle32");
+          }
+        );
+      } else if (
+        percentage > 48 &&
+        percentage < 78 &&
+        !this.state.sectionThree
+      ) {
+        this.setState(
+          {
+            sectionOne: false,
+            sectionTwo: false,
+            sectionThree: true,
+            contact: false
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle43");
+          }
+        );
+      }
+    } else {
+      if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
+        this.setState(
+          {
+            sectionOne: false,
+            sectionTwo: true,
+            sectionThree: false,
+            contact: false
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle12");
+          }
+        );
+      } else if (
+        percentage > 48 &&
+        percentage < 78 &&
+        !this.state.sectionThree
+      ) {
+        this.setState(
+          {
+            sectionOne: false,
+            sectionTwo: false,
+            sectionThree: true,
+            contact: false
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle23");
+          }
+        );
+      } else if (percentage > 78 && !this.state.contact) {
+        this.setState(
+          {
+            sectionOne: false,
+            sectionTwo: false,
+            sectionThree: false,
+            contact: true
+          },
+          () => {
+            this.removeClasses(circle, animationClasses);
+            circle.classList.add("circle34");
+          }
+        );
+      }
+    }
+  };
+
+  circleTextAnimation = (scrollPercentage) => {
+
+    // select circleTextBox 
+    const circleTextBox = document.getElementById("circleTextBox");
+
+    // set css transform rotate to percentage
+    circleTextBox.style.transform = "rotate(" + scrollPercentage*3 + "deg)";
+
+  }
 
   LazyAnimation2 = () => {
     const props = useSpring({
@@ -223,7 +231,7 @@ class LandingPage extends Component {
 
     return (
       <animated.h1 style={props}>
-        A better <span className="wayTo">way to</span> <span className="payFor">pay for </span><span className="education">education</span>
+        A better way to pay <span className="forEdu">for education.</span>
       </animated.h1>
     );
   };
@@ -238,12 +246,19 @@ class LandingPage extends Component {
 
     return (
       <animated.div style={props} className="landingPageText">
-        <p>
-          Pay only
-          when you start working with Income Share Agreements. Learn more about
-          ISAs with Ursa.
-          {/* <span>so you can focus on what’s important.</span> */}
-        </p>
+        <div className="landingPageTextSub">
+          <div className="arrowBoxS1">
+            <img
+              src={require("../Assets/Images/arrowTwo.svg")}
+              alt=""
+              className="arrowImg"
+            />
+          </div>
+          <p>
+            Pay only when you start working with{" "}
+            <span>Income Share Agreements.</span>
+          </p>
+        </div>
 
         <ScrollLink
           activeClass="active"
@@ -254,7 +269,8 @@ class LandingPage extends Component {
           duration={500}
         >
           <button>
-            Learn More<i className="fas fa-arrow-up"></i>
+            Learn More
+            {/* <i className="fas fa-arrow-up"></i> */}
           </button>
         </ScrollLink>
       </animated.div>
@@ -298,8 +314,13 @@ class LandingPage extends Component {
       <animated.div ref={ref} style={props} className="floatingPoints">
         <div className="circle1">&#x1f511;</div>
         <div className="circle2">&#128273;</div>
-        <div className="circle3">&#128273;</div>
+        {/* <div className="circle3">&#128273;</div> */}
         <div className="circle4">&#128273;</div>
+
+        <div className="circle5"></div>
+        <div className="circle6"></div>
+        <div className="circle7"></div>
+        <div className="circle8"></div>
       </animated.div>
     );
   };
@@ -318,7 +339,7 @@ class LandingPage extends Component {
 
     return (
       <animated.h2 ref={ref} style={props} className="studentBenefits">
-        Student <span>benefits</span>
+        Student Benefits
       </animated.h2>
     );
   };
@@ -337,13 +358,9 @@ class LandingPage extends Component {
 
     return (
       <animated.div ref={ref} style={props} className="requestIsa">
-        {/* <a href="#contact">
-          <p>
-            Request an ISA program at <span>your school ></span>
-          </p>
-        </a> */}
-
-        <button className="requestIsa">Request ISA<span>s</span> for your program</button>
+        <button className="requestIsa">
+          Request ISA<span>s</span> for your program
+        </button>
       </animated.div>
     );
   };
@@ -356,13 +373,13 @@ class LandingPage extends Component {
 
     const props = useSpring({
       opacity: inView ? 1 : 0,
-      right: inView ? 0 : 50,
+      left: inView ? 0 : 50,
       config: config.default
     });
 
     return (
       <animated.h2 ref={ref} style={props} className="contactUs">
-        Contact <span>Us</span>
+        Contact Us
       </animated.h2>
     );
   };
@@ -377,6 +394,13 @@ class LandingPage extends Component {
             {/* SECTION ONE */}
 
             <div className="sectionOneBg">
+              <div className="circleTextBox" id="circleTextBox">
+                <img
+                  src={require("../Assets/Images/circleText2.svg")}
+                  alt=""
+                  className="circleTextImg"
+                />
+              </div>
               <section
                 className="sectionOne navSection scrollChild wrapper"
                 id="sectionOne"
@@ -384,10 +408,10 @@ class LandingPage extends Component {
                 <div className="sectionOneLeft">
                   <div className="titleBox">
                     <this.LazyAnimation2 />
-                    <div className="borderSeven"></div>
-                  </div>
+                    {/* <div className="borderSeven"></div> */}
 
-                  <this.LazyAnimation3 />
+                    <this.LazyAnimation3 />
+                  </div>
                 </div>
 
                 {/* <div className="imgBox">
@@ -413,26 +437,9 @@ class LandingPage extends Component {
                   className="sectionTwoUpper navSection"
                   id="sectionTwoUpper"
                 >
-                  {/* <div className="borderOne"></div> */}
                   <this.LazyAnimation4 />
 
-                  <div className="isaDescription">
-                    <p>
-                      An <em>Income Share Agreement</em> lets you train in that
-                      field you want to work in without worrying about debt.
-                    </p>
-
-                    <p>
-                      We pay your tuition upfront, and you pay us a % of your
-                      income for a period of time once you start working.
-                    </p>
-                  </div>
-
                   <SectionTwoUpper />
-
-                  <p className="institutions">
-                    We work with educational institutions in Canada and the US.
-                  </p>
 
                   <button>Tell Me More</button>
                 </section>

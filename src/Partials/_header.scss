@@ -7,8 +7,8 @@
   left: 0;
   right: 0;
   top: 0;
-  height: 7vh;
-  background-image: linear-gradient($background, rgba(255, 244, 233, 0));
+  height: 85px;
+  // background-image: linear-gradient($background, rgba(109, 65, 21, 0));
   z-index: 80;
 }
 
@@ -29,7 +29,7 @@
   z-index: 100;
   left: 10%;
   right: 10%;
-  top: 20px;
+  top: 15px;
 
   margin: 0 auto;
   max-width: 1280px;
@@ -103,19 +103,7 @@
       color: $background;
 
       &:hover {
-        // animation: toWhite 0.3s linear forwards;
-        background-color: white;
-        color: $colorOne;
-      }
-    }
-
-    @keyframes toWhite {
-      from {
-        background-color: $colorOne;
-        color: $background;
-      }
-      to {
-        background-color: white;
+        background-color: $colorTwo;
         color: $colorOne;
       }
     }
@@ -314,133 +302,136 @@
   }
 }
 
-.sideNav {
-  display: flex;
-  justify-content: center;
+// .sideNav {
+//   display: flex;
+//   justify-content: center;
 
-  position: fixed;
-  left: 0%;
-  width: 10%;
-  top: calc(50% - 200px);
+//   position: fixed;
+//   left: 0%;
+//   width: 10%;
+//   top: calc(50% - 200px);
 
-  ul {
-    padding: 2px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 400px;
-    position: relative;
-    width: 20px;
-  }
+//   z-index: 50;
 
-  li {
-    border-radius: 50%;
-  }
+//   ul {
+//     padding: 2px 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-between;
+//     height: 400px;
+//     position: relative;
+//     width: 20px;
+//   }
 
-  .dot {
-    width: 6px;
-    height: 6px;
-    margin: 5px;
-    border-radius: 50%;
-    background-color: $colorOne;
-  }
+//   li {
+//     border-radius: 50%;
+//   }
 
-  .circle {
-    height: 20px;
-    width: 20px;
-    border: 1px solid $colorOne;
-    // background-color: $colorOne;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-  }
+//   .dot {
+//     width: 6px;
+//     height: 6px;
+//     margin: 5px;
+//     border-radius: 50%;
+//     background-color: $colorOne;
+//   }
 
-  $distance: 126.7px;
-  $distance2: 253.4px;
-  $distance3: 380.1px;
+//   .circle {
+//     height: 20px;
+//     width: 20px;
+//     border: 1px solid $colorOne;
+//     // background-color: $colorOne;
+//     border-radius: 50%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     margin: 0 auto;
+//     // z-index: -1;
+//   }
 
-  .circle12 {
-    animation: circle12 0.1s linear 1 forwards;
-  }
+//   $distance: 126.7px;
+//   $distance2: 253.4px;
+//   $distance3: 380.1px;
 
-  @keyframes circle12 {
-    from {
-      top: 0;
-    }
-    to {
-      top: $distance;
-    }
-  }
+//   .circle12 {
+//     animation: circle12 0.1s linear 1 forwards;
+//   }
 
-  .circle23 {
-    animation: circle23 0.1s linear 1 forwards;
-  }
+//   @keyframes circle12 {
+//     from {
+//       top: 0;
+//     }
+//     to {
+//       top: $distance;
+//     }
+//   }
 
-  @keyframes circle23 {
-    from {
-      top: $distance;
-    }
-    to {
-      top: $distance2;
-    }
-  }
+//   .circle23 {
+//     animation: circle23 0.1s linear 1 forwards;
+//   }
 
-  .circle34 {
-    animation: circle34 0.1s linear 1 forwards;
-  }
+//   @keyframes circle23 {
+//     from {
+//       top: $distance;
+//     }
+//     to {
+//       top: $distance2;
+//     }
+//   }
 
-  @keyframes circle34 {
-    from {
-      top: $distance2;
-    }
-    to {
-      top: $distance3;
-    }
-  }
+//   .circle34 {
+//     animation: circle34 0.1s linear 1 forwards;
+//   }
 
-  .circle21 {
-    animation: circle21 0.1s linear 1 forwards;
-  }
+//   @keyframes circle34 {
+//     from {
+//       top: $distance2;
+//     }
+//     to {
+//       top: $distance3;
+//     }
+//   }
 
-  @keyframes circle21 {
-    from {
-      top: $distance;
-    }
-    to {
-      top: 0;
-    }
-  }
+//   .circle21 {
+//     animation: circle21 0.1s linear 1 forwards;
+//   }
 
-  .circle32 {
-    animation: circle32 0.1s linear 1 forwards;
-  }
+//   @keyframes circle21 {
+//     from {
+//       top: $distance;
+//     }
+//     to {
+//       top: 0;
+//     }
+//   }
 
-  @keyframes circle32 {
-    from {
-      top: $distance2;
-    }
-    to {
-      top: $distance;
-    }
-  }
+//   .circle32 {
+//     animation: circle32 0.1s linear 1 forwards;
+//   }
 
-  .circle43 {
-    animation: circle43 0.1s linear 1 forwards;
-  }
+//   @keyframes circle32 {
+//     from {
+//       top: $distance2;
+//     }
+//     to {
+//       top: $distance;
+//     }
+//   }
 
-  @keyframes circle43 {
-    from {
-      top: $distance3;
-    }
-    to {
-      top: $distance2;
-    }
-  }
-}
+//   .circle43 {
+//     animation: circle43 0.1s linear 1 forwards;
+//   }
+
+//   @keyframes circle43 {
+//     from {
+//       top: $distance3;
+//     }
+//     to {
+//       top: $distance2;
+//     }
+//   }
+// }
 
 @media (max-width: 500px) {
   .sideNav {
@@ -460,5 +451,9 @@
   .miniNav,
   .navCircle {
     display: block;
+  }
+
+  .topBarContainer {
+    height: 67px;
   }
 }
