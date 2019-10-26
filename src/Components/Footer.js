@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Footer = props => {
@@ -15,9 +16,11 @@ const Footer = props => {
                 />
               </div>
             </HashLink>
-  
+
             <div className="footerText">
-              <p className="footMotto">Forward <span>Together</span></p>
+              <p className="footMotto">
+                Forward <span>Together</span>
+              </p>
               <div className="footerLinks">
                 <ul>
                   {/* <li>Company</li> */}
@@ -25,14 +28,23 @@ const Footer = props => {
                   <li>Help & Support</li> */}
                   {/* <li>Privacy Policy</li>
                   <li>Terms Of Use</li> */}
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#contact">Contact Us</a></li>
-                  <li><a href="#">Legal</a></li>
+
+                  <li>
+                    <Link to="/faq" className="logIn">
+                      FAQ
+                    </Link>
+                  </li>
+                  <li>
+                    <a href="#contact">Contact Us</a>
+                  </li>
+                  <li>
+                    <a href="#">Legal</a>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
-  
+
           <div className="rightFooter">
             <ul>
               <li>
@@ -47,7 +59,7 @@ const Footer = props => {
             </ul>
           </div>
         </div>
-  
+
         <div className="bottomFooter">
           <p>&copy; 2019 Ursa Inc.</p>
           <a href="#">

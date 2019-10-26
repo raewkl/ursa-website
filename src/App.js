@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 import LogIn from "./Components/LogIn";
 import Header from "./Components/Header";
 import Dashboard from "./Components/Dashboard";
+import Faq from "./Components/Faq";
 
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
@@ -17,8 +18,7 @@ class App extends Component {
     super();
     this.state = {
       user: null,
-      userId: null,
-      // change footer background based on location
+      userId: null
     };
   }
 
@@ -48,7 +48,15 @@ class App extends Component {
     // }
     // });
     // console.log("loading");
+
+    // this.accordionListener();
   }
+
+  componentWillUnmount() {
+    // this.accordionListener();
+  }
+
+
 
   updateUser = user => {
     this.setState({
@@ -120,6 +128,13 @@ class App extends Component {
               />
             )}
           </Route>
+
+          <Route
+            path="/faq"
+            component={() => <Faq 
+              footerWhite={this.footerWhite} 
+              />}
+          />
 
           <Route path="/" component={() => <Footer />} />
         </div>
