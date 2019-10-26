@@ -21,9 +21,9 @@
 
 .circle1 {
   position: absolute;
-  font-size: 2.5rem;
+  font-size: 2rem;
   bottom: 0;
-  left: 7%;
+  left: 6.5%;
   animation: float1 14s linear infinite;
   z-index: -20;
 }
@@ -33,18 +33,18 @@
   position: absolute;
   bottom: 0;
   right: 28%;
-  animation: float2 19s linear 2s infinite;
+  animation: float2 15s linear 2s infinite;
   z-index: -20;
 }
 
-// .circle3 {
-//   font-size: 3rem;
-//   position: absolute;
-//   bottom: 0;
-//   right: 20%;
-//   animation: float3 14s ease-in-out 1s infinite;
-//   z-index: -20;
-// }
+.circle3 {
+  font-size: 3rem;
+  position: absolute;
+  bottom: 0;
+  right: 6%;
+  animation: float3 14s ease-in-out 1s infinite;
+  z-index: -20;
+}
 
 .circle4 {
   font-size: 8rem;
@@ -63,8 +63,8 @@
 
   position: absolute;
   bottom: 0;
-  left: 6%;
-  animation: float5 9s linear 5s infinite;
+  left: 4%;
+  animation: float5 11s linear 5s infinite;
   z-index: -20;
 }
 
@@ -76,14 +76,14 @@
 
   position: absolute;
   bottom: 0;
-  right: 5%;
+  right: 6%;
   animation: float5 9s linear 2s infinite;
   z-index: -20;
 }
 
 .circle7 {
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   background-color: $colorFour;
   border-radius: 50%;
 
@@ -95,15 +95,15 @@
 }
 
 .circle8 {
-  height: 22px;
-  width: 22px;
+  height: 30px;
+  width: 30px;
   background-color: $colorFive;
   border-radius: 50%;
 
   position: absolute;
   bottom: 0;
-  left: 12%;
-  animation: float5 13s linear 4s infinite;
+  left: 10%;
+  animation: float5 18s linear 4s infinite;
   z-index: -20;
 }
 
@@ -186,6 +186,8 @@
     right: 2%;
     position: absolute;
     z-index: 40;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-out 1.6s forwards;
   }
 }
 
@@ -199,7 +201,6 @@
 }
 
 .sectionOne {
-
   height: 88vh;
   display: flex;
   position: relative;
@@ -215,9 +216,20 @@
     position: absolute;
     left: -10.2%;
     bottom: 8px;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-out 1.6s forwards;
 
     .arrowImg {
       width: 100%;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 
@@ -228,26 +240,22 @@
     align-items: center;
     border: none;
 
-    .fa-arrow-up {
-      transform: rotate(180deg);
-    }
-
     &:hover {
       background-color: $colorTwo;
     }
 
-    &:hover .fa-arrow-up {
-      animation: arrowPoint 1s ease-out infinite;
-    }
-  }
+  //   &:hover .fa-arrow-up {
+  //     animation: arrowPoint 1s ease-out infinite;
+  //   }
+  // }
 
-  @keyframes arrowPoint {
-    from {
-      transform: translate(0px, 0px) rotate(180deg);
-    }
-    to {
-      transform: translate(0px, 4px) rotate(180deg);
-    }
+  // @keyframes arrowPoint {
+  //   from {
+  //     transform: translate(0px, 0px) rotate(90deg);
+  //   }
+  //   to {
+  //     transform: translate(4px, 0px) rotate(90deg);
+  //   }
   }
 
   .sectionOneLeft {
@@ -688,6 +696,15 @@ form {
   }
 }
 
+@keyframes arrowPoint {
+    from {
+      transform: translate(0px, 0px) rotate(90deg);
+    }
+    to {
+      transform: translate(4px, 0px) rotate(90deg);
+    }
+  }
+
 .asideBox {
   height: 100%;
   position: relative;
@@ -850,6 +867,10 @@ aside {
 
 @media (max-width: 1119px) {
   .sectionOne {
+    .arrowBoxS1 {
+      width: 7px;
+    }
+
     .sectionOneLeft {
       h1 {
         font-size: 3.5rem;
@@ -875,6 +896,9 @@ aside {
     .sectionOneLeft {
       h1 {
         font-size: 3rem;
+        .forEdu {
+          display: inline;
+        }
       }
 
       .titleBox {
@@ -899,7 +923,6 @@ aside {
       }
 
       p {
-        width: 80%;
         font-size: 0.8rem;
       }
     }
@@ -915,7 +938,6 @@ aside {
     ul {
       flex-direction: column;
       align-items: center;
-      // margin-bottom: 4vh;
     }
 
     li {
@@ -975,18 +997,18 @@ aside {
 }
 
 @media (max-width: 720px) {
-  .sectionOne {
-    .sectionOneLeft {
-      h1 {
-        .forEdu {
-          display: inline;
-        }
-      }
+  .sectionOneBg .circleTextBox {
+    width: 184px;
+  }
 
+  .sectionOne {
+    .arrowBoxS1 {
+      display: none;
+    }
+
+    .sectionOneLeft {
       .titleBox {
-        &:before {
-          display: none;
-        }
+        padding-left: 0;
       }
     }
   }
@@ -1051,6 +1073,11 @@ aside {
 }
 
 @media (max-width: 500px) {
+  .sectionOneBg .circleTextBox {
+    width: 157px;
+    bottom: -6vh;
+  }
+
   .circle4 {
     font-size: 4.5rem;
   }
@@ -1137,6 +1164,11 @@ aside {
 }
 
 @media (max-width: 500px) and (max-height: 750px) {
+
+  .sectionOneBg .circleTextBox {
+    display: none;
+  }
+
   .sectionOne {
     height: calc(100vh);
     padding-top: 12vh;

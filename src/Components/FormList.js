@@ -22,13 +22,13 @@ const FormList = props => {
               <div className="buttonBox">
                 <div className="buttonBoxLower">
                   <a href={`mailto:${student.email}`}>
-                    <i class="far fa-envelope"></i>
+                    <i className="far fa-envelope"></i>
                   </a>
                   <a href={student.linkedIn}>
-                    <i class="fab fa-linkedin-in"></i>
+                    <i className="fab fa-linkedin-in"></i>
                   </a>
                   <button onClick={() => props.editStudent(i)}>
-                    <i class="far fa-edit"></i>
+                    <i className="far fa-edit"></i>
                   </button>
                   <button
                     onClick={() => {
@@ -41,12 +41,12 @@ const FormList = props => {
                       }
                     }}
                   >
-                    <i class="fas fa-user-times"></i>
+                    <i className="fas fa-user-times"></i>
                   </button>
                 </div>
 
                 <div className="phoneContact">
-                  <i class="fas fa-phone"></i>
+                  <i className="fas fa-phone"></i>
                   <p>{student.phone}</p>
                 </div>
               </div>

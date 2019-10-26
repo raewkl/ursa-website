@@ -28,6 +28,9 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
+
+    this.props.footerWhite();
+
     this.listener = auth.onAuthStateChanged(user => {
       if (user) {
         this.setState(

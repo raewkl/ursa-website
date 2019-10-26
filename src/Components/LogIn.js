@@ -18,7 +18,10 @@ class LogIn extends Component {
     });
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+
+    this.props.footerWhite();
+  }
 
   render() {
     return (

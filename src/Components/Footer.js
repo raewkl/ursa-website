@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 
 const Footer = props => {
   return (
-    <div className="footerBg">
+    <div className="footerBg" id="footerBg">
       <footer className="wrapper scrollChild">
         <div className="upperFooter">
           <div className="leftFooter">

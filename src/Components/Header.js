@@ -79,7 +79,7 @@ const Header = props => {
   const animProps = useSpring({
     config: config.molasses,
     from: { opacity: 0, top: -80 },
-    to: { opacity: 1, top: 20 },
+    to: { opacity: 1, top: 20 }
     // delay: 500
   });
 
@@ -102,10 +102,8 @@ const Header = props => {
           <nav className="mainNav">
             <ul>
               <li>
-                <HashLink to="/#contact">
-                  <a className="contactLink" href="#contact">
-                    <span className="animatedBorder">Contact</span>
-                  </a>
+                <HashLink to="/#contact" className="contactLink">
+                  <span className="animatedBorder">Contact</span>
                 </HashLink>
               </li>
 
@@ -113,7 +111,6 @@ const Header = props => {
                 <Link to="/dashboard" className="logIn">
                   <span className="movingText1">Log In</span>
                   <span className="movingText2">Log In</span>
-                  {/* <span className="movingText">Log In</span> */}
                 </Link>
               </li>
             </ul>
@@ -150,7 +147,7 @@ const Header = props => {
         </animated.div>
       </div>
 
-      <div className="sideNav">
+      {/* <div className="sideNav">
         <ul className="sideNavLower">
           <ScrollLink
             activeClass="active"
@@ -202,7 +199,7 @@ const Header = props => {
           </ScrollLink>
         </ul>
         <div className="circle" id="circle"></div>
-      </div>
+      </div> */}
     </header>
   );
 };

@@ -31,7 +31,9 @@ const SectionTwoUpper = () => {
       <ul className="oneTwoList">
         <li>
           <figure>
-            <div className="emoji">&#128091;</div>
+            <span className="emoji" role="img" aria-label="purse">
+              &#128091;
+            </span>
 
             <figcaption>
               <div className="subFig">
@@ -43,7 +45,9 @@ const SectionTwoUpper = () => {
 
         <li>
           <figure className="even">
-            <div className="emoji">&#128079;</div>
+            <span className="emoji" role="img" aria-label="clapping hands">
+              &#128079;
+            </span>
             <figcaption>
               <div className="subFig">
                 <p>
@@ -57,7 +61,9 @@ const SectionTwoUpper = () => {
 
         <li>
           <figure>
-            <div className="emoji">&#9200;</div>
+            <span className="emoji" role="img" aria-label="alarm clock">
+              &#9200;
+            </span>
             <figcaption>
               <div className="subFig">
                 <p>
@@ -70,7 +76,9 @@ const SectionTwoUpper = () => {
 
         <li>
           <figure className="even">
-            <div className="emoji">&#x1F3C6;</div>
+            <span className="emoji" role="img" aria-label="trophy">
+              &#x1F3C6;
+            </span>
             <figcaption>
               <div className="subFig">
                 <p>

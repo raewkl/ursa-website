@@ -58,8 +58,7 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url("../Assets/Fonts/Avenir/Avenir-Black.woff2")
-      format("woff2"),
+  src: url("../Assets/Fonts/Avenir/Avenir-Black.woff2") format("woff2"),
     url("../Assets/Fonts/Avenir/Avenir-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
@@ -67,8 +66,7 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url("../Assets/Fonts/Avenir/Avenir-Heavy.woff2")
-      format("woff2"),
+  src: url("../Assets/Fonts/Avenir/Avenir-Heavy.woff2") format("woff2"),
     url("../Assets/Fonts/Avenir/Avenir-Heavy.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -76,8 +74,7 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url("../Assets/Fonts/Avenir/Avenir-Book.woff2")
-      format("woff2"),
+  src: url("../Assets/Fonts/Avenir/Avenir-Book.woff2") format("woff2"),
     url("../Assets/Fonts/Avenir/Avenir-Book.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -102,14 +99,16 @@ p {
   font-weight: 300;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: $headlineFont;
 }
 
 h1 {
   font-size: 4.8rem;
   position: relative;
-  
+
   font-weight: 700;
 }
 
@@ -178,13 +177,12 @@ button {
 }
 
 button {
-
   border: none;
   &:hover {
-      background-color: $colorTwo;
-      color: $colorOne;
-      // border-color: white;
-    }
+    background-color: $colorTwo;
+    color: $colorOne;
+    // border-color: white;
+  }
 }
 
 .sectionTwo {
@@ -206,13 +204,12 @@ button {
 }
 
 .fa-arrow-up {
-      font-size: 0.8rem;
-      transform: rotate(45deg);
-      margin-left: 6px;
-    }
+  font-size: 0.7rem;
+  transform: rotate(90deg);
+  margin-left: 6px;
+}
 
 @media (max-width: 1317px) {
-
   h1 {
     font-size: 4rem;
   }

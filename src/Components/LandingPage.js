@@ -22,6 +22,9 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
+
+    this.props.footerBlue();
+    console.log("should be blue!");
     // check if in contact for initial circle position
     this.setState(
       {
@@ -211,15 +214,13 @@ class LandingPage extends Component {
     }
   };
 
-  circleTextAnimation = (scrollPercentage) => {
-
-    // select circleTextBox 
+  circleTextAnimation = scrollPercentage => {
+    // select circleTextBox
     const circleTextBox = document.getElementById("circleTextBox");
 
     // set css transform rotate to percentage
-    circleTextBox.style.transform = "rotate(" + scrollPercentage*3 + "deg)";
-
-  }
+    circleTextBox.style.transform = "rotate(" + scrollPercentage * 3 + "deg)";
+  };
 
   LazyAnimation2 = () => {
     const props = useSpring({
@@ -265,7 +266,7 @@ class LandingPage extends Component {
           to="sectionTwo"
           spy={true}
           smooth={true}
-          offset={-60}
+          offset={0}
           duration={500}
         >
           <button>
@@ -314,13 +315,13 @@ class LandingPage extends Component {
       <animated.div ref={ref} style={props} className="floatingPoints">
         <div className="circle1">&#x1f511;</div>
         <div className="circle2">&#128273;</div>
-        {/* <div className="circle3">&#128273;</div> */}
+        <div className="circle3">&#128273;</div>
         <div className="circle4">&#128273;</div>
 
-        <div className="circle5"></div>
+        {/* <div className="circle5"></div>
         <div className="circle6"></div>
         <div className="circle7"></div>
-        <div className="circle8"></div>
+        <div className="circle8"></div> */}
       </animated.div>
     );
   };
@@ -358,9 +359,18 @@ class LandingPage extends Component {
 
     return (
       <animated.div ref={ref} style={props} className="requestIsa">
-        <button className="requestIsa">
-          Request ISA<span>s</span> for your program
-        </button>
+        <ScrollLink
+          activeClass="active"
+          to="contact"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          <button className="requestIsa">
+            Request ISA<span>s</span> for your program
+          </button>
+        </ScrollLink>
       </animated.div>
     );
   };
@@ -441,7 +451,16 @@ class LandingPage extends Component {
 
                   <SectionTwoUpper />
 
-                  <button>Tell Me More</button>
+                  <ScrollLink
+                    activeClass="active"
+                    to="sectionThree"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                  >
+                    <button>Tell Me More</button>
+                  </ScrollLink>
                 </section>
               </section>
 
