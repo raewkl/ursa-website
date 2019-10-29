@@ -107,6 +107,19 @@
   z-index: -20;
 }
 
+.circle9 {
+  height: 12px;
+  width: 12px;
+  background-color: $colorOne;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  animation: float5 14s linear 10s infinite;
+  z-index: -20;
+}
+
 @keyframes float1 {
   0% {
     transform: translateY(0px) rotate(20deg);
@@ -181,6 +194,7 @@
   position: relative;
 
   .circleTextBox {
+    display: none;
     width: 220px;
     bottom: -8vh;
     right: 2%;
@@ -200,6 +214,15 @@
   z-index: -10;
 }
 
+@keyframes arrowPointBottom {
+  from {
+    transform: translate(0px, 0px) rotate(180deg);
+  }
+  to {
+    transform: translate(0px, 4px) rotate(180deg);
+  }
+}
+
 .sectionOne {
   height: 88vh;
   display: flex;
@@ -212,6 +235,7 @@
   }
 
   .arrowBoxS1 {
+    display: none;
     width: 9px;
     position: absolute;
     left: -10.2%;
@@ -233,29 +257,26 @@
     }
   }
 
+  a {
+    display: flex;
+    justify-content: center;
+  }
+
   button {
     margin-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    justify-content: space-evenly;
 
     &:hover {
       background-color: $colorTwo;
     }
 
-  //   &:hover .fa-arrow-up {
-  //     animation: arrowPoint 1s ease-out infinite;
-  //   }
-  // }
-
-  // @keyframes arrowPoint {
-  //   from {
-  //     transform: translate(0px, 0px) rotate(90deg);
-  //   }
-  //   to {
-  //     transform: translate(4px, 0px) rotate(90deg);
-  //   }
+    &:hover .fa-arrow-up {
+      animation: arrowPointBottom 0.75s ease-in-out infinite forwards;
+    }
   }
 
   .sectionOneLeft {
@@ -263,27 +284,18 @@
     flex-direction: column;
     justify-content: center;
     width: calc(100%);
-    // padding-left: 9%;
 
     .titleBox {
       position: relative;
       z-index: 10;
-      padding-left: 9%;
 
-      // &:before {
-      //   content: "";
-      //   position: absolute;
-      //   left: calc(50% - 475px);
-      //   top: 55px;
-      //   bottom: 40px;
-      //   background-color: $colorTwoLight;
-      //   width: 950px;
-      // }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     h1 {
-      text-align: left;
-      // padding-left: 9%;
+      text-align: center;
     }
 
     .forEdu {
@@ -311,34 +323,24 @@
     }
 
     p {
-      text-align: left;
-      // margin: 40px 0 47px 0;
-      // background-color: $colorFour;
-      // padding: 0 10px;
+      text-align: center;
 
       span {
         font-weight: 500;
       }
-      // width: calc(100% - 200px);
     }
   }
 }
 
+.sectionTwo,
+.sectionThree {
+  padding: 12vh 0;
+  display: flex;
+}
+
 .sectionTwo {
-  padding: 9vh 0;
-
-  .isaDescription {
-    margin-top: 8vh;
-    text-align: center;
-
-    p {
-      font-size: 1rem;
-    }
-
-    em {
-      font-weight: bold;
-    }
-  }
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sectionTwoBg {
@@ -347,10 +349,37 @@
   background-color: $background2;
 }
 
+.sectionTwo {
+  .isaDescription {
+    text-align: center;
+    display: flex;
+    text-align: left;
+
+    p {
+      font-size: 1rem;
+    }
+
+    em {
+      font-weight: bold;
+    }
+
+    .headlineBox {
+      width: 350px;
+    }
+  }
+
+  .isaDescriptionLower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 350px);
+  }
+}
+
 .sectionTwoUpper {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 0 0 0 0;
@@ -360,37 +389,24 @@
     position: relative;
   }
 
-  .isaDescription {
-    p:first-child {
-      margin-bottom: 20px;
-    }
-  }
-
   ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
     width: 100%;
-    margin: 8vh 0 8vh 0;
   }
 
   figure {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    color: $background;
-
+    align-items: flex-start;
+    color: $colorOne;
     border-radius: 25px;
-    width: 260px;
-    min-height: 200px;
-    padding: 30px;
     text-align: center;
-    background-color: $colorOne;
 
-    &:hover {
-      box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.07);
-      background-color: $colorTwo;
+    .emojiContainer {
+      text-align: left;
     }
 
     .emoji {
@@ -398,22 +414,39 @@
     }
 
     p {
-      margin: 0;
-      font-size: 0.9rem;
+      text-align: left;
     }
   }
 
-  li {
-    width: 25%;
-    display: flex;
-    justify-content: center;
+  figure:nth-child(3),
+  figure:last-child {
+    padding-bottom: 0;
   }
 
-  figcaption {
-    margin-top: 20px;
+  li {
+    width: calc(50% - 50px);
+    display: flex;
+    margin-top: 40px;
+  }
+
+  figcaption .subFig {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
+
+    p {
+      width: 100%;
+      line-height: 1.5;
+      color: $colorOne;
+      font-family: "avenir", serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+
+      &:hover {
+        color: $colorOne;
+      }
+    }
   }
 
   h3 {
@@ -426,17 +459,39 @@
   }
 
   button {
-    margin-top: 6vh;
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 165px;
+    margin-top: 8vh;
+
+    &:hover .fa-arrow-up {
+      animation: arrowPointBottom 0.75s ease-in-out infinite forwards;
+    }
   }
 }
 
 .sectionThree {
-  padding: 8vh 0 calc(8vh + 20px) 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   position: relative;
+
+  .studentBenefits {
+    width: 350px;
+  }
+
+  .sectionThreeSub {
+    width: calc(100% - 350px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    span {
+      line-height: 1.6;
+    }
+  }
 
   .studentBenefits,
   .stuBenefitsList,
@@ -445,18 +500,22 @@
   }
 
   ul {
-    margin: 8vh 0 4vh 0;
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
 
   li {
-    width: 25%;
-    display: flex;
-    justify-content: center;
+    width: 29%;
 
     &:hover .stuImg {
       opacity: 0;
+    }
+
+    &:hover h3 {
+      -webkit-text-stroke-width: 0px;
+      //  -webkit-text-stroke-color: $colorOne;
+      color: $colorOne;
     }
   }
 
@@ -465,23 +524,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: calc(100%);
   }
 
   h3 {
-    font-size: 1rem;
-    padding-bottom: 20px;
-  }
-
-  p {
-    text-align: left;
+    font-size: 2rem;
+    font-weight: 900;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $colorOne;
+    color: rgba(0, 0, 0, 0);
   }
 
   .stuImgBox {
     border-radius: 25px;
     overflow: hidden;
     position: relative;
-    width: 180px;
-    height: 210px;
+    width: 90%;
+    // height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -502,10 +561,18 @@
   }
 
   button {
-    width: 290px;
+    margin-top: 8vh;
+    width: 315px;
+    display: flex;
+    justify-content: space-evenly;
 
-    span {
+    &:hover .fa-arrow-up {
+      animation: arrowPointBottom 0.75s ease-in-out infinite forwards;
+    }
+
+    span.lower {
       text-transform: lowercase;
+      white-space: normal;
     }
   }
 }
@@ -526,15 +593,15 @@
 
 .contactUs {
   position: relative;
+  text-align: center;
 }
 
 .contact {
-  padding: 8vh 0 calc(8vh + 10px) 0;
+  padding: 12vh 0 calc(12vh + 10px) 0;
   background-color: rgba(0, 0, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
   position: relative;
 }
 
@@ -690,29 +757,28 @@ form {
     margin-top: 20px;
     width: 120px;
 
+    .fa-arrow-up {
+      transform: rotate(45deg);
+    }
+
     &:hover .fa-arrow-up {
-      animation: arrowPoint 1s ease-out infinite;
+      animation: arrowPointTopRight 0.75s ease-out infinite;
     }
   }
 }
 
-@keyframes arrowPoint {
-    from {
-      transform: translate(0px, 0px) rotate(90deg);
-    }
-    to {
-      transform: translate(4px, 0px) rotate(90deg);
-    }
+@keyframes arrowPointTopRight {
+  from {
+    transform: translate(0px, 0px) rotate(45deg);
   }
+  to {
+    transform: translate(3px, -3px) rotate(45deg);
+  }
+}
 
 .asideBox {
   height: 100%;
   position: relative;
-
-  // &:hover aside, &:hover aside:before {
-  //   border: 2px solid $colorTwo;
-  //   color: $colorTwo;
-  // }
 }
 
 aside {
@@ -723,8 +789,7 @@ aside {
   height: 100%;
   width: 320px;
   color: $colorOne;
-  right: 10px;
-
+  right: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -769,33 +834,25 @@ aside {
     position: absolute;
     width: 100%;
     height: 100%;
-    // background-color: rgba(172, 153, 255, 0.3);
     border: 2px solid $colorOne;
     z-index: -1;
-    top: 8px;
-    left: 8px;
+    top: 6px;
+    left: 6px;
   }
 }
 
-@media (max-width: 1406px) {
-  .sectionTwoUpper {
-    ul {
-      margin: 6vh 0;
+@media (max-width: 1563px) {
+  .sectionThree {
+    h3 {
+      font-size: 1.8rem;
     }
+  }
+}
 
-    li {
-      padding: 2%;
-      width: 50%;
-    }
-
-    li:first-child,
-    li:nth-child(3) {
-      justify-content: flex-end;
-    }
-
-    li:nth-child(2),
-    li:last-child {
-      justify-content: flex-start;
+@media (max-width: 1471px) {
+  .sectionThree {
+    h3 {
+      font-size: 1.6rem;
     }
   }
 }
@@ -811,6 +868,53 @@ aside {
           width: 780px;
         }
       }
+    }
+  }
+
+  .sectionTwo {
+    .isaDescription {
+      flex-direction: column;
+
+      .headlineBox {
+        width: 100%;
+        line-height: 0.9;
+
+        h2 {
+          text-align: center;
+        }
+        
+        span {
+          display: inline;
+          line-height: 0.9;
+        }
+      }
+    }
+
+    .isaDescriptionLower {
+      margin-top: 6vh;
+      width: 100%;
+    }
+  }
+
+  .sectionThree {
+    flex-direction: column;
+    .studentBenefits {
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      width: 100%;
+      line-height: 0.9;
+      span {
+        display: inline;
+        line-height: 0.9;
+      }
+    }
+
+    .sectionThreeSub {
+      margin-top: 6vh;
+      width: 100%;
     }
   }
 
@@ -837,7 +941,7 @@ aside {
   }
 
   aside {
-    width: calc(100% - 10px);
+    width: calc(100% - 8px);
     padding: 4vh 4%;
     right: 0px;
 
@@ -889,6 +993,8 @@ aside {
       }
     }
   }
+
+  
 }
 
 @media (max-width: 934px) {
@@ -927,14 +1033,12 @@ aside {
       }
     }
   }
-}
-
-@media (max-width: 803px) {
-  h2 {
-    font-size: 2.5rem;
-  }
 
   .sectionThree {
+    h3 {
+      font-size: 2rem;
+    }
+
     ul {
       flex-direction: column;
       align-items: center;
@@ -949,6 +1053,24 @@ aside {
     li:last-child {
       margin-bottom: 0;
     }
+
+    .stuImgBox {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 803px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .sectionTwo .isaDescription p {
+    font-size: 0.8rem;
+  }
+  
+  .sectionTwoUpper figcaption .subFig p {
+    font-size: 0.9rem;
   }
 
   form {
@@ -978,7 +1100,7 @@ aside {
     height: 500px;
     padding: 0 4%;
 
-    right: 5px;
+    right: 4px;
 
     flex-direction: column;
     justify-content: space-evenly;
@@ -1014,15 +1136,8 @@ aside {
   }
 
   .sectionTwoUpper {
-    ul {
-      flex-direction: column;
-      align-items: center;
-    }
-
     li {
-      width: 100%;
-      margin: 1vh 0;
-      justify-content: center !important;
+      width: calc(50% - 25px);
     }
   }
 }
@@ -1067,8 +1182,36 @@ aside {
     }
   }
 
+  .sectionThree {
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    li {
+      width: 80%;
+    }
+
+  }
+
   .formBox {
     width: 100%;
+  }
+}
+
+@media (max-width: 545px) {
+  .sectionTwo .isaDescription {
+    h2 {
+      text-align: center;
+    }
+  }
+
+  .sectionTwoUpper ul {
+    flex-direction: column;
+    align-items: center;
+
+    li {
+      width: 320px;
+    }
   }
 }
 
@@ -1140,6 +1283,15 @@ aside {
       }
     }
   }
+
+  .sectionTwoUpper ul {
+    flex-direction: column;
+    align-items: center;
+
+    li {
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: 380px) {
@@ -1153,18 +1305,22 @@ aside {
     }
   }
 
-  .sectionThree {
-    a {
-      width: 90%;
-      p {
+  a, button {
+    font-size: 0.6rem;
+      span {
         font-size: 0.6rem;
       }
     }
+
+  .sectionThree {
+    button {
+      width: 280px;
+    }
+    
   }
 }
 
 @media (max-width: 500px) and (max-height: 750px) {
-
   .sectionOneBg .circleTextBox {
     display: none;
   }

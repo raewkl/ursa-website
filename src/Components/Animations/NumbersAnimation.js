@@ -20,11 +20,11 @@ const NumbersAnimation = () => {
           <h3>The Numbers</h3>
           <div className="fact1">
             <h4>7 in 10</h4>
-            <p>students require financial assistance</p>
+            <p>students rely on financial assistance</p>
           </div>
           <div className="fact2">
-            <h4>1 in 10</h4>
-            <p>default on their loans</p>
+            <h4>4 in 10</h4>
+            <p>are expected to default by 2023</p>
           </div>
           <div className="fact3">
             <h4>$1.5 Trillion</h4>

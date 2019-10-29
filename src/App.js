@@ -33,30 +33,20 @@ class App extends Component {
   };
 
   componentDidMount() {
-    // this.listener = auth.onAuthStateChanged(user => {
-    // if (user) {
-    //   this.setState({
-    //     user,
-    //     userId: user.uid
-    //    });
-    // }
-    // else {
-    //   this.setState({
-    //     user: null,
-    //     userId: null
-    //   });
-    // }
-    // });
-    // console.log("loading");
-
-    // this.accordionListener();
+    document.addEventListener("mousemove", this.moveMouse);
   }
 
   componentWillUnmount() {
-    // this.accordionListener();
   }
 
+  moveMouse = e => {
 
+    const cursor = document.getElementById("cursor");
+    const x = e.clientX;
+    const y = e.clientY;
+
+    cursor.style.transform = `translate(${x + 72}px, ${y - 2}px)`;
+  };
 
   updateUser = user => {
     this.setState({
@@ -102,6 +92,12 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <div className="cursor" id="cursor">
+            <img
+              src={require("../src/Assets/Cursors/cursorDownBlue.png")}
+              alt="cursor"
+            />
+          </div>
           <Route path="/" component={() => <Header />} />
 
           <Route
@@ -131,9 +127,7 @@ class App extends Component {
 
           <Route
             path="/faq"
-            component={() => <Faq 
-              footerWhite={this.footerWhite} 
-              />}
+            component={() => <Faq footerWhite={this.footerWhite} />}
           />
 
           <Route path="/" component={() => <Footer />} />

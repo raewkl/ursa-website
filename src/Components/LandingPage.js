@@ -3,6 +3,7 @@ import SectionTwoUpper from "./Animations/SectionTwoUpper";
 import StudentBenefits from "./Animations/StudentBenefits";
 import FormAnimation from "./Animations/FormAnimation";
 import NumbersAnimation from "./Animations/NumbersAnimation";
+
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import * as Scroll from "react-scroll";
@@ -22,9 +23,7 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-
     this.props.footerBlue();
-    console.log("should be blue!");
     // check if in contact for initial circle position
     this.setState(
       {
@@ -42,6 +41,7 @@ class LandingPage extends Component {
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.scrollDirection, false);
+    
   }
 
   scrollDirection = () => {
@@ -271,7 +271,7 @@ class LandingPage extends Component {
         >
           <button>
             Learn More
-            {/* <i className="fas fa-arrow-up"></i> */}
+            <i className="fas fa-arrow-up"></i>
           </button>
         </ScrollLink>
       </animated.div>
@@ -292,10 +292,7 @@ class LandingPage extends Component {
 
     return (
       <animated.div ref={ref} style={props} className="howItWorks">
-        <h2>
-          {/* How <span>it works</span> */}
-          What’s an ISA?
-        </h2>
+        <h2>What’s an ISA?</h2>
       </animated.div>
     );
   };
@@ -318,10 +315,13 @@ class LandingPage extends Component {
         <div className="circle3">&#128273;</div>
         <div className="circle4">&#128273;</div>
 
-        {/* <div className="circle5"></div>
+        <div className="circle5"></div>
         <div className="circle6"></div>
         <div className="circle7"></div>
-        <div className="circle8"></div> */}
+        <div className="circle8"></div>
+
+        <div className="circle9"></div>
+        {/* <div className="circle10"></div> */}
       </animated.div>
     );
   };
@@ -339,9 +339,11 @@ class LandingPage extends Component {
     });
 
     return (
-      <animated.h2 ref={ref} style={props} className="studentBenefits">
-        Student Benefits
-      </animated.h2>
+      <animated.div ref={ref} style={props} className="studentBenefits">
+        <h2>
+          Student <span>Benefits</span>
+        </h2>
+      </animated.div>
     );
   };
 
@@ -394,9 +396,14 @@ class LandingPage extends Component {
     );
   };
 
+  // mouseListener = () => {
+  //   document.addEventListener("mousemove", this.moveMouse, false);
+  // }
+
   render() {
     return (
       <div className="noWrapper">
+  
         <this.LazyAnimation6 />
 
         <div className="landingPage">
@@ -411,6 +418,7 @@ class LandingPage extends Component {
                   className="circleTextImg"
                 />
               </div>
+
               <section
                 className="sectionOne navSection scrollChild wrapper"
                 id="sectionOne"
@@ -425,13 +433,13 @@ class LandingPage extends Component {
                 </div>
 
                 {/* <div className="imgBox">
-                  <img
-                    src={require("../Assets/Images/student_light.png")}
-                    alt=""
-                    className="boyImg"
-                  />
-                  <div className="shadow shadow1"></div>
-                </div> */}
+                    <img
+                      src={require("../Assets/Images/student_light.png")}
+                      alt=""
+                      className="boyImg"
+                    />
+                    <div className="shadow shadow1"></div>
+                  </div> */}
               </section>
 
               {/* <div className="diagonalBox">
@@ -447,20 +455,9 @@ class LandingPage extends Component {
                   className="sectionTwoUpper navSection"
                   id="sectionTwoUpper"
                 >
-                  <this.LazyAnimation4 />
+                  {/* <this.LazyAnimation4 /> */}
 
                   <SectionTwoUpper />
-
-                  <ScrollLink
-                    activeClass="active"
-                    to="sectionThree"
-                    spy={true}
-                    smooth={true}
-                    offset={0}
-                    duration={500}
-                  >
-                    <button>Tell Me More</button>
-                  </ScrollLink>
                 </section>
               </section>
 
@@ -476,25 +473,11 @@ class LandingPage extends Component {
                 className="sectionThree navSection scrollChild wrapper"
                 id="sectionThree"
               >
-                {/* <div className="borderFour"></div> */}
-                <this.LazyAnimation7 />
+  
+                  <this.LazyAnimation7 />
 
-                <StudentBenefits />
-
-                <this.LazyAnimation9 />
-
-                {/* <div className="sec3ImgBox1">
-                  <img
-                    src={require("../Assets/Images/3d_tree4_light.png")}
-                    alt={"Ursa Logo"}
-                  />
-                </div>
-                <div className="sec3ImgBox2">
-                  <img
-                    src={require("../Assets/Images/3d_tree3_dark.png")}
-                    alt={"Ursa Logo"}
-                  />
-                </div> */}
+                  <StudentBenefits />
+        
               </section>
             </div>
 
