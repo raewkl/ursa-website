@@ -1,7 +1,17 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  // cursor: none;
+  cursor: url(../Assets/Cursors/cursorBlue20.png) 8 8, auto;
+}
+
+button, input[type="submit"], a {
+  cursor: url(../Assets/Cursors/cursorBlue20.png) 8 8, auto;
+}
+
+.sectionThree {
+  li {
+    cursor: url(../Assets/Cursors/cursorDownBlue.png) 0 70, auto;
+  }
 }
 
 // Backgrounds
@@ -73,12 +83,13 @@ img {
 }
 
 .cursor {
-  width: 70px;
+  width: 16px;
+  height: 16px;
   position: fixed;
-  z-index: 150;
+  z-index: 21;
+  background-color: $colorOne;
+  border-radius: 50%;
 
-  left: -70px;
-  top: -70px;
 }
 
 button,

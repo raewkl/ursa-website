@@ -33,20 +33,20 @@ class App extends Component {
   };
 
   componentDidMount() {
-    document.addEventListener("mousemove", this.moveMouse);
+    // document.addEventListener("mousemove", this.moveMouse);
   }
 
   componentWillUnmount() {
   }
 
-  moveMouse = e => {
+  // moveMouse = e => {
 
-    const cursor = document.getElementById("cursor");
-    const x = e.clientX;
-    const y = e.clientY;
+  //   const cursor = document.getElementById("cursor");
+  //   const x = e.clientX;
+  //   const y = e.clientY;
 
-    cursor.style.transform = `translate(${x + 72}px, ${y - 2}px)`;
-  };
+  //   cursor.style.transform = `translate(${x - 8}px, ${y - 8}px)`;
+  // };
 
   updateUser = user => {
     this.setState({
@@ -92,12 +92,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="cursor" id="cursor">
-            <img
-              src={require("../src/Assets/Cursors/cursorDownBlue.png")}
-              alt="cursor"
-            />
-          </div>
+          {/* <div className="cursor" id="cursor">
+          </div> */}
           <Route path="/" component={() => <Header />} />
 
           <Route

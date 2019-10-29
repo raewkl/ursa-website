@@ -23,7 +23,7 @@ const SectionTwoUpper = () => {
       <div className="isaDescription">
         <div className="headlineBox">
           <h2>
-            What’s <span>an</span> <span>ISA?</span>
+            What’s an ISA?
           </h2>
         </div>
         <div className="isaDescriptionLower">
@@ -45,11 +45,10 @@ const SectionTwoUpper = () => {
 
                 <figcaption>
                   <div className="subFig">
-                    <p>ISA payments depend on how much you earn.</p>
-                    {/* <p>
-                      With Ursa, you’ll never have to worry about balances or
-                      interest. We get paid when you get paid!
-                    </p> */}
+                    <p>No monthly balances, no interest. <span className="light">
+                      ISA payments depend on how much you earn.
+                    </span></p>
+
                   </div>
                 </figcaption>
               </figure>
@@ -69,8 +68,10 @@ const SectionTwoUpper = () => {
                 <figcaption>
                   <div className="subFig">
                     <p>
-                      Payments are capped, so your balance will{" "}
-                      <span>never</span> grow.
+                      No surprises. <span className="light">
+                        Unlike loans, contracts are capped and will{" "}
+                        <span className="under">never</span> grow.
+                      </span>
                     </p>
                     {/* <p>
                       Payments will always be a set % of your earnings, and
@@ -91,13 +92,11 @@ const SectionTwoUpper = () => {
                 <figcaption>
                   <div className="subFig">
                     <p>
-                      ISAs expire after some time, no matter how much you’ve
-                      paid.
+                      Not forever. <span className="light">
+                        ISAs expire after some time, no matter how much you’ve
+                        paid.
+                      </span>
                     </p>
-                    {/* <p>
-                      We know how stressful the jump from school to working can
-                      be. We’re here to make it easier.
-                    </p> */}
                   </div>
                 </figcaption>
               </figure>
@@ -113,10 +112,11 @@ const SectionTwoUpper = () => {
                 <figcaption>
                   <div className="subFig">
                     <p>
-                      ISAs don’t depend on credit - instead, we look to your
-                      potential.
+                      Let's focus on the future. <span className="light">
+                        Instead of leaning on credit,
+                        we look to your potential.
+                      </span>
                     </p>
-                    {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam voluptatum incidunt ab obcaecati ex quaerat aperiam! Voluptate ipsum aliquid sequi!</p> */}
                   </div>
                 </figcaption>
               </figure>

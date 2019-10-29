@@ -48,7 +48,7 @@ const StudentBenefits = () => {
           </figure>
         </li>
         <li>
-          <figure>
+          <figure className="evenFigure">
             {/* <div className="stuImgBoxUpper"> */}
               <div className="stuImgBox">
                 <img
