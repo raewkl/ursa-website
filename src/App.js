@@ -33,20 +33,18 @@ class App extends Component {
   };
 
   componentDidMount() {
-    // document.addEventListener("mousemove", this.moveMouse);
+    document.addEventListener("mousemove", this.moveMouse);
   }
 
-  componentWillUnmount() {
-  }
+  componentWillUnmount() {}
 
-  // moveMouse = e => {
+  moveMouse = e => {
+    const cursor2 = document.getElementById("cursor2");
+    const x = e.clientX;
+    const y = e.clientY;
 
-  //   const cursor = document.getElementById("cursor");
-  //   const x = e.clientX;
-  //   const y = e.clientY;
-
-  //   cursor.style.transform = `translate(${x - 8}px, ${y - 8}px)`;
-  // };
+     cursor2.style.transform = `translate(${x - 7}px, ${y - 8}px)`;
+  };
 
   updateUser = user => {
     this.setState({
@@ -92,8 +90,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          {/* <div className="cursor" id="cursor">
-          </div> */}
+          
+          <div className="cursor cursor1" id="cursor1"></div>
+
+          <div className="cursor cursor2" id="cursor2"></div>
+
           <Route path="/" component={() => <Header />} />
 
           <Route

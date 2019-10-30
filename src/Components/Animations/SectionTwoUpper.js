@@ -22,9 +22,7 @@ const SectionTwoUpper = () => {
     <animated.div ref={ref} style={props} className="sectionTwoLower">
       <div className="isaDescription">
         <div className="headlineBox">
-          <h2>
-            What’s an ISA?
-          </h2>
+          <h2>What’s an ISA?</h2>
         </div>
         <div className="isaDescriptionLower">
           <p>
@@ -45,10 +43,11 @@ const SectionTwoUpper = () => {
 
                 <figcaption>
                   <div className="subFig">
-                    <p>No monthly balances, no interest. <span className="light">
-                      ISA payments depend on how much you earn.
-                    </span></p>
+                    <p>No interest</p>
 
+                    <p className="light">
+                      ISA payments depend on how much you earn.
+                    </p>
                   </div>
                 </figcaption>
               </figure>
@@ -67,11 +66,11 @@ const SectionTwoUpper = () => {
                 </div>
                 <figcaption>
                   <div className="subFig">
-                    <p>
-                      No surprises. <span className="light">
-                        Unlike loans, contracts are capped and will{" "}
-                        <span className="under">never</span> grow.
-                      </span>
+                    <p>No surprises </p>
+
+                    <p className="light">
+                      Unlike loans, contracts are capped and will{" "}
+                      <span className="under">never</span> grow.
                     </p>
                     {/* <p>
                       Payments will always be a set % of your earnings, and
@@ -91,11 +90,11 @@ const SectionTwoUpper = () => {
                 </div>
                 <figcaption>
                   <div className="subFig">
-                    <p>
-                      Not forever. <span className="light">
-                        ISAs expire after some time, no matter how much you’ve
-                        paid.
-                      </span>
+                    <p>Finite obligation</p>
+
+                    <p className="light">
+                      ISAs expire after some time, no matter how much you’ve
+                      paid.
                     </p>
                   </div>
                 </figcaption>
@@ -111,37 +110,24 @@ const SectionTwoUpper = () => {
                 </div>
                 <figcaption>
                   <div className="subFig">
-                    <p>
-                      Let's focus on the future. <span className="light">
-                        Instead of leaning on credit,
-                        we look to your potential.
-                      </span>
+                    <p>Future focused </p>
+
+                    <p className="light">
+                      Instead of leaning on credit, we look to your potential.
                     </p>
                   </div>
                 </figcaption>
               </figure>
             </li>
           </ul>
-
-          <ScrollLink
-            activeClass="active"
-            to="sectionThree"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <button>
-              Tell Me More 
-              <i className="fas fa-arrow-up"></i>
-            </button>
-          </ScrollLink>
         </div>
       </div>
 
       {/* <p className="institutions">
         We work with educational institutions in Canada and the US.
       </p> */}
+
+      
     </animated.div>
   );
 };

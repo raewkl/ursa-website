@@ -80,12 +80,10 @@ const Header = props => {
     config: config.molasses,
     from: { opacity: 0, top: -80 },
     to: { opacity: 1, top: 20 }
-    // delay: 500
   });
 
   return (
     <header className="landingNav scrollChild">
-      {/* Make all of this position fixed */}
 
       <div className="topBarContainer" id="topBarContainer">
         <div className="navCircle"></div>

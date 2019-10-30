@@ -41,7 +41,6 @@ class LandingPage extends Component {
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.scrollDirection, false);
-    
   }
 
   scrollDirection = () => {
@@ -260,20 +259,6 @@ class LandingPage extends Component {
             <span>Income Share Agreements.</span>
           </p>
         </div>
-
-        <ScrollLink
-          activeClass="active"
-          to="sectionTwo"
-          spy={true}
-          smooth={true}
-          offset={0}
-          duration={500}
-        >
-          <button>
-            Learn More
-            <i className="fas fa-arrow-up"></i>
-          </button>
-        </ScrollLink>
       </animated.div>
     );
   };
@@ -322,27 +307,6 @@ class LandingPage extends Component {
 
         <div className="circle9"></div>
         {/* <div className="circle10"></div> */}
-      </animated.div>
-    );
-  };
-
-  LazyAnimation7 = () => {
-    const [ref, inView] = useInView({
-      rootMargin: "-50px 0px",
-      triggerOnce: true
-    });
-
-    const props = useSpring({
-      opacity: inView ? 1 : 0,
-      left: inView ? 0 : 100,
-      config: config.default
-    });
-
-    return (
-      <animated.div ref={ref} style={props} className="studentBenefits">
-        <h2>
-          Student <span>Benefits</span>
-        </h2>
       </animated.div>
     );
   };
@@ -403,7 +367,6 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="noWrapper">
-  
         <this.LazyAnimation6 />
 
         <div className="landingPage">
@@ -440,6 +403,27 @@ class LandingPage extends Component {
                     />
                     <div className="shadow shadow1"></div>
                   </div> */}
+
+                <ScrollLink
+                  activeClass="active"
+                  to="sectionTwo"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                >
+                  {/* <button>
+            Learn More
+            <i className="fas fa-arrow-up"></i>
+          </button> */}
+
+                  <div className="cursorDownContainer">
+                    <img
+                      src={require("../Assets/Cursors/cursorDown.svg")}
+                      alt=""
+                    />
+                  </div>
+                </ScrollLink>
               </section>
 
               {/* <div className="diagonalBox">
@@ -459,6 +443,27 @@ class LandingPage extends Component {
 
                   <SectionTwoUpper />
                 </section>
+
+                <ScrollLink
+                  activeClass="active"
+                  to="sectionThree"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                >
+                  {/* <button>
+              Tell Me More
+              <i className="fas fa-arrow-up"></i>
+            </button> */}
+
+                  <div className="cursorDownContainer">
+                    <img
+                      src={require("../Assets/Cursors/cursorDown.svg")}
+                      alt=""
+                    />
+                  </div>
+                </ScrollLink>
               </section>
 
               {/* <div className="diagonalBox">
@@ -469,16 +474,9 @@ class LandingPage extends Component {
             {/* SECTION THREE */}
 
             <div className="sectionThreeBg">
-              <section
-                className="sectionThree navSection scrollChild wrapper"
-                id="sectionThree"
-              >
-  
-                  <this.LazyAnimation7 />
+              <StudentBenefits />
 
-                  <StudentBenefits />
-        
-              </section>
+              {/* </section> */}
             </div>
 
             {/* CONTACT*/}

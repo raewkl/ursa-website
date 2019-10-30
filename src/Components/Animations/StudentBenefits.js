@@ -19,85 +19,82 @@ const StudentBenefits = () => {
   });
 
   return (
-    <animated.div ref={ref} style={props} className="sectionThreeSub">
-      <ul className="stuBenefitsList">
-        <li>
-          <figure>
-            {/* <div className="stuImgBoxUpper"> */}
-              <div className="stuImgBox">
-                <img
-                  className="stuImg"
-                  src={require("../../Assets/Gifs/rocket2.jpg")}
-                  alt=""
-                />
-                <img
-                  className="stuGif"
-                  src={require("../../Assets/Gifs/rocket2G.gif")}
-                  alt=""
-                />
-              </div>
-            {/* </div> */}
-
-            <figcaption>
-              <h3>Pay only when you start working</h3>
-              {/* <p>
-                With Ursa, you’ll never have to worry about balances or
-                interest. We get paid when you get paid!
-              </p> */}
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure className="evenFigure">
-            {/* <div className="stuImgBoxUpper"> */}
-              <div className="stuImgBox">
-                <img
-                  className="stuImg"
-                  src={require("../../Assets/Gifs/hooray.jpg")}
-                  alt=""
-                />
-                <img
-                  className="stuGif"
-                  src={require("../../Assets/Gifs/hoorayG.gif")}
-                  alt=""
-                />
-              </div>
-            {/* </div> */}
-            <figcaption>
-              <h3>Financing that’s always affordable</h3>
-              {/* <p>
-                Payments will always be a set % of your earnings, and you’ll
-                never pay more than the cap we agree on.
-              </p> */}
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure>
-            {/* <div className="stuImgBoxUpper"> */}
-              <div className="stuImgBox">
-                <img
-                  className="stuImg"
-                  src={require("../../Assets/Gifs/youGotThis.jpg")}
-                  alt=""
-                />
-                <img
-                  className="stuGif"
-                  src={require("../../Assets/Gifs/youGotThisG.gif")}
-                  alt=""
-                />
-              </div>
-            {/* </div> */}
-            <figcaption>
-              <h3>Mentorship and career support</h3>
-              {/* <p>
-                We know how stressful the jump from school to working can be.
-                We’re here to make it easier.
-              </p> */}
-            </figcaption>
-          </figure>
-        </li>
-      </ul>
+    <animated.section
+      className="sectionThreeUpper navSection scrollChild wrapper"
+      id="sectionThree"
+      ref={ref}
+      style={props}
+    >
+      <section className="sectionThree">
+        <div className="studentBenefits">
+          <h2>
+            Student <span>Benefits</span>
+          </h2>
+        </div>
+        <div ref={ref} style={props} className="sectionThreeContent">
+          <ul className="stuBenefitsList">
+            <li>
+              <figure>
+                <div className="stuImgBox">
+                  <img
+                    className="stuImg"
+                    src={require("../../Assets/Gifs/rocket2.jpg")}
+                    alt=""
+                  />
+                  <img
+                    className="stuGif"
+                    src={require("../../Assets/Gifs/rocket2G.gif")}
+                    alt=""
+                  />
+                </div>
+  
+                <figcaption>
+                  <h3>Pay only when you start working</h3>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure className="evenFigure">
+                <div className="stuImgBox">
+                  <img
+                    className="stuImg"
+                    src={require("../../Assets/Gifs/hooray.jpg")}
+                    alt=""
+                  />
+                  <img
+                    className="stuGif"
+                    src={require("../../Assets/Gifs/hoorayG.gif")}
+                    alt=""
+                  />
+                </div>
+                {/* </div> */}
+                <figcaption>
+                  <h3>Financing that’s always affordable</h3>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div className="stuImgBox">
+                  <img
+                    className="stuImg"
+                    src={require("../../Assets/Gifs/youGotThis.jpg")}
+                    alt=""
+                  />
+                  <img
+                    className="stuGif"
+                    src={require("../../Assets/Gifs/youGotThisG.gif")}
+                    alt=""
+                  />
+                </div>
+                <figcaption>
+                  <h3>Mentorship and career support</h3>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
 
       <ScrollLink
         activeClass="active"
@@ -107,18 +104,19 @@ const StudentBenefits = () => {
         offset={0}
         duration={500}
       >
-        <button className="requestIsa">
-          <span>
-            Request ISA<span className="lower">s </span> for your program
-          </span>
-          <i className="fas fa-arrow-up"></i>
-        </button>
+        {/* <button className="requestIsa">
+            <span>
+              Request ISA<span className="lower">s </span> for your program
+            </span>
+            <i className="fas fa-arrow-up"></i>
+          </button> */}
+
+        <div className="cursorDownContainer">
+          <img src={require("../../Assets/Cursors/cursorDown.svg")} alt="" />
+        </div>
       </ScrollLink>
 
-      {/* <div className="quoteContainer">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur natus accusamus voluptates sunt consectetur assumenda, repellendus quam atque mollitia ipsa nobis sed. Sit fugit delectus maxime ullam et deserunt consectetur!</p>
-      </div> */}
-    </animated.div>
+    </animated.section>
   );
 };
 

@@ -18,8 +18,6 @@
   font-style: normal;
 }
 
-
-
 // IBM PLEX SANS
 
 @font-face {
@@ -82,41 +80,6 @@
   font-style: normal;
 }
 
-// AKZIDENZ
-
-@font-face {
-    font-family: 'Berthold Akzidenz Grotesk BE';
-    src: url('../Assets/Fonts/Akzidenz/AkzidenzGroteskBE-Md.woff2') format('woff2'),
-        url('../Assets/Fonts/Akzidenz/AkzidenzGroteskBE-Md.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Berthold Akzidenz Grotesk BE';
-    src: url('../Assets/Fonts/Akzidenz/AkzidenzGroteskBE-Light.woff2') format('woff2'),
-        url('../Assets/Fonts/Akzidenz/AkzidenzGroteskBE-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Berthold Akzidenz Grotesk BE';
-    src: url('../Assets/Fonts/Akzidenz/AkzidenzGroteskBE-Regular.woff2') format('woff2'),
-        url('../Assets/Fonts/Akzidenz/AkzidenzGroteskBE-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Berthold Akzidenz Grotesk BE';
-    src: url('../Assets/Fonts/Akzidenz/AkzidenzGroteskBE-Bold.woff2') format('woff2'),
-        url('../Assets/Fonts/Akzidenz/AkzidenzGroteskBE-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
-
 // DEFAULTS
 
 $primaryFont: "IBM Plex Sans", serif;
@@ -129,13 +92,11 @@ html {
 
 li {
   line-height: 1;
-  /*font-weight: 300;
-*/}
+}
 
 p {
   line-height: 1.6;
-  /*font-weight: 300;
-*/}
+}
 
 h1,
 h2,
@@ -156,12 +117,6 @@ h2 {
   text-align: left;
   font-size: 3rem;
   line-height: 0.9;
-
-  /*span {
-    display: block;
-    font-weight: 600;
-    line-height: 1.2;
-  }*/
 }
 
 .howItWorks {
@@ -211,35 +166,33 @@ a p {
 }
 
 a,
-button {
+button,
+.logInSubmit {
   text-transform: uppercase;
   font-size: 0.7rem;
   font-weight: 700;
+  border: none;
 }
 
-button {
+button,
+.logInSubmit {
   border: none;
   &:hover {
     background-color: $colorTwo;
     color: $colorOne;
-    // border-color: white;
   }
 }
 
 .sectionTwo {
   figcaption {
     p {
-      /*font-weight: 500;
-      */
       font-size: 0.9rem;
       line-height: 1.6;
     }
 
     span {
-      /*font-weight: 100;*/
       text-decoration: none;
     }
-    
   }
 }
 

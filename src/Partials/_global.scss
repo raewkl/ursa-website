@@ -4,15 +4,17 @@ html {
   cursor: url(../Assets/Cursors/cursorBlue20.png) 8 8, auto;
 }
 
-button, input[type="submit"], a {
+button,
+input[type="submit"],
+a {
   cursor: url(../Assets/Cursors/cursorBlue20.png) 8 8, auto;
 }
 
-.sectionThree {
-  li {
-    cursor: url(../Assets/Cursors/cursorDownBlue.png) 0 70, auto;
-  }
-}
+// .sectionThree {
+//   li {
+//     cursor: url(../Assets/Cursors/cursorDownBlue.png) 0 70, auto;
+//   }
+// }
 
 // Backgrounds
 
@@ -74,7 +76,7 @@ a {
 
 .wrapper {
   width: 80%;
-  max-width: 1280px;
+  max-width: 1020px;
   margin: 0 auto;
 }
 
@@ -83,13 +85,34 @@ img {
 }
 
 .cursor {
-  width: 16px;
-  height: 16px;
+  
   position: fixed;
-  z-index: 21;
-  background-color: $colorOne;
-  border-radius: 50%;
+  // z-index: 21;
+  // background-color: $colorTwo;
 
+  border-radius: 50%;
+}
+
+// .cursor1 {
+
+//   width: 14px;
+//   height: 14px;
+//     background-color: $colorTwo;
+
+//   // border: 1px solid $colorTwo;
+//   transition-duration: 180ms;
+//   transition-timing-function: ease-out;
+// }
+
+.cursor2 {
+
+  width: 18px;
+  height: 18px;
+    background-color: $colorTwoLight;
+
+  // border: 1px solid $colorFour;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
 }
 
 button,
@@ -97,9 +120,8 @@ input[type="submit"] {
   margin-top: 40px;
   background-color: $colorOne;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   padding: 12px 20px;
-  border: 1px solid $colorOne;
   border-radius: 30px;
   width: 160px;
   color: $background;
@@ -107,6 +129,13 @@ input[type="submit"] {
 
 .App {
   min-width: 320px;
+}
+
+.cursorDownContainer {
+  position: absolute;
+  width: 80px;
+  bottom: 5vh;
+  left: calc(50% - 40px);
 }
 
 @media (max-width: 500px) {

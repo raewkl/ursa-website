@@ -1,57 +1,79 @@
 .logInPage {
+  height: 73vh;
+  padding-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    height: 73vh;
-    padding-top: 15vh;
+  form.logInForm {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .upperFormLogIn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  .formUserEmail,
+  .formPassword {
+    width: 48%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 1px solid $colorOne;
+    padding: 10px;
+    font-size: 2rem;
+    opacity: 0.5;
+
+    color: $colorOne;
+
+    &::placeholder {
+      color: $colorOne;
+    }
+  }
+
+  .passBox {
+    display: flex;
     align-items: center;
 
-    form.logInForm {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding-right: 0;
+    a {
+      font-size: 0.8rem;
     }
+  }
 
-    .upperFormLogIn {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 50px;
-    }
+  .lowerFormLogIn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-    .formUserEmail, .formPassword {
-        width: 48%;
-        background-color: rgba(0,0,0,0);
-        border: none;
-        border-bottom: 1px solid $colorOne;
-        padding: 10px;
-        font-size: 2rem;
-        opacity: 0.5;
+  .logInSubmit {
+    margin-top: 0;
+  }
+}
 
-        color: $colorOne;
+@media (max-width: 973px) {
+  .upperFormLogIn {
+    flex-direction: column;
+  }
 
-        &::placeholder {
-            color: $colorOne;
-        }
-    }
+  .logInPage .formUserEmail,
+  .logInPage .formPassword {
+    width: 100%;
+  }
 
-    .passBox {
-        display: flex;
-        align-items: center;
+  .logInPage .formUserEmail {
+    margin-bottom: 2vh;
+  }
+}
 
-        a {
-            font-size: 0.8rem;
-        }
-    }
-
-    .lowerFormLogIn {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .logInSubmit {
-        margin-top: 0;
-    }
+@media (max-width: 606px) {
+  .logInPage .formUserEmail,
+  .logInPage .formPassword {
+    font-size: 1.6rem;
+  }
 }
