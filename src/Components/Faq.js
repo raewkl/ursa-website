@@ -8,7 +8,6 @@ class Faq extends Component {
 
   componentDidMount() {
     this.accordionListener();
-    this.props.footerWhite();
   }
 
   componentWillUnmount() {

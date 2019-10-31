@@ -83,11 +83,12 @@ const Header = props => {
   });
 
   return (
-    <header className="landingNav scrollChild">
+    <header className="landingNav">
 
       <div className="topBarContainer" id="topBarContainer">
         <div className="navCircle"></div>
-        <animated.div style={animProps} className="topBar">
+
+        <animated.div style={animProps} className="topBar" id="topBar">
           <HashLink to="/#sectionOne">
             <div className="logoBox">
               <img

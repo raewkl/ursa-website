@@ -19,8 +19,6 @@ class LogIn extends Component {
   };
 
   componentDidMount() {
-
-    this.props.footerWhite();
   }
 
   render() {

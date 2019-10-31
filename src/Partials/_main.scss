@@ -2,8 +2,11 @@
   position: absolute;
   left: 0;
   right: 0;
-  height: 100%;
-  margin: 0 auto;
+  top: 0;
+  bottom: 0;
+  // width: 100%;
+  // height: 100%;
+  // margin: 0 auto;
 }
 
 .circle1,
@@ -33,7 +36,7 @@
   position: absolute;
   bottom: 0;
   right: 28%;
-  animation: float2 15s linear 2s infinite;
+  animation: float2 15s linear -2s infinite;
   z-index: -20;
 }
 
@@ -42,7 +45,7 @@
   position: absolute;
   bottom: 0;
   right: 6%;
-  animation: float3 14s ease-in-out 1s infinite;
+  animation: float3 14s ease-in-out -1s infinite;
   z-index: -20;
 }
 
@@ -51,7 +54,7 @@
   position: absolute;
   bottom: -150px;
   right: 12%;
-  animation: float4 28s linear 5s infinite;
+  animation: float4 28s linear -5s infinite;
   z-index: 15;
 }
 
@@ -64,7 +67,7 @@
   position: absolute;
   bottom: 0;
   left: 4%;
-  animation: float5 11s linear 5s infinite;
+  animation: float5 11s linear -5s infinite;
   z-index: -20;
 }
 
@@ -77,7 +80,7 @@
   position: absolute;
   bottom: 0;
   right: 6%;
-  animation: float5 9s linear 2s infinite;
+  animation: float5 9s linear -2s infinite;
   z-index: -20;
 }
 
@@ -90,7 +93,7 @@
   position: absolute;
   bottom: 0;
   right: 8%;
-  animation: float5 7s linear 1s infinite;
+  animation: float5 7s linear -1s infinite;
   z-index: -20;
 }
 
@@ -103,7 +106,7 @@
   position: absolute;
   bottom: 0;
   left: 10%;
-  animation: float5 18s linear 4s infinite;
+  animation: float5 18s linear -4s infinite;
   z-index: -20;
 }
 
@@ -116,122 +119,109 @@
   position: absolute;
   bottom: 0;
   left: 8%;
-  animation: float5 14s linear 10s infinite;
+  animation: float5 14s linear -10s infinite;
   z-index: -20;
 }
 
 @keyframes float1 {
   0% {
-    transform: translateY(0px) rotate(20deg);
+    transform: rotate(20deg);
     opacity: 0;
+    bottom: 0;
   }
   10% {
     opacity: 0.5;
   }
   100% {
-    transform: translateY(-105vh) rotate(110deg);
+    transform: rotate(110deg);
     opacity: 0.5;
+    bottom: 100%;
   }
 }
 
 @keyframes float2 {
   0% {
-    transform: translateY(0px) rotate(0);
+    transform: rotate(0);
     opacity: 0;
+    bottom: 0;
   }
   10% {
     opacity: 0.3;
   }
   100% {
-    transform: translateY(-105vh) rotate(-90deg);
+    transform: rotate(-90deg);
     opacity: 0.3;
+    bottom: 100%;
   }
 }
 
 @keyframes float3 {
   0% {
-    transform: translateY(50px) rotate(-80deg);
+    transform: rotate(-80deg); // 50px
     opacity: 0;
+    bottom: 0;
   }
   10% {
     opacity: 0.4;
   }
   100% {
-    transform: translateY(-105vh) rotate(-130deg);
+    
+    transform: rotate(-130deg); 
     opacity: 0.4;
+    bottom: 100%;
   }
 }
 
 @keyframes float4 {
   0% {
-    transform: translateY(50px);
+    transform: translateY(0);
     opacity: 0;
+    bottom: 0;
   }
   35% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-135vh) rotate(60deg);
+    transform: rotate(60deg);
     opacity: 1;
+    bottom: 100%;
   }
 }
 
 @keyframes float5 {
   0% {
-    transform: translateY(0px) rotate(0);
+    transform: rotate(0);
     opacity: 0;
+    bottom: 0;
   }
   20% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-105vh) rotate(90deg);
+    transform: rotate(90deg);
     opacity: 1;
+    bottom: 100%;
   }
 }
 
 .sectionOneBg {
   position: relative;
-
-  .circleTextBox {
-    display: none;
-    width: 220px;
-    bottom: -8vh;
-    right: 2%;
-    position: absolute;
-    z-index: 40;
-    opacity: 0;
-    animation: fadeIn 2.5s ease-out 1.6s forwards;
-  }
 }
 
 .landingPage {
   position: relative;
 }
 
-.borderSeven {
-  position: absolute;
-  z-index: -10;
-}
-
-@keyframes arrowPointBottom {
-  from {
-    transform: translate(0px, 0px) rotate(180deg);
-  }
-  to {
-    transform: translate(0px, 4px) rotate(180deg);
-  }
-}
-
 .sectionOne {
   height: 100vh;
   display: flex;
   position: relative;
-  padding-top: 84px;
+  flex-direction: column;
+  justify-content: center;
 
   .landingPageTextSub {
     position: relative;
-    margin: 5vh 0 7.5vh 0;
+    margin: 5vh 0 0 0;
   }
 
   .arrowBoxS1 {
@@ -339,16 +329,12 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   .cursorDownContainer {
     position: static;
     margin-top: 10vh;
   }
-}
-
-.sectionTwoBg {
-  position: relative;
-  z-index: 20;
 }
 
 .sectionTwo {
@@ -541,6 +527,10 @@
     }
   }
 
+  li:last-child {
+    margin-bottom: 0;
+  }
+
   figure {
     text-align: center;
     display: flex;
@@ -609,16 +599,6 @@
 
 .contactBg {
   position: relative;
-}
-
-.contactBgSub {
-  position: absolute;
-  z-index: -10;
-  // background-color: $background3;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
 
 .contactUs {

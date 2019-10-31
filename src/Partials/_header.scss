@@ -9,19 +9,49 @@
   top: 0;
   height: 85px;
   z-index: 80;
+
+  transition: transform 0.5s;
 }
 
-.navCircle {
-  display: none;
-  height: 20px;
-  width: 20px;
-  background-color: white;
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  z-index: 10;
-  border-radius: 50%;
+.moveUp {
+  transition: transform 0.5s;
+  animation: moveUp 0.5s linear forwards;
 }
+
+.moveDown {
+  transition: transform 0.5s;
+  animation: moveDown 0.5s linear forwards;
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes moveDown {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+// .navCircle {
+//   display: none;
+//   height: 20px;
+//   width: 20px;
+//   background-color: white;
+//   position: absolute;
+//   top: -20px;
+//   right: -20px;
+//   z-index: 10;
+//   border-radius: 50%;
+// }
 
 .topBar {
   position: fixed;

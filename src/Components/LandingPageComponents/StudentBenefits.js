@@ -1,7 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
-
 import * as Scroll from "react-scroll";
 
 let ScrollLink = Scroll.Link;
@@ -20,12 +19,11 @@ const StudentBenefits = () => {
 
   return (
     <animated.section
-      className="sectionThreeUpper navSection scrollChild wrapper"
-      id="sectionThree"
+      className="sectionThreeUpper wrapper"
       ref={ref}
       style={props}
     >
-      <section className="sectionThree">
+      <section className="sectionThree" id="sectionThree">
         <div className="studentBenefits">
           <h2>
             Student <span>Benefits</span>
@@ -47,7 +45,7 @@ const StudentBenefits = () => {
                     alt=""
                   />
                 </div>
-  
+
                 <figcaption>
                   <h3>Pay only when you start working</h3>
                 </figcaption>
@@ -67,7 +65,6 @@ const StudentBenefits = () => {
                     alt=""
                   />
                 </div>
-                {/* </div> */}
                 <figcaption>
                   <h3>Financing that’s always affordable</h3>
                 </figcaption>
@@ -104,18 +101,15 @@ const StudentBenefits = () => {
         offset={0}
         duration={500}
       >
-        {/* <button className="requestIsa">
-            <span>
-              Request ISA<span className="lower">s </span> for your program
-            </span>
-            <i className="fas fa-arrow-up"></i>
-          </button> */}
-
         <div className="cursorDownContainer">
-          <img src={require("../../Assets/Cursors/cursorDown.svg")} alt="" />
+          <img className="cursorNormal" src={require("../../Assets/Cursors/cursorDown.svg")} alt="" />
+          <img
+            className="cursorHover"
+            src={require("../../Assets/Cursors/cursorDownBlue.svg")}
+            alt=""
+          />
         </div>
       </ScrollLink>
-
     </animated.section>
   );
 };

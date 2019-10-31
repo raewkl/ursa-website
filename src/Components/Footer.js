@@ -23,12 +23,6 @@ const Footer = props => {
               </p>
               <div className="footerLinks">
                 <ul>
-                  {/* <li>Company</li> */}
-                  {/* <li>Team</li>
-                  <li>Help & Support</li> */}
-                  {/* <li>Privacy Policy</li>
-                  <li>Terms Of Use</li> */}
-
                   <li>
                     <Link to="/faq" className="logIn">
                       FAQ

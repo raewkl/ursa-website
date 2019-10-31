@@ -10,12 +10,6 @@ a {
   cursor: url(../Assets/Cursors/cursorBlue20.png) 8 8, auto;
 }
 
-// .sectionThree {
-//   li {
-//     cursor: url(../Assets/Cursors/cursorDownBlue.png) 0 70, auto;
-//   }
-// }
-
 // Backgrounds
 
 $background: white;
@@ -85,34 +79,14 @@ img {
 }
 
 .cursor {
-  
   position: fixed;
-  // z-index: 21;
-  // background-color: $colorTwo;
-
   border-radius: 50%;
-}
-
-// .cursor1 {
-
-//   width: 14px;
-//   height: 14px;
-//     background-color: $colorTwo;
-
-//   // border: 1px solid $colorTwo;
-//   transition-duration: 180ms;
-//   transition-timing-function: ease-out;
-// }
-
-.cursor2 {
-
   width: 18px;
   height: 18px;
-    background-color: $colorTwoLight;
-
-  // border: 1px solid $colorFour;
+  background-color: $colorTwoLight;
   transition-duration: 150ms;
   transition-timing-function: ease-out;
+  z-index: -1;
 }
 
 button,
@@ -131,11 +105,24 @@ input[type="submit"] {
   min-width: 320px;
 }
 
+.cursorHover {
+  display: none;
+}
+
 .cursorDownContainer {
   position: absolute;
   width: 80px;
-  bottom: 5vh;
+  height: 83px;
   left: calc(50% - 40px);
+  bottom: 7vh;
+
+  &:hover .cursorNormal {
+    display: none;
+  }
+
+  &:hover .cursorHover {
+    display: block;
+  }
 }
 
 @media (max-width: 500px) {

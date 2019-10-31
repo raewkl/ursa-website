@@ -22,16 +22,6 @@ class App extends Component {
     };
   }
 
-  footerWhite = () => {
-    const footerBg = document.getElementById("footerBg");
-    footerBg.style.backgroundColor = "white";
-  };
-
-  footerBlue = () => {
-    const footerBg = document.getElementById("footerBg");
-    footerBg.style.backgroundColor = "#efeeff";
-  };
-
   componentDidMount() {
     document.addEventListener("mousemove", this.moveMouse);
   }
@@ -39,11 +29,11 @@ class App extends Component {
   componentWillUnmount() {}
 
   moveMouse = e => {
-    const cursor2 = document.getElementById("cursor2");
+    const cursor = document.getElementById("cursor");
     const x = e.clientX;
     const y = e.clientY;
 
-     cursor2.style.transform = `translate(${x - 7}px, ${y - 8}px)`;
+    cursor.style.transform = `translate(${x - 7}px, ${y - 8}px)`;
   };
 
   updateUser = user => {
@@ -90,18 +80,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          
-          <div className="cursor cursor1" id="cursor1"></div>
-
-          <div className="cursor cursor2" id="cursor2"></div>
+          <div className="cursor" id="cursor"></div>
 
           <Route path="/" component={() => <Header />} />
 
-          <Route
-            exact
-            path="/"
-            component={() => <LandingPage footerBlue={this.footerBlue} />}
-          />
+          <Route exact path="/" component={() => <LandingPage />} />
 
           <Route path="/dashboard">
             {this.state.user ? (
@@ -109,7 +92,6 @@ class App extends Component {
                 logout={this.logout}
                 userId={this.state.uid}
                 listener={this.listener}
-                footerWhite={this.footerWhite}
               />
             ) : (
               <LogIn
@@ -117,15 +99,11 @@ class App extends Component {
                 handleChange={this.handleChange}
                 login={this.login}
                 user={this.state.user}
-                footerWhite={this.footerWhite}
               />
             )}
           </Route>
 
-          <Route
-            path="/faq"
-            component={() => <Faq footerWhite={this.footerWhite} />}
-          />
+          <Route path="/faq" component={() => <Faq />} />
 
           <Route path="/" component={() => <Footer />} />
         </div>
