@@ -9,18 +9,14 @@
   top: 0;
   height: 85px;
   z-index: 80;
-
-  transition: transform 0.5s;
 }
 
 .moveUp {
-  transition: transform 0.5s;
-  animation: moveUp 0.5s linear forwards;
+  animation: moveUp 0.3s linear forwards;
 }
 
 .moveDown {
-  transition: transform 0.5s;
-  animation: moveDown 0.5s linear forwards;
+  animation: moveDown 0.3s linear forwards;
 }
 
 @keyframes moveUp {

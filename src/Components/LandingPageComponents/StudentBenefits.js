@@ -32,6 +32,7 @@ const StudentBenefits = () => {
         <div ref={ref} style={props} className="sectionThreeContent">
           <ul className="stuBenefitsList">
             <li>
+              <div className="gifSelector"></div>
               <figure>
                 <div className="stuImgBox">
                   <img
@@ -52,6 +53,7 @@ const StudentBenefits = () => {
               </figure>
             </li>
             <li>
+              <div className="gifSelector"></div>
               <figure className="evenFigure">
                 <div className="stuImgBox">
                   <img
@@ -71,6 +73,7 @@ const StudentBenefits = () => {
               </figure>
             </li>
             <li>
+              <div className="gifSelector"></div>
               <figure>
                 <div className="stuImgBox">
                   <img
@@ -102,7 +105,11 @@ const StudentBenefits = () => {
         duration={500}
       >
         <div className="cursorDownContainer">
-          <img className="cursorNormal" src={require("../../Assets/Cursors/cursorDown.svg")} alt="" />
+          <img
+            className="cursorNormal"
+            src={require("../../Assets/Cursors/cursorDown.svg")}
+            alt=""
+          />
           <img
             className="cursorHover"
             src={require("../../Assets/Cursors/cursorDownBlue.svg")}

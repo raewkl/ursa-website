@@ -6,7 +6,7 @@ import * as Scroll from "react-scroll";
 
 let ScrollLink = Scroll.Link;
 
-const SectionTwoUpper = () => {
+const SectionTwo = () => {
   const [ref, inView] = useInView({
     rootMargin: "-50px 0px",
     triggerOnce: true
@@ -132,4 +132,4 @@ const SectionTwoUpper = () => {
   );
 };
 
-export default SectionTwoUpper;
+export default SectionTwo;

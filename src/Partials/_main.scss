@@ -4,9 +4,6 @@
   right: 0;
   top: 0;
   bottom: 0;
-  // width: 100%;
-  // height: 100%;
-  // margin: 0 auto;
 }
 
 .circle1,
@@ -125,82 +122,73 @@
 
 @keyframes float1 {
   0% {
-    transform: rotate(20deg);
+    transform: translateY(0) rotate(20deg);
     opacity: 0;
-    bottom: 0;
+    // bottom: 0;
   }
   10% {
     opacity: 0.5;
   }
   100% {
-    transform: rotate(110deg);
+    transform: translateY(-120vh) rotate(110deg);
     opacity: 0.5;
-    bottom: 100%;
+    // bottom: 100%;
   }
 }
 
 @keyframes float2 {
   0% {
-    transform: rotate(0);
+    transform: translateY(0) rotate(0);
     opacity: 0;
-    bottom: 0;
   }
   10% {
     opacity: 0.3;
   }
   100% {
-    transform: rotate(-90deg);
+    transform: translateY(-120vh) rotate(-90deg);
     opacity: 0.3;
-    bottom: 100%;
   }
 }
 
 @keyframes float3 {
   0% {
-    transform: rotate(-80deg); // 50px
+    transform: translateY(0) rotate(-80deg);
     opacity: 0;
-    bottom: 0;
   }
   10% {
     opacity: 0.4;
   }
   100% {
-    
-    transform: rotate(-130deg); 
+    transform: translateY(-120vh) rotate(-130deg);
     opacity: 0.4;
-    bottom: 100%;
   }
 }
 
 @keyframes float4 {
   0% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0deg);
     opacity: 0;
-    bottom: 0;
   }
   35% {
     opacity: 1;
   }
   100% {
-    transform: rotate(60deg);
+    transform: translateY(-120vh) rotate(60deg);
     opacity: 1;
-    bottom: 100%;
   }
 }
 
 @keyframes float5 {
   0% {
-    transform: rotate(0);
+    transform: translateY(0) rotate(0);
     opacity: 0;
-    bottom: 0;
   }
   20% {
     opacity: 1;
   }
   100% {
-    transform: rotate(90deg);
+    transform: translateY(-120vh) rotate(90deg);
     opacity: 1;
-    bottom: 100%;
   }
 }
 
@@ -484,7 +472,6 @@
 
   .studentBenefits {
     width: 350px;
-
   }
 
   .sectionThreeContent {
@@ -516,6 +503,7 @@
   li {
     width: 100%;
     margin-bottom: 6vh;
+    position: relative;
 
     &:hover .stuImg {
       opacity: 0;
@@ -524,6 +512,18 @@
     &:hover h3 {
       -webkit-text-stroke-width: 0px;
       color: $colorOne;
+    }
+  }
+
+  .gifSelector {
+    position: absolute;
+    left: -100vw;
+    right: -100vw;
+    top: 0;
+    bottom: 0;
+
+    &:hover + .stuGif {
+      display: none;
     }
   }
 
@@ -539,7 +539,7 @@
     justify-content: space-between;
     width: 100%;
   }
-  
+
   figure.evenFigure {
     flex-direction: row-reverse;
   }
@@ -851,21 +851,21 @@ aside {
   }
 }
 
-@media (max-width: 1563px) {
-  .sectionThree {
-    h3 {
-      font-size: 1.8rem;
-    }
-  }
-}
+// @media (max-width: 1563px) {
+//   .sectionThree {
+//     h3 {
+//       font-size: 1.8rem;
+//     }
+//   }
+// }
 
-@media (max-width: 1471px) {
-  .sectionThree {
-    h3 {
-      font-size: 1.58rem;
-    }
-  }
-}
+// @media (max-width: 1471px) {
+//   .sectionThree {
+//     h3 {
+//       font-size: 1.58rem;
+//     }
+//   }
+// }
 
 @media (max-width: 1317px) {
   .sectionOne {
@@ -914,6 +914,7 @@ aside {
 
   .sectionThree {
     flex-direction: column;
+
     .studentBenefits {
       width: 100%;
     }
@@ -929,8 +930,21 @@ aside {
     }
 
     .sectionThreeContent {
-      margin-top: 6vh;
+      margin-top: 8vh;
       width: 100%;
+    }
+
+    figure {
+      padding: 0 7%;
+    }
+
+    .stuImgBox {
+      width: 40%;
+      height: 275px;
+    }
+
+    figcaption {
+      width: 40%;
     }
 
     h3 {
@@ -1053,40 +1067,9 @@ aside {
   }
 
   .sectionThree {
-    h3 {
-      font-size: 2rem;
-    }
-
-    figure {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    figure.evenFigure {
-      flex-direction: row-reverse;
-    }
-
+    .stuImgBox,
     figcaption {
-      width: 40%;
-    }
-
-    .stuImgBox {
-      width: 40%;
-      margin-bottom: 0;
-    }
-
-    ul {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    li {
-      width: 100%;
-      margin-bottom: 8vh;
-    }
-
-    li:last-child {
-      margin-bottom: 0;
+      width: 45%;
     }
   }
 }
@@ -1213,12 +1196,12 @@ aside {
     }
   }
 
-  .sectionThree {
-    .stuImgBox,
-    figcaption {
-      width: 45%;
-    }
-  }
+  // .sectionThree {
+  //   .stuImgBox,
+  //   figcaption {
+  //     width: 45%;
+  //   }
+  // }
 
   .formBox {
     width: 100%;
@@ -1290,7 +1273,7 @@ aside {
   }
 
   .sectionThree {
-    padding-bottom: 8vh;
+    // padding-bottom: 8vh;
 
     ul {
       margin-bottom: 2vh;
@@ -1382,10 +1365,14 @@ aside {
 
   .sectionOne {
     height: calc(100vh);
-    padding-top: 12vh;
+    padding-top: 0vh;
 
     .sectionOneLeft {
       justify-content: center;
     }
+  }
+
+  .cursorHover, .cursorNormal {
+    width: 50px;
   }
 }

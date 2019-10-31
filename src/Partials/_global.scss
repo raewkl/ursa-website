@@ -109,11 +109,18 @@ input[type="submit"] {
   display: none;
 }
 
-.cursorDownContainer {
-  position: absolute;
+.cursorHover, .cursorNormal {
   width: 80px;
+}
+
+.cursorDownContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  width: 240px;
   height: 83px;
-  left: calc(50% - 40px);
+  left: calc(50% - 120px);
   bottom: 7vh;
 
   &:hover .cursorNormal {
@@ -122,6 +129,16 @@ input[type="submit"] {
 
   &:hover .cursorHover {
     display: block;
+    animation: arrowDown 1s ease-in-out infinite;
+  }
+}
+
+@keyframes arrowDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(15px);
   }
 }
 

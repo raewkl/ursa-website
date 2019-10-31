@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SectionTwoUpper from "./LandingPageComponents/SectionTwoUpper";
+import SectionTwo from "./LandingPageComponents/SectionTwoUpper";
 import StudentBenefits from "./LandingPageComponents/StudentBenefits";
 import FormAnimation from "./LandingPageComponents/FormAnimation";
 import NumbersAnimation from "./LandingPageComponents/NumbersAnimation";
@@ -43,10 +43,9 @@ class LandingPage extends Component {
   }
 
   scrollDirection = () => {
-    this.scrollHeight();
+    // this.scrollHeight();
 
     const topBar = document.getElementById("topBar");
-    console.log(topBar);
 
     if (topBar) {
       // let percentage = this.scrollHeight();
@@ -314,8 +313,8 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="noWrapper">
+        <this.floatingCircles />
         <div className="landingPage">
-          <this.floatingCircles />
           <main>
             {/* SECTION ONE */}
 
@@ -364,7 +363,7 @@ class LandingPage extends Component {
                   className="sectionTwoUpper navSection"
                   id="sectionTwoUpper"
                 >
-                  <SectionTwoUpper />
+                  <SectionTwo />
                 </section>
 
                 <ScrollLink
