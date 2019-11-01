@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Footer = props => {
+
+  
+
   return (
     <div className="footerBg" id="footerBg">
       <footer className="wrapper scrollChild">
@@ -24,7 +27,7 @@ const Footer = props => {
               <div className="footerLinks">
                 <ul>
                   <li>
-                    <Link to="/faq" className="logIn">
+                    <Link to="/faq" className="logIn" onClick={() => props.removeHeader()}>
                       FAQ
                     </Link>
                   </li>

@@ -7,7 +7,7 @@ html {
 button,
 input[type="submit"],
 a {
-  cursor: url(../Assets/Cursors/cursorBlue20.png) 8 8, auto;
+  cursor: url(../Assets/Cursors/cursorBlue20.png) 10 10, auto;
 }
 
 // Backgrounds
@@ -81,8 +81,8 @@ img {
 .cursor {
   position: fixed;
   border-radius: 50%;
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   background-color: $colorTwoLight;
   transition-duration: 150ms;
   transition-timing-function: ease-out;

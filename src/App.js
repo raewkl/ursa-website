@@ -28,12 +28,19 @@ class App extends Component {
 
   componentWillUnmount() {}
 
+  removeHeader = () => {
+    const topBar = document.getElementById("topBarContainer");
+
+    topBar.classList.remove("addHeight");
+    topBar.classList.add("removeHeight");
+  };
+
   moveMouse = e => {
     const cursor = document.getElementById("cursor");
     const x = e.clientX;
     const y = e.clientY;
 
-    cursor.style.transform = `translate(${x - 8}px, ${y - 8}px)`;
+    cursor.style.transform = `translate(${x - 6.5}px, ${y - 6.5}px)`;
   };
 
   updateUser = user => {
@@ -82,7 +89,10 @@ class App extends Component {
         <div className="App">
           <div className="cursor" id="cursor"></div>
 
-          <Route path="/" component={() => <Header />} />
+          <Route
+            path="/"
+            component={() => <Header removeHeader={this.removeHeader} />}
+          />
 
           <Route exact path="/" component={() => <LandingPage />} />
 
@@ -103,9 +113,12 @@ class App extends Component {
             )}
           </Route>
 
-          <Route path="/faq" component={() => <Faq />} />
+          <Route exact path="/faq" component={() => <Faq />} />
 
-          <Route path="/" component={() => <Footer />} />
+          <Route
+            path="/"
+            component={() => <Footer removeHeader={this.removeHeader} />}
+          />
         </div>
       </Router>
     );

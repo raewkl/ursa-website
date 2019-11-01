@@ -27,10 +27,10 @@ class LandingPage extends Component {
   }
 
   componentWillUnmount() {
-
-    this.state = {
+    this.setState({
       topBar: false
-    };
+    });
+
     // window.removeEventListener("scroll", this.scrollDirection, false);
   }
 
@@ -52,6 +52,8 @@ class LandingPage extends Component {
   //     scrollPos = document.body.getBoundingClientRect().top;
   //   }
   // };
+
+  
 
   removeClasses = (target, classes) => {
     const circle = target;
@@ -161,7 +163,8 @@ class LandingPage extends Component {
             <div className="sectionOneBg">
               <section className="sectionOne wrapper" id="sectionOne">
                 <div className="sectionOneLeft">
-                  <InView as="div"
+                  <InView
+                    as="div"
                     className="titleBox"
                     as="section"
                     onChange={(inView, entry) => {

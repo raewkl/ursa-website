@@ -48,7 +48,7 @@ const Header = props => {
         hamburger.classList.remove("close");
         topBarContainer.classList.remove("contract");
         hamburgerLinks.classList.remove("fadeOut");
-      }, 750);
+      }, 1500);
     }
   };
 
@@ -81,7 +81,6 @@ const Header = props => {
 
   return (
     <header className="landingNav">
-
       <div className="topBarContainer" id="topBarContainer">
         <div className="navCircle"></div>
 
@@ -104,7 +103,11 @@ const Header = props => {
               </li>
 
               <li>
-                <Link to="/dashboard" className="logIn">
+                <Link
+                  to="/dashboard"
+                  className="logIn"
+                  onClick={() => props.removeHeader()}
+                >
                   <span className="movingText1">Log In</span>
                   {/* <span className="movingText2">Log In</span> */}
                 </Link>

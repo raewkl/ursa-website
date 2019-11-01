@@ -115,8 +115,7 @@ class Faq extends Component {
               <p>
                 We sometimes compare ISAs directly with loan APRs (annual
                 percentage rates), but that’s not entirely a great comparison
-                since APRs project growth of a balance and ISAs don’t grow. For
-                example, this could happen (graphs), or this (other graphs). So
+                since APRs project growth of a balance and ISAs don’t grow. So
                 you might end up paying us back more than the original amount of
                 tuition, but that will only happen if you’re doing really well!
                 At the end of the day, it’s a way for you to pay for tuition

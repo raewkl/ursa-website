@@ -63,19 +63,14 @@
   li {
     padding: 20px 0;
     border-top: 1px solid $colorOne;
+        border-radius: 0;
+
 
     &:last-child {
       border-bottom: 1px solid $colorOne;
     }
-  }
 
-  .answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-  }
-
-  button {
+    button {
     color: $colorOne;
     background-color: rgba(0, 0, 0, 0);
     width: 100%;
@@ -85,6 +80,15 @@
     border-radius: 0;
     text-transform: none;
   }
+  }
+
+  .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  
 
   h2 {
     text-decoration: none;
