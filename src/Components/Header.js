@@ -39,8 +39,8 @@ const Header = props => {
     } else {
       clicked = false;
       hamburger.classList.add("close");
-      topBarContainer.classList.add("contract");
       hamburgerLinks.classList.add("fadeOut");
+      topBarContainer.classList.add("contract");
 
       setTimeout(() => {
         hamburgerLinks.style.display = "none";
@@ -48,7 +48,7 @@ const Header = props => {
         hamburger.classList.remove("close");
         topBarContainer.classList.remove("contract");
         hamburgerLinks.classList.remove("fadeOut");
-      }, 500);
+      }, 750);
     }
   };
 
@@ -106,7 +106,7 @@ const Header = props => {
               <li>
                 <Link to="/dashboard" className="logIn">
                   <span className="movingText1">Log In</span>
-                  <span className="movingText2">Log In</span>
+                  {/* <span className="movingText2">Log In</span> */}
                 </Link>
               </li>
             </ul>

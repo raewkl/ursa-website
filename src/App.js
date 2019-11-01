@@ -33,7 +33,7 @@ class App extends Component {
     const x = e.clientX;
     const y = e.clientY;
 
-    cursor.style.transform = `translate(${x - 7}px, ${y - 8}px)`;
+    cursor.style.transform = `translate(${x - 8}px, ${y - 8}px)`;
   };
 
   updateUser = user => {

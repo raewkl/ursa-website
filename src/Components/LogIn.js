@@ -54,9 +54,9 @@ class LogIn extends Component {
           </div>
 
           <div className="lowerFormLogIn">
-            <div className="passBox">
+            {/* <div className="passBox">
               <a href="#">Forgot your password?</a>
-            </div>
+            </div> */}
 
             <div className="signInContainer">
               <input

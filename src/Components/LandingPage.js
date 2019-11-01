@@ -4,61 +4,50 @@ import StudentBenefits from "./LandingPageComponents/StudentBenefits";
 import FormAnimation from "./LandingPageComponents/FormAnimation";
 import NumbersAnimation from "./LandingPageComponents/NumbersAnimation";
 
-import { useInView } from "react-intersection-observer";
+import { useInView, InView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import * as Scroll from "react-scroll";
 
 let ScrollLink = Scroll.Link;
-let scrollPos = 0;
+// let scrollPos = 0;
 
 class LandingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sectionOne: false,
-      sectionTwo: false,
-      sectionThree: false,
-      contact: false
+      topBar: false
     };
   }
 
   componentDidMount() {
     // check if in contact for initial circle position
-    this.setState(
-      {
-        sectionOne: true,
-        sectionTwo: false,
-        sectionThree: false,
-        contact: false
-      },
-      () => {
-        window.addEventListener("scroll", this.scrollDirection, false);
-      }
-    );
+    this.setState({}, () => {
+      // window.addEventListener("scroll", this.scrollDirection, false);
+    });
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.scrollDirection, false);
+    // window.removeEventListener("scroll", this.scrollDirection, false);
   }
 
-  scrollDirection = () => {
+  // scrollDirection = () => {
 
-    const topBar = document.getElementById("topBar");
+  //   const topBar = document.getElementById("topBar");
 
-    if (topBar) {
+  //   if (topBar) {
 
-      if (document.body.getBoundingClientRect().top > scrollPos) {
-        topBar.classList.remove("moveUp");
-        topBar.classList.add("moveDown");
-      } else {
-        topBar.classList.remove("moveDown");
-        topBar.classList.add("moveUp");
-      }
+  //     if (document.body.getBoundingClientRect().top > scrollPos) {
+  //       topBar.classList.remove("moveUp");
+  //       topBar.classList.add("moveDown");
+  //     } else {
+  //       topBar.classList.remove("moveDown");
+  //       topBar.classList.add("moveUp");
+  //     }
 
-      // saves the new position for iteration.
-      scrollPos = document.body.getBoundingClientRect().top;
-    }
-  };
+  //     // saves the new position for iteration.
+  //     scrollPos = document.body.getBoundingClientRect().top;
+  //   }
+  // };
 
   removeClasses = (target, classes) => {
     const circle = target;
@@ -166,8 +155,29 @@ class LandingPage extends Component {
             {/* SECTION ONE */}
 
             <div className="sectionOneBg">
-              <section
-                className="sectionOne navSection scrollChild wrapper"
+              <InView
+                as="section"
+                onChange={(inView, entry) => {
+                  // select the bar
+                  const topBar = document.getElementById("topBarContainer");
+
+                  if (inView === false) {
+                    this.setState(
+                      {
+                        topBar: true
+                      },
+                      () => {
+                        topBar.classList.remove("removeHeight");
+                        topBar.classList.add("addHeight");
+                      }
+                    );
+                  } else if (inView === true && this.state.topBar) {
+
+                    topBar.classList.remove("addHeight");
+                    topBar.classList.add("removeHeight");
+                  }
+                }}
+                className="sectionOne wrapper"
                 id="sectionOne"
               >
                 <div className="sectionOneLeft">
@@ -183,7 +193,7 @@ class LandingPage extends Component {
                   to="sectionTwo"
                   spy={true}
                   smooth={true}
-                  offset={0}
+                  offset={10}
                   duration={500}
                 >
                   <div className="cursorDownContainer">
@@ -199,13 +209,13 @@ class LandingPage extends Component {
                     />
                   </div>
                 </ScrollLink>
-              </section>
+              </InView>
             </div>
 
             {/* SECTION TWO */}
 
             <div className="sectionTwoBg">
-              <section className="sectionTwo scrollChild wrapper">
+              <section className="sectionTwo wrapper">
                 <section
                   className="sectionTwoUpper navSection"
                   id="sectionTwoUpper"
@@ -218,7 +228,7 @@ class LandingPage extends Component {
                   to="sectionThree"
                   spy={true}
                   smooth={true}
-                  offset={0}
+                  offset={-210}
                   duration={500}
                 >
                   <div className="cursorDownContainer">
@@ -257,7 +267,6 @@ class LandingPage extends Component {
                   <NumbersAnimation />
                 </div>
               </section>
-
             </div>
           </main>
         </div>

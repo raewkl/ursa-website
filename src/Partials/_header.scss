@@ -6,9 +6,36 @@
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
-  height: 85px;
+  top: -1px;
+  // height: 85px;
   z-index: 80;
+  background-color: $background;
+  border-bottom: 1px solid $colorOne;
+}
+
+.addHeight {
+  animation: addHeight 0.3s linear forwards;
+}
+
+.removeHeight {
+  animation: removeHeight 0.3s linear forwards;
+
+}
+
+@keyframes addHeight {
+  from {
+    height: 0px;
+  } to {
+    height: 86px;
+  }
+}
+
+@keyframes removeHeight {
+  from {
+    height: 86px;
+  } to {
+    height: 0px;
+  }
 }
 
 .moveUp {
@@ -122,8 +149,9 @@
       height: 100%;
       display: flex;
       align-items: center;
+      justify-content: center;
       width: 120px;
-      overflow-x: hidden;
+      // overflow-x: hidden;
       background-color: $colorOne;
       color: $background;
 
@@ -133,32 +161,32 @@
       }
     }
 
-    .movingText1,
-    .movingText2 {
+    .movingText1 {
       display: inline-block;
       white-space: nowrap;
-      transform: translateX(100px);
-      position: absolute;
+
+      // transform: translateX(100px);
+      // position: absolute;
     }
 
-    .movingText1 {
-      animation: scroll 6s linear infinite;
-    }
+    // .movingText1 {
+    //   animation: scroll 6s linear infinite;
+    // }
 
-    .movingText2 {
-      animation: scroll 6s linear 3s infinite;
-    }
+    // .movingText2 {
+    //   animation: scroll 6s linear 3s infinite;
+    // }
   }
 }
 
-@keyframes scroll {
-  from {
-    transform: translateX(105px);
-  }
-  to {
-    transform: translateX(-75px);
-  }
-}
+// @keyframes scroll {
+//   from {
+//     transform: translateX(105px);
+//   }
+//   to {
+//     transform: translateX(-75px);
+//   }
+// }
 
 .miniNav {
   display: none;
@@ -172,6 +200,7 @@
   padding: 0;
   border: none;
   width: auto;
+  border-radius: 0;
 
   .topBun,
   .bottomBun {
@@ -215,7 +244,7 @@
 }
 
 .fadeIn {
-  animation: fadeIn 0.5s linear forwards;
+  animation: fadeIn 0.75s linear forwards;
 }
 
 .fadeOut {
@@ -264,7 +293,7 @@
 }
 
 .contract .navCircle {
-  animation: contract 0.5s linear forwards;
+  animation: contract 0.75s linear forwards;
 }
 
 @keyframes expand {
@@ -353,7 +382,23 @@
     display: block;
   }
 
-  .topBarContainer {
+  // .topBarContainer {
+  //   height: 67px;
+  // }
+
+  @keyframes addHeight {
+  from {
+    height: 0px;
+  } to {
     height: 67px;
   }
+}
+
+@keyframes removeHeight {
+  from {
+    height: 67px;
+  } to {
+    height: 0px;
+  }
+}
 }

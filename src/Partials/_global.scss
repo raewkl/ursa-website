@@ -1,7 +1,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  cursor: url(../Assets/Cursors/cursorBlue20.png) 8 8, auto;
+  cursor: url(../Assets/Cursors/cursorBlue20.png) 10 10, auto;
 }
 
 button,
@@ -81,8 +81,8 @@ img {
 .cursor {
   position: fixed;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   background-color: $colorTwoLight;
   transition-duration: 150ms;
   transition-timing-function: ease-out;

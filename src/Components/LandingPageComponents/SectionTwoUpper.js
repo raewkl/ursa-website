@@ -1,5 +1,5 @@
 import React from "react";
-import { useInView } from "react-intersection-observer";
+import { useInView, InView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 
 const SectionTwo = () => {
@@ -16,7 +16,9 @@ const SectionTwo = () => {
 
   return (
     <animated.div ref={ref} style={props} className="sectionTwoLower">
-      <div className="isaDescription">
+      <div
+        className="isaDescription"
+      >
         <div className="headlineBox">
           <h2>What’s an ISA?</h2>
         </div>
@@ -114,12 +116,6 @@ const SectionTwo = () => {
           </ul>
         </div>
       </div>
-
-      {/* <p className="institutions">
-        We work with educational institutions in Canada and the US.
-      </p> */}
-
-      
     </animated.div>
   );
 };

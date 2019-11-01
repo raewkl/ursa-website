@@ -31,9 +31,9 @@ const Footer = props => {
                   <li>
                     <HashLink to="/#contact">Contact Us</HashLink>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="#sectionOne">Legal</a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

@@ -24,7 +24,7 @@
   font-size: 2rem;
   bottom: 0;
   left: 6.5%;
-  animation: float1 14s linear infinite;
+  animation: float1 14s ease-in infinite;
   z-index: -20;
 }
 
@@ -33,7 +33,7 @@
   position: absolute;
   bottom: 0;
   right: 28%;
-  animation: float2 15s linear -2s infinite;
+  animation: float2 17s ease-in -2s infinite;
   z-index: -20;
 }
 
@@ -42,7 +42,7 @@
   position: absolute;
   bottom: 0;
   right: 6%;
-  animation: float3 14s ease-in-out -1s infinite;
+  animation: float3 26s ease-in -1s infinite;
   z-index: -20;
 }
 
@@ -51,7 +51,7 @@
   position: absolute;
   bottom: -150px;
   right: 12%;
-  animation: float4 28s linear -5s infinite;
+  animation: float4 28s ease-in -5s infinite;
   z-index: 15;
 }
 
@@ -64,7 +64,7 @@
   position: absolute;
   bottom: 0;
   left: 4%;
-  animation: float5 11s linear -5s infinite;
+  animation: float5 14s ease-in -5s infinite;
   z-index: -20;
 }
 
@@ -77,7 +77,7 @@
   position: absolute;
   bottom: 0;
   right: 6%;
-  animation: float5 9s linear -2s infinite;
+  animation: float5 9s ease-in -2s infinite;
   z-index: -20;
 }
 
@@ -90,7 +90,7 @@
   position: absolute;
   bottom: 0;
   right: 8%;
-  animation: float5 7s linear -1s infinite;
+  animation: float5 7s ease-in -1s infinite;
   z-index: -20;
 }
 
@@ -103,7 +103,7 @@
   position: absolute;
   bottom: 0;
   left: 10%;
-  animation: float5 18s linear -4s infinite;
+  animation: float5 18s ease-in -4s infinite;
   z-index: -20;
 }
 
@@ -116,7 +116,7 @@
   position: absolute;
   bottom: 0;
   left: 8%;
-  animation: float5 14s linear -10s infinite;
+  animation: float5 14s ease-in -10s infinite;
   z-index: -20;
 }
 
@@ -132,7 +132,6 @@
   100% {
     transform: translateY(-120vh) rotate(110deg);
     opacity: 0.5;
-    // bottom: 100%;
   }
 }
 
@@ -172,9 +171,12 @@
   35% {
     opacity: 1;
   }
-  100% {
-    transform: translateY(-120vh) rotate(60deg);
+  90% {
     opacity: 1;
+  }
+  100% {
+    transform: translateY(-130vh) rotate(100deg);
+    opacity: 0;
   }
 }
 
@@ -281,7 +283,7 @@
       text-align: center;
 
       span {
-        font-weight: 500;
+        font-weight: bold;
       }
     }
   }
@@ -581,7 +583,7 @@
 
 .formAsideBox {
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: space-between;
   margin-top: 8vh;
 }
@@ -679,6 +681,7 @@ form {
     padding: 10px 0;
     font-size: 0.8rem;
     font-family: $primaryFont;
+    border-radius: 0;
 
     &::placeholder {
       font-size: 0.8rem;
@@ -751,7 +754,7 @@ form {
 }
 
 .asideBox {
-  height: 100%;
+  height: auto;
   position: relative;
 }
 
@@ -855,7 +858,8 @@ aside {
 
     .isaDescriptionLower {
       margin-top: 6vh;
-      width: 80%;
+      width: 100%;
+      padding: 0 10%;
       min-width: 670px;
     }
   }
@@ -903,10 +907,11 @@ aside {
 
   .formAsideBox {
     flex-direction: column;
+    align-items: center;
   }
 
   .formBox {
-    width: 75%;
+    width: 80%;
   }
 
   form {
@@ -953,6 +958,11 @@ aside {
 }
 
 @media (max-width: 1119px) {
+
+  .circle4 {
+    font-size: calc(5rem * 0.8);
+  }
+
   .sectionOne {
     .arrowBoxS1 {
       width: 7px;
@@ -1037,20 +1047,23 @@ aside {
   }
 
   .sectionTwo {
-
     .isaDescriptionLower {
       width: 100%;
+      padding: 0;
       min-width: auto;
     }
+  }
+
+  // .sectionThree {
+  //   figure {
+  //   padding: 0;
+  //   }
+  // }
 
   form {
     .radioOptionsUpper {
       flex-wrap: wrap;
     }
-
-  }
-
-  
 
     p {
       width: 100%;
@@ -1118,7 +1131,7 @@ aside {
 
 @media (max-width: 677px) {
   .circle4 {
-    font-size: 6rem;
+    font-size: calc(6rem * 0.8);
   }
 
   @keyframes float4 {
@@ -1210,7 +1223,7 @@ aside {
   }
 
   .circle4 {
-    font-size: 4.5rem;
+    font-size: calc(4.5rem * 0.75);
   }
 
   body {
