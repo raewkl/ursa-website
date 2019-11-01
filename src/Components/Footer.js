@@ -42,13 +42,31 @@ const Footer = props => {
           <div className="rightFooter">
             <ul>
               <li>
-                <i className="fab fa-twitter"></i>
+                <a
+                  href="https://twitter.com/ursaeducation"
+                  target="_blank"
+                  className="icons"
+                >
+                  <i className="fab fa-twitter"></i>
+                </a>
               </li>
               <li>
-                <i className="fab fa-linkedin-in"></i>
+                <a
+                  href="https://ca.linkedin.com/company/ursa-education"
+                  target="_blank"
+                  className="icons"
+                >
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
               </li>
               <li>
-                <i className="fab fa-facebook-f"></i>
+                <a
+                  href="https://www.facebook.com/ursaeducation/"
+                  target="_blank"
+                  className="icons"
+                >
+                  <i className="fab fa-facebook-f"></i>
+                </a>
               </li>
             </ul>
           </div>
@@ -61,7 +79,6 @@ const Footer = props => {
             <p className="return">Return To Top</p>
           </a>
         </div>
-
       </footer>
     </div>
   );
