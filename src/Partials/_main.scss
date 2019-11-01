@@ -832,6 +832,7 @@ aside {
   .sectionTwo {
     .isaDescription {
       flex-direction: column;
+      align-items: center;
 
       .headlineBox {
         width: 100%;
@@ -848,10 +849,14 @@ aside {
       }
     }
 
+    li {
+      max-width: none;
+    }
+
     .isaDescriptionLower {
       margin-top: 6vh;
-      width: 100%;
-      max-width: 670px;
+      width: 80%;
+      min-width: 670px;
     }
   }
 
@@ -883,7 +888,7 @@ aside {
     }
 
     figure {
-      padding: 0 7%;
+      padding: 0 10%;
     }
 
     .stuImgBox {
@@ -1031,10 +1036,21 @@ aside {
     font-size: 0.9rem;
   }
 
+  .sectionTwo {
+
+    .isaDescriptionLower {
+      width: 100%;
+      min-width: auto;
+    }
+
   form {
     .radioOptionsUpper {
       flex-wrap: wrap;
     }
+
+  }
+
+  
 
     p {
       width: 100%;
@@ -1305,6 +1321,10 @@ aside {
     .sectionOneLeft {
       justify-content: center;
     }
+  }
+
+  .cursorDownContainer {
+    bottom: 10vh;
   }
 
   .cursorHover,
