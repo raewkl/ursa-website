@@ -212,29 +212,6 @@
     margin: 5vh 0 0 0;
   }
 
-  .arrowBoxS1 {
-    display: none;
-    width: 9px;
-    position: absolute;
-    left: -10.2%;
-    bottom: 8px;
-    opacity: 0;
-    animation: fadeIn 2.5s ease-out 1.6s forwards;
-
-    .arrowImg {
-      width: 100%;
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
   a {
     display: flex;
     justify-content: center;
@@ -312,7 +289,7 @@
 
 .sectionTwo,
 .sectionThreeUpper {
-  padding: 12vh 0 12vh 0;
+  padding: 12vh 0 0 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -450,18 +427,6 @@
     margin: 0;
     text-align: center;
   }
-
-  // button {
-  //   display: flex;
-  //   justify-content: space-evenly;
-
-  //   width: 165px;
-  //   margin-top: 8vh;
-
-  //   &:hover .fa-arrow-up {
-  //     animation: arrowPointBottom 0.75s ease-in-out infinite forwards;
-  //   }
-  // }
 }
 
 .sectionThree {
@@ -534,7 +499,6 @@
   figure {
     text-align: center;
     display: flex;
-    // flex-direction: column;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -851,22 +815,6 @@ aside {
   }
 }
 
-// @media (max-width: 1563px) {
-//   .sectionThree {
-//     h3 {
-//       font-size: 1.8rem;
-//     }
-//   }
-// }
-
-// @media (max-width: 1471px) {
-//   .sectionThree {
-//     h3 {
-//       font-size: 1.58rem;
-//     }
-//   }
-// }
-
 @media (max-width: 1317px) {
   .sectionOne {
     .sectionOneLeft {
@@ -945,10 +893,6 @@ aside {
 
     figcaption {
       width: 40%;
-    }
-
-    h3 {
-      font-size: 1.7rem;
     }
   }
 
@@ -1196,13 +1140,6 @@ aside {
     }
   }
 
-  // .sectionThree {
-  //   .stuImgBox,
-  //   figcaption {
-  //     width: 45%;
-  //   }
-  // }
-
   .formBox {
     width: 100%;
   }
@@ -1273,8 +1210,6 @@ aside {
   }
 
   .sectionThree {
-    // padding-bottom: 8vh;
-
     ul {
       margin-bottom: 2vh;
     }
@@ -1372,7 +1307,12 @@ aside {
     }
   }
 
-  .cursorHover, .cursorNormal {
+  .cursorHover,
+  .cursorNormal {
     width: 50px;
+  }
+
+  .cursor {
+    display: none;
   }
 }

@@ -3,7 +3,7 @@ import FormList from "./FormList";
 import StudentForm from "./StudentForm";
 import firebase from "./firebase";
 
-const provider = new firebase.auth.GoogleAuthProvider();
+// const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 
 class Dashboard extends Component {
@@ -43,8 +43,6 @@ class Dashboard extends Component {
             dbRef.on("value", response => {
               const newState = [];
               const data = response.val();
-
-              console.log(data);
 
               for (let key in data) {
                 newState.push({

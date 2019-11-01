@@ -11,7 +11,6 @@ class LogIn extends Component {
   }
 
   // bring state for handle change
-
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -24,7 +23,6 @@ class LogIn extends Component {
   render() {
     return (
       <div className="logInPage wrapper">
-        {/* <Header /> */}
 
         <form action="" className="logInForm">
           <div className="upperFormLogIn">

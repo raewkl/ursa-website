@@ -16,7 +16,12 @@ const FormAnimation = () => {
 
   return (
     <animated.div style={props} ref={ref} className="formBox">
-      <form action="" method="POST" className="commentForm" name="commentForm">
+      <form
+        action="https://formspree.io/xknwywgo"
+        method="POST"
+        className="commentForm"
+        name="commentForm"
+      >
         <div className="upperForm">
           <div className="nameEmail">
             <div className="nameBox">
@@ -70,7 +75,6 @@ const FormAnimation = () => {
             <legend className="visuallyHidden">Customer Type</legend>
             <div className="radioOptionsUpper">
               <p>Tell us more about yourself: </p>
-              {/* <div className="radioOptions"> */}
 
               <div className="radioBox rb1">
                 <input
@@ -116,7 +120,6 @@ const FormAnimation = () => {
                   </span>
                 </label>
               </div>
-              {/* </div> */}
             </div>
           </fieldset>
         </div>

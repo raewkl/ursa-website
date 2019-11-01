@@ -38,12 +38,12 @@ const StudentBenefits = () => {
                   <img
                     className="stuImg"
                     src={require("../../Assets/Gifs/rocket2.jpg")}
-                    alt=""
+                    alt="Rocket taking off."
                   />
                   <img
                     className="stuGif"
-                    src={require("../../Assets/Gifs/rocket2G.gif")}
-                    alt=""
+                    src={require("../../Assets/Gifs/rocket2GCompressed.gif")}
+                    alt="Rocket taking off."
                   />
                 </div>
 
@@ -59,12 +59,12 @@ const StudentBenefits = () => {
                   <img
                     className="stuImg"
                     src={require("../../Assets/Gifs/hooray.jpg")}
-                    alt=""
+                    alt="Confetti falling on woman."
                   />
                   <img
                     className="stuGif"
                     src={require("../../Assets/Gifs/hoorayG.gif")}
-                    alt=""
+                    alt="Confetti falling on woman."
                   />
                 </div>
                 <figcaption>
@@ -79,12 +79,12 @@ const StudentBenefits = () => {
                   <img
                     className="stuImg"
                     src={require("../../Assets/Gifs/youGotThis.jpg")}
-                    alt=""
+                    alt="Woman giving thumbs up."
                   />
                   <img
                     className="stuGif"
-                    src={require("../../Assets/Gifs/youGotThisG.gif")}
-                    alt=""
+                    src={require("../../Assets/Gifs/youGotThisCompressed.gif")}
+                    alt="Woman giving thumbs up."
                   />
                 </div>
                 <figcaption>
@@ -108,12 +108,12 @@ const StudentBenefits = () => {
           <img
             className="cursorNormal"
             src={require("../../Assets/Cursors/cursorDown.svg")}
-            alt=""
+            alt="Arrow pointing down."
           />
           <img
             className="cursorHover"
             src={require("../../Assets/Cursors/cursorDownBlue.svg")}
-            alt=""
+            alt="Arrow pointing down."
           />
         </div>
       </ScrollLink>

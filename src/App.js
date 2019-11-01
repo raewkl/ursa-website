@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Partials/App.scss";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import firebase from "./Components/firebase";
 
 import LandingPage from "./Components/LandingPage";
@@ -10,7 +10,7 @@ import Header from "./Components/Header";
 import Dashboard from "./Components/Dashboard";
 import Faq from "./Components/Faq";
 
-const provider = new firebase.auth.GoogleAuthProvider();
+// const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 
 class App extends Component {
@@ -54,7 +54,7 @@ class App extends Component {
           uid: user.uid
         },
         () => {
-          console.log(user);
+          // console.log(user);
         }
       );
     });
@@ -70,7 +70,7 @@ class App extends Component {
           userId: null
         },
         () => {
-          console.log(this.state.user);
+          // console.log(this.state.user);
         }
       );
     });

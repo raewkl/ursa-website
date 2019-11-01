@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import { HashLink } from "react-router-hash-link";
 
 class Faq extends Component {
-  constructor() {
-    super();
-  }
 
   componentDidMount() {
     this.accordionListener();

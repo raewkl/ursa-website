@@ -1,10 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import * as Scroll from "react-scroll";
 import { useSpring, animated, config } from "react-spring";
-
-let ScrollLink = Scroll.Link;
 
 const Header = props => {
   let clicked = false;
@@ -145,60 +142,6 @@ const Header = props => {
           </nav>
         </animated.div>
       </div>
-
-      {/* <div className="sideNav">
-        <ul className="sideNavLower">
-          <ScrollLink
-            activeClass="active"
-            to="sectionOne"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            <li className="navContainer" name="sectionOneScroll">
-              <div className="dot"></div>
-            </li>
-          </ScrollLink>
-          <ScrollLink
-            activeClass="active"
-            to="sectionTwo"
-            spy={true}
-            smooth={true}
-            offset={-25}
-            duration={500}
-          >
-            <li className="navContainer">
-              <div className="dot"></div>
-            </li>
-          </ScrollLink>
-          <ScrollLink
-            activeClass="active"
-            to="sectionThree"
-            spy={true}
-            smooth={true}
-            offset={-80}
-            duration={500}
-          >
-            <li className="navContainer">
-              <div className="dot"></div>
-            </li>
-          </ScrollLink>
-          <ScrollLink
-            activeClass="active"
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <li className="navContainer">
-              <div className="dot"></div>
-            </li>
-          </ScrollLink>
-        </ul>
-        <div className="circle" id="circle"></div>
-      </div> */}
     </header>
   );
 };

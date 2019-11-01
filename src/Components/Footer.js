@@ -29,10 +29,10 @@ const Footer = props => {
                     </Link>
                   </li>
                   <li>
-                    <a href="#contact">Contact Us</a>
+                    <HashLink to="/#contact">Contact Us</HashLink>
                   </li>
                   <li>
-                    <a href="#">Legal</a>
+                    <a href="#sectionOne">Legal</a>
                   </li>
                 </ul>
               </div>
@@ -56,11 +56,12 @@ const Footer = props => {
 
         <div className="bottomFooter">
           <p>&copy; 2019 Ursa Inc.</p>
-          <a href="#">
+          <a href="#sectionOne">
             <i className="fas fa-arrow-up"></i>
             <p className="return">Return To Top</p>
           </a>
         </div>
+
       </footer>
     </div>
   );

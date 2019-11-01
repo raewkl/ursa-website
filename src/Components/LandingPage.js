@@ -32,7 +32,6 @@ class LandingPage extends Component {
         contact: false
       },
       () => {
-        // this.circleAnimations("", this.scrollHeight());
         window.addEventListener("scroll", this.scrollDirection, false);
       }
     );
@@ -43,12 +42,10 @@ class LandingPage extends Component {
   }
 
   scrollDirection = () => {
-    // this.scrollHeight();
 
     const topBar = document.getElementById("topBar");
 
     if (topBar) {
-      // let percentage = this.scrollHeight();
 
       if (document.body.getBoundingClientRect().top > scrollPos) {
         topBar.classList.remove("moveUp");
@@ -63,38 +60,6 @@ class LandingPage extends Component {
     }
   };
 
-  getDocHeight = () => {
-    let d = document;
-    return Math.max(
-      d.body.scrollHeight,
-      d.documentElement.scrollHeight,
-      d.body.offsetHeight,
-      d.documentElement.offsetHeight,
-      d.body.clientHeight,
-      d.documentElement.clientHeight
-    );
-  };
-
-  scrollHeight = () => {
-    const winHeight =
-      window.innerHeight ||
-      (document.documentElement || document.body).clientHeight;
-
-    const docHeight = this.getDocHeight();
-
-    const scrollTop =
-      window.pageYOffset ||
-      (document.documentElement || document.body.parentNode || document.body)
-        .scrollTop;
-
-    const trackLength = docHeight - winHeight;
-    const percentScrolled = (scrollTop / trackLength) * 100;
-
-    // this.circleTextAnimation(percentScrolled);
-
-    return percentScrolled;
-  };
-
   removeClasses = (target, classes) => {
     const circle = target;
     const animClasses = classes;
@@ -103,124 +68,6 @@ class LandingPage extends Component {
       circle.classList.remove(i);
     });
   };
-
-  circleAnimations = (vector, height) => {
-    const circle = document.getElementById("circle");
-
-    const animationClasses = [
-      "circle12",
-      "circle23",
-      "circle34",
-      "circle21",
-      "circle32",
-      "circle43"
-    ];
-
-    let percentage = height;
-    let animationVector = vector;
-
-    if (animationVector === "-") {
-      // if (percentage < 15 && !this.state.sectionOne) {
-      //   this.setState(
-      //     {
-      //       sectionOne: true,
-      //       sectionTwo: false,
-      //       sectionThree: false,
-      //       contact: false
-      //     },
-      //     () => {
-      //       this.removeClasses(circle, animationClasses);
-      //       circle.classList.add("circle21");
-      //     }
-      //   );
-      // } else if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
-      //   this.setState(
-      //     {
-      //       sectionOne: false,
-      //       sectionTwo: true,
-      //       sectionThree: false,
-      //       contact: false
-      //     },
-      //     () => {
-      //       this.removeClasses(circle, animationClasses);
-      //       circle.classList.add("circle32");
-      //     }
-      //   );
-      // } else if (
-      //   percentage > 48 &&
-      //   percentage < 78 &&
-      //   !this.state.sectionThree
-      // ) {
-      //   this.setState(
-      //     {
-      //       sectionOne: false,
-      //       sectionTwo: false,
-      //       sectionThree: true,
-      //       contact: false
-      //     },
-      //     () => {
-      //       this.removeClasses(circle, animationClasses);
-      //       circle.classList.add("circle43");
-      //     }
-      //   );
-      // }
-    } else {
-      // if (percentage > 15 && percentage < 48 && !this.state.sectionTwo) {
-      //   this.setState(
-      //     {
-      //       sectionOne: false,
-      //       sectionTwo: true,
-      //       sectionThree: false,
-      //       contact: false
-      //     },
-      //     () => {
-      //       this.removeClasses(circle, animationClasses);
-      //       circle.classList.add("circle12");
-      //     }
-      //   );
-      // } else if (
-      //   percentage > 48 &&
-      //   percentage < 78 &&
-      //   !this.state.sectionThree
-      // ) {
-      //   this.setState(
-      //     {
-      //       sectionOne: false,
-      //       sectionTwo: false,
-      //       sectionThree: true,
-      //       contact: false
-      //     },
-      //     () => {
-      //       this.removeClasses(circle, animationClasses);
-      //       circle.classList.add("circle23");
-      //     }
-      //   );
-      // } else if (percentage > 78 && !this.state.contact) {
-      //   this.setState(
-      //     {
-      //       sectionOne: false,
-      //       sectionTwo: false,
-      //       sectionThree: false,
-      //       contact: true
-      //     },
-      //     () => {
-      //       this.removeClasses(circle, animationClasses);
-      //       circle.classList.add("circle34");
-      //     }
-      //   );
-      // }
-    }
-  };
-
-  // circleTextAnimation = scrollPercentage => {
-  // select circleTextBox
-
-  // const circleTextBox = document.getElementById("circleTextBox");
-
-  // set css transform rotate to percentage
-
-  // circleTextBox.style.transform = "rotate(" + scrollPercentage * 3 + "deg)";
-  // };
 
   MainHeader = () => {
     const props = useSpring({
@@ -242,19 +89,11 @@ class LandingPage extends Component {
       config: config.molasses,
       from: { opacity: 0, bottom: -100 },
       to: { opacity: 1, bottom: 0 }
-      // delay: 500
     });
 
     return (
       <animated.div style={props} className="landingPageText">
         <div className="landingPageTextSub">
-          <div className="arrowBoxS1">
-            <img
-              src={require("../Assets/Images/arrowTwo.svg")}
-              alt=""
-              className="arrowImg"
-            />
-          </div>
           <p>
             Pay only when you start working with{" "}
             <span>Income Share Agreements.</span>
@@ -265,22 +104,30 @@ class LandingPage extends Component {
   };
 
   floatingCircles = () => {
-    // const [ref, inView] = useInView({
-    //   rootMargin: "-50% 0px",
-    //   triggerOnce: false
-    // });
+    const [ref, inView] = useInView({
+      rootMargin: "-30% 0px",
+      triggerOnce: false
+    });
 
-    // const props = useSpring({
-    //   opacity: inView ? 1 : 0,
-    //   config: config.molasses
-    // });
+    const props = useSpring({
+      opacity: inView ? 1 : 0,
+      config: config.molasses
+    });
 
     return (
-      <animated.div className="floatingPoints">
-        <div className="circle1">&#x1f511;</div>
-        <div className="circle2">&#128273;</div>
-        <div className="circle3">&#128273;</div>
-        <div className="circle4">&#128273;</div>
+      <animated.div ref={ref} style={props} className="floatingPoints">
+        <span role="img" className="circle1" aria-label="key">
+          &#x1f511;
+        </span>
+        <span role="img" className="circle2" aria-label="key">
+          &#128273;
+        </span>
+        <span role="img" className="circle3" aria-label="key">
+          &#128273;
+        </span>
+        <span role="img" className="circle4" aria-label="key">
+          &#128273;
+        </span>
 
         <div className="circle5"></div>
         <div className="circle6"></div>
@@ -394,8 +241,6 @@ class LandingPage extends Component {
 
             <div className="sectionThreeBg">
               <StudentBenefits />
-
-              {/* </section> */}
             </div>
 
             {/* CONTACT*/}
@@ -412,6 +257,7 @@ class LandingPage extends Component {
                   <NumbersAnimation />
                 </div>
               </section>
+
             </div>
           </main>
         </div>

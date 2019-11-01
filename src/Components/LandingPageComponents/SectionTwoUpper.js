@@ -2,10 +2,6 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 
-import * as Scroll from "react-scroll";
-
-let ScrollLink = Scroll.Link;
-
 const SectionTwo = () => {
   const [ref, inView] = useInView({
     rootMargin: "-50px 0px",
@@ -72,10 +68,6 @@ const SectionTwo = () => {
                       Unlike loans, contracts are capped and will{" "}
                       <span className="under">never</span> grow.
                     </p>
-                    {/* <p>
-                      Payments will always be a set % of your earnings, and
-                      you’ll never pay more than the cap we agree on.
-                    </p> */}
                   </div>
                 </figcaption>
               </figure>
