@@ -20,6 +20,7 @@ const StudentBenefits = () => {
   return (
     <animated.section
       className="sectionThreeUpper wrapper"
+      id="sectionThreeUpper"
       ref={ref}
       style={props}
     >
@@ -98,10 +99,10 @@ const StudentBenefits = () => {
 
       <ScrollLink
         activeClass="active"
-        to="contact"
+        to="contactBg"
         spy={true}
         smooth={true}
-        offset={-50}
+        offset={0}
         duration={500}
       >
         <div className="cursorDownContainer">

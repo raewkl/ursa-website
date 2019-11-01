@@ -27,6 +27,10 @@ class LandingPage extends Component {
   }
 
   componentWillUnmount() {
+
+    this.state = {
+      topBar: false
+    };
     // window.removeEventListener("scroll", this.scrollDirection, false);
   }
 
@@ -155,80 +159,43 @@ class LandingPage extends Component {
             {/* SECTION ONE */}
 
             <div className="sectionOneBg">
-              <InView
-                as="section"
-                onChange={(inView, entry) => {
-                  // select the bar
-                  const topBar = document.getElementById("topBarContainer");
-
-                  if (inView === false) {
-                    this.setState(
-                      {
-                        topBar: true
-                      },
-                      () => {
-                        topBar.classList.remove("removeHeight");
-                        topBar.classList.add("addHeight");
-                      }
-                    );
-                  } else if (inView === true && this.state.topBar) {
-
-                    topBar.classList.remove("addHeight");
-                    topBar.classList.add("removeHeight");
-                  }
-                }}
-                className="sectionOne wrapper"
-                id="sectionOne"
-              >
+              <section className="sectionOne wrapper" id="sectionOne">
                 <div className="sectionOneLeft">
-                  <div className="titleBox">
+                  <InView as="div"
+                    className="titleBox"
+                    as="section"
+                    onChange={(inView, entry) => {
+                      // select the bar
+                      const topBar = document.getElementById("topBarContainer");
+
+                      if (inView === false) {
+                        this.setState(
+                          {
+                            topBar: true
+                          },
+                          () => {
+                            topBar.classList.remove("removeHeight");
+                            topBar.classList.add("addHeight");
+                          }
+                        );
+                      } else if (inView === true && this.state.topBar) {
+                        topBar.classList.remove("addHeight");
+                        topBar.classList.add("removeHeight");
+                      }
+                    }}
+                  >
                     <this.MainHeader />
 
                     <this.MainText />
-                  </div>
+                  </InView>
                 </div>
 
                 <ScrollLink
                   activeClass="active"
-                  to="sectionTwo"
+                  to="sectionTwoBg"
                   spy={true}
                   smooth={true}
-                  offset={10}
-                  duration={500}
-                >
-                  <div className="cursorDownContainer">
-                    <img
-                      className="cursorNormal"
-                      src={require("../Assets/Cursors/cursorDown.svg")}
-                      alt=""
-                    />
-                    <img
-                      className="cursorHover"
-                      src={require("../Assets/Cursors/cursorDownBlue.svg")}
-                      alt=""
-                    />
-                  </div>
-                </ScrollLink>
-              </InView>
-            </div>
-
-            {/* SECTION TWO */}
-
-            <div className="sectionTwoBg">
-              <section className="sectionTwo wrapper">
-                <section
-                  className="sectionTwoUpper navSection"
-                  id="sectionTwoUpper"
-                >
-                  <SectionTwo />
-                </section>
-
-                <ScrollLink
-                  activeClass="active"
-                  to="sectionThree"
-                  spy={true}
-                  smooth={true}
-                  offset={-210}
+                  offset={-60}
                   duration={500}
                 >
                   <div className="cursorDownContainer">
@@ -247,15 +214,50 @@ class LandingPage extends Component {
               </section>
             </div>
 
+            {/* SECTION TWO */}
+
+            <div className="sectionTwoBg" id="sectionTwoBg">
+              <section className="sectionTwo wrapper">
+                <section
+                  className="sectionTwoUpper navSection"
+                  id="sectionTwoUpper"
+                >
+                  <SectionTwo />
+                </section>
+
+                <ScrollLink
+                  activeClass="active"
+                  to="sectionThreeBg"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                >
+                  <div className="cursorDownContainer">
+                    <img
+                      className="cursorNormal"
+                      src={require("../Assets/Cursors/cursorDown.svg")}
+                      alt="Arrow pointing down."
+                    />
+                    <img
+                      className="cursorHover"
+                      src={require("../Assets/Cursors/cursorDownBlue.svg")}
+                      alt="Arrow pointing down."
+                    />
+                  </div>
+                </ScrollLink>
+              </section>
+            </div>
+
             {/* SECTION THREE */}
 
-            <div className="sectionThreeBg">
+            <div className="sectionThreeBg" id="sectionThreeBg">
               <StudentBenefits />
             </div>
 
             {/* CONTACT*/}
 
-            <div className="contactBg">
+            <div className="contactBg" id="contactBg">
               <section
                 className="contact navSection scrollChild wrapper"
                 id="contact"
