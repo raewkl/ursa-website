@@ -27,7 +27,7 @@ const StudentBenefits = () => {
       <section className="sectionFour" id="sectionFour">
         <div className="studentBenefits">
           <h2>
-            Highlights
+            Student Benefits
           </h2>
         </div>
         <div ref={ref} style={props} className="sectionFourContent">

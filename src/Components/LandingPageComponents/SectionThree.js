@@ -55,7 +55,9 @@ const SectionThree = () => {
                 need to worry about tuition. We pay your school directly and
                 send you confirmation.
               </p>
-              <p class="subText">At this time, Ursa funding is for tuition only.</p>
+              <p class="subText">
+                At this time, Ursa funding is for tuition only.
+              </p>
             </div>
           </li>
 
@@ -70,11 +72,11 @@ const SectionThree = () => {
                 so whenever you’re ready, we’re here to make it easier.
               </p>
               <p className="subText">Ask us for help with:</p>
-              <ul>
-                <li>Job Search</li>
-                <li>Resume & Interview Prep</li>
-                <li>Negotiations</li>
-                <li>Contract Review</li>
+              <ul className="helpWith">
+                <li className="helpWithOne">Job Search</li>
+                <li className="helpWithTwo">Resume & Interview Prep</li>
+                <li className="helpWithThree">Negotiations</li>
+                <li className="helpWithFour">Contract Review</li>
               </ul>
             </div>
           </li>

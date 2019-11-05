@@ -459,7 +459,7 @@
     display: flex;
     border: 1px solid $colorOne;
     margin-bottom: 20px;
-    padding: 30px 20px;
+    padding: 30px;
 
     &:hover span {
       color: $colorOne;
@@ -472,7 +472,6 @@
 
   .stepLeft {
     padding-right: 40px;
-    padding-left: 10px;
     font-size: 5rem;
 
     span {
@@ -506,7 +505,7 @@
     }
 
     p {
-      margin-top: 15px;
+      margin-top: 20px;
       line-height: 1.5;
     }
 
@@ -516,15 +515,25 @@
     }
 
     ul {
-      margin: 15px 0 0 20px;
+      margin: 20px 0 0 20px;
+    }
+
+    .helpWith {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 5px;
+
+      li {
+        width: calc(50% - 15px);
+      }
     }
 
     p {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     li {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       line-height: 1.5;
       list-style-type: circle;
       list-style-position: outside;
@@ -969,6 +978,30 @@ aside {
     }
   }
 
+  .sectionThree {
+    .sectionThreeLower {
+      flex-direction: column;
+    }
+
+    .headlineBox,
+    ul.contentBox {
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    ul.contentBox {
+      margin-top: 6vh;
+      padding: 0 10%;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
   .sectionFourUpper {
     display: flex;
     flex-direction: column;
@@ -1090,6 +1123,18 @@ aside {
       }
     }
   }
+
+  .sectionThree .stepRight .helpWith {
+    .helpWithOne,
+    .helpWithThree {
+      width: calc(40% - 15px);
+    }
+
+    .helpWithTwo,
+    .helpWithFour {
+      width: calc(60% - 15px);
+    }
+  }
 }
 
 @media (max-width: 934px) {
@@ -1129,6 +1174,21 @@ aside {
     }
   }
 
+  .sectionThree .stepRight {
+    li {
+      margin-top: 5px;
+    }
+
+    .helpWith {
+      .helpWithOne,
+      .helpWithThree,
+      .helpWithTwo,
+      .helpWithFour {
+        width: calc(100% - 15px);
+      }
+    }
+  }
+
   .sectionFour {
     .stuImgBox,
     figcaption {
@@ -1155,6 +1215,27 @@ aside {
       width: 100%;
       padding: 0;
       min-width: auto;
+    }
+  }
+
+  .sectionThree {
+
+    .stepLeft {
+      font-size: 4rem;
+      padding-right: 30px;
+    }
+
+    ul.contentBox {
+      padding: 0;
+    }
+
+    .stepRight {
+      h4 {
+        font-size: 0.9rem;
+      }
+      p, li {
+        font-size: 0.8rem;
+      }
     }
   }
 
@@ -1312,6 +1393,17 @@ aside {
       width: 320px;
     }
   }
+
+  .sectionThree {
+
+    .stepLeft {
+      padding-right: 20px;
+    }
+
+    li.howStep {
+      padding: 20px;
+    }
+  }
 }
 
 @media (max-width: 500px) {
@@ -1394,6 +1486,24 @@ aside {
 
     li {
       width: 100%;
+    }
+  }
+
+  .sectionThree {
+
+    .stepLeft {
+      font-size: 3rem;
+      padding-right: 15px;
+    }
+
+    li.howStep {
+      padding: 15px;
+    }
+
+    .stepRight {
+      ul {
+        margin-left: 0;
+      }
     }
   }
 }
