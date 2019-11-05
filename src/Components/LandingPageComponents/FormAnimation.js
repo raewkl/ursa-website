@@ -30,7 +30,7 @@ const FormAnimation = () => {
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Enter Name"
+                placeholder="Enter name"
                 className="formName"
               />
             </div>
@@ -54,7 +54,7 @@ const FormAnimation = () => {
                 type="text"
                 name="school"
                 id="school"
-                placeholder="Enter School Name"
+                placeholder="Enter school name"
                 className="formSchool"
               />
             </div>

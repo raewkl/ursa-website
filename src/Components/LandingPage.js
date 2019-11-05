@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import SectionTwo from "./LandingPageComponents/SectionTwoUpper";
+import SectionTwo from "./LandingPageComponents/SectionTwo";
+import SectionThree from "./LandingPageComponents/SectionThree";
 import StudentBenefits from "./LandingPageComponents/StudentBenefits";
 import FormAnimation from "./LandingPageComponents/FormAnimation";
 import NumbersAnimation from "./LandingPageComponents/NumbersAnimation";
@@ -52,8 +53,6 @@ class LandingPage extends Component {
   //     scrollPos = document.body.getBoundingClientRect().top;
   //   }
   // };
-
-  
 
   removeClasses = (target, classes) => {
     const circle = target;
@@ -217,7 +216,7 @@ class LandingPage extends Component {
               </section>
             </div>
 
-            {/* SECTION TWO */}
+            {/* SECTION TWO - WHAT'S AN ISA */}
 
             <div className="sectionTwoBg" id="sectionTwoBg">
               <section className="sectionTwo wrapper">
@@ -252,12 +251,18 @@ class LandingPage extends Component {
               </section>
             </div>
 
-            {/* SECTION THREE */}
+            {/* SECTION THREE - HOW IT WORKS */}
 
             <div className="sectionThreeBg" id="sectionThreeBg">
-              <StudentBenefits />
+              <SectionThree />
             </div>
 
+            {/* SECTION FOUR - HIGHLIGHTS */}
+
+            <div className="sectionFourBg" id="sectionFourBg">
+              <StudentBenefits />
+            </div>
+f
             {/* CONTACT*/}
 
             <div className="contactBg" id="contactBg">

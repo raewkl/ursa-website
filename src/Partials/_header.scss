@@ -7,25 +7,25 @@
   left: 0;
   right: 0;
   top: -1px;
-  // height: 85px;
   z-index: 80;
   background-color: $background;
   border-bottom: 1px solid $colorOne;
 }
 
 .addHeight {
-  animation: addHeight 0.3s linear forwards;
+  animation: addHeight 0.3s linear;
+  height: 86px;
 }
 
 .removeHeight {
-  animation: removeHeight 0.3s linear forwards;
-
+  animation: removeHeight 0.3s linear;
 }
 
 @keyframes addHeight {
   from {
     height: 0px;
-  } to {
+  }
+  to {
     height: 86px;
   }
 }
@@ -33,7 +33,8 @@
 @keyframes removeHeight {
   from {
     height: 86px;
-  } to {
+  }
+  to {
     height: 0px;
   }
 }
@@ -164,29 +165,9 @@
     .movingText1 {
       display: inline-block;
       white-space: nowrap;
-
-      // transform: translateX(100px);
-      // position: absolute;
     }
-
-    // .movingText1 {
-    //   animation: scroll 6s linear infinite;
-    // }
-
-    // .movingText2 {
-    //   animation: scroll 6s linear 3s infinite;
-    // }
   }
 }
-
-// @keyframes scroll {
-//   from {
-//     transform: translateX(105px);
-//   }
-//   to {
-//     transform: translateX(-75px);
-//   }
-// }
 
 .miniNav {
   display: none;
@@ -214,7 +195,7 @@
   }
 
   &:hover {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
   }
 }
 
@@ -237,7 +218,8 @@
   }
 }
 
-.hamburgerContactLink, .hamburgerLogIn {
+.hamburgerContactLink,
+.hamburgerLogIn {
   &:hover {
     color: $colorTwo;
   }
@@ -382,23 +364,25 @@
     display: block;
   }
 
-  // .topBarContainer {
-  //   height: 67px;
-  // }
+  .addHeight {
+    height: 67px;
+  }
 
   @keyframes addHeight {
-  from {
-    height: 0px;
-  } to {
-    height: 67px;
+    from {
+      height: 0px;
+    }
+    to {
+      height: 67px;
+    }
   }
-}
 
-@keyframes removeHeight {
-  from {
-    height: 67px;
-  } to {
-    height: 0px;
+  @keyframes removeHeight {
+    from {
+      height: 67px;
+    }
+    to {
+      height: 0px;
+    }
   }
-}
 }

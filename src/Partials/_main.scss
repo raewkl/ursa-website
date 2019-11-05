@@ -1,3 +1,5 @@
+// SECTION ONE - ANIMATIONS
+
 .floatingPoints {
   position: absolute;
   left: 0;
@@ -202,6 +204,8 @@
   position: relative;
 }
 
+// SECTION ONE
+
 .sectionOne {
   height: 100vh;
   display: flex;
@@ -290,7 +294,8 @@
 }
 
 .sectionTwo,
-.sectionThreeUpper {
+.sectionThree,
+.sectionFourUpper {
   padding: 12vh 0 0 0;
   display: flex;
   justify-content: center;
@@ -303,6 +308,8 @@
     margin-top: 10vh;
   }
 }
+
+// SECTION TWO
 
 .sectionTwo {
   padding-top: 5vh;
@@ -433,7 +440,103 @@
   }
 }
 
+// SECTION THREE
+
 .sectionThree {
+  .sectionThreeLower {
+    display: flex;
+  }
+
+  .headlineBox {
+    width: 350px;
+  }
+
+  ul.contentBox {
+    width: calc(100% - 350px);
+  }
+
+  li.howStep {
+    display: flex;
+    border: 1px solid $colorOne;
+    margin-bottom: 20px;
+    padding: 30px 20px;
+
+    &:hover span {
+      color: $colorOne;
+    }
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  .stepLeft {
+    padding-right: 40px;
+    padding-left: 10px;
+    font-size: 5rem;
+
+    span {
+      display: block;
+      font-weight: 900;
+      line-height: 0.97;
+      color: rgba(0, 0, 0, 0);
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #0000cc;
+    }
+  }
+
+  .stepRight {
+    line-height: 1.6;
+    font-size: 1rem;
+
+    h4 {
+      font-weight: 800;
+      margin: 0;
+
+      span {
+        font-weight: normal;
+      }
+
+      a {
+        font-size: 1rem;
+        text-transform: none;
+        text-decoration: underline;
+        font-weight: normal;
+      }
+    }
+
+    p {
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+
+    ul,
+    .subText {
+      font-weight: 500;
+    }
+
+    ul {
+      margin: 15px 0 0 20px;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    li {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      list-style-type: circle;
+      list-style-position: outside;
+      margin: 10px 0 0 15px;
+      padding-left: 10px;
+    }
+  }
+}
+
+// SECTION FOUR
+
+.sectionFour {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -443,7 +546,7 @@
     width: 350px;
   }
 
-  .sectionThreeContent {
+  .sectionFourContent {
     width: calc(100% - 350px);
     display: flex;
     flex-direction: column;
@@ -866,12 +969,12 @@ aside {
     }
   }
 
-  .sectionThreeUpper {
+  .sectionFourUpper {
     display: flex;
     flex-direction: column;
   }
 
-  .sectionThree {
+  .sectionFour {
     flex-direction: column;
 
     .studentBenefits {
@@ -888,7 +991,7 @@ aside {
       }
     }
 
-    .sectionThreeContent {
+    .sectionFourContent {
       margin-top: 8vh;
       width: 100%;
     }
@@ -1026,7 +1129,7 @@ aside {
     }
   }
 
-  .sectionThree {
+  .sectionFour {
     .stuImgBox,
     figcaption {
       width: 45%;
@@ -1054,12 +1157,6 @@ aside {
       min-width: auto;
     }
   }
-
-  // .sectionThree {
-  //   figure {
-  //   padding: 0;
-  //   }
-  // }
 
   form {
     .radioOptionsUpper {
@@ -1176,7 +1273,7 @@ aside {
 }
 
 @media (max-width: 571px) {
-  .sectionThree {
+  .sectionFour {
     figure,
     figure.evenFigure {
       flex-direction: column;
@@ -1239,7 +1336,7 @@ aside {
     font-size: 1.2rem;
   }
 
-  .sectionThree {
+  .sectionFour {
     ul {
       margin-bottom: 2vh;
     }
@@ -1316,7 +1413,7 @@ aside {
     }
   }
 
-  .sectionThree {
+  .sectionFour {
     button {
       width: 280px;
     }

@@ -19,18 +19,18 @@ const StudentBenefits = () => {
 
   return (
     <animated.section
-      className="sectionThreeUpper wrapper"
-      id="sectionThreeUpper"
+      className="sectionFourUpper wrapper"
+      id="sectionFourUpper"
       ref={ref}
       style={props}
     >
-      <section className="sectionThree" id="sectionThree">
+      <section className="sectionFour" id="sectionFour">
         <div className="studentBenefits">
           <h2>
-            Student <span>Benefits</span>
+            Highlights
           </h2>
         </div>
-        <div ref={ref} style={props} className="sectionThreeContent">
+        <div ref={ref} style={props} className="sectionFourContent">
           <ul className="stuBenefitsList">
             <li>
               <div className="gifSelector"></div>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class Faq extends Component {
-
   componentDidMount() {
     this.accordionListener();
   }
@@ -120,6 +119,27 @@ class Faq extends Component {
                 tuition, but that will only happen if you’re doing really well!
                 At the end of the day, it’s a way for you to pay for tuition
                 without having to worry about the costs upfront.
+              </p>
+            </div>
+          </li>
+          <li>
+            <button className="questionSub accordion">
+              <div>
+                <h2>
+                  If I sign an ISA, will I have to work in my field of study
+                  after graduation?
+                </h2>
+              </div>
+              <div className="plusExpand">
+                <span className="horizontal"></span>
+                <span className="vertical"></span>
+              </div>
+            </button>
+            <div className="answer">
+              <p>
+                Of course not! What you want to do is entirely up to you. We are
+                here to support you if you need us, in whatever career you are
+                interested in.
               </p>
             </div>
           </li>
