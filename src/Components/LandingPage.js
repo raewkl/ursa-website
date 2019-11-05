@@ -262,7 +262,6 @@ class LandingPage extends Component {
             <div className="sectionFourBg" id="sectionFourBg">
               <StudentBenefits />
             </div>
-f
             {/* CONTACT*/}
 
             <div className="contactBg" id="contactBg">
