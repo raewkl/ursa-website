@@ -1212,19 +1212,29 @@ aside {
     font-size: 2.5rem;
   }
 
-  .sectionTwo .isaDescription p {
-    font-size: 0.8rem;
-  }
-
-  .isaDescription figcaption .subFig p {
-    font-size: 0.9rem;
-  }
-
   .sectionTwo {
+    .isaDescription {
+      p {
+        font-size: 0.8rem;
+      }
+
+      figcaption .subFig p {
+        font-size: 0.9rem;
+      }
+    }
+
     .isaDescriptionLower {
       width: 100%;
       padding: 0;
       min-width: auto;
+
+      .questionsS2 a {
+        font-size: 0.8rem;
+
+        &:visited {
+          color: $colorOne;
+        }
+      }
     }
   }
 
