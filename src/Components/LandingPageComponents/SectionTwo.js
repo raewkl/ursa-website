@@ -123,7 +123,7 @@ const SectionTwo = () => {
               className="logIn"
               onClick={() => props.addHeader}
             >
-              I have questions >
+              Frequently asked questions >
             </HashLink>
           </div>
         </div>

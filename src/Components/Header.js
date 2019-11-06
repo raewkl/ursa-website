@@ -25,46 +25,47 @@ const Header = props => {
 
   const hamClick = () => {
     const hamburger = document.getElementById("hamburger");
-    const topBarContainer = document.getElementById("topBarContainer");
+    const navCircle = document.getElementById("navCircle");
     const hamburgerLinks = document.getElementById("hamburgerLinks");
 
-    removeAnimations(hamburger, topBarContainer, hamburgerLinks);
-
     if (clicked === false) {
+      removeAnimations(hamburger, navCircle, hamburgerLinks);
+
       clicked = true;
       hamburger.classList.add("open"); // 0.5
-      topBarContainer.classList.add("expand"); // 0.5
+      navCircle.classList.add("expand"); // 0.5
       hamburgerLinks.style.display = "block";
       hamburgerLinks.classList.add("fadeIn"); // 0.75
     } else {
+      
       clicked = false;
       hamburger.classList.add("close"); // 0.5
       hamburgerLinks.classList.add("fadeOut"); // 0.375
-      topBarContainer.classList.add("contract"); // 0.75
+      navCircle.classList.add("contract"); // 0.75
 
       setTimeout(() => {
         hamburgerLinks.style.display = "none";
-        removeAnimations(hamburger, topBarContainer, hamburgerLinks);
+        removeAnimations(hamburger, navCircle, hamburgerLinks);
       }, 750);
     }
   };
 
   const contactClick = () => {
     const hamburger = document.getElementById("hamburger");
-    const topBarContainer = document.getElementById("topBarContainer");
+    const navCircle = document.getElementById("navCircle");
     const hamburgerLinks = document.getElementById("hamburgerLinks");
 
-    removeAnimations(hamburger, topBarContainer, hamburgerLinks);
+    removeAnimations(hamburger, navCircle, hamburgerLinks);
 
     if (clicked === true) {
       clicked = false;
       hamburger.classList.add("close");
-      topBarContainer.classList.add("contract");
+      navCircle.classList.add("contract");
       hamburgerLinks.classList.add("fadeOut");
 
       setTimeout(() => {
         hamburgerLinks.style.display = "none";
-        removeAnimations(hamburger, topBarContainer, hamburgerLinks);
+        removeAnimations(hamburger, navCircle, hamburgerLinks);
       }, 750);
     }
   };
@@ -115,8 +116,8 @@ const Header = props => {
             </ul>
           </nav>
 
-          <nav className="miniNav">
-            <div className="navCircle"></div>
+          <nav className="miniNav" id="miniNav">
+            <div className="navCircle" id="navCircle"></div>
 
             <button className="hamburger" id="hamburger" onClick={hamClick}>
               <div className="topBun"></div>
@@ -144,8 +145,6 @@ const Header = props => {
                 </Link>
               </li>
             </ul>
-
-            
           </nav>
         </animated.div>
       </div>
