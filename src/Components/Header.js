@@ -4,7 +4,6 @@ import { HashLink } from "react-router-hash-link";
 import { useSpring, animated, config } from "react-spring";
 
 const Header = props => {
-
   let clicked = false;
 
   const animArray = [
@@ -25,7 +24,6 @@ const Header = props => {
   };
 
   const hamClick = () => {
-
     const hamburger = document.getElementById("hamburger");
     const topBarContainer = document.getElementById("topBarContainer");
     const hamburgerLinks = document.getElementById("hamburgerLinks");
@@ -34,46 +32,41 @@ const Header = props => {
 
     if (clicked === false) {
       clicked = true;
-      hamburger.classList.add("open");
-      topBarContainer.classList.add("expand");
+      hamburger.classList.add("open"); // 0.5
+      topBarContainer.classList.add("expand"); // 0.5
       hamburgerLinks.style.display = "block";
-      hamburgerLinks.classList.add("fadeIn");
+      hamburgerLinks.classList.add("fadeIn"); // 0.75
     } else {
       clicked = false;
-      hamburger.classList.add("close");
-      hamburgerLinks.classList.add("fadeOut");
-      topBarContainer.classList.add("contract");
+      hamburger.classList.add("close"); // 0.5
+      hamburgerLinks.classList.add("fadeOut"); // 0.375
+      topBarContainer.classList.add("contract"); // 0.75
 
       setTimeout(() => {
         hamburgerLinks.style.display = "none";
-
-        hamburger.classList.remove("close");
-        topBarContainer.classList.remove("contract");
-        hamburgerLinks.classList.remove("fadeOut");
+        removeAnimations(hamburger, topBarContainer, hamburgerLinks);
       }, 750);
     }
   };
 
   const contactClick = () => {
-
     const hamburger = document.getElementById("hamburger");
     const topBarContainer = document.getElementById("topBarContainer");
     const hamburgerLinks = document.getElementById("hamburgerLinks");
 
     removeAnimations(hamburger, topBarContainer, hamburgerLinks);
 
-    clicked = false;
-    hamburger.classList.add("close");
-    topBarContainer.classList.add("contract");
-    hamburgerLinks.classList.add("fadeOut");
+    if (clicked === true) {
+      clicked = false;
+      hamburger.classList.add("close");
+      topBarContainer.classList.add("contract");
+      hamburgerLinks.classList.add("fadeOut");
 
-    setTimeout(() => {
-      hamburgerLinks.style.display = "none";
-
-      hamburger.classList.remove("close");
-      topBarContainer.classList.remove("contract");
-      hamburgerLinks.classList.remove("fadeOut");
-    }, 750);
+      setTimeout(() => {
+        hamburgerLinks.style.display = "none";
+        removeAnimations(hamburger, topBarContainer, hamburgerLinks);
+      }, 750);
+    }
   };
 
   const animProps = useSpring({
@@ -124,6 +117,7 @@ const Header = props => {
 
           <nav className="miniNav">
             <div className="navCircle"></div>
+
             <button className="hamburger" id="hamburger" onClick={hamClick}>
               <div className="topBun"></div>
               <div className="bottomBun"></div>
