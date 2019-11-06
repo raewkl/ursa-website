@@ -5,6 +5,7 @@ import SectionFour from "./LandingPageComponents/SectionFour";
 import ContactForm from "./LandingPageComponents/ContactForm";
 import NumbersAside from "./LandingPageComponents/NumbersAside";
 
+
 import { useInView, InView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import * as Scroll from "react-scroll";
@@ -187,7 +188,9 @@ class LandingPage extends Component {
             {/* SECTION TWO - WHAT'S AN ISA */}
 
             <div className="sectionTwoBg" id="sectionTwoBg">
-                  <SectionTwo />
+                  <SectionTwo 
+                    addHeader={this.props.addHeader}
+                  />
             </div>
 
             {/* SECTION THREE - HOW IT WORKS */}

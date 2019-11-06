@@ -2,6 +2,7 @@ import React from "react";
 import { useInView, InView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import * as Scroll from "react-scroll";
+import { HashLink } from "react-router-hash-link";
 
 let ScrollLink = Scroll.Link;
 
@@ -117,9 +118,13 @@ const SectionTwo = () => {
           </ul>
 
           <div className="questionsS2">
-            <a href="#contact">
-              <p>I have questions ></p>
-            </a>
+            <HashLink
+              to="/faq#faq"
+              className="logIn"
+              onClick={() => props.addHeader}
+            >
+              I have questions >
+            </HashLink>
           </div>
         </div>
       </div>

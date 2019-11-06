@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Partials/App.scss";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import firebase from "./Components/firebase";
 
 import LandingPage from "./Components/LandingPage";
@@ -104,9 +105,11 @@ class App extends Component {
             )}
           />
 
-          <Route exact path="/" component={() => <LandingPage />} />
+          <Route exact path="/" component={() => <LandingPage 
+            addHeader={this.addHeader}
+          />} />
 
-          <Route path="/dashboard">
+          <Route exact path="/dashboard">
             {this.state.user ? (
               <Dashboard
                 logout={this.logout}

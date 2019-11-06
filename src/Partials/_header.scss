@@ -83,13 +83,13 @@
   left: 10%;
   right: 10%;
   top: 15px;
-
   margin: 0 auto;
   max-width: 1280px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+
 }
 
 .mainNav {
@@ -170,6 +170,11 @@
 
 .miniNav {
   display: none;
+}
+
+.logoBoxContainer, .hamburger {
+  position: relative;
+  z-index: 15;
 }
 
 .hamburger {

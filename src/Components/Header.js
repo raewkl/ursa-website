@@ -4,6 +4,7 @@ import { HashLink } from "react-router-hash-link";
 import { useSpring, animated, config } from "react-spring";
 
 const Header = props => {
+
   let clicked = false;
 
   const animArray = [
@@ -24,6 +25,7 @@ const Header = props => {
   };
 
   const hamClick = () => {
+
     const hamburger = document.getElementById("hamburger");
     const topBarContainer = document.getElementById("topBarContainer");
     const hamburgerLinks = document.getElementById("hamburgerLinks");
@@ -48,11 +50,12 @@ const Header = props => {
         hamburger.classList.remove("close");
         topBarContainer.classList.remove("contract");
         hamburgerLinks.classList.remove("fadeOut");
-      }, 1000);
+      }, 750);
     }
   };
 
   const contactClick = () => {
+
     const hamburger = document.getElementById("hamburger");
     const topBarContainer = document.getElementById("topBarContainer");
     const hamburgerLinks = document.getElementById("hamburgerLinks");
@@ -70,7 +73,7 @@ const Header = props => {
       hamburger.classList.remove("close");
       topBarContainer.classList.remove("contract");
       hamburgerLinks.classList.remove("fadeOut");
-    }, 500);
+    }, 750);
   };
 
   const animProps = useSpring({
@@ -82,10 +85,15 @@ const Header = props => {
   return (
     <header className="landingNav">
       <div className="topBarContainer" id="topBarContainer">
-        <div className="navCircle"></div>
-
         <animated.div style={animProps} className="topBar" id="topBar">
-          <HashLink to="/#sectionOne" onClick={props.removeHeader}>
+          <HashLink
+            to="/#sectionOne"
+            className="logoBoxContainer"
+            onClick={() => {
+              props.removeHeader();
+              contactClick();
+            }}
+          >
             <div className="logoBox">
               <img
                 src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
@@ -115,6 +123,7 @@ const Header = props => {
           </nav>
 
           <nav className="miniNav">
+            <div className="navCircle"></div>
             <button className="hamburger" id="hamburger" onClick={hamClick}>
               <div className="topBun"></div>
               <div className="bottomBun"></div>

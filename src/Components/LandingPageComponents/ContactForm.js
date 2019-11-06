@@ -140,6 +140,7 @@ const ContactForm = () => {
               id="comment"
               placeholder="Leave a message..."
               className="formComment"
+              required
             ></textarea>
           </div>
 
