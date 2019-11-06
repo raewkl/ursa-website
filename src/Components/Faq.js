@@ -34,13 +34,13 @@ class Faq extends Component {
 
   render() {
     return (
-      <div className="wrapper faqContainer">
+      <div className="wrapper faqContainer" id="faq">
         <h1>FAQ</h1>
 
         <ul className="questions">
           <li>
             <button className="questionSub accordion">
-              <div>
+              <div className="questionExpand">
                 <h2>What’s an Income Share Agreement?</h2>
               </div>
               <div className="plusExpand">
@@ -84,7 +84,7 @@ class Faq extends Component {
           </li>
           <li>
             <button className="questionSub accordion">
-              <div>
+              <div className="questionExpand">
                 <h2>Am I eligible?</h2>
               </div>
               <div className="plusExpand">
@@ -102,7 +102,7 @@ class Faq extends Component {
           </li>
           <li>
             <button className="questionSub accordion">
-              <div>
+              <div className="questionExpand">
                 <h2>How does this compare with a loan?</h2>
               </div>
               <div className="plusExpand">
@@ -124,7 +124,7 @@ class Faq extends Component {
           </li>
           <li>
             <button className="questionSub accordion">
-              <div>
+              <div className="questionExpand">
                 <h2>
                   If I sign an ISA, will I have to work in my field of study
                   after graduation?

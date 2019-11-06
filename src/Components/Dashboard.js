@@ -29,7 +29,7 @@ class Dashboard extends Component {
 
   componentDidMount() {
 
-    
+    this.props.addHeader();
 
     this.listener = auth.onAuthStateChanged(user => {
       if (user) {
@@ -86,7 +86,6 @@ class Dashboard extends Component {
 
   componentWillUnmount() {
     this.listener();
-    // this.props.listener();
   }
 
   handleChange = event => {

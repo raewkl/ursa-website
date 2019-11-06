@@ -1,6 +1,9 @@
 import React from "react";
 import { useInView, InView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
+import * as Scroll from "react-scroll";
+
+let ScrollLink = Scroll.Link;
 
 const SectionTwo = () => {
   const [ref, inView] = useInView({
@@ -15,10 +18,8 @@ const SectionTwo = () => {
   });
 
   return (
-    <animated.div ref={ref} style={props} className="sectionTwoLower">
-      <div
-        className="isaDescription"
-      >
+    <animated.section ref={ref} style={props} className="sectionTwo wrapper">
+      <div className="isaDescription">
         <div className="headlineBox">
           <h2>What’s an ISA?</h2>
         </div>
@@ -41,7 +42,7 @@ const SectionTwo = () => {
 
                 <figcaption>
                   <div className="subFig">
-                    <p>No interest</p>
+                    <p>Always affordable</p>
 
                     <p className="light">
                       ISA payments depend on how much you earn.
@@ -64,7 +65,7 @@ const SectionTwo = () => {
                 </div>
                 <figcaption>
                   <div className="subFig">
-                    <p>No surprises </p>
+                    <p>No interest</p>
 
                     <p className="light">
                       Unlike loans, contracts are capped and will{" "}
@@ -104,7 +105,7 @@ const SectionTwo = () => {
                 </div>
                 <figcaption>
                   <div className="subFig">
-                    <p>Future focused </p>
+                    <p>Future-focused</p>
 
                     <p className="light">
                       Instead of leaning on credit, we look to your potential.
@@ -114,9 +115,37 @@ const SectionTwo = () => {
               </figure>
             </li>
           </ul>
+
+          <div className="questionsS2">
+            <a href="#contact">
+              <p>I have questions ></p>
+            </a>
+          </div>
         </div>
       </div>
-    </animated.div>
+
+      <ScrollLink
+        activeClass="active"
+        to="sectionThreeBg"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={500}
+      >
+        <div className="cursorDownContainer">
+          <img
+            className="cursorNormal"
+            src={require("../../Assets/Cursors/cursorDown.svg")}
+            alt="Arrow pointing down."
+          />
+          <img
+            className="cursorHover"
+            src={require("../../Assets/Cursors/cursorDownBlue.svg")}
+            alt="Arrow pointing down."
+          />
+        </div>
+      </ScrollLink>
+    </animated.section>
   );
 };
 

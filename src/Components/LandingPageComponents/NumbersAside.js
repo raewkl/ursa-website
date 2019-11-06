@@ -2,7 +2,7 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 
-const NumbersAnimation = () => {
+const NumbersAside = () => {
   const [ref, inView] = useInView({
     rootMargin: "-50px 0px",
     triggerOnce: true
@@ -23,11 +23,11 @@ const NumbersAnimation = () => {
             <p>students rely on financial assistance</p>
           </div>
           <div className="fact2">
-            <h4>4 in 10</h4>
-            <p>are expected to default by 2023</p>
+            <h4>1 in 10</h4>
+            <p>default every year</p>
           </div>
           <div className="fact3">
-            <h4>$1.5 Trillion</h4>
+            <h4>$1.6 Trillion</h4>
             <p>outstanding student debt in North America</p>
           </div>
           <p className="motto">
@@ -38,4 +38,4 @@ const NumbersAnimation = () => {
   );
 };
 
-export default NumbersAnimation;
+export default NumbersAside;

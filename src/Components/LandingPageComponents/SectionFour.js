@@ -5,7 +5,7 @@ import * as Scroll from "react-scroll";
 
 let ScrollLink = Scroll.Link;
 
-const StudentBenefits = () => {
+const SectionFour = () => {
   const [ref, inView] = useInView({
     rootMargin: "-50px 0px",
     triggerOnce: true
@@ -27,7 +27,7 @@ const StudentBenefits = () => {
       <section className="sectionFour" id="sectionFour">
         <div className="studentBenefits">
           <h2>
-            Student Benefits
+            Program highlights
           </h2>
         </div>
         <div ref={ref} style={props} className="sectionFourContent">
@@ -122,4 +122,4 @@ const StudentBenefits = () => {
   );
 };
 
-export default StudentBenefits;
+export default SectionFour;

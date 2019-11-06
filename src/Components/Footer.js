@@ -11,7 +11,7 @@ const Footer = props => {
       <footer className="wrapper scrollChild">
         <div className="upperFooter">
           <div className="leftFooter">
-            <HashLink to="/#sectionOne">
+            <HashLink to="/#sectionOne" onClick={props.removeHeader}>
               <div className="logoBox">
                 <img
                   src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
@@ -27,9 +27,13 @@ const Footer = props => {
               <div className="footerLinks">
                 <ul>
                   <li>
-                    <Link to="/faq" className="logIn" onClick={() => props.removeHeader()}>
+                    <HashLink
+                      to="/faq#faq"
+                      className="logIn"
+                      onClick={() => props.addHeader()}
+                    >
                       FAQ
-                    </Link>
+                    </HashLink>
                   </li>
                   <li>
                     <HashLink to="/#contact">Contact Us</HashLink>

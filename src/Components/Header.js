@@ -48,7 +48,7 @@ const Header = props => {
         hamburger.classList.remove("close");
         topBarContainer.classList.remove("contract");
         hamburgerLinks.classList.remove("fadeOut");
-      }, 1500);
+      }, 1000);
     }
   };
 
@@ -85,7 +85,7 @@ const Header = props => {
         <div className="navCircle"></div>
 
         <animated.div style={animProps} className="topBar" id="topBar">
-          <HashLink to="/#sectionOne">
+          <HashLink to="/#sectionOne" onClick={props.removeHeader}>
             <div className="logoBox">
               <img
                 src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
@@ -101,12 +101,11 @@ const Header = props => {
                   <span className="animatedBorder">Contact</span>
                 </HashLink>
               </li>
-
               <li>
                 <Link
                   to="/dashboard"
                   className="logIn"
-                  onClick={() => props.removeHeader()}
+                  onClick={() => props.addHeader()}
                 >
                   <span className="movingText1">Log In</span>
                   {/* <span className="movingText2">Log In</span> */}

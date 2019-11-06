@@ -28,9 +28,14 @@ class App extends Component {
 
   componentWillUnmount() {}
 
+  addHeader = () => {
+    const topBar = document.getElementById("topBarContainer");
+    topBar.classList.remove("removeHeight");
+    topBar.classList.add("addHeight");
+  };
+
   removeHeader = () => {
     const topBar = document.getElementById("topBarContainer");
-
     topBar.classList.remove("addHeight");
     topBar.classList.add("removeHeight");
   };
@@ -91,7 +96,12 @@ class App extends Component {
 
           <Route
             path="/"
-            component={() => <Header removeHeader={this.removeHeader} />}
+            component={() => (
+              <Header
+                addHeader={this.addHeader}
+                removeHeader={this.removeHeader}
+              />
+            )}
           />
 
           <Route exact path="/" component={() => <LandingPage />} />
@@ -102,6 +112,7 @@ class App extends Component {
                 logout={this.logout}
                 userId={this.state.uid}
                 listener={this.listener}
+                addHeader={this.addHeader}
               />
             ) : (
               <LogIn
@@ -109,6 +120,7 @@ class App extends Component {
                 handleChange={this.handleChange}
                 login={this.login}
                 user={this.state.user}
+                addHeader={this.addHeader}
               />
             )}
           </Route>
@@ -117,7 +129,12 @@ class App extends Component {
 
           <Route
             path="/"
-            component={() => <Footer removeHeader={this.removeHeader} />}
+            component={() => (
+              <Footer
+                addHeader={this.addHeader}
+                removeHeader={this.removeHeader}
+              />
+            )}
           />
         </div>
       </Router>

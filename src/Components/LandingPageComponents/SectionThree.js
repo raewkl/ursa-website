@@ -32,14 +32,14 @@ const SectionThree = () => {
             <div className="stepRight">
               <h4>
                 Check if we fund your program,{" "}
-                <span>
-                  or ask your school to be a partner institution! You can send a
-                  note <a href="#contact">here.</a>
-                </span>
+                <span>or ask your school to be a partner institution!</span>
               </h4>
               <p>
                 We ask schools to defer some tuition to show accountability to
                 student success.
+              </p>
+              <p className="subText">
+                You can check with us <a href="#contact">here.</a>
               </p>
             </div>
           </li>

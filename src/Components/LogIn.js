@@ -18,6 +18,7 @@ class LogIn extends Component {
   };
 
   componentDidMount() {
+    this.props.addHeader();
   }
 
   render() {
@@ -37,6 +38,7 @@ class LogIn extends Component {
               className="formUserEmail"
               value={this.state.email}
               onChange={e => this.handleChange(e)}
+              required
             />
 
             <label htmlFor="password" className="visuallyHidden">
@@ -50,6 +52,7 @@ class LogIn extends Component {
               className="formPassword"
               value={this.state.password}
               onChange={e => this.handleChange(e)}
+              required
             />
           </div>
 

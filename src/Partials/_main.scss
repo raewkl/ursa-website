@@ -22,39 +22,55 @@
 }
 
 .circle1 {
+  height: 15px;
+  width: 15px;
+  background-color: $colorOne;
+  border-radius: 50%;
+
   position: absolute;
-  font-size: 2rem;
   bottom: 0;
   left: 6.5%;
-  animation: float1 14s ease-in infinite;
+  animation: float1 9s ease-in -2s infinite;
   z-index: -20;
 }
 
 .circle2 {
-  font-size: 1.8rem;
+  height: 20px;
+  width: 20px;
+  background-color: $colorTwo;
+  border-radius: 50%;
+
   position: absolute;
   bottom: 0;
   right: 28%;
-  animation: float2 17s ease-in -2s infinite;
+  animation: float2 10s ease-in -3s infinite;
   z-index: -20;
 }
 
 .circle3 {
-  font-size: 3rem;
+  height: 25px;
+  width: 25px;
+  background-color: $colorTwo;
+  border-radius: 50%;
+
   position: absolute;
   bottom: 0;
   right: 6%;
-  animation: float3 26s ease-in -1s infinite;
+  animation: float3 15s ease-in -5s infinite;
   z-index: -20;
 }
 
 .circle4 {
-  font-size: 8rem;
+  height: 30px;
+  width: 30px;
+  background-color: $colorOne;
+  border-radius: 50%;
+
   position: absolute;
   bottom: -150px;
   right: 12%;
-  animation: float4 28s ease-in -5s infinite;
-  z-index: 15;
+  animation: float4 17s ease-in -5s infinite;
+  z-index: -20;
 }
 
 .circle5 {
@@ -66,7 +82,7 @@
   position: absolute;
   bottom: 0;
   left: 4%;
-  animation: float5 14s ease-in -5s infinite;
+  animation: float5 14s ease-in -9s infinite;
   z-index: -20;
 }
 
@@ -92,7 +108,7 @@
   position: absolute;
   bottom: 0;
   right: 8%;
-  animation: float5 7s ease-in -1s infinite;
+  animation: float5 11s ease-in -8s infinite;
   z-index: -20;
 }
 
@@ -177,7 +193,7 @@
     opacity: 1;
   }
   100% {
-    transform: translateY(-130vh) rotate(100deg);
+    transform: translateY(-120vh) rotate(100deg);
     opacity: 0;
   }
 }
@@ -320,7 +336,7 @@
     text-align: left;
 
     p {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     em {
@@ -337,23 +353,15 @@
     flex-direction: column;
     align-items: center;
     width: calc(100% - 350px);
-  }
-}
 
-.sectionTwoUpper {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0 0 0;
+    .questionsS2 {
+      width: 100%;
+      margin-top: 6vh;
 
-  .sectionTwoLower {
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+      p {
+        font-weight: bold;
+      }
+    }
   }
 
   .light {
@@ -495,13 +503,6 @@
       span {
         font-weight: normal;
       }
-
-      a {
-        font-size: 1rem;
-        text-transform: none;
-        text-decoration: underline;
-        font-weight: normal;
-      }
     }
 
     p {
@@ -512,6 +513,13 @@
     ul,
     .subText {
       font-weight: 500;
+
+      a {
+        font-size: 0.9rem;
+        font-weight: 900;
+        text-transform: none;
+        text-decoration: underline;
+      }
     }
 
     ul {
@@ -697,7 +705,6 @@
 
 .formAsideBox {
   display: flex;
-  // align-items: center;
   justify-content: space-between;
   margin-top: 8vh;
 }
@@ -744,7 +751,7 @@ form {
   }
 
   input[type="radio"] {
-    display: none;
+    opacity: 0;
   }
 
   input[type="radio"] + label .outerRadio {
@@ -912,7 +919,6 @@ aside {
   .motto {
     font-size: 0.9rem;
     font-weight: bold;
-    text-decoration: underline;
     text-align: center;
 
     span {
@@ -1206,7 +1212,7 @@ aside {
     font-size: 0.8rem;
   }
 
-  .sectionTwoUpper figcaption .subFig p {
+  .isaDescription figcaption .subFig p {
     font-size: 0.9rem;
   }
 
@@ -1219,7 +1225,6 @@ aside {
   }
 
   .sectionThree {
-
     .stepLeft {
       font-size: 4rem;
       padding-right: 30px;
@@ -1233,7 +1238,9 @@ aside {
       h4 {
         font-size: 0.9rem;
       }
-      p, li {
+      p,
+      li,
+      .subText a {
         font-size: 0.8rem;
       }
     }
@@ -1265,7 +1272,6 @@ aside {
     max-width: 400px;
     height: 500px;
     padding: 0 4%;
-
     right: 4px;
 
     flex-direction: column;
@@ -1301,7 +1307,7 @@ aside {
     }
   }
 
-  .sectionTwoUpper {
+  .isaDescription {
     li {
       width: calc(50% - 25px);
     }
@@ -1385,7 +1391,7 @@ aside {
     }
   }
 
-  .sectionTwoUpper ul {
+  .isaDescription ul {
     flex-direction: column;
     align-items: center;
 
@@ -1395,7 +1401,6 @@ aside {
   }
 
   .sectionThree {
-
     .stepLeft {
       padding-right: 20px;
     }
@@ -1480,7 +1485,7 @@ aside {
     }
   }
 
-  .sectionTwoUpper ul {
+  .isaDescription ul {
     flex-direction: column;
     align-items: center;
 
@@ -1490,14 +1495,13 @@ aside {
   }
 
   .sectionThree {
-
     .stepLeft {
       font-size: 3rem;
       padding-right: 15px;
     }
 
     li.howStep {
-      padding: 15px;
+      padding: 20px 15px;
     }
 
     .stepRight {

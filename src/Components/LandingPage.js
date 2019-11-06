@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import SectionTwo from "./LandingPageComponents/SectionTwo";
 import SectionThree from "./LandingPageComponents/SectionThree";
-import StudentBenefits from "./LandingPageComponents/StudentBenefits";
-import FormAnimation from "./LandingPageComponents/FormAnimation";
-import NumbersAnimation from "./LandingPageComponents/NumbersAnimation";
+import SectionFour from "./LandingPageComponents/SectionFour";
+import ContactForm from "./LandingPageComponents/ContactForm";
+import NumbersAside from "./LandingPageComponents/NumbersAside";
 
 import { useInView, InView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import * as Scroll from "react-scroll";
 
 let ScrollLink = Scroll.Link;
-// let scrollPos = 0;
 
 class LandingPage extends Component {
   constructor(props) {
@@ -21,9 +20,9 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    // check if in contact for initial circle position
-    this.setState({}, () => {
-      // window.addEventListener("scroll", this.scrollDirection, false);
+    this.setState({
+      topBar: false,
+
     });
   }
 
@@ -31,28 +30,7 @@ class LandingPage extends Component {
     this.setState({
       topBar: false
     });
-
-    // window.removeEventListener("scroll", this.scrollDirection, false);
   }
-
-  // scrollDirection = () => {
-
-  //   const topBar = document.getElementById("topBar");
-
-  //   if (topBar) {
-
-  //     if (document.body.getBoundingClientRect().top > scrollPos) {
-  //       topBar.classList.remove("moveUp");
-  //       topBar.classList.add("moveDown");
-  //     } else {
-  //       topBar.classList.remove("moveDown");
-  //       topBar.classList.add("moveUp");
-  //     }
-
-  //     // saves the new position for iteration.
-  //     scrollPos = document.body.getBoundingClientRect().top;
-  //   }
-  // };
 
   removeClasses = (target, classes) => {
     const circle = target;
@@ -68,7 +46,6 @@ class LandingPage extends Component {
       config: config.molasses,
       from: { opacity: 0, left: -100 },
       to: { opacity: 1, left: 0 }
-      // delay: 500
     });
 
     return (
@@ -110,18 +87,10 @@ class LandingPage extends Component {
 
     return (
       <animated.div ref={ref} style={props} className="floatingPoints">
-        <span role="img" className="circle1" aria-label="key">
-          &#x1f511;
-        </span>
-        <span role="img" className="circle2" aria-label="key">
-          &#128273;
-        </span>
-        <span role="img" className="circle3" aria-label="key">
-          &#128273;
-        </span>
-        <span role="img" className="circle4" aria-label="key">
-          &#128273;
-        </span>
+        <div className="circle1"></div>
+        <div className="circle2"></div>
+        <div className="circle3"></div>
+        <div className="circle4"></div>
 
         <div className="circle5"></div>
         <div className="circle6"></div>
@@ -146,7 +115,7 @@ class LandingPage extends Component {
 
     return (
       <animated.h2 ref={ref} style={props} className="contactUs">
-        Contact Us
+        Get in touch
       </animated.h2>
     );
   };
@@ -167,7 +136,6 @@ class LandingPage extends Component {
                     className="titleBox"
                     as="section"
                     onChange={(inView, entry) => {
-                      // select the bar
                       const topBar = document.getElementById("topBarContainer");
 
                       if (inView === false) {
@@ -219,36 +187,7 @@ class LandingPage extends Component {
             {/* SECTION TWO - WHAT'S AN ISA */}
 
             <div className="sectionTwoBg" id="sectionTwoBg">
-              <section className="sectionTwo wrapper">
-                <section
-                  className="sectionTwoUpper navSection"
-                  id="sectionTwoUpper"
-                >
                   <SectionTwo />
-                </section>
-
-                <ScrollLink
-                  activeClass="active"
-                  to="sectionThreeBg"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                >
-                  <div className="cursorDownContainer">
-                    <img
-                      className="cursorNormal"
-                      src={require("../Assets/Cursors/cursorDown.svg")}
-                      alt="Arrow pointing down."
-                    />
-                    <img
-                      className="cursorHover"
-                      src={require("../Assets/Cursors/cursorDownBlue.svg")}
-                      alt="Arrow pointing down."
-                    />
-                  </div>
-                </ScrollLink>
-              </section>
             </div>
 
             {/* SECTION THREE - HOW IT WORKS */}
@@ -260,20 +199,21 @@ class LandingPage extends Component {
             {/* SECTION FOUR - HIGHLIGHTS */}
 
             <div className="sectionFourBg" id="sectionFourBg">
-              <StudentBenefits />
+              <SectionFour />
             </div>
-            {/* CONTACT*/}
+
+            {/* CONTACT & NUMBERS */}
 
             <div className="contactBg" id="contactBg">
               <section
-                className="contact navSection scrollChild wrapper"
+                className="contact wrapper"
                 id="contact"
               >
                 <this.ContactHeader />
 
                 <div className="formAsideBox">
-                  <FormAnimation />
-                  <NumbersAnimation />
+                  <ContactForm />
+                  <NumbersAside />
                 </div>
               </section>
             </div>

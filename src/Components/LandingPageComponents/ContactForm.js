@@ -2,7 +2,7 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 
-const FormAnimation = () => {
+const ContactForm = () => {
   const [ref, inView] = useInView({
     rootMargin: "-50px 0px",
     triggerOnce: true
@@ -30,8 +30,9 @@ const FormAnimation = () => {
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Enter name"
+                placeholder="Enter your name"
                 className="formName"
+                required
               />
             </div>
 
@@ -43,6 +44,7 @@ const FormAnimation = () => {
                 id="email"
                 placeholder="Enter your email"
                 className="formEmail"
+                required
               />
             </div>
           </div>
@@ -73,7 +75,7 @@ const FormAnimation = () => {
 
           <fieldset>
             <legend className="visuallyHidden">Customer Type</legend>
-            <div className="radioOptionsUpper">
+            <div className="radioOptionsUpper" id="radioOptionsUpper">
               <p>Tell us more about yourself: </p>
 
               <div className="radioBox rb1">
@@ -82,6 +84,7 @@ const FormAnimation = () => {
                   name="customerType"
                   value="school"
                   id="schoolRadio"
+                  required
                 ></input>
                 <label htmlFor="schoolRadio">
                   School
@@ -97,6 +100,7 @@ const FormAnimation = () => {
                   name="customerType"
                   value="student"
                   id="studentRadio"
+                  required
                 ></input>
                 <label htmlFor="studentRadio">
                   Student
@@ -112,6 +116,7 @@ const FormAnimation = () => {
                   name="customerType"
                   value="other"
                   id="otherRadio"
+                  required
                 ></input>
                 <label htmlFor="otherRadio">
                   Other
@@ -155,4 +160,4 @@ const FormAnimation = () => {
   );
 };
 
-export default FormAnimation;
+export default ContactForm;

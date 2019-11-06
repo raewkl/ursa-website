@@ -88,6 +88,12 @@ h4 {
   font-weight: 1000;
 }
 
+aside {
+  h4, p {
+    font-family: $primaryFont;
+  }
+}
+
 h1 {
   font-size: 4.8rem;
   position: relative;
