@@ -24,7 +24,7 @@ const NumbersAside = () => {
           </div>
           <div className="fact2">
             <h4>1 in 10</h4>
-            <p>default every year</p>
+            <p>students default every year</p>
           </div>
           <div className="fact3">
             <h4>$1.6 Trillion</h4>
