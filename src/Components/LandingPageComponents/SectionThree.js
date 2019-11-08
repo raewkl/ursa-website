@@ -51,7 +51,7 @@ const SectionThree = () => {
             <div className="stepRight">
               <h4>Complete a quick prescreen, then review the contract.</h4>
               <p>
-                If you like our terms and enter into an ISA with Ursa, you don’t
+                If you like our terms, and enter into an ISA with Ursa, you don’t
                 need to worry about tuition. We pay your school directly and
                 send you confirmation.
               </p>
