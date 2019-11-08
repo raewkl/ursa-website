@@ -1,0 +1,170 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  cursor: url(../Assets/Cursors/cursorBlue20.png) 10 10, auto;
+}
+
+button,
+input[type="submit"],
+a {
+  cursor: url(../Assets/Cursors/cursorBlue20.png) 10 10, auto;
+}
+
+// Backgrounds
+
+$background: white;
+$background2: #fcf0ec;
+$background3: #efeeff;
+
+// Primary Colors
+
+$colorOne: #0000cc;
+$colorOneLight: rgba(0, 0, 204, 0.2);
+$colorTwo: #ff99cc;
+$colorTwoLight: rgba(255, 153, 204, 0.6);
+$colorThree: #434343;
+
+// Secondary Colors
+
+$colorFour: #99ffcc;
+$colorFourLight: #99ffcc64;
+$colorFive: #6666ff;
+
+html {
+  font-size: 125%;
+  background-color: $background;
+  color: $colorOne;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+li,
+span,
+em {
+  &::selection {
+    background-color: $colorTwo;
+  }
+}
+
+body,
+h1,
+h2,
+button,
+p,
+a,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: $colorOne;
+  }
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+.cursor {
+  position: fixed;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  background-color: $colorTwoLight;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+  z-index: -1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+button,
+input[type="submit"] {
+  margin-top: 40px;
+  background-color: $colorOne;
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 12px 20px;
+  border-radius: 30px;
+  width: 160px;
+  color: $background;
+}
+
+.App {
+  min-width: 320px;
+}
+
+.cursorHover {
+  display: none;
+}
+
+.cursorHover,
+.cursorNormal {
+  width: 80px;
+}
+
+.cursorDownContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  width: 240px;
+  height: 83px;
+  left: calc(50% - 120px);
+  bottom: 7vh;
+
+  animation: fadeIn 1.5s linear forwards;
+
+  &:hover .cursorNormal {
+    display: none;
+  }
+
+  &:hover .cursorHover {
+    display: block;
+    animation: arrowDown 1s ease-in-out infinite;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes arrowDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    width: 84%;
+  }
+}

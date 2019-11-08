@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Berthold Akzidenz Grotesk BE';
+    src: url('AkzidenzGroteskBE-Md.woff2') format('woff2'),
+        url('AkzidenzGroteskBE-Md.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Berthold Akzidenz Grotesk BE';
+    src: url('AkzidenzGroteskBE-Light.woff2') format('woff2'),
+        url('AkzidenzGroteskBE-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Berthold Akzidenz Grotesk BE';
+    src: url('AkzidenzGroteskBE-Regular.woff2') format('woff2'),
+        url('AkzidenzGroteskBE-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Berthold Akzidenz Grotesk BE';
+    src: url('AkzidenzGroteskBE-Bold.woff2') format('woff2'),
+        url('AkzidenzGroteskBE-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+

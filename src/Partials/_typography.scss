@@ -1,0 +1,214 @@
+// FONT FACE
+
+// IBM PLEX SANS
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("../Assets/Fonts/IbmPlexSans/IBMPlexSans.woff2") format("woff2"),
+    url("../Assets/Fonts/IbmPlexSans/IBMPlexSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("../Assets/Fonts/IbmPlexSans/IBMPlexSans-Medium.woff2")
+      format("woff2"),
+    url("../Assets/Fonts/IbmPlexSans/IBMPlexSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("../Assets/Fonts/IbmPlexSans/IBMPlexSans-Light.woff2")
+      format("woff2"),
+    url("../Assets/Fonts/IbmPlexSans/IBMPlexSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+// AVENIR
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../Assets/Fonts/Avenir/Avenir-Medium.woff2") format("woff2"),
+    url("../Assets/Fonts/Avenir/Avenir-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../Assets/Fonts/Avenir/Avenir-Black.woff2") format("woff2"),
+    url("../Assets/Fonts/Avenir/Avenir-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../Assets/Fonts/Avenir/Avenir-Heavy.woff2") format("woff2"),
+    url("../Assets/Fonts/Avenir/Avenir-Heavy.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../Assets/Fonts/Avenir/Avenir-Book.woff2") format("woff2"),
+    url("../Assets/Fonts/Avenir/Avenir-Book.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+// DEFAULTS
+
+$primaryFont: "IBM Plex Sans", serif;
+$secondaryFont: "Avenir", serif;
+$headlineFont: "Avenir", serif;
+
+html {
+  font-family: $primaryFont;
+}
+
+li {
+  line-height: 1;
+}
+
+p {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $headlineFont;
+  font-weight: 1000;
+}
+
+aside {
+  h4, p {
+    font-family: $primaryFont;
+  }
+}
+
+h1 {
+  font-size: 4.8rem;
+  position: relative;
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 700;
+  text-align: left;
+  font-size: 3rem;
+  line-height: 0.9;
+}
+
+.howItWorks {
+  position: relative;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.sectionThree {
+  .stepLeft {
+    span {
+      font-family: $headlineFont;
+    }
+  }
+}
+
+.hamburgerLinks a {
+  font-family: $headlineFont;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+  opacity: 1;
+  color: $colorOne;
+  font-family: $primaryFont;
+  font-weight: 500;
+
+  &::placeholder {
+    font-weight: 500;
+    font-family: $primaryFont;
+    color: $colorOne;
+    opacity: 0.7;
+  }
+}
+
+textarea {
+  opacity: 1;
+  font-family: $primaryFont;
+  font-weight: 500;
+  color: $colorOne;
+
+  &::placeholder {
+    opacity: 0.7;
+    font-weight: 500;
+    font-family: $primaryFont;
+    color: $colorOne;
+  }
+}
+
+a p {
+  font-size: 0.7em;
+  font-weight: 500;
+  text-decoration: underline;
+  text-transform: none;
+}
+
+a,
+button,
+.logInSubmit {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border: none;
+}
+
+button,
+.logInSubmit {
+  border: none;
+  &:hover {
+    background-color: $colorTwo;
+    color: $colorOne;
+  }
+}
+
+.sectionTwo {
+  figcaption {
+    p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    span {
+      text-decoration: none;
+    }
+  }
+}
+
+.sectionThree p {
+  font-size: 0.8rem;
+}
+
+.fa-arrow-up {
+  font-size: 0.7rem;
+  transform: rotate(180deg);
+  margin-left: 6px;
+}
+
+@media (max-width: 1317px) {
+  h1 {
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,152 @@
+footer {
+  padding-top: 5vh;
+  border-top: 1px solid $colorOne;
+}
+
+.icons {
+  font-weight: 500;
+  font-size: 1rem;
+  color: $colorOne;
+}
+
+.footerBg {
+  background-color: white;
+}
+
+.upperFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoBox {
+  width: 80px;
+
+  &:hover {
+    animation: grow 0.3s ease-in forwards;
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.leftFooter {
+  display: flex;
+  width: 100%;
+
+  .logoBox {
+    margin-right: 10px;
+  }
+
+  .footerLinks {
+    margin-top: 3vh;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+  }
+
+  li {
+    font-size: 0.7rem;
+    margin-right: 35px;
+    text-decoration: underline;
+    font-weight: 700;
+  }
+
+  .footMotto {
+    line-height: 1;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    line-height: 0.7;
+  }
+
+  a {
+    text-transform: none;
+  }
+}
+
+.rightFooter {
+  // width: 15%;
+  // padding-left: 40px;
+  display: flex;
+  justify-content: flex-end;
+
+  li {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  a:hover i {
+    color: $colorTwo;
+  }
+}
+
+.bottomFooter {
+  margin-top: 50px;
+  padding: 20px 0;
+  border-top: 1px solid $colorOne;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    display: flex;
+  }
+
+  p {
+    white-space: nowrap;
+    font-size: 0.7rem;
+    font-weight: 300;
+  }
+
+  i {
+    line-height: 1.6;
+    margin-right: 5px;
+    transform: rotate(0deg);
+  }
+
+  
+
+  .return {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 677px) {
+  .leftFooter {
+    .footMotto {
+      span {
+        margin-top: 10px;
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .leftFooter {
+    .footMotto {
+      font-size: 1.2rem;
+    }
+
+    ul {
+      flex-direction: column;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+  }
+}

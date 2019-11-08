@@ -1,0 +1,132 @@
+.faqContainer {
+  padding: 120px 0 13vh 0;
+  min-height: 73vh;
+}
+
+.questions {
+  margin-top: 5vh;
+
+  .questionSub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h2 {
+    line-height: 1.3;
+  }
+
+  .questionExpand {
+    width: calc(100% - 26px);
+  }
+
+  .plusExpand {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spinClockwise {
+    animation: spinClockwise 0.3s ease-out forwards;
+  }
+
+  @keyframes spinClockwise {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(135deg);
+    }
+  }
+
+  .spinCounter {
+    animation: spinCounter 0.3s ease-out forwards;
+  }
+
+  @keyframes spinCounter {
+    from {
+      transform: rotate(135deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .horizontal,
+  .vertical {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: $colorOne;
+    position: absolute;
+  }
+
+  .vertical {
+    transform: rotate(90deg);
+  }
+
+  li {
+    padding: 20px 0;
+    border-top: 1px solid $colorOne;
+        border-radius: 0;
+
+
+    &:last-child {
+      border-bottom: 1px solid $colorOne;
+    }
+
+    button {
+    color: $colorOne;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    text-transform: none;
+  }
+  }
+
+  .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  
+
+  h2 {
+    text-decoration: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  p {
+    margin: 20px 0;
+    line-height: 1.6;
+  }
+
+  p,
+  li {
+    font-size: 0.7rem;
+  }
+
+  em {
+    font-weight: 600;
+  }
+
+  .isaComponents {
+    padding-left: 20px;
+
+    li {
+      margin: 15px 0 15px 15px;
+      padding: 0 0 0 10px;
+      border: none;
+      list-style-type: circle;
+      line-height: 1.6;
+    }
+  }
+}
