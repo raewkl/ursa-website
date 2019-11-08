@@ -98,6 +98,7 @@ class LandingPage extends Component {
         <div className="circle7"></div>
         <div className="circle8"></div>
         <div className="circle9"></div>
+        <div className="circle10"></div>
       </animated.div>
     );
   };
