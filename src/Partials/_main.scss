@@ -17,8 +17,7 @@
 .circle7,
 .circle8,
 .circle9,
-.circle10
- {
+.circle10 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -70,7 +69,7 @@
 .circle4 {
   height: 30px;
   width: 30px;
-  background-color: $colorOne;
+  background-color: $colorFive;
   border-radius: 50%;
 
   position: absolute;
@@ -240,6 +239,27 @@
   position: relative;
 }
 
+.lineBreak {
+  display: block;
+}
+
+.sectionTwo,
+.sectionThree,
+.sectionFourUpper {
+  padding: 12vh 0 0 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .cursorDownContainer {
+    position: static;
+    margin-top: 10vh;
+  }
+}
+// end ANIMATIONS
+
 // SECTION ONE
 
 .sectionOne {
@@ -282,23 +302,6 @@
     justify-content: center;
     width: calc(100%);
 
-    .titleBox {
-      position: relative;
-      z-index: 10;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .forEdu {
-      display: block;
-    }
-
     .landingPageText {
       position: relative;
       z-index: 10;
@@ -321,27 +324,7 @@
 
     p {
       text-align: center;
-
-      span {
-        font-weight: bold;
-      }
     }
-  }
-}
-
-.sectionTwo,
-.sectionThree,
-.sectionFourUpper {
-  padding: 12vh 0 0 0;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-
-  .cursorDownContainer {
-    position: static;
-    margin-top: 10vh;
   }
 }
 
@@ -351,12 +334,11 @@
   padding-top: 5vh;
 
   .isaDescription {
-    text-align: center;
     display: flex;
     text-align: left;
 
     p {
-      font-size: 0.9rem;
+      font-size: 1.1rem;
     }
 
     em {
@@ -389,10 +371,6 @@
 
   .light {
     font-weight: 500;
-  }
-
-  .under {
-    text-decoration: underline;
   }
 
   ul {
@@ -497,9 +475,9 @@
     }
   }
 
-  li:last-child {
-    margin-bottom: 0;
-  }
+  // li:last-child {
+  //   margin-bottom: 0;
+  // }
 
   .stepLeft {
     padding-right: 40px;
@@ -963,17 +941,20 @@ aside {
 }
 
 @media (max-width: 1317px) {
-  .sectionOne {
-    .sectionOneLeft {
-      .titleBox {
-        &:before {
-          left: calc(50% - 390px);
-          top: 45px;
-          bottom: 34px;
-          width: 780px;
-        }
-      }
-    }
+  // h2 moves center,
+  //"Aside" box moves to bottom
+
+  h1 {
+    font-size: 3.3rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 2.7rem;
+    text-align: center;
   }
 
   .sectionTwo {
@@ -981,13 +962,13 @@ aside {
       flex-direction: column;
       align-items: center;
 
+      p {
+        font-size: 1rem;
+      }
+
       .headlineBox {
         width: 100%;
         line-height: 0.9;
-
-        h2 {
-          text-align: center;
-        }
 
         span {
           display: inline;
@@ -1018,10 +999,6 @@ aside {
       width: 100%;
     }
 
-    h2 {
-      text-align: center;
-    }
-
     ul.contentBox {
       margin-top: 6vh;
       padding: 0 10%;
@@ -1029,6 +1006,18 @@ aside {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+    }
+
+    .stepRight .helpWith {
+      .helpWithOne,
+      .helpWithThree {
+        width: calc(40% - 15px);
+      }
+
+      .helpWithTwo,
+      .helpWithFour {
+        width: calc(60% - 15px);
+      }
     }
   }
 
@@ -1045,7 +1034,6 @@ aside {
     }
 
     h2 {
-      text-align: center;
       width: 100%;
       line-height: 1.1;
       span {
@@ -1125,67 +1113,12 @@ aside {
   }
 }
 
-@media (max-width: 1119px) {
-  .circle4 {
-    font-size: calc(5rem * 0.8);
-  }
+@media (max-width: 1150px) {
+  // Section 3_3 bullets go from 2 columns to 1
+  //
 
   .sectionOne {
-    .arrowBoxS1 {
-      width: 7px;
-    }
-
     .sectionOneLeft {
-      h1 {
-        font-size: 3.5rem;
-        span {
-          white-space: normal;
-        }
-      }
-
-      .titleBox {
-        &:before {
-          left: calc(50% - 345px);
-          top: 40px;
-          bottom: 29px;
-          width: 690px;
-        }
-      }
-    }
-  }
-
-  .sectionThree .stepRight .helpWith {
-    .helpWithOne,
-    .helpWithThree {
-      width: calc(40% - 15px);
-    }
-
-    .helpWithTwo,
-    .helpWithFour {
-      width: calc(60% - 15px);
-    }
-  }
-}
-
-@media (max-width: 934px) {
-  .sectionOne {
-    .sectionOneLeft {
-      h1 {
-        font-size: 3rem;
-        .forEdu {
-          display: inline;
-        }
-      }
-
-      .titleBox {
-        &:before {
-          left: calc(50% - 295px);
-          top: 34px;
-          bottom: 25px;
-          width: 590px;
-        }
-      }
-
       @keyframes border7ExpandSmall {
         0% {
           opacity: 0;
@@ -1196,10 +1129,6 @@ aside {
           opacity: 1;
           right: 20%;
         }
-      }
-
-      p {
-        font-size: 0.8rem;
       }
     }
   }
@@ -1228,14 +1157,18 @@ aside {
 }
 
 @media (max-width: 803px) {
-  h2 {
+  h1 {
     font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.3rem;
   }
 
   .sectionTwo {
     .isaDescription {
       p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
       }
 
       figcaption .subFig p {
@@ -1324,34 +1257,10 @@ aside {
   }
 }
 
-@media (max-width: 720px) {
-  .sectionOneBg .circleTextBox {
-    width: 184px;
-  }
-
-  .sectionOne {
-    .arrowBoxS1 {
-      display: none;
-    }
-
-    .sectionOneLeft {
-      .titleBox {
-        padding-left: 0;
-      }
-    }
-  }
-
-  .isaDescription {
-    li {
-      width: calc(50% - 25px);
-    }
-  }
-}
-
 @media (max-width: 677px) {
-  .circle4 {
-    font-size: calc(6rem * 0.8);
-  }
+  // Section 1 animations shrink
+  // Section 4 (program highlights) goes from 2 columns to 1
+  //
 
   @keyframes float4 {
     0% {
@@ -1367,33 +1276,23 @@ aside {
     }
   }
 
-  h2 {
-    font-size: 2.2rem;
-  }
-
   .sectionOne {
     .sectionOneLeft {
-      h1 {
-        font-size: 3rem;
-
-        .forEducation {
-          display: inline;
-          white-space: normal;
-        }
-      }
-
       button {
         margin: 0;
       }
     }
   }
 
-  .formBox {
-    width: 100%;
-  }
-}
+  .sectionTwo .isaDescription ul {
+    flex-direction: column;
+    align-items: center;
 
-@media (max-width: 571px) {
+    li {
+      width: 320px;
+    }
+  }
+
   .sectionFour {
     figure,
     figure.evenFigure {
@@ -1416,55 +1315,37 @@ aside {
       }
     }
   }
-}
 
-@media (max-width: 545px) {
-  .sectionTwo .isaDescription {
-    h2 {
-      text-align: center;
-    }
-  }
-
-  .isaDescription ul {
-    flex-direction: column;
-    align-items: center;
-
-    li {
-      width: 320px;
-    }
-  }
-
-  .sectionThree {
-    .stepLeft {
-      padding-right: 20px;
-    }
-
-    li.howStep {
-      padding: 20px;
-    }
+  .formBox {
+    width: 100%;
   }
 }
 
 @media (max-width: 500px) {
-  .sectionOneBg .circleTextBox {
-    width: 157px;
-    bottom: -6vh;
+  // General
+  h1 {
+    font-size: 2.1rem;
   }
 
-  .circle4 {
-    font-size: calc(4.5rem * 0.75);
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
   }
 
   body {
     overflow-x: hidden;
   }
 
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
+  .sectionOneBg .circleTextBox {
+    width: 157px;
+    bottom: -6vh;
   }
 
   .sectionFour {
@@ -1505,33 +1386,42 @@ aside {
 }
 
 @media (max-width: 425px) {
-  h2 {
-    font-size: 1.7rem;
-  }
-  .sectionOne {
-    .sectionOneLeft {
-      h1 {
-        .wayTo,
-        .payFor {
-          display: block;
-        }
-      }
+  h1 {
+    font-size: 1.5rem;
+    .lineBreak {
+      display: block;
     }
   }
 
-  .isaDescription ul {
-    flex-direction: column;
-    align-items: center;
+  h2 {
+    font-size: 1.5rem;
+  }
 
-    li {
+  .sectionTwo {
+    .isaDescription {
+      p {
+        font-size: 0.8rem;
+      }
+
+      figcaption .subFig p {
+        font-size: 0.8rem;
+      }
+    }
+
+    .isaDescription ul {
+      flex-direction: column;
+      align-items: center;
+
+      li {
       width: 100%;
+      }
     }
   }
 
   .sectionThree {
     .stepLeft {
       font-size: 3rem;
-      padding-right: 15px;
+      padding-right: 20px;
     }
 
     li.howStep {
@@ -1544,50 +1434,34 @@ aside {
       }
     }
   }
+
+  // .sectionFour {
+  //   button {
+  //     width: 280px;
+  //   }
+  // }
 }
 
-@media (max-width: 380px) {
-  .sectionOne {
-    .imgBox {
-      right: 0;
-    }
-  }
+// @media (max-width: 500px) and (max-height: 850px) {
+//   .sectionOne {
+//     height: calc(100vh);
+//     padding-top: 0vh;
 
-  a,
-  button {
-    font-size: 0.6rem;
-    span {
-      font-size: 0.6rem;
-    }
-  }
+//     .sectionOneLeft {
+//       justify-content: center;
+//     }
+//   }
 
-  .sectionFour {
-    button {
-      width: 280px;
-    }
-  }
-}
+//   .cursorDownContainer {
+//     bottom: 10vh;
+//   }
 
-@media (max-width: 500px) and (max-height: 850px) {
-  .sectionOne {
-    height: calc(100vh);
-    padding-top: 0vh;
+//   .cursorHover,
+//   .cursorNormal {
+//     width: 50px;
+//   }
 
-    .sectionOneLeft {
-      justify-content: center;
-    }
-  }
-
-  .cursorDownContainer {
-    bottom: 10vh;
-  }
-
-  .cursorHover,
-  .cursorNormal {
-    width: 50px;
-  }
-
-  .cursor {
-    display: none;
-  }
-}
+//   .cursor {
+//     display: none;
+//   }
+// }

@@ -77,7 +77,16 @@ li {
 }
 
 p {
+  font-size: 1.4rem;
   line-height: 1.6;
+}
+
+.under {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 h1,
@@ -89,21 +98,23 @@ h4 {
 }
 
 aside {
-  h4, p {
+  h4,
+  p {
     font-family: $primaryFont;
   }
 }
 
 h1 {
-  font-size: 4.3rem;
+  text-align: center;
   position: relative;
+  font-size: 4.3rem;
   font-weight: 700;
 }
 
 h2 {
-  font-weight: 700;
   text-align: left;
   font-size: 3rem;
+  font-weight: 700;
   line-height: 0.9;
 }
 
@@ -116,9 +127,28 @@ h3 {
   font-size: 1.5rem;
 }
 
-.sectionOne .sectionOneLeft p {
-  font-size: 1.3rem;
-}
+// SECTION 1
+
+// .sectionOne p {
+//   font-size: 1.3rem;
+// }
+
+// SECTION 2
+
+// .sectionTwo {
+//   figcaption {
+//     p {
+//       font-size: 0.9rem;
+//       line-height: 1.6;
+//     }
+
+//     span {
+//       text-decoration: none;
+//     }
+//   }
+// }
+
+// SECTION 3
 
 .sectionThree {
   .stepLeft {
@@ -126,6 +156,14 @@ h3 {
       font-family: $headlineFont;
     }
   }
+}
+
+// OTHER
+
+.fa-arrow-up {
+  font-size: 0.7rem;
+  transform: rotate(180deg);
+  margin-left: 6px;
 }
 
 .hamburgerLinks a {
@@ -185,34 +223,5 @@ button,
   &:hover {
     background-color: $colorTwo;
     color: $colorOne;
-  }
-}
-
-.sectionTwo {
-  figcaption {
-    p {
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    span {
-      text-decoration: none;
-    }
-  }
-}
-
-.sectionThree p {
-  font-size: 0.8rem;
-}
-
-.fa-arrow-up {
-  font-size: 0.7rem;
-  transform: rotate(180deg);
-  margin-left: 6px;
-}
-
-@media (max-width: 1317px) {
-  h1 {
-    font-size: 4rem;
   }
 }

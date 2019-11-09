@@ -5,7 +5,6 @@ import SectionFour from "./LandingPageComponents/SectionFour";
 import ContactForm from "./LandingPageComponents/ContactForm";
 import NumbersAside from "./LandingPageComponents/NumbersAside";
 
-
 import { useInView, InView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import * as Scroll from "react-scroll";
@@ -22,8 +21,7 @@ class LandingPage extends Component {
 
   componentDidMount() {
     this.setState({
-      topBar: false,
-
+      topBar: false
     });
   }
 
@@ -51,7 +49,7 @@ class LandingPage extends Component {
 
     return (
       <animated.h1 style={props}>
-        A better way to pay <span className="forEdu">for education.</span>
+        A better way to pay <span className="lineBreak">for education.</span>
       </animated.h1>
     );
   };
@@ -68,7 +66,7 @@ class LandingPage extends Component {
         <div className="landingPageTextSub">
           <p>
             Pay only when you start working with{" "}
-            <span>Income Share Agreements.</span>
+            <span className="bold">Income Share Agreements.</span>
           </p>
         </div>
       </animated.div>
@@ -189,9 +187,7 @@ class LandingPage extends Component {
             {/* SECTION TWO - WHAT'S AN ISA */}
 
             <div className="sectionTwoBg" id="sectionTwoBg">
-                  <SectionTwo 
-                    addHeader={this.props.addHeader}
-                  />
+              <SectionTwo addHeader={this.props.addHeader} />
             </div>
 
             {/* SECTION THREE - HOW IT WORKS */}
@@ -209,10 +205,7 @@ class LandingPage extends Component {
             {/* CONTACT & NUMBERS */}
 
             <div className="contactBg" id="contactBg">
-              <section
-                className="contact wrapper"
-                id="contact"
-              >
+              <section className="contact wrapper" id="contact">
                 <this.ContactHeader />
 
                 <div className="formAsideBox">

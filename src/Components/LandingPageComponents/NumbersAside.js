@@ -28,10 +28,10 @@ const NumbersAside = () => {
           </div>
           <div className="fact3">
             <h4>$1.6 Trillion</h4>
-            <p>outstanding student debt in North America</p>
+          <p>outstanding student debt <span className="lineBreak">in North America</span></p>
           </div>
           <p className="motto">
-            There's a better way <span>to finance education</span>
+            There's a better way <span>to pay for education</span>
           </p>
         </aside>
     </animated.div>
