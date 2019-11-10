@@ -202,7 +202,7 @@ class LandingPage extends Component {
               <SectionFour />
             </div>
 
-            {/* CONTACT & NUMBERS */}
+            {/* CONTACT */}
 
             <div className="contactBg" id="contactBg">
               <section className="contact wrapper" id="contact">
