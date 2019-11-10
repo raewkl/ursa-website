@@ -43,5 +43,10 @@
 
   input[type=submit] {
     margin: 10px 10px 0 10px;
+    border: none;
+    width: 120px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: $primaryFont;
   }
 }

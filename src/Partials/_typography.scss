@@ -161,7 +161,7 @@ h3 {
 // OTHER
 
 .fa-arrow-up {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   transform: rotate(180deg);
   margin-left: 6px;
 }
@@ -212,9 +212,10 @@ a,
 button,
 .logInSubmit {
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   border: none;
+  font-family: $primaryFont;
 }
 
 button,

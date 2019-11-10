@@ -55,6 +55,20 @@
   .logInSubmit {
     margin-top: 0;
   }
+
+  .warningBox {
+    position: relative;
+  }
+
+  .warning {
+    position: absolute;
+    display: none;
+    margin-top: 20px;
+    font-size: 0.7rem;
+    color: red;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 973px) {

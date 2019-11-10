@@ -1442,26 +1442,26 @@ aside {
   // }
 }
 
-// @media (max-width: 500px) and (max-height: 850px) {
-//   .sectionOne {
-//     height: calc(100vh);
-//     padding-top: 0vh;
+@media (max-width: 500px) and (max-height: 850px) {
+  .sectionOne {
+    height: calc(100vh);
+    padding-top: 0vh;
 
-//     .sectionOneLeft {
-//       justify-content: center;
-//     }
-//   }
+    .sectionOneLeft {
+      justify-content: center;
+    }
+  }
 
-//   .cursorDownContainer {
-//     bottom: 10vh;
-//   }
+  .cursorDownContainer {
+    bottom: 10vh;
+  }
 
-//   .cursorHover,
-//   .cursorNormal {
-//     width: 50px;
-//   }
+  .cursorHover,
+  .cursorNormal {
+    width: 50px;
+  }
 
-//   .cursor {
-//     display: none;
-//   }
-// }
+  .cursor {
+    display: none;
+  }
+}

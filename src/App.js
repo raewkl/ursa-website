@@ -58,35 +58,48 @@ class App extends Component {
   login = (event, email, password) => {
     event.preventDefault();
 
-    auth.signInWithEmailAndPassword(email, password).then(result => {
-      const user = result.user;
+    const warning = document.getElementById("warning");
 
-      this.setState(
-        {
-          user,
-          uid: user.uid
-        },
-        () => {
-          // console.log(user);
-        }
-      );
-    });
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(result => {
+        const user = result.user;
+
+        this.setState(
+          {
+            user,
+            uid: user.uid
+          },
+          () => {
+            if (warning) {
+              warning.style.display = "none";
+            }
+          }
+        );
+      })
+      .catch(function(error) {
+        warning.style.display = "block";
+      });
   };
 
   logout = event => {
     event.preventDefault();
 
-    auth.signOut().then(() => {
-      this.setState(
-        {
-          user: null,
-          userId: null
-        },
-        () => {
-          // console.log(this.state.user);
-        }
-      );
-    });
+    auth
+      .signOut()
+      .then(() => {
+        this.setState(
+          {
+            user: null,
+            userId: null
+          },
+          () => {
+            // console.log(this.state.user);
+          }
+        );
+      })
+      .catch(function(error) {
+      });
   };
 
   render() {
@@ -105,9 +118,11 @@ class App extends Component {
             )}
           />
 
-          <Route exact path="/" component={() => <LandingPage 
-            addHeader={this.addHeader}
-          />} />
+          <Route
+            exact
+            path="/"
+            component={() => <LandingPage addHeader={this.addHeader} />}
+          />
 
           <Route exact path="/dashboard">
             {this.state.user ? (

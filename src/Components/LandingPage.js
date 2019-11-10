@@ -43,8 +43,8 @@ class LandingPage extends Component {
   MainHeader = () => {
     const props = useSpring({
       config: config.molasses,
-      from: { opacity: 0, left: -100 },
-      to: { opacity: 1, left: 0 }
+      from: { opacity: 0, bottom: -30 },
+      to: { opacity: 1, bottom: 0 }
     });
 
     return (
@@ -57,7 +57,7 @@ class LandingPage extends Component {
   MainText = () => {
     const props = useSpring({
       config: config.molasses,
-      from: { opacity: 0, bottom: -100 },
+      from: { opacity: 0, bottom: -30 },
       to: { opacity: 1, bottom: 0 }
     });
 
@@ -132,9 +132,8 @@ class LandingPage extends Component {
               <section className="sectionOne wrapper" id="sectionOne">
                 <div className="sectionOneLeft">
                   <InView
-                    as="div"
                     className="titleBox"
-                    as="section"
+                    as="div"
                     onChange={(inView, entry) => {
                       const topBar = document.getElementById("topBarContainer");
 

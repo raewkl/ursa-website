@@ -55,7 +55,7 @@ const SectionThree = () => {
                 need to worry about tuition. We pay your school directly and
                 send you confirmation.
               </p>
-              <p class="subText">
+              <p className="subText">
                 At this time, Ursa funding is for tuition only.
               </p>
             </div>
@@ -127,6 +127,7 @@ const SectionThree = () => {
           />
         </div>
       </ScrollLink>
+
     </animated.section>
   );
 };

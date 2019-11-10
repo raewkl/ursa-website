@@ -24,7 +24,6 @@ class LogIn extends Component {
   render() {
     return (
       <div className="logInPage wrapper">
-
         <form action="" className="logInForm">
           <div className="upperFormLogIn">
             <label htmlFor="userName" className="visuallyHidden">
@@ -72,6 +71,12 @@ class LogIn extends Component {
                 }
               />
             </div>
+          </div>
+
+          <div className="warningBox">
+            <p className="warning" id="warning">
+              The email or password you’ve entered doesn’t match any account.
+            </p>
           </div>
         </form>
       </div>
