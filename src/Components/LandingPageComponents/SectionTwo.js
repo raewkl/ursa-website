@@ -26,7 +26,7 @@ const SectionTwo = () => {
         </div>
         <div className="isaDescriptionLower">
           <p>
-            An <em>Income Share Agreement</em> lets you train in that field you
+            An <em>Income Share Agreement (ISA)</em> lets you train in that field you
             want to work in without worrying about debt. We pay your tuition
             upfront, and you pay us a % of your income for a period of time once
             you start working.
@@ -140,7 +140,7 @@ const SectionTwo = () => {
         <div className="cursorDownContainer">
           <img
             className="cursorNormal"
-            src={require("../../Assets/Cursors/cursorDown.svg")}
+            src={require("../../Assets/Cursors/cursorDownBlue.svg")}
             alt="Arrow pointing down."
           />
           <img

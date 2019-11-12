@@ -26,9 +26,7 @@ const SectionFour = () => {
     >
       <section className="sectionFour" id="sectionFour">
         <div className="studentBenefits">
-          <h2>
-            Program highlights
-          </h2>
+          <h2>Program highlights</h2>
         </div>
         <div ref={ref} style={props} className="sectionFourContent">
           <ul className="stuBenefitsList">
@@ -108,7 +106,7 @@ const SectionFour = () => {
         <div className="cursorDownContainer">
           <img
             className="cursorNormal"
-            src={require("../../Assets/Cursors/cursorDown.svg")}
+            src={require("../../Assets/Cursors/cursorDownBlue.svg")}
             alt="Arrow pointing down."
           />
           <img

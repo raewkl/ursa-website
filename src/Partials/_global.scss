@@ -22,10 +22,11 @@ $colorOne: #0000cc;
 $colorOneLight: rgba(0, 0, 204, 0.2);
 $colorTwo: #ff99cc;
 $colorTwoLight: rgba(255, 153, 204, 0.6);
-$colorThree: #434343;
+
 
 // Secondary Colors
 
+$colorThree: #434343;
 $colorFour: #99ffcc;
 $colorFourLight: #99ffcc64;
 $colorFive: #6666ff;
@@ -70,7 +71,7 @@ a {
 
 .wrapper {
   width: 80%;
-  max-width: 1020px;
+  max-width: 1090px;
   margin: 0 auto;
 }
 
@@ -78,16 +79,17 @@ img {
   width: 100%;
 }
 
-.cursor {
-  position: fixed;
-  border-radius: 50%;
-  width: 13px;
-  height: 13px;
-  background-color: $colorTwoLight;
-  transition-duration: 150ms;
-  transition-timing-function: ease-out;
-  z-index: -1;
-}
+// CURSOR SHADOW
+// .cursor {
+//   position: fixed;
+//   border-radius: 50%;
+//   width: 13px;
+//   height: 13px;
+//   background-color: $colorTwoLight;
+//   transition-duration: 150ms;
+//   transition-timing-function: ease-out;
+//   z-index: -1;
+// }
 
 @keyframes fadeIn {
   from {

@@ -14,7 +14,7 @@ const Footer = props => {
             <HashLink to="/#sectionOne" onClick={props.removeHeader}>
               <div className="logoBox">
                 <img
-                  src={require("../Assets/Logo/Logo_Akkurat_blue.png")}
+                  src={require("../Assets/Logo/Logo_blue.png")}
                   alt={"Ursa Logo"}
                 />
               </div>

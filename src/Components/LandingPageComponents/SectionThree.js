@@ -51,9 +51,9 @@ const SectionThree = () => {
             <div className="stepRight">
               <h4>Complete a quick prescreen, then review the contract.</h4>
               <p>
-                If you like our terms, and enter into an ISA with Ursa, you don’t
-                need to worry about tuition. We pay your school directly and
-                send you confirmation.
+                If you like our terms, and enter into an ISA with Ursa, you
+                don’t need to worry about tuition. We pay your school directly
+                and send you confirmation.
               </p>
               <p className="subText">
                 At this time, Ursa funding is for tuition only.
@@ -117,7 +117,7 @@ const SectionThree = () => {
         <div className="cursorDownContainer">
           <img
             className="cursorNormal"
-            src={require("../../Assets/Cursors/cursorDown.svg")}
+            src={require("../../Assets/Cursors/cursorDownBlue.svg")}
             alt="Arrow pointing down."
           />
           <img
@@ -127,7 +127,6 @@ const SectionThree = () => {
           />
         </div>
       </ScrollLink>
-
     </animated.section>
   );
 };

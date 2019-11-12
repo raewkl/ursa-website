@@ -48,8 +48,13 @@ class LandingPage extends Component {
     });
 
     return (
+      // <animated.h1 style={props}>
+      //   A better way to pay <span className="lineBreak">for education.</span>
+      // </animated.h1>
       <animated.h1 style={props}>
-        A better way to pay <span className="lineBreak">for education.</span>
+        Ditch debt. 
+        <span className="lineBreak"> Pay tuition with </span> 
+        <span className="lineBreak"> Income Share Agreements.</span>
       </animated.h1>
     );
   };
@@ -65,8 +70,8 @@ class LandingPage extends Component {
       <animated.div style={props} className="landingPageText">
         <div className="landingPageTextSub">
           <p>
-            Pay only when you start working with{" "}
-            <span className="bold">Income Share Agreements.</span>
+            {/* Pay only when you start working with{" "}
+            <span className="bold">Income Share Agreements.</span> */}
           </p>
         </div>
       </animated.div>
@@ -136,8 +141,9 @@ class LandingPage extends Component {
                     as="div"
                     onChange={(inView, entry) => {
                       const topBar = document.getElementById("topBarContainer");
-
-                      if (inView === false) {
+                      
+                      // static top bar for all sections
+                      if (inView === true) {
                         this.setState(
                           {
                             topBar: true
@@ -170,7 +176,7 @@ class LandingPage extends Component {
                   <div className="cursorDownContainer">
                     <img
                       className="cursorNormal"
-                      src={require("../Assets/Cursors/cursorDown.svg")}
+                      src={require("../Assets/Cursors/cursorDownBlue.svg")}
                       alt=""
                     />
                     <img

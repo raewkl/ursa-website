@@ -107,15 +107,16 @@ aside {
 h1 {
   text-align: center;
   position: relative;
-  font-size: 4.3rem;
+  font-size: 4rem;
   font-weight: 700;
+  line-height: 1.1;
 }
 
 h2 {
   text-align: left;
   font-size: 3rem;
   font-weight: 700;
-  line-height: 0.9;
+  line-height: 1;
 }
 
 .howItWorks {
@@ -127,26 +128,6 @@ h3 {
   font-size: 1.5rem;
 }
 
-// SECTION 1
-
-// .sectionOne p {
-//   font-size: 1.3rem;
-// }
-
-// SECTION 2
-
-// .sectionTwo {
-//   figcaption {
-//     p {
-//       font-size: 0.9rem;
-//       line-height: 1.6;
-//     }
-
-//     span {
-//       text-decoration: none;
-//     }
-//   }
-// }
 
 // SECTION 3
 
