@@ -1,3 +1,4 @@
+
 .landingNav {
   position: relative;
 }
@@ -88,12 +89,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
 
-
+.logoBoxContainer, .mainNav {
+  flex: 1 0 50%;
 }
 
 .mainNav {
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: flex-end;
 
@@ -170,7 +173,6 @@
 
 .miniNav {
   display: none;
-  // -webkit-backface-visibility: hidden;
 }
 
 .logoBoxContainer, .hamburger {

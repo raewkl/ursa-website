@@ -16,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "aws2 s3 sync build/ s3://ursa.io",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

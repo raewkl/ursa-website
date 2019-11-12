@@ -1339,13 +1339,16 @@ aside {
     font-size: 0.9rem;
   }
 
-  body {
-    overflow-x: hidden;
-  }
+  
 
   .sectionOneBg .circleTextBox {
     width: 157px;
     bottom: -6vh;
+  }
+
+  .cursorHover,
+  .cursorNormal {
+    width: 50px;
   }
 
   .sectionFour {
@@ -1413,7 +1416,7 @@ aside {
       align-items: center;
 
       li {
-      width: 100%;
+        width: 100%;
       }
     }
   }
@@ -1442,7 +1445,7 @@ aside {
   // }
 }
 
-@media (max-width: 500px) and (max-height: 850px) {
+@media (max-width: 400px) and (max-height: 850px) {
   .sectionOne {
     height: calc(100vh);
     padding-top: 0vh;
@@ -1456,12 +1459,31 @@ aside {
     bottom: 10vh;
   }
 
+  .cursor {
+    display: none;
+  }
+}
+
+@media (max-height: 500px) {
+
   .cursorHover,
   .cursorNormal {
     width: 50px;
   }
+}
 
-  .cursor {
+
+@media (max-height: 400px) {
+  .cursorDownContainer,
+  .cursorHover,
+  .cursorNormal {
     display: none;
   }
+
+  .sectionOne {
+
+    padding-top: 35px;
+  }
+
+  
 }
