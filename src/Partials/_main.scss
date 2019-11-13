@@ -951,7 +951,7 @@ aside {
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.9rem;
   }
 
   h2 {
@@ -1169,6 +1169,10 @@ aside {
     font-size: 2.5rem;
   }
 
+  p {
+    font-size: 1.4rem;
+  }
+
   h2 {
     font-size: 2.3rem;
   }
@@ -1349,7 +1353,7 @@ aside {
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 
   .cursorHover,
@@ -1405,6 +1409,10 @@ aside {
     .lineBreak {
       display: block;
     }
+  }
+
+  p {
+    font-size: 0.9rem;
   }
 
   h2 {
@@ -1474,7 +1482,7 @@ aside {
 @media (max-height: 500px) {
   .cursorHover,
   .cursorNormal {
-    width: 50px;
+    width: 40px;
   }
 }
 

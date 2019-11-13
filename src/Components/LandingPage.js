@@ -53,8 +53,8 @@ class LandingPage extends Component {
       // </animated.h1>
       <animated.h1 style={props}>
         Ditch debt. 
-        <span className="lineBreak"> Pay tuition with </span> 
-        <span className="lineBreak"> Income Share Agreements.</span>
+        {/* <span className="lineBreak"> Pay tuition with </span> 
+        <span className="lineBreak"> Income Share Agreements.</span> */}
       </animated.h1>
     );
   };
@@ -70,8 +70,8 @@ class LandingPage extends Component {
       <animated.div style={props} className="landingPageText">
         <div className="landingPageTextSub">
           <p>
-            {/* Pay only when you start working with{" "}
-            <span className="bold">Income Share Agreements.</span> */}
+            Pay tuition with{" "}
+            <span className="bold">Income Share Agreements.</span>
           </p>
         </div>
       </animated.div>
