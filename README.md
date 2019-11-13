@@ -4,5 +4,5 @@ Freelance project for an emerging fintech company that provides ISAs (Income Sha
 
 Includes a prototype student management system with user authentification for partnered institutions.
 
-Tech Used: React, Firebase, CSS3, HTML5
+Tech Used: React, Firebase, CSS3, HTML5, AWS (S3, Route53, Cloudfront)
 
