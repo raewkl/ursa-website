@@ -328,6 +328,10 @@
   }
 }
 
+.headlineBox {
+  width: 350px;
+}
+
 // SECTION TWO
 
 .sectionTwo {
@@ -343,10 +347,6 @@
 
     em {
       font-weight: bold;
-    }
-
-    .headlineBox {
-      width: 350px;
     }
   }
 
@@ -456,10 +456,6 @@
     display: flex;
   }
 
-  .headlineBox {
-    width: 350px;
-  }
-
   ul.contentBox {
     width: calc(100% - 350px);
   }
@@ -475,13 +471,13 @@
     }
   }
 
-  // li:last-child {
-  //   margin-bottom: 0;
-  // }
+  li:last-child {
+    margin-bottom: 0;
+  }
 
   .stepLeft {
-    padding-right: 40px;
-    font-size: 5rem;
+    padding-right: 35px;
+    font-size: 4rem;
 
     span {
       display: block;
@@ -560,10 +556,6 @@
   align-items: flex-start;
   position: relative;
 
-  .studentBenefits {
-    width: 350px;
-  }
-
   .sectionFourContent {
     width: calc(100% - 350px);
     display: flex;
@@ -578,7 +570,7 @@
     }
   }
 
-  .studentBenefits,
+  .headlineBox,
   .stuBenefitsList,
   .requestIsa {
     position: relative;
@@ -586,6 +578,7 @@
 
   ul {
     display: flex;
+    // display flex : flex box defines direction of list. default direction is vertical. You can also do things like row reverse.
     justify-content: space-between;
     flex-direction: column;
     width: 100%;
@@ -632,6 +625,7 @@
 
   figure.evenFigure {
     flex-direction: row-reverse;
+    //evenFigure we defined as a class and applied to 2nd child, but you can use nth-child, etc
   }
 
   h3 {
@@ -646,7 +640,7 @@
     border-radius: 25px;
     overflow: hidden;
     position: relative;
-    width: 45%;
+    width: 320px;
     height: 240px;
     display: flex;
     justify-content: center;
@@ -655,11 +649,14 @@
 
   figcaption {
     width: 45%;
+    //this width references the % of the width of the parent element.
   }
 
   .stuImg {
     height: 100%;
+    // usually you avoid setting height of image but since they are being wrapped we want to make sure the window is consistent and set % of box in which it sits.
     width: auto;
+    // width: auto is the default setting.
   }
 
   .stuGif {
@@ -668,6 +665,8 @@
     position: absolute;
     top: 0;
     z-index: -1;
+    //higher z-index is more front. negative puts it behind
+    //z-index has to follow position: relative/absolute, doesn't work on its own. It will also affect all subdivs of a parent div so be careful!
   }
 
   button {
@@ -704,7 +703,6 @@
   justify-content: space-evenly;
   position: relative;
 }
-
 
 .formAsideBox {
   display: flex;
@@ -1210,7 +1208,7 @@ aside {
 
   .sectionThree {
     .stepLeft {
-      font-size: 4rem;
+      font-size: 3rem;
       padding-right: 30px;
     }
 
@@ -1294,10 +1292,9 @@ aside {
   }
 
   .sectionOne {
-    .sectionOneLeft {
-      button {
-        margin: 0;
-      }
+    .landingPageTextSub {
+      position: relative;
+      margin: 3.7vh 0 0 0;
     }
   }
 
@@ -1340,6 +1337,7 @@ aside {
 
 @media (max-width: 500px) {
   // Text size change
+
   h1 {
     font-size: 2.1rem;
   }
@@ -1442,7 +1440,8 @@ aside {
 
   .sectionThree {
     .stepLeft {
-      font-size: 3rem;
+      font-size: 1.5rem;
+      padding-top: 5px;
       padding-right: 20px;
     }
 
@@ -1460,7 +1459,7 @@ aside {
 
 // HEIGHT ADJUSTMENTS
 
-@media (max-width: 400px) and (max-height: 850px) {
+@media (max-width: 500px) and (max-height: 850px) {
   .sectionOne {
     height: calc(100vh);
     padding-top: 0vh;
@@ -1471,7 +1470,7 @@ aside {
   }
 
   .cursorDownContainer {
-    bottom: 10vh;
+    bottom: 8vh;
   }
 
   .cursor {
@@ -1479,14 +1478,8 @@ aside {
   }
 }
 
-@media (max-height: 500px) {
-  .cursorHover,
-  .cursorNormal {
-    width: 40px;
-  }
-}
 
-@media (max-height: 400px) {
+@media (max-height: 500px) {
   .cursorDownContainer,
   .cursorHover,
   .cursorNormal {

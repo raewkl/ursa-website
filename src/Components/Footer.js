@@ -11,7 +11,9 @@ const Footer = props => {
       <footer className="wrapper scrollChild">
         <div className="upperFooter">
           <div className="leftFooter">
-            <HashLink to="/#sectionOne" onClick={props.removeHeader}>
+            <HashLink to="/#sectionOne" 
+            // onClick={props.removeHeader}
+            >
               <div className="logoBox">
                 <img
                   src={require("../Assets/Logo/Logo_blue.png")}
@@ -30,7 +32,7 @@ const Footer = props => {
                     <HashLink
                       to="/faq#faq"
                       className="logIn"
-                      onClick={() => props.addHeader()}
+                      // onClick={() => props.addHeader()}
                     >
                       FAQ
                     </HashLink>

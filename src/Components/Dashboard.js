@@ -30,7 +30,7 @@ class Dashboard extends Component {
 
   componentDidMount() {
 
-    this.props.addHeader();
+    // this.props.addHeader();
 
     this.listener = auth.onAuthStateChanged(user => {
       if (user) {

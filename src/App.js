@@ -1,3 +1,6 @@
+//overarching, root file. contains functions that are constant across pages.
+// anything starting with return is jsx (functions like html)- comment = {/* */}. within the curly brackets, the code is js again.
+
 import React, { Component } from "react";
 import "./Partials/App.scss";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -23,23 +26,12 @@ class App extends Component {
     };
   }
 
+  //componentDidMount - after components have mounted, run the following: "mousemove" searches for the cursor trailer div (via cursor)
   componentDidMount() {
-    document.addEventListener("mousemove", this.moveMouse);
+    // document.addEventListener("mousemove", this.moveMouse);
   }
-
-  componentWillUnmount() {}
-
-  addHeader = () => {
-    const topBar = document.getElementById("topBarContainer");
-    topBar.classList.remove("removeHeight");
-    topBar.classList.add("addHeight");
-  };
-
-  removeHeader = () => {
-    const topBar = document.getElementById("topBarContainer");
-    topBar.classList.remove("addHeight");
-    topBar.classList.add("removeHeight");
-  };
+  
+//CURSOR
 
   moveMouse = e => {
     const cursor = document.getElementById("cursor");
@@ -48,6 +40,20 @@ class App extends Component {
 
     cursor.style.transform = `translate(${x - 6.5}px, ${y - 6.5}px)`;
   };
+
+//HEADER
+
+  // addHeader = () => {
+  //   const topBar = document.getElementById("topBarContainer");
+  //   topBar.classList.remove("removeHeight");
+  //   topBar.classList.add("addHeight");
+  // };
+
+  // removeHeader = () => {
+  //   const topBar = document.getElementById("topBarContainer");
+  //   topBar.classList.remove("addHeight");
+  //   topBar.classList.add("removeHeight");
+  // };
 
   updateUser = user => {
     this.setState({
@@ -102,35 +108,44 @@ class App extends Component {
       });
   };
 
+
+  //render: renders jsx code inside "return". All jsx in thi
+
   render() {
     return (
       <Router>
         <div className="App">
-          <div className="cursor" id="cursor"></div>
+          {/* <div className="cursor" id="cursor"></div> */}
+          {/* {^this is code for the trailing cursor} */}
 
+        {/* Header */}
           <Route
             path="/"
             component={() => (
               <Header
-                addHeader={this.addHeader}
-                removeHeader={this.removeHeader}
+                // addHeader={this.addHeader}
+                // removeHeader={this.removeHeader}
               />
             )}
           />
 
+       {/* Landing Page */}
           <Route
             exact
             path="/"
-            component={() => <LandingPage addHeader={this.addHeader} />}
+            component={() => <LandingPage 
+              // addHeader={this.addHeader} 
+              />}
           />
 
+        { /* Log-in and Dashboard */}
           <Route exact path="/dashboard">
             {this.state.user ? (
               <Dashboard
                 logout={this.logout}
                 userId={this.state.uid}
                 listener={this.listener}
-                addHeader={this.addHeader}
+                // addHeader={this.addHeader}
               />
             ) : (
               <LogIn
@@ -138,19 +153,19 @@ class App extends Component {
                 handleChange={this.handleChange}
                 login={this.login}
                 user={this.state.user}
-                addHeader={this.addHeader}
+                // addHeader={this.addHeader}
               />
             )}
           </Route>
-
+        {/* Faq */}
           <Route exact path="/faq" component={() => <Faq />} />
-
+        {/* Footer */}
           <Route
             path="/"
             component={() => (
               <Footer
-                addHeader={this.addHeader}
-                removeHeader={this.removeHeader}
+                // addHeader={this.addHeader}
+                // removeHeader={this.removeHeader}
               />
             )}
           />

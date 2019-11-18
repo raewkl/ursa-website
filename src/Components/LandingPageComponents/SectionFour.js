@@ -6,16 +6,28 @@ import * as Scroll from "react-scroll";
 let ScrollLink = Scroll.Link;
 
 const SectionFour = () => {
+
   const [ref, inView] = useInView({
     rootMargin: "-50px 0px",
     triggerOnce: true
   });
 
+  // "useInView" - is an event listener, checks when a section is visible
+  // rootMargin -50 triggers once 50 pixels are in view.
+
   const props = useSpring({
     opacity: inView ? 1 : 0,
+    // opacity goes from 0 (invisible) to 1 (completely opaque)
+
     top: inView ? 0 : 100,
+    // "top" is a property, describing relative position. Once "ref" object is inView, it triggers an animation that slides it up 100 pixels (goes from 100 pixels to 0 pixels)
+
     config: config.default
   });
+
+  // spring is an animation library for React. you interact via an API. We've installed and imported useSpring library + some other useful functions at the top of the doc. 
+  // Google "useSpring" to learn more (documentation is complex)
+  // ternary defined by "boolean statement ? iftrue : iffalse" - 1st variable is if true, 2nd is if false.
 
   return (
     <animated.section
@@ -25,10 +37,13 @@ const SectionFour = () => {
       style={props}
     >
       <section className="sectionFour" id="sectionFour">
-        <div className="studentBenefits">
+
+        <div className="studentBenefits headlineBox">
           <h2>Program highlights</h2>
         </div>
+
         <div ref={ref} style={props} className="sectionFourContent">
+          
           <ul className="stuBenefitsList">
             <li>
               <div className="gifSelector"></div>
@@ -41,7 +56,7 @@ const SectionFour = () => {
                   />
                   <img
                     className="stuGif"
-                    src={require("../../Assets/Gifs/rocket2GCompressed.gif")}
+                    src={require("../../Assets/Gifs/1_rocketgif.gif")}
                     alt="Rocket taking off."
                   />
                 </div>
@@ -62,7 +77,7 @@ const SectionFour = () => {
                   />
                   <img
                     className="stuGif"
-                    src={require("../../Assets/Gifs/hoorayG.gif")}
+                    src={require("../../Assets/Gifs/2_hooraygif.gif")}
                     alt="Confetti falling on woman."
                   />
                 </div>
@@ -82,7 +97,7 @@ const SectionFour = () => {
                   />
                   <img
                     className="stuGif"
-                    src={require("../../Assets/Gifs/youGotThisCompressed.gif")}
+                    src={require("../../Assets/Gifs/3_gotthisgif.gif")}
                     alt="Woman giving thumbs up."
                   />
                 </div>

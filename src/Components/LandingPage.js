@@ -192,7 +192,9 @@ class LandingPage extends Component {
             {/* SECTION TWO - WHAT'S AN ISA */}
 
             <div className="sectionTwoBg" id="sectionTwoBg">
-              <SectionTwo addHeader={this.props.addHeader} />
+              <SectionTwo 
+              // addHeader={this.props.addHeader} 
+              />
             </div>
 
             {/* SECTION THREE - HOW IT WORKS */}

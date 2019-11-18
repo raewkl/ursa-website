@@ -18,7 +18,7 @@ class LogIn extends Component {
   };
 
   componentDidMount() {
-    this.props.addHeader();
+    // this.props.addHeader();
   }
 
   render() {

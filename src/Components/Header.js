@@ -3,10 +3,13 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useSpring, animated, config } from "react-spring";
 
+// Animations are in css. For animations in js, add class to trigger css animation.
+
 const Header = props => {
   let clicked = false;
 
   const animArray = [
+    // animArray applies to the hambuger menu specifically.
     "open",
     "close",
     "expand",
@@ -32,12 +35,11 @@ const Header = props => {
       removeAnimations(hamburger, navCircle, hamburgerLinks);
 
       clicked = true;
-      hamburger.classList.add("open"); // 0.5
+      hamburger.classList.add("open"); // 0.5 speed, check _header.scss
       navCircle.classList.add("expand"); // 0.5
       hamburgerLinks.style.display = "block";
       hamburgerLinks.classList.add("fadeIn"); // 0.75
     } else {
-      
       clicked = false;
       hamburger.classList.add("close"); // 0.5
       hamburgerLinks.classList.add("fadeOut"); // 0.375
@@ -70,21 +72,37 @@ const Header = props => {
     }
   };
 
-  const animProps = useSpring({
+//TOP NAV BAR 
+
+  // animProps: this relates to the header (topnav) background
+  const headerLinks = useSpring({
     config: config.molasses,
     from: { opacity: 0, top: -80 },
+    //starts 80 px above original position (off viewport), then slides to 0px (so top of bar is at top of viewport)
     to: { opacity: 1, top: 20 }
   });
 
+  //bar background including border
+  const headerBackground = useSpring({
+    config: config.molasses,
+    from: { top: -116 },
+    to: { top: -16 }
+  });
+
+
+  // RENDER + RUN 
   return (
     <header className="landingNav">
-      <div className="topBarContainer" id="topBarContainer">
-        <animated.div style={animProps} className="topBar" id="topBar">
+      <animated.div
+        style={headerBackground}
+        className="topBarContainer"
+        id="topBarContainer"
+      >
+        <animated.div style={headerLinks} className="topBar" id="topBar">
           <HashLink
             to="/#sectionOne"
             className="logoBoxContainer"
             onClick={() => {
-              props.removeHeader();
               contactClick();
             }}
           >
@@ -107,7 +125,7 @@ const Header = props => {
                 <Link
                   to="/dashboard"
                   className="logIn"
-                  onClick={() => props.addHeader()}
+                  // onClick={() => props.addHeader()}
                 >
                   <span className="movingText1">Log In</span>
                   {/* <span className="movingText2">Log In</span> */}
@@ -147,7 +165,7 @@ const Header = props => {
             </ul>
           </nav>
         </animated.div>
-      </div>
+      </animated.div>
     </header>
   );
 };

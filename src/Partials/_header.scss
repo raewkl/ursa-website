@@ -1,3 +1,4 @@
+// Animations are in css. For animations in js, add class to trigger css animation.
 
 .landingNav {
   position: relative;
@@ -7,64 +8,66 @@
   position: fixed;
   left: 0;
   right: 0;
+  height: 100px;
   top: -1px;
   z-index: 20;
   background-color: $background;
   border-bottom: 1px solid $colorOne;
 }
 
-.addHeight {
-  animation: addHeight 0.3s linear;
-  height: 86px;
-}
+// add height refers to the topbarContainer (background + line) and the border bottom
+// .addHeight {
+//   animation: addHeight 0.3s linear;
+//   height: 86px;
+// }
 
-.removeHeight {
-  animation: removeHeight 0.3s linear;
-}
+// .removeHeight {
+//   animation: removeHeight 0.3s linear;
+// }
 
-@keyframes addHeight {
-  from {
-    height: 0px;
-  }
-  to {
-    height: 86px;
-  }
-}
+// @keyframes addHeight {
+//   from {
+//     height: 0px;
+//   }
+//   to {
+//     height: 86px;
+//   }
+// }
 
-@keyframes removeHeight {
-  from {
-    height: 86px;
-  }
-  to {
-    height: 0px;
-  }
-}
+// @keyframes removeHeight {
+//   from {
+//     height: 86px;
+//   }
+//   to {
+//     height: 0px;
+//   }
+// }
 
-.moveUp {
-  animation: moveUp 0.3s linear forwards;
-}
+// .moveUp {
+//   animation: moveUp 0.3s linear forwards;
+// }
 
-.moveDown {
-  animation: moveDown 0.3s linear forwards;
-}
+// .moveDown {
+//   animation: moveDown 0.3s linear forwards;
+// }
 
-@keyframes moveUp {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-100px);
-  }
-}
+// @keyframes moveUp {
+//   from {
+//     transform: translateY(0);
+//   }
+//   to {
+//     transform: translateY(-100px);
+//   }
+// }
 
-@keyframes moveDown {
-  from {
-    transform: translateY(-100px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
+// @keyframes moveDown {
+//   from {
+//     transform: translateY(-100px);
+//   }
+//   to {
+//     transform: translateY(0);
+//   }
+// }
 
 .navCircle {
   display: none;
@@ -91,9 +94,9 @@
   justify-content: space-between;
 }
 
-.logoBoxContainer, .mainNav {
-  flex: 1 0 50%;
-}
+// .logoBoxContainer, .mainNav {
+//   flex: 1 0 50%;
+// }
 
 .mainNav {
   // width: 100%;
@@ -360,6 +363,10 @@
     display: none;
   }
 
+  .topBarContainer {
+    height: 80px;
+  }
+
   .topBar {
     top: 3vh;
     left: 8%;
@@ -375,25 +382,25 @@
     display: block;
   }
 
-  .addHeight {
-    height: 67px;
-  }
+  // .addHeight {
+  //   height: 67px;
+  // }
 
-  @keyframes addHeight {
-    from {
-      height: 0px;
-    }
-    to {
-      height: 67px;
-    }
-  }
+  // @keyframes addHeight {
+  //   from {
+  //     height: 0px;
+  //   }
+  //   to {
+  //     height: 67px;
+  //   }
+  // }
 
-  @keyframes removeHeight {
-    from {
-      height: 67px;
-    }
-    to {
-      height: 0px;
-    }
-  }
+  // @keyframes removeHeight {
+  //   from {
+  //     height: 67px;
+  //   }
+  //   to {
+  //     height: 0px;
+  //   }
+  // }
 }
