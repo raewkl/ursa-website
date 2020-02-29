@@ -45,6 +45,7 @@ const SectionFour = () => {
         <div ref={ref} style={props} className="sectionFourContent">
           
           <ul className="stuBenefitsList">
+            {/* block #1 */}
             <li>
               <div className="gifSelector"></div>
               <figure>
@@ -62,10 +63,12 @@ const SectionFour = () => {
                 </div>
 
                 <figcaption>
-                  <h3>Pay only when you start working</h3>
+                  <h3>Pay only when you start earning</h3>
                 </figcaption>
               </figure>
             </li>
+
+            {/* block #2 */}
             <li>
               <div className="gifSelector"></div>
               <figure className="evenFigure">
@@ -86,6 +89,7 @@ const SectionFour = () => {
                 </figcaption>
               </figure>
             </li>
+            {/* block #3 */}
             <li>
               <div className="gifSelector"></div>
               <figure>

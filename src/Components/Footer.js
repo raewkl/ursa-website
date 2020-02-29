@@ -24,7 +24,7 @@ const Footer = props => {
 
             <div className="footerText">
               <p className="footMotto">
-                Forward <span>Together</span>
+                Education <span>without debt</span>
               </p>
               <div className="footerLinks">
                 <ul>

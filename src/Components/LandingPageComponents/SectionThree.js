@@ -51,9 +51,8 @@ const SectionThree = () => {
             <div className="stepRight">
               <h4>Complete a quick prescreen, then review the contract.</h4>
               <p>
-                If you like our terms, and enter into an ISA with Ursa, you
-                don’t need to worry about tuition. We pay your school directly
-                and send you confirmation.
+                If you get an ISA with Ursa, you don’t need to worry about
+                tuition. We pay the education provider directly.
               </p>
               <p className="subText">
                 At this time, Ursa funding is for tuition only.
@@ -68,8 +67,8 @@ const SectionThree = () => {
             <div className="stepRight">
               <h4>Focus on learning and improving your skill set!</h4>
               <p>
-                We know how stressful the transition from school to work can be,
-                so whenever you’re ready, we’re here to make it easier.
+                We know how stressful the transition from school to work can be.
+                Whenever you’re ready, we’re here to make it easier.
               </p>
               <p className="subText">Ask us for help with:</p>
               <ul className="helpWith">
@@ -93,11 +92,14 @@ const SectionThree = () => {
               </p>
               <ul>
                 <li>
+                  No payments until you start earning.
+                </li>
+                <li>
                   Contracts expire after some time no matter how much you’ve
                   paid.
                 </li>
                 <li>
-                  If you do really well, you keep the upside! We’ll only ever
+                  You keep the upside! We’ll only ever
                   ask for up to the payment cap.
                 </li>
               </ul>

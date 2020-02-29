@@ -51,12 +51,12 @@ const ContactForm = () => {
 
           <div className="schoolProgram">
             <div className="schoolBox">
-              <label htmlFor="school">School / Institution</label>
+              <label htmlFor="school">Education Provider</label>
               <input
                 type="text"
                 name="school"
                 id="school"
-                placeholder="Enter school name"
+                placeholder="Enter institution name"
                 className="formSchool"
               />
             </div>
@@ -82,12 +82,12 @@ const ContactForm = () => {
                 <input
                   type="radio"
                   name="customerType"
-                  value="school"
+                  value="Education Provider"
                   id="schoolRadio"
                   required
                 ></input>
                 <label htmlFor="schoolRadio">
-                  School
+                  Education Provider
                   <span className="outerRadio">
                     <span className="innerRadio"></span>
                   </span>

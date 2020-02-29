@@ -117,7 +117,8 @@ class Faq extends Component {
                 since APRs project growth of a balance and ISAs don’t grow. So
                 you might end up paying us back more than the original amount of
                 tuition, but that will only happen if you’re doing really well!
-                At the end of the day, it’s a way for you to pay for tuition
+                </p>
+                <p> At the end of the day, it’s a way for you to pay for tuition
                 without having to worry about the costs upfront.
               </p>
             </div>
@@ -158,7 +159,9 @@ class Faq extends Component {
                 We’re taking this on because the world is getting more and more
                 specialised and training and education are key. Life is
                 expensive as is, and for education, loans just don’t really make
-                sense. We think ISAs could really change the game on how we pay
+                sense. 
+                </p>
+                <p>We think ISAs could really change the game on how we pay
                 for education in the future, putting investors on the same side
                 as students and letting education providers show accountability.
               </p>

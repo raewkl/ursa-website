@@ -8,16 +8,16 @@
   bottom: 0;
 }
 
+.star1,
+.star2,
+.star3,
 .circle1,
 .circle2,
 .circle3,
 .circle4,
 .circle5,
 .circle6,
-.circle7,
-.circle8,
-.circle9,
-.circle10 {
+.circle7 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -27,207 +27,521 @@
   user-select: none;
 }
 
-.circle1 {
-  height: 15px;
-  width: 15px;
-  background-color: $colorFive;
-  border-radius: 50%;
+//confetti components
 
+.star1 {
   position: absolute;
   bottom: 0;
-  left: 6.5%;
-  animation: float1 12s ease-in -2s infinite;
+  left: 16.5%;
+  animation: float-s1 12s ease-in -2s infinite;
   z-index: -20;
+
+  /* Controlls the size of the stars. */
+  font-size: 25px;
+
+  //star shape
+  display: inline-block;
+  width: 0;
+  height: 0;
+
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  margin-bottom: 1.2em;
+
+  border-right: 0.28em solid transparent;
+  border-bottom: 0.7em solid #fc0;
+  border-left: 0.28em solid transparent;
+
+  &:before,
+  &:after {
+    content: "";
+
+    display: block;
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    top: 0.6em;
+    left: -1em;
+
+    border-right: 1em solid transparent;
+    border-bottom: 0.7em solid #fc0;
+    border-left: 1em solid transparent;
+
+    transform: rotate(-35deg);
+  }
+
+  &:after {
+    transform: rotate(35deg);
+  }
+}
+
+.star2 {
+  position: absolute;
+  bottom: 0;
+  right: 21%;
+  animation: float-s2 13s ease-in -3s infinite;
+  z-index: -20;
+
+  /* Controlls the size of the stars. */
+  font-size: 30px;
+
+  //star shape
+  display: inline-block;
+  width: 0;
+  height: 0;
+
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  margin-bottom: 1.2em;
+
+  border-right: 0.27em solid transparent;
+  border-bottom: 0.7em solid #fc0;
+  border-left: 0.27em solid transparent;
+
+  &:before,
+  &:after {
+    content: "";
+
+    display: block;
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    top: 0.6em;
+    left: -1em;
+
+    border-right: 1em solid transparent;
+    border-bottom: 0.7em solid #fc0;
+    border-left: 1em solid transparent;
+
+    transform: rotate(-35deg);
+  }
+
+  &:after {
+    transform: rotate(35deg);
+  }
+}
+
+.star3 {
+  position: absolute;
+  bottom: 0;
+  right: 6%;
+  animation: float-s3 15s ease-in -5s infinite;
+  z-index: -20;
+
+  /* Controlls the size of the stars. */
+  font-size: 25px;
+
+  //star shape
+  display: inline-block;
+  width: 0;
+  height: 0;
+
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  margin-bottom: 1.2em;
+
+  border-right: 0.27em solid transparent;
+  border-bottom: 0.7em solid #fc0;
+  border-left: 0.27em solid transparent;
+
+  &:before,
+  &:after {
+    content: "";
+
+    display: block;
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    top: 0.6em;
+    left: -1em;
+
+    border-right: 1em solid transparent;
+    border-bottom: 0.7em solid #fc0;
+    border-left: 1em solid transparent;
+
+    transform: rotate(-35deg);
+  }
+
+  &:after {
+    transform: rotate(35deg);
+  }
+}
+
+.circle1 {
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  animation: float-c1 13s ease-in -1s infinite;
+  z-index: -20;
+
+  text-align: center;
+  height: 10px;
+  width: 22px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    background: $colorFive;
+    transform: skew(0deg, 6deg);
+  }
+    &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: $colorFive;
+    transform: skew(0deg, -6deg);
+  }
+
 }
 
 .circle2 {
-  height: 20px;
-  width: 20px;
-  background-color: $colorTwo;
-  border-radius: 50%;
-
   position: absolute;
   bottom: 0;
-  right: 28%;
-  animation: float2 10s ease-in -3s infinite;
+  right: 15%;
+  animation: float-c2 10s ease-in -3s infinite;
   z-index: -20;
+
+  text-align: center;
+  height: 10px;
+  width: 22px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    background: magenta;
+    transform: skew(0deg, 6deg);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: magenta;
+    transform: skew(0deg, -6deg);
+  }
 }
 
 .circle3 {
-  height: 15px;
-  width: 15px;
-  background-color: $colorTwo;
-  border-radius: 50%;
-
   position: absolute;
-  bottom: 0;
-  right: 6%;
-  animation: float3 15s ease-in -5s infinite;
+  bottom: -150px;
+  right: 35%;
+  animation: float-c3 17s ease-in -5s infinite;
   z-index: -20;
+
+    text-align: center;
+  height: 10px;
+  width: 22px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    background: $colorFour;
+    transform: skew(0deg, 6deg);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: $colorFour;
+    transform: skew(0deg, -6deg);
+  }
 }
 
 .circle4 {
-  height: 15px;
-  width: 15px;
-  background-color: $colorFive;
-  border-radius: 50%;
-
   position: absolute;
-  bottom: -150px;
-  right: 12%;
-  animation: float4 17s ease-in -15s infinite;
+  bottom: 0;
+  left: 40%;
+  animation: float-c4 11s ease-in -4s infinite;
   z-index: -20;
+
+    text-align: center;
+  height: 10px;
+  width: 22px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    background: red;
+    transform: skew(0deg, 6deg);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: red;
+    transform: skew(0deg, -6deg);
+  }
 }
 
 .circle5 {
-  height: 15px;
-  width: 15px;
-  background-color: $colorTwo;
-  border-radius: 50%;
-
   position: absolute;
   bottom: 0;
-  left: 4%;
-  animation: float5 14s ease-in -9s infinite;
+  left: 15%;
+  animation: float-c5 14s ease-in -9s infinite;
   z-index: -20;
+
+  text-align: center;
+  height: 10px;
+  width: 22px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    background: $colorFive;
+    transform: skew(0deg, 6deg);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: $colorFive;
+    transform: skew(0deg, -6deg);
+  }  
 }
 
 .circle6 {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  animation: float-c6 13s ease-in -2s infinite;
+  z-index: -20;
+
+    text-align: center;
   height: 10px;
-  width: 10px;
-  background-color: $colorFive;
-  border-radius: 50%;
+  width: 22px;
 
-  position: absolute;
-  bottom: 0;
-  right: 6%;
-  animation: float5 17s ease-in -2s infinite;
-  z-index: -20;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    background: $colorFour;
+    transform: skew(0deg, 6deg);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: $colorFour;
+    transform: skew(0deg, -6deg);
+  }  
 }
 
-.circle7 {
-  height: 20px;
-  width: 20px;
-  background-color: $colorFour;
-  border-radius: 50%;
-
+ .circle7 {
   position: absolute;
   bottom: 0;
-  right: 8%;
-  animation: float5 11s ease-in -8s infinite;
+  left: 20%;
+  animation: float-c7 15s ease-in -1s infinite;
   z-index: -20;
-}
 
-.circle8 {
-  height: 20px;
-  width: 20px;
-  background-color: $colorFive;
-  border-radius: 50%;
-
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  animation: float5 18s ease-in -4s infinite;
-  z-index: -20;
-}
-
-.circle9 {
+    text-align: center;
   height: 10px;
-  width: 10px;
-  background-color: $colorFour;
-  border-radius: 50%;
+  width: 22px;
 
-  position: absolute;
-  bottom: 0;
-  left: 8%;
-  animation: float5 13s ease-in -7s infinite;
-  z-index: -20;
-}
-
-.circle10 {
-  height: 20px;
-  width: 20px;
-  background-color: $colorTwo;
-  border-radius: 50%;
-
-  position: absolute;
-  bottom: 0;
-  left: 18%;
-  animation: float5 15s ease-in -7s infinite;
-  z-index: -20;
-}
-
-@keyframes float1 {
-  0% {
-    transform: translateY(0) rotate(20deg);
-    opacity: 0;
-    // bottom: 0;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    background: magenta;
+    transform: skew(0deg, 6deg);
   }
-  10% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(-120vh) rotate(110deg);
-    opacity: 0.5;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: magenta;
+    transform: skew(0deg, -6deg);
   }
 }
 
-@keyframes float2 {
+
+//Animation for confetti
+
+@keyframes float-s1 {
   0% {
     transform: translateY(0);
     opacity: 0;
   }
   10% {
-    opacity: 0.3;
+    opacity: 1;
   }
   100% {
-    transform: translateY(-120vh);
-    opacity: 0.3;
+    transform: translateY(-120vh) translateX(-20vh) rotate(-180deg);
+    opacity: 1;
   }
 }
 
-@keyframes float3 {
+@keyframes float-s2 {
   0% {
     transform: translateY(0);
     opacity: 0;
   }
   10% {
-    opacity: 0.4;
+    opacity: 1;
   }
   100% {
-    transform: translateY(-120vh);
-    opacity: 0.4;
+    transform: translateY(-90vh) rotate(180deg);
+    opacity: 1;
   }
 }
 
-@keyframes float4 {
+@keyframes float-s3 {
   0% {
     transform: translateY(0);
     opacity: 0;
   }
-  35% {
-    opacity: 1;
-  }
-  90% {
+  10% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-120vh);
-    opacity: 0;
+    transform: translateY(-120vh) translateX(10vh) rotate(360deg);
+    opacity: 1;
   }
 }
 
-@keyframes float5 {
+@keyframes float-c1 {
+  0% {
+    transform: translateY(0) rotate(90deg);// skew(23deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh) translatex(10vh) rotate(270deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float-c2 {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(25vh) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float-c3 {
   0% {
     transform: translateY(0);
     opacity: 0;
   }
-  20% {
+  10% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-120vh);
+    transform: translateY(-120vh) translateX(20vh) rotate(360deg);
     opacity: 1;
+  }
+}
+
+@keyframes float-c4 {
+  0% {
+    transform: translateY(0) rotate(90deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(-10vh) rotate(-450deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes float-c5 {
+  0% {
+    transform: translateY(0) rotate(-40deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(-20vh) rotate(-360deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float-c6 {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(-20vh) rotate(-460deg);
+    opacity: 1;
+  }
+}
+
+@keyframes float-c7 {
+  0% {
+    transform: translateY(0) rotate(15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(-20vh) rotate(-500deg);
+    opacity: 0.7;
   }
 }
 
@@ -259,6 +573,8 @@
   }
 }
 // end ANIMATIONS
+
+
 
 // SECTION ONE
 
@@ -458,6 +774,7 @@
 
   ul.contentBox {
     width: calc(100% - 350px);
+    
   }
 
   li.howStep {
@@ -465,10 +782,13 @@
     border: 1px solid $colorOne;
     margin-bottom: 20px;
     padding: 30px;
+    padding-bottom: 40px;
+    border-radius: 25px;
 
     &:hover span {
       color: $colorOne;
     }
+    
   }
 
   li:last-child {
@@ -827,6 +1147,7 @@ form {
   .formComment {
     margin: 10px 0 20px 0;
     padding: 10px;
+    //border-radius: 25px;
   }
 
   .nameEmail,
@@ -887,11 +1208,13 @@ aside {
   background-color: $background3;
   height: 100%;
   width: 320px;
-  color: $colorOne;
-  right: 8px;
+  //color: $colorOne;
+  right: 6px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  
+  border-radius: 25px;
 
   h3 {
     text-align: center;
@@ -934,10 +1257,15 @@ aside {
     height: 100%;
     border: 2px solid $colorOne;
     z-index: -1;
-    top: 6px;
-    left: 6px;
+    top: 4px;
+    left: 4px;
+
+    background: $colorOne;
+    border-radius: 25px;
   }
 }
+
+// RESPONSIVE
 
 @media (max-width: 1317px) {
   // Text size change
@@ -1446,7 +1774,8 @@ aside {
     }
 
     li.howStep {
-      padding: 20px 15px;
+      padding: 20px;
+      padding-bottom: 25px;
     }
 
     .stepRight {
@@ -1477,7 +1806,6 @@ aside {
     display: none;
   }
 }
-
 
 @media (max-height: 500px) {
   .cursorDownContainer,

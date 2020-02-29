@@ -52,9 +52,9 @@ class LandingPage extends Component {
       //   A better way to pay <span className="lineBreak">for education.</span>
       // </animated.h1>
       <animated.h1 style={props}>
-        Ditch debt. 
-        {/* <span className="lineBreak"> Pay tuition with </span> 
-        <span className="lineBreak"> Income Share Agreements.</span> */}
+        {/* Ditch debt. */}
+        Make Outcomes Matter 
+
       </animated.h1>
     );
   };
@@ -95,13 +95,13 @@ class LandingPage extends Component {
         <div className="circle2"></div>
         <div className="circle3"></div>
         <div className="circle4"></div>
-
         <div className="circle5"></div>
         <div className="circle6"></div>
         <div className="circle7"></div>
-        <div className="circle8"></div>
-        <div className="circle9"></div>
-        <div className="circle10"></div>
+
+        <div className="star1"></div>
+        <div className="star2"></div>
+        <div className="star3"></div>
       </animated.div>
     );
   };
