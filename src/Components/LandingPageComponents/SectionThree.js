@@ -39,7 +39,7 @@ const SectionThree = () => {
                 student success.
               </p>
               <p className="subText">
-                You can check with us <a href="#contact">here.</a>
+                You can check with us <a href="#contact">here</a>.
               </p>
             </div>
           </li>

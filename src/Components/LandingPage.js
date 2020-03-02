@@ -53,7 +53,7 @@ class LandingPage extends Component {
       // </animated.h1>
       <animated.h1 style={props}>
         {/* Ditch debt. */}
-        Make Outcomes Matter 
+        Let's make student <span className="lineBreak">outcomes matter.</span>
 
       </animated.h1>
     );

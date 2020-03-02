@@ -95,8 +95,45 @@ class Faq extends Component {
             <div className="answer">
               <p>
                 We currently work with schools in Canada and the US. Check with
-                your education provider or hit us up here. You will also need to
-                be authorized to work in those countries.
+                your education provider or hit us up{" "}
+                <a href="/#contact">here</a>. You will also need to be
+                authorized to work in those countries.
+              </p>
+              <p>
+                Please note that Ursa is an independent financing provider and schedules
+                all of our own information sessions and interviews. Please do
+                not respond to emails representing Ursa unless it comes from an
+                ursa.io email address.
+              </p>
+            </div>
+          </li>
+          <li>
+            <button className="questionSub accordion">
+              <div className="questionExpand">
+                <h2>What happens if my program is no longer eligible?</h2>
+              </div>
+              <div className="plusExpand">
+                <span className="horizontal"></span>
+                <span className="vertical"></span>
+              </div>
+            </button>
+            <div className="answer">
+              <p>
+                Don't worry, this doesn't affect any existing ISAs, and we won't
+                go back on our word if we've committed to funding you!
+              </p>
+              <p>
+                This just means we will stop funding new ISAs with your program
+                for the time being. We continuously review our partner programs
+                to make sure they are giving students what they need to succeed
+                in the workforce. To that end, we may stop or suspend funding
+                for programs from time to time.
+              </p>
+              <p>
+                Please note that Ursa is an independent financing provider and schedules
+                all of our own information sessions and interviews. Please do
+                not respond to emails representing Ursa unless it comes from an
+                ursa.io email address.
               </p>
             </div>
           </li>
@@ -117,9 +154,11 @@ class Faq extends Component {
                 since APRs project growth of a balance and ISAs don’t grow. So
                 you might end up paying us back more than the original amount of
                 tuition, but that will only happen if you’re doing really well!
-                </p>
-                <p> At the end of the day, it’s a way for you to pay for tuition
-                without having to worry about the costs upfront.
+              </p>
+              <p>
+                {" "}
+                At the end of the day, it’s a way for you to pay for tuition
+                without having to worry about costs upfront or fixed monthly balances.
               </p>
             </div>
           </li>
@@ -159,11 +198,12 @@ class Faq extends Component {
                 We’re taking this on because the world is getting more and more
                 specialised and training and education are key. Life is
                 expensive as is, and for education, loans just don’t really make
-                sense. 
-                </p>
-                <p>We think ISAs could really change the game on how we pay
-                for education in the future, putting investors on the same side
-                as students and letting education providers show accountability.
+                sense.
+              </p>
+              <p>
+                We think ISAs could really change the game on how we pay for
+                education in the future, putting investors on the same side as
+                students and letting education providers show accountability.
               </p>
             </div>
           </li>

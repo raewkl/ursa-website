@@ -26,10 +26,9 @@ const SectionTwo = () => {
         </div>
         <div className="isaDescriptionLower">
           <p>
-            An <em>Income Share Agreement (ISA)</em> lets you train in that field you
-            want to work in without worrying about debt. We pay your tuition
-            upfront, and you pay us a % of your income for a period of time once
-            you start working.
+            An <em>Income Share Agreement (ISA)</em> lets you enroll in post-secondary programs without having to worry about debt. We pay your tuition
+            upfront, and you pay us a % of your income for a set period of time once
+            you start earning.
           </p>
 
           <ul className="oneTwoList">
