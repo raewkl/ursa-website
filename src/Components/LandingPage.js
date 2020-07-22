@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SectionTwo from "./LandingPageComponents/SectionTwo";
-import SectionThree from "./LandingPageComponents/SectionThree";
+// import SectionThree from "./LandingPageComponents/SectionThree";
 import SectionFour from "./LandingPageComponents/SectionFour";
 import ContactForm from "./LandingPageComponents/ContactForm";
 import NumbersAside from "./LandingPageComponents/NumbersAside";
@@ -199,9 +199,9 @@ class LandingPage extends Component {
 
             {/* SECTION THREE - HOW IT WORKS */}
 
-            <div className="sectionThreeBg" id="sectionThreeBg">
+            {/*<div className="sectionThreeBg" id="sectionThreeBg">
               <SectionThree />
-            </div>
+            </div>*/}
 
             {/* SECTION FOUR - HIGHLIGHTS */}
 

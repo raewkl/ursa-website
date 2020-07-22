@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import "./Partials/App.scss";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import firebase from "./Components/firebase";
+// import firebase from "./Components/firebase";
 
 import LandingPage from "./Components/LandingPage";
 import Footer from "./Components/Footer";
@@ -15,7 +15,7 @@ import Dashboard from "./Components/Dashboard";
 import Faq from "./Components/Faq";
 
 // const provider = new firebase.auth.GoogleAuthProvider();
-const auth = firebase.auth();
+// const auth = firebase.auth();
 
 class App extends Component {
   constructor() {
@@ -55,7 +55,7 @@ class App extends Component {
   //   topBar.classList.add("removeHeight");
   // };
 
-  updateUser = user => {
+  /* updateUser = user => {
     this.setState({
       user
     });
@@ -107,9 +107,7 @@ class App extends Component {
       .catch(function(error) {
       });
   };
-
-
-  //render: renders jsx code inside "return". All jsx in thi
+  */
 
   render() {
     return (

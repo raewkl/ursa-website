@@ -1,11 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-const Footer = props => {
-
-  
-
+const Footer = () => {
   return (
     <div className="footerBg" id="footerBg">
       <footer className="wrapper scrollChild">
@@ -54,6 +50,7 @@ const Footer = props => {
                 <a
                   href="https://twitter.com/ursaeducation"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="icons"
                 >
                   <i className="fab fa-twitter"></i>
@@ -63,6 +60,7 @@ const Footer = props => {
                 <a
                   href="https://ca.linkedin.com/company/ursa-education"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="icons"
                 >
                   <i className="fab fa-linkedin-in"></i>
@@ -72,6 +70,7 @@ const Footer = props => {
                 <a
                   href="https://www.facebook.com/ursaeducation/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="icons"
                 >
                   <i className="fab fa-facebook-f"></i>
