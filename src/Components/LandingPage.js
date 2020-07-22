@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import SectionTwo from "./LandingPageComponents/SectionTwo";
 // import SectionThree from "./LandingPageComponents/SectionThree";
-import SectionFour from "./LandingPageComponents/SectionFour";
+// import SectionFour from "./LandingPageComponents/SectionFour";
 import ContactForm from "./LandingPageComponents/ContactForm";
 import NumbersAside from "./LandingPageComponents/NumbersAside";
 
 import { useInView, InView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import * as Scroll from "react-scroll";
+import Mission from "./LandingPageComponents/Mission";
 
 let ScrollLink = Scroll.Link;
 
@@ -167,7 +168,7 @@ class LandingPage extends Component {
 
                 <ScrollLink
                   activeClass="active"
-                  to="sectionTwoBg"
+                  to="missionBg"
                   spy={true}
                   smooth={true}
                   offset={-60}
@@ -189,6 +190,12 @@ class LandingPage extends Component {
               </section>
             </div>
 
+            {/* MISSION */}
+
+            <div className="sectionTwoBg" id="missionBg">
+              <Mission />
+            </div>
+
             {/* SECTION TWO - WHAT'S AN ISA */}
 
             <div className="sectionTwoBg" id="sectionTwoBg">
@@ -205,9 +212,9 @@ class LandingPage extends Component {
 
             {/* SECTION FOUR - HIGHLIGHTS */}
 
-            <div className="sectionFourBg" id="sectionFourBg">
+            {/*<div className="sectionFourBg" id="sectionFourBg">
               <SectionFour />
-            </div>
+            </div>*/}
 
             {/* CONTACT */}
 

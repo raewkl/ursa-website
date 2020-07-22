@@ -85,11 +85,10 @@ const SectionTwo = () => {
                 </div>
                 <figcaption>
                   <div className="subFig">
-                    <p>Finite obligation</p>
+                    <p>ISAs expire</p>
 
                     <p className="light">
-                      ISAs expire eventually, no matter what you’ve
-                      paid.
+                      There's an end in sight, no matter what you've paid.
                     </p>
                   </div>
                 </figcaption>
@@ -130,7 +129,7 @@ const SectionTwo = () => {
 
       <ScrollLink
         activeClass="active"
-        to="sectionFourBg"
+        to="contact"
         spy={true}
         smooth={true}
         offset={0}
