@@ -680,10 +680,12 @@
       font-size: 2rem;
       font-weight: normal;
       text-align: left;
+      font-family: 'IBM Plex Sans';
     }
 
     p {
       font-size: 1.1rem;
+      line-height: 1.5;
       margin-bottom: 5vh;
     }
 
@@ -1181,6 +1183,11 @@ form {
       font-size: 0.8rem;
       font-family: $primaryFont;
       font-weight: lighter;
+    }
+
+    &:focus {
+      background-color: $colorTwoLight;
+      outline: none;
     }
   }
 

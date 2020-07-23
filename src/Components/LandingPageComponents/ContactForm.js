@@ -5,13 +5,13 @@ import { useSpring, animated, config } from "react-spring";
 const ContactForm = () => {
   const [ref, inView] = useInView({
     rootMargin: "-50px 0px",
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   const props = useSpring({
     opacity: inView ? 1 : 0,
     right: inView ? 0 : 100,
-    config: config.default
+    config: config.default,
   });
 
   return (
@@ -49,7 +49,7 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div className="schoolProgram">
+          {/*} <div className="schoolProgram">
             <div className="schoolBox">
               <label htmlFor="school">Education Provider</label>
               <input
@@ -126,10 +126,11 @@ const ContactForm = () => {
                 </label>
               </div>
             </div>
-          </fieldset>
+          </fieldset>*/}
         </div>
 
         <div className="lowerForm">
+          <p style={{ fontSize: "0.75em", lineHeight: "1.5", margin: "10px 0 10px 0" }}>Please also tell us a little about yourself or your organization. (eg, I’m a student interested in teacher’s college, I work for a non-profit, etc)</p>
           <div className="commentBox">
             <label htmlFor="comment" className="visuallyHidden">
               Leave a comment
