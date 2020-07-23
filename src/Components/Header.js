@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useSpring, animated, config } from "react-spring";
 

@@ -191,7 +191,7 @@
     background: $colorFive;
     transform: skew(0deg, 6deg);
   }
-    &:after {
+  &:after {
     content: "";
     position: absolute;
     top: 0;
@@ -201,7 +201,6 @@
     background: $colorFive;
     transform: skew(0deg, -6deg);
   }
-
 }
 
 .circle2 {
@@ -244,7 +243,7 @@
   animation: float-c3 17s ease-in -5s infinite;
   z-index: -20;
 
-    text-align: center;
+  text-align: center;
   height: 10px;
   width: 22px;
 
@@ -277,7 +276,7 @@
   animation: float-c4 11s ease-in -4s infinite;
   z-index: -20;
 
-    text-align: center;
+  text-align: center;
   height: 10px;
   width: 22px;
 
@@ -333,7 +332,7 @@
     width: 50%;
     background: $colorFive;
     transform: skew(0deg, -6deg);
-  }  
+  }
 }
 
 .circle6 {
@@ -343,7 +342,7 @@
   animation: float-c6 13s ease-in -2s infinite;
   z-index: -20;
 
-    text-align: center;
+  text-align: center;
   height: 10px;
   width: 22px;
 
@@ -366,17 +365,17 @@
     width: 50%;
     background: $colorFour;
     transform: skew(0deg, -6deg);
-  }  
+  }
 }
 
- .circle7 {
+.circle7 {
   position: absolute;
   bottom: 0;
   left: 20%;
   animation: float-c7 15s ease-in -1s infinite;
   z-index: -20;
 
-    text-align: center;
+  text-align: center;
   height: 10px;
   width: 22px;
 
@@ -401,7 +400,6 @@
     transform: skew(0deg, -6deg);
   }
 }
-
 
 //Animation for confetti
 
@@ -449,7 +447,7 @@
 
 @keyframes float-c1 {
   0% {
-    transform: translateY(0) rotate(90deg);// skew(23deg);
+    transform: translateY(0) rotate(90deg); // skew(23deg);
     opacity: 0;
   }
   10% {
@@ -557,6 +555,7 @@
   display: block;
 }
 
+.mission,
 .sectionTwo,
 .sectionThree,
 .sectionFourUpper {
@@ -573,8 +572,6 @@
   }
 }
 // end ANIMATIONS
-
-
 
 // SECTION ONE
 
@@ -648,11 +645,57 @@
   width: 350px;
 }
 
+// MISSION
+
+.mission {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .missionDescription {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    .missionTitle {
+      margin-bottom: 5vh;
+    }
+
+    .missionText {
+      margin-bottom: 10vh;
+
+      .reachOut {
+        text-transform: none;
+        font-size: 1.1rem;
+        font-weight: normal;
+        text-decoration: underline;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      text-align: left;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 5vh;
+    }
+
+    em {
+      font-weight: bold;
+    }
+  }
+}
+
 // SECTION TWO
 
 .sectionTwo {
-  padding-top: 5vh;
-
   .isaDescription {
     display: flex;
     text-align: left;
@@ -699,14 +742,22 @@
 
   figure {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
+    justify-content: flex-start;
     color: $colorOne;
+    border: 2px solid $colorOne;
+    padding: 5%;
     border-radius: 25px;
-    text-align: center;
+    box-shadow: 5px 5px 0px 0px #0000cc;
+    // text-align: center;
 
     .emojiContainer {
       text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
     }
 
     .emoji {
@@ -724,17 +775,20 @@
   }
 
   li {
-    width: calc(50% - 50px);
+    width: calc(50% - 10px);
     display: flex;
-    margin-top: 6vh;
-    max-width: 285px;
+    margin-top: 20px;
+    // max-width: 285px;
   }
 
   figcaption .subFig {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    margin-left: 10px;
 
     p {
       width: 100%;
@@ -774,7 +828,6 @@
 
   ul.contentBox {
     width: calc(100% - 350px);
-    
   }
 
   li.howStep {
@@ -788,7 +841,6 @@
     &:hover span {
       color: $colorOne;
     }
-    
   }
 
   li:last-child {
@@ -1213,7 +1265,7 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  
+
   border-radius: 25px;
 
   h3 {
@@ -1288,6 +1340,12 @@ aside {
   .cursorHover,
   .cursorNormal {
     width: 60px;
+  }
+
+  .mission {
+    .cursorDownContainer {
+      margin-top: 0;
+    }
   }
 
   .sectionTwo {
@@ -1466,6 +1524,14 @@ aside {
     }
   }
 
+  .mission {
+    .missionDescription {
+      .missionText {
+        margin-bottom: 5vh;
+      }
+    }
+  }
+
   .sectionThree .stepRight {
     li {
       margin-top: 5px;
@@ -1506,6 +1572,25 @@ aside {
   .cursorHover,
   .cursorNormal {
     width: 50px;
+  }
+
+  .mission {
+    .missionDescription {
+      .missionTitle {
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+      .missionText {
+        margin-bottom: 0;
+        p {
+          font-size: 0.9rem;
+        }
+        .reachOut {
+          font-size: 0.9rem;
+        }
+      }
+    }
   }
 
   .sectionTwo {
@@ -1743,6 +1828,10 @@ aside {
 
   h2 {
     font-size: 1.5rem;
+  }
+
+  .mission {
+    justify-content: flex-start;
   }
 
   .sectionTwo {

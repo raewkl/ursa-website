@@ -1,5 +1,5 @@
 import React from "react";
-import { useInView, InView } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import * as Scroll from "react-scroll";
 import { HashLink } from "react-router-hash-link";
@@ -85,11 +85,10 @@ const SectionTwo = () => {
                 </div>
                 <figcaption>
                   <div className="subFig">
-                    <p>Finite obligation</p>
+                    <p>ISAs expire</p>
 
                     <p className="light">
-                      ISAs expire after some time, no matter how much you’ve
-                      paid.
+                      There's an end in sight, no matter what you've paid.
                     </p>
                   </div>
                 </figcaption>
@@ -122,7 +121,7 @@ const SectionTwo = () => {
               className="logIn"
               onClick={() => props.addHeader}
             >
-              Frequently asked questions >
+              Frequently asked questions
             </HashLink>
           </div>
         </div>
@@ -130,7 +129,7 @@ const SectionTwo = () => {
 
       <ScrollLink
         activeClass="active"
-        to="sectionThreeBg"
+        to="contact"
         spy={true}
         smooth={true}
         offset={0}

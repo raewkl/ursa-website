@@ -1,5 +1,5 @@
 import React from "react";
-import { useInView, InView } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import * as Scroll from "react-scroll";
 

@@ -16,7 +16,7 @@ const NumbersAside = () => {
 
   return (
     <animated.div ref={ref} style={props} className="asideBox">
-        <aside  className="theNumbers">
+        <aside className="theNumbers">
           <h3>The Numbers</h3>
           <div className="fact1">
             <h4>7 in 10</h4>
