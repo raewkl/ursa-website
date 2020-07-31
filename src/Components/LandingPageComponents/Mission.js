@@ -26,7 +26,7 @@ const Mission = () => {
               to fair financing and post-secondary education.</h1>
           </div>
           <div className="missionText">
-              <p>Ursa has completed an initial pilot with 12 students to test product viability.</p>
+              <p>Ursa has completed an initial pilot with 12 students in Toronto, Canada, to test product viability.</p>
               <p>We are currently looking for <em>non-profits</em>, <em>government</em> and <em>community groups</em> to collaborate with for a larger scale
               pilot program. Please <HashLink className="reachOut" to="#contact">reach out</HashLink> if you are interested!</p>
           </div>
